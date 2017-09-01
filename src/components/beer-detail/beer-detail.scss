@@ -1,0 +1,22 @@
+beer-detail {
+  ion-page {
+    padding-top: 4em;
+  }
+
+  ion-scroll {
+    padding: 1em;
+  }
+
+  st-img img {
+    width: 5em;
+  }
+
+  st-img {
+    margin-top: 2em;
+  }
+
+  #img-block {
+    display: flex;
+    justify-content: center;
+  }
+}
