@@ -6,4 +6,12 @@ beer-page {
   ion-scroll {
     background: #ececec !important;
   }
+
+  ion-button[disabled] {
+    opacity: 0.5;
+  }
+
+  ion-button[disabled] button {
+    color: grey;
+  }
 }

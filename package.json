@@ -13,9 +13,9 @@
     "start": "npm run dev"
   },
   "dependencies": {
-    "@ionic/core": "0.0.2-8",
-    "@stencil/core": "0.0.5-9",
-    "@stencil/router": "next",
+    "@ionic/core": "0.0.2-10",
+    "@stencil/core": "0.0.5-12",
+    "@stencil/router": "0.0.9",
     "st-img": "0.0.5"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 import { Component, Prop } from '@stencil/core';
+import { ToastController } from '@ionic/core';
 
 
 @Component({
@@ -8,6 +9,27 @@ import { Component, Prop } from '@stencil/core';
 export class BeerList {
 
   @Prop() beers: any[];
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+
+  share(beer) {
+    (navigator as any).share({
+      title: document.title,
+      text: "Check out this cool beer",
+      url: `${window.location.href}/detail/${beer.id}`
+    }).then(() => {
+      this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
+        toast.present();
+      })
+    })
+      .catch((error) => {
+        console.error(error);
+        window.open(`http://twitter.com/share?text=Check out this cool beer&url=window.location.href}/detail/${beer.id}`);
+
+        this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
+          toast.present();
+        })
+      });
+  }
 
   render() {
     if (this.beers) {
@@ -25,13 +47,17 @@ export class BeerList {
               </p>
             </ion-card-content>
 
-            <stencil-route-link url={`/beers/detail/${beer.id}`} router="#router">
-              <ion-buttons slot='end'>
+            <ion-buttons slot='end'>
+              <stencil-route-link url={`/beers/detail/${beer.id}`}>
                 <ion-button color='primary' clear>
                   Detail
                 </ion-button>
-              </ion-buttons>
-            </stencil-route-link>
+              </stencil-route-link>
+
+              <ion-button onClick={() => this.share(beer)} clear icon-only>
+                <ion-icon color='primary' name='share'></ion-icon>
+              </ion-button>
+            </ion-buttons>
           </ion-card>
         )
       });

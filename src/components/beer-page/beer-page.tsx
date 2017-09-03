@@ -1,4 +1,4 @@
-import { Component, State, Prop } from '@stencil/core';
+import { Component, State, Prop, Listen } from '@stencil/core';
 import { LoadingController } from '@ionic/core';
 
 
@@ -39,22 +39,41 @@ export class BeerPage {
   }
 
   previousPage() {
-    this.page = this.page - 1;
-    this.fetchBeers(this.page);
+    if (this.page > 1) {
+      this.page = this.page - 1;
+      this.fetchBeers(this.page);
+    }
+  }
+  
+  @Listen('ionInput')
+  search(ev) {
+    setTimeout(() => {
+      fetch(`https://api.punkapi.com/v2/beers?beer_name=${ev.detail.target.value}`).then((response) => {
+        return response.json();
+      }).then((data) => {
+        this.beers = data;
+      }).catch(() => {
+        this.fetchBeers(this.page);
+      })
+    }, 1000);
   }
 
   render() {
     return (
-      <ion-page>
+      <ion-page class='show-page'>
+        <ion-toolbar color='dark'>
+          <ion-searchbar></ion-searchbar>
+        </ion-toolbar>
+  
         <ion-content>
           <beer-list beers={this.beers}></beer-list>
         </ion-content>
 
         <ion-footer>
-          <ion-toolbar>
+          <ion-toolbar color='dark'>
             <ion-buttons slot='start'>
-              <ion-button clear onClick={() => this.previousPage()}>
-                back
+              <ion-button disabled={this.page === 1} clear onClick={() => this.previousPage()}>
+                prev
               </ion-button>
             </ion-buttons>
 

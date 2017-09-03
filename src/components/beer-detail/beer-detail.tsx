@@ -11,6 +11,7 @@ export class BeerDetail {
   @Prop() match: any;
 
   componentDidLoad() {
+    console.log(this.match); 
     fetch(`https://api.punkapi.com/v2/beers?ids=${this.match.params.id}`).then((response) => {
       return response.json();
     }).then((data) => {
@@ -29,7 +30,7 @@ export class BeerDetail {
       })
 
       return (
-        <ion-page>
+        <ion-page class='show-page'>
           <ion-content>
             <div id='img-block'>
               <st-img src={this.beer.image_url} alt={this.beer.name}></st-img>

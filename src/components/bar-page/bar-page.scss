@@ -1,12 +1,8 @@
-main-page {
+bar-page {
   ion-page {
     padding-top: 4em;
   }
-
-  stencil-route-link a {
-    text-decoration: none;
-  }
-
+  
   ion-scroll {
     background: #ececec !important;
   }
