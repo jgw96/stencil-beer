@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-
+import { ToastController } from '@ionic/core';
 
 @Component({
   tag: 'beer-detail',
@@ -8,7 +8,9 @@ import { Component, Prop, State } from '@stencil/core';
 export class BeerDetail {
 
   @State() beer: any;
+
   @Prop() match: any;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   componentDidLoad() {
     console.log(this.match); 
@@ -18,6 +20,26 @@ export class BeerDetail {
       console.log(data);
       this.beer = data[0];
     })
+  }
+
+  share() {
+    (navigator as any).share({
+      title: document.title,
+      text: "Check out this cool beer",
+      url: `${window.location.href}/detail/${this.beer.id}`
+    }).then(() => {
+      this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
+        toast.present();
+      })
+    })
+      .catch((error) => {
+        console.error(error);
+        window.open(`http://twitter.com/share?text=Check out this cool beer&url=${window.location.href}`);
+
+        this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
+          toast.present();
+        })
+      });
   }
 
   render() {
@@ -44,6 +66,8 @@ export class BeerDetail {
 
             <h4>Food Pairings</h4>
             {foods}
+
+            <ion-button onClick={() => this.share()} block color='primary'>Share</ion-button>
           </ion-content>
         </ion-page>
       )

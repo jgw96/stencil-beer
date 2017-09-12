@@ -19,4 +19,8 @@ beer-detail {
     display: flex;
     justify-content: center;
   }
+
+  ion-button button {
+    margin-top: 15px !important;
+  }
 }

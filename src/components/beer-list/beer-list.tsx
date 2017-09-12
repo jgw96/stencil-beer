@@ -23,7 +23,7 @@ export class BeerList {
     })
       .catch((error) => {
         console.error(error);
-        window.open(`http://twitter.com/share?text=Check out this cool beer&url=window.location.href}/detail/${beer.id}`);
+        window.open(`http://twitter.com/share?text=Check out this cool beer&url=${window.location.href}/detail/${beer.id}`);
 
         this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
           toast.present();

@@ -12,7 +12,7 @@ export class MainPage {
       <ion-page class='show-page'>
         <ion-content>
           <main>
-            <stencil-route-link url="/beers" router="#router">
+            <stencil-route-link url="/beers">
               <ion-card>
                 <st-img src="../../images/beers.jpeg" alt='beer' />
                 <ion-card-content>
@@ -27,9 +27,9 @@ export class MainPage {
               </ion-card>
             </stencil-route-link>
 
-            <stencil-route-link url="/bars" router="#router">
+            <stencil-route-link url="/bars">
               <ion-card>
-                <st-img src="../../images/bars.jpeg" alt='beer' />
+                <st-img src="../../images/bars.jpeg" alt='bar' />
                 <ion-card-content>
                   <ion-card-title>
                     Bars
