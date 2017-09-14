@@ -3,6 +3,10 @@ main-page {
     padding-top: 4em;
   }
 
+  st-img img {
+    height: 224px;
+  }
+
   stencil-route-link a {
     text-decoration: none;
   }

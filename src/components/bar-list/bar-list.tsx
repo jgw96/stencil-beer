@@ -33,45 +33,55 @@ export class barList {
 
   render() {
     if (this.bars) {
-      const bars = this.bars.map((bar) => {
-        if (bar.brewery.images)
-          return (
-            <ion-card>
-              <st-img src={bar.brewery.images.squareMedium} alt='bar' />
-              <ion-card-content>
-                <ion-card-title>
-                  {bar.brewery.name}
-                </ion-card-title>
-
-                <div>{bar.streetAddress}</div>
-              </ion-card-content>
-
-              <ion-buttons slot='end'>
-                <a href={bar.website}>
-                  <ion-button clear>
-                    website
-                  </ion-button>
-                </a>
-
-                <a href={`tel:${bar.phone}`}>
-                  <ion-button clear>
-                    call
-                  </ion-button>
-                </a>
-
-                <ion-button onClick={() => this.share(bar)} clear icon-only>
-                  <ion-icon color='primary' name='share'></ion-icon>
-                </ion-button>
-              </ion-buttons>
-            </ion-card>
-          )
-      });
-
       return (
+        <ion-list>
+          {this.bars.map((bar) => {
+            if (bar.brewery.images)
+              return (
+                <ion-card>
+                  <st-img src={bar.brewery.images.squareMedium} alt='bar' />
+                  <ion-card-content>
+                    <ion-card-title>
+                      {bar.brewery.name}
+                    </ion-card-title>
+
+                    <div>{bar.streetAddress}</div>
+                  </ion-card-content>
+
+                  <ion-buttons slot='end'>
+                    <stencil-route-link url={`/bars/directions/${bar.streetAddress}}`} exact={true}>
+                      <ion-button clear>
+                        Directions
+                  </ion-button>
+                    </stencil-route-link>
+
+                    <a href={bar.website}>
+                      <ion-button clear>
+                        website
+                  </ion-button>
+                    </a>
+
+                    <a href={`tel:${bar.phone}`}>
+                      <ion-button clear>
+                        call
+                  </ion-button>
+                    </a>
+
+                    <ion-button onClick={() => this.share(bar)} clear icon-only>
+                      <ion-icon color='primary' name='share'></ion-icon>
+                    </ion-button>
+                  </ion-buttons>
+                </ion-card>
+              )
+          })}
+        </ion-list>
+      );
+
+      /*return (
         <ion-list>
           {bars}
         </ion-list>
-      )
+      )*/
     }
   }
 }

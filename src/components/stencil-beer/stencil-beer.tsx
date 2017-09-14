@@ -36,6 +36,12 @@ export class StencilBeer {
           <stencil-route
             url='/bars'
             component='bar-page'
+            exact={true}
+          />
+
+          <stencil-route
+            url='/bars/directions/:address'
+            component='bar-directions'
           />
 
         </stencil-router>

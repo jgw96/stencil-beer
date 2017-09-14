@@ -14,7 +14,7 @@ export class BeerPage {
 
   page: number;
 
-  componentDidLoad() {
+  componentWillLoad() {
     this.page = 1;
 
     this.fetchBeers(this.page);

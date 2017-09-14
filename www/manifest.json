@@ -1,0 +1,13 @@
+{
+  "name": "StencilBeer",
+  "short_name": "StencilBeer",
+  "start_url": "/",
+  "display": "standalone",
+  "icons": [{
+    "src": "assets/img/icon.png",
+    "sizes": "512x512",
+    "type": "image/png"
+  }],
+  "background_color": "#222",
+  "theme_color": "#222"
+}
