@@ -1,6 +1,7 @@
 main-page {
   ion-page {
     padding-top: 4em;
+    background: black;
   }
 
   st-img img {
@@ -12,6 +13,34 @@ main-page {
   }
 
   ion-scroll {
-    background: #ececec !important;
+    background: black !important;
+  }
+
+  .card {
+    position: relative;
+    text-align: center;
+    will-change: opacity;
+    margin-top: 10px;
+  }
+
+  .card-title {
+    position: absolute;
+    top: 56%;
+    font-size: 2.0em;
+    font-weight: bold;
+    color: white;
+    background: black;
+    padding-left: 0.8em;
+    padding-right: 0.5em;
+  }
+
+  .card-subtitle {
+    font-size: 1.5em;
+    position: absolute;
+    top: 72%;
+    color: white;
+    background: black;
+    padding-left: 1.1em;
+    padding-right: 0.5em;
   }
 }

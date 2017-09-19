@@ -15,7 +15,7 @@ export class BarPage {
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
 
   componentDidLoad() {
-    this.loadingCtrl.create({ content: 'fetching bars...' }).then((loading) => {
+    /*this.loadingCtrl.create({ content: 'fetching bars...' }).then((loading) => {
       loading.present().then(() => {
         navigator.geolocation.getCurrentPosition((position) => {
           fetch(`${this.apiRoot}&lat=${position.coords.latitude}&lng=${position.coords.longitude}`, { mode: 'cors' }).then((response) => {
@@ -28,7 +28,7 @@ export class BarPage {
           })
         });
       })
-    })
+    })*/
   }
 
   @Listen('ionInput')

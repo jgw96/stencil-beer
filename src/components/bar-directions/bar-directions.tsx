@@ -13,6 +13,13 @@ export class BarDirections {
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
 
   apiKey = 'AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
+  url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
+
+  componentWillLoad() {
+    const script = document.createElement('script');
+    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
+    document.body.appendChild(script);
+  }
 
   componentDidLoad() {
     this.loadingCtrl.create({ content: 'getting location...' }).then((loading) => {

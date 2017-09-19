@@ -7,43 +7,44 @@ import { Component } from '@stencil/core';
 })
 export class MainPage {
 
+  componentDidLoad() {
+    const cards = document.querySelectorAll('.card');
+
+    if (cards[0].animate) {
+      (cards as any).forEach((card: Element) => {
+        card.animate(
+          [
+            { opacity: 0 },
+            { opacity: 1 }
+          ], {
+            duration: 500
+          }
+        )
+      });
+    }
+  }
+
   render() {
     return (
       <ion-page class='show-page'>
-        <ion-content>
           <main>
             <stencil-route-link url="/beers">
-              <ion-card>
+              <div id='first-card' class='card'>
                 <st-img src="../../images/beers.jpeg" alt='beer' />
-                <ion-card-content>
-                  <ion-card-title>
-                    Beers
-                </ion-card-title>
-
-                  <p>
-                    Search through our huge database of beers!
-                </p>
-                </ion-card-content>
-              </ion-card>
+                <div class="card-title">Beers</div>
+                <div class="card-subtitle">Find beers!</div>
+              </div>
             </stencil-route-link>
 
             <stencil-route-link url="/bars">
-              <ion-card>
+              <div class='card'>
                 <st-img src="../../images/bars.jpeg" alt='bar' />
-                <ion-card-content>
-                  <ion-card-title>
-                    Bars
-                </ion-card-title>
-
-                  <p>
-                    Find bars near you!
-                </p>
-                </ion-card-content>
-              </ion-card>
+                <div class="card-title">Bars</div>
+                <div class="card-subtitle">Find bars near you!</div>
+              </div>
             </stencil-route-link>
 
           </main>
-        </ion-content>
       </ion-page>
     );
   }

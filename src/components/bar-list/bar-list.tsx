@@ -39,6 +39,9 @@ export class barList {
             if (bar.brewery.images)
               return (
                 <ion-card>
+                  <ion-button id='share-button' onClick={() => this.share(bar)} clear icon-only>
+                    <ion-icon color='primary' name='share'></ion-icon>
+                  </ion-button>
                   <st-img src={bar.brewery.images.squareMedium} alt='bar' />
                   <ion-card-content>
                     <ion-card-title>
@@ -66,22 +69,12 @@ export class barList {
                         call
                   </ion-button>
                     </a>
-
-                    <ion-button onClick={() => this.share(bar)} clear icon-only>
-                      <ion-icon color='primary' name='share'></ion-icon>
-                    </ion-button>
                   </ion-buttons>
                 </ion-card>
               )
           })}
         </ion-list>
       );
-
-      /*return (
-        <ion-list>
-          {bars}
-        </ion-list>
-      )*/
     }
   }
 }
