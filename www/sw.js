@@ -28,11 +28,11 @@ const fileManifest = [
   },
   {
     "url": "bars/index.html",
-    "revision": "ac34ac6cc89b4b99f809a93dadbfa10a"
+    "revision": "19cb81c1851c5dac62b9130c449d426e"
   },
   {
     "url": "beers/index.html",
-    "revision": "3ef8541d8661cbf817af73d8c7a5625f"
+    "revision": "d471e24dd54aeeda300151798ca75c93"
   },
   {
     "url": "build/app.global.js",
@@ -40,11 +40,11 @@ const fileManifest = [
   },
   {
     "url": "build/app.js",
-    "revision": "5cfbcf07e03897e43fb7ec20f795d91a"
+    "revision": "3e43562b36bf68fbc448c5aa90e54dc7"
   },
   {
     "url": "build/app.registry.json",
-    "revision": "b4766080ef8caa09d94a4fb9206da488"
+    "revision": "dc06263f098fdbaf5323f4a194a91721"
   },
   {
     "url": "build/app/06ic4yhp.css",
@@ -135,6 +135,10 @@ const fileManifest = [
     "revision": "1e738872440984a85184a72ff8a1b53d"
   },
   {
+    "url": "build/app/agndt7yw.js",
+    "revision": "4639df9a0a7f5f1738aabf756ad5346c"
+  },
+  {
     "url": "build/app/app.o2itcpk4.pf.js",
     "revision": "661314902d456a888161d6aee8890a90"
   },
@@ -213,10 +217,6 @@ const fileManifest = [
   {
     "url": "build/app/fyyer5aq.css",
     "revision": "8b00c85605a084d1072a1d8b651d9abe"
-  },
-  {
-    "url": "build/app/g3lvpc8y.js",
-    "revision": "7e7898d65bc71d2a72af08c5ad115c0b"
   },
   {
     "url": "build/app/g82xarp6.css",
@@ -301,10 +301,6 @@ const fileManifest = [
   {
     "url": "build/app/ksufjpux.css",
     "revision": "8566dee8f7059e916ffd81d73014aebb"
-  },
-  {
-    "url": "build/app/l8idgbml.js",
-    "revision": "fdd7de27b8a68ad6f3a906c9d1576c90"
   },
   {
     "url": "build/app/lylgdzho.css",
@@ -435,6 +431,10 @@ const fileManifest = [
     "revision": "d204219a6cc05889c3927f0cfe8c8410"
   },
   {
+    "url": "build/app/t9e9ridm.js",
+    "revision": "657b4d048266a4a61c5cace7c9f908a0"
+  },
+  {
     "url": "build/app/taqqg0q6.js",
     "revision": "cf729e38aa1b20dde79c60f2de171daa"
   },
@@ -516,7 +516,7 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "6ad8f58b8db2c53b4984b45ea39c8800"
+    "revision": "3dcd891f18183a3ad5881d3ececdbbdb"
   },
   {
     "url": "manifest.json",

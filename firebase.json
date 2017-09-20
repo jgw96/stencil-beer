@@ -3,17 +3,23 @@
     "public": "www",
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
+        "source": "/googlePlaces", 
+        "function": "googlePlaces"
+      },
+      {
+        "source": "/googleGeocode",
+        "function": "googleGeocode"
       }
     ],
     "headers": [
       {
         "source": "sw.js",
-        "headers" : [ {
-          "key" : "Cache-Control",
-          "value" : "no-cache"
-        } ]
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "no-cache"
+          }
+        ]
       },
       {
         "source": "/",

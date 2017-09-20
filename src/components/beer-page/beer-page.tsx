@@ -11,13 +11,16 @@ export class BeerPage {
   @State() beers: any[];
 
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
 
   page: number;
 
   componentWillLoad() {
     this.page = 1;
-
-    this.fetchBeers(this.page);
+    
+    if (!this.isServer) {
+      this.fetchBeers(this.page);
+    }
   }
 
   fetchBeers(page) {

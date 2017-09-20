@@ -17,7 +17,7 @@ export class BarDirections {
 
   componentWillLoad() {
     const script = document.createElement('script');
-    script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
+    script.src = this.url;
     document.body.appendChild(script);
   }
 
@@ -25,7 +25,10 @@ export class BarDirections {
     this.loadingCtrl.create({ content: 'getting location...' }).then((loading) => {
       loading.present().then(() => {
 
-        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${this.match.params.address}&key=${this.apiKey}`).then((response) => {
+        fetch('/googleGeocode', {
+          method: 'post',
+          body: JSON.stringify({address: this.match.params.address})
+        }).then((response) => {
           return response.json()
         }).then((data) => {
           console.log(data);
@@ -33,7 +36,7 @@ export class BarDirections {
             const start = { lat: position.coords.latitude, lng: position.coords.longitude };
             const dest = { lat: data.results[0].geometry.location.lat, lng: data.results[0].geometry.location.lng };
 
-            const map = new google.maps.Map(document.getElementById('map'), {
+            const map = new google.maps.Map(document.querySelector('#map'), {
               center: start,
               zoom: 7
             });

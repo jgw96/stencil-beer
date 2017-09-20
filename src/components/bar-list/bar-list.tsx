@@ -36,42 +36,27 @@ export class barList {
       return (
         <ion-list>
           {this.bars.map((bar) => {
-            if (bar.brewery.images)
-              return (
-                <ion-card>
-                  <ion-button id='share-button' onClick={() => this.share(bar)} clear icon-only>
-                    <ion-icon color='primary' name='share'></ion-icon>
-                  </ion-button>
-                  <st-img src={bar.brewery.images.squareMedium} alt='bar' />
-                  <ion-card-content>
-                    <ion-card-title>
-                      {bar.brewery.name}
-                    </ion-card-title>
+            return (
+              <ion-item>
+                <ion-label>
+                  <h2>{bar.name}</h2>
 
-                    <div>{bar.streetAddress}</div>
-                  </ion-card-content>
+                  <p>{bar.vicinity}</p>
+
 
                   <ion-buttons slot='end'>
-                    <stencil-route-link url={`/bars/directions/${bar.streetAddress}}`} exact={true}>
-                      <ion-button clear>
-                        Directions
-                  </ion-button>
+                    <stencil-route-link url={`/bars/directions/${bar.vicinity}}`} exact={true}>
+                      <ion-button clear> Directions </ion-button>
                     </stencil-route-link>
 
-                    <a href={bar.website}>
-                      <ion-button clear>
-                        website
-                  </ion-button>
-                    </a>
+                    <ion-button onClick={() => this.share(bar)} clear icon-only>
+                      <ion-icon color='primary' name='share'></ion-icon>
+                    </ion-button>
 
-                    <a href={`tel:${bar.phone}`}>
-                      <ion-button clear>
-                        call
-                  </ion-button>
-                    </a>
                   </ion-buttons>
-                </ion-card>
-              )
+                </ion-label>
+              </ion-item>
+            )
           })}
         </ion-list>
       );
