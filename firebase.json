@@ -3,6 +3,10 @@
     "public": "www",
     "rewrites": [
       {
+        "source": "**",
+        "destination": "/index.html"
+      },
+      {
         "source": "/googlePlaces", 
         "function": "googlePlaces"
       },
@@ -18,15 +22,6 @@
           {
             "key": "Cache-Control",
             "value": "no-cache"
-          }
-        ]
-      },
-      {
-        "source": "/",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</build/app/app.ar1xu3nb.js>;rel=preload;as=script,</build/app/dsrelshu.js>;rel=preload;as=script,</build/app/mql1fbi8.css>;rel=preload;as=style,</build/app/tmv9qcog.js>;rel=preload;as=script,</build/app/jqtfxghf.css>;rel=preload;as=style,</build/app/4iwl584z.css>;rel=preload;as=style,</build/app/qezwi11y.js>;rel=preload;as=script,</build/app/taqqg0q6.js>;rel=preload;as=script,</images/beers.jpeg>;rel=preload;as=media,</images/bars.jpeg>;rel=preload;as=media"
           }
         ]
       }

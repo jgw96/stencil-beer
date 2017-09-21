@@ -16,7 +16,7 @@ exports.googlePlaces = functions.https.onRequest((req, res) => {
     fetch(`${placesApiRoot}?key=${apiKey}&location=${data.lat},${data.long}&radius=9000&type=bar`).then((response) => {
       return response.json()
     }).then((data) => {
-      res.send(data.results);
+      res.json(data.results);
     })
 
   });
@@ -29,7 +29,7 @@ exports.googleGeocode = functions.https.onRequest((req, res) => {
     fetch(`${geocodeApiRoot}?address=${data.address}&key=${apiKey}`).then((response) => {
       return response.json()
     }).then((data) => {
-      res.send(data);
+      res.json(data);
     })
     
   })
