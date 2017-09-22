@@ -12,7 +12,7 @@ export class StencilBeer {
       <ion-app>
         <ion-header>
           <ion-toolbar color='dark'>
-            <ion-title>StencilBeer</ion-title>
+            <ion-title>IonicBeer</ion-title>
           </ion-toolbar>
         </ion-header>
 
