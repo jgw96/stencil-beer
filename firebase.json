@@ -3,10 +3,6 @@
     "public": "www",
     "rewrites": [
       {
-        "source": "**",
-        "destination": "/index.html"
-      },
-      {
         "source": "/googlePlaces", 
         "function": "googlePlaces"
       },

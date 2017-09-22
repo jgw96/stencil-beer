@@ -24,7 +24,7 @@ export class StencilBeer {
           />
 
           <stencil-route
-            url='/beers'
+            url={['/beers', '/beers/']}
             component='beer-page'
           />
 
@@ -34,7 +34,7 @@ export class StencilBeer {
           />
 
           <stencil-route
-            url='/bars'
+            url={['/bars', '/bars/']}
             component='bar-page'
             exact={true}
           />
