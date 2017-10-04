@@ -1,5 +1,5 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
-import { LoadingController } from '@ionic/core';
+import { LoadingController, Loading } from '@ionic/core';
 
 
 @Component({
@@ -7,6 +7,8 @@ import { LoadingController } from '@ionic/core';
   styleUrl: 'bar-page.scss'
 })
 export class BarPage {
+
+  loading: Loading;
 
   @State() bars: any[];
 
@@ -16,6 +18,9 @@ export class BarPage {
   componentDidLoad() {
     if (!this.isServer) {
       this.loadingCtrl.create({ content: 'fetching bars...' }).then((loading) => {
+
+        this.loading = loading;
+        
         loading.present().then(() => {
           navigator.geolocation.getCurrentPosition((position) => {
             fetch('/googlePlaces', {
@@ -24,7 +29,6 @@ export class BarPage {
             }).then((response) => {
               return response.json()
             }).then((data) => {
-              console.log(data);
               this.bars = data;
 
               loading.dismiss();
@@ -33,6 +37,10 @@ export class BarPage {
         })
       })
     }
+  }
+
+  componentDidUnload() {
+    this.loading.dismiss();
   }
 
   @Listen('ionInput')

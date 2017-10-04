@@ -11,24 +11,20 @@ export class BeerList {
   @Prop() beers: any[];
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
-  share(beer) {
-    (navigator as any).share({
-      title: document.title,
-      text: "Check out this cool beer",
-      url: `${window.location.href}/detail/${beer.id}`
-    }).then(() => {
-      this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
-        toast.present();
-      })
-    })
-      .catch((error) => {
-        console.error(error);
-        window.open(`http://twitter.com/share?text=Check out this cool beer&url=${window.location.href}/detail/${beer.id}`);
-
-        this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
+  share(bar) {
+    if ((navigator as any).share) {
+      (navigator as any).share({
+        title: document.title,
+        text: "Check out this cool bar",
+        url: `${window.location.href}/detail/${bar.id}`
+      }).then(() => {
+        this.toastCtrl.create({ message: 'bar shared', duration: 1000 }).then((toast) => {
           toast.present();
         })
-      });
+      })
+    } else {
+      window.open(`http://twitter.com/share?text=Check out this cool bar&url=window.location.href}/detail/${bar.id}`);
+    }
   }
 
   render() {

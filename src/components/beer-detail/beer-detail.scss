@@ -23,4 +23,25 @@ beer-detail {
   ion-button button {
     margin-top: 15px !important;
   }
+
+  @media (min-width: 550px) {
+    ion-scroll {
+      padding-left: 3em;
+      padding-right: 3em;
+    }
+  }
+
+  @media (min-width: 800px) {
+    ion-scroll {
+      padding-left: 12em;
+      padding-right: 12em;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    ion-scroll {
+      padding-left: 23em;
+      padding-right: 23em;
+    }
+  }
 }

@@ -1,5 +1,5 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
-import { LoadingController } from '@ionic/core';
+import { LoadingController, Loading } from '@ionic/core';
 
 
 @Component({
@@ -7,6 +7,8 @@ import { LoadingController } from '@ionic/core';
   styleUrl: 'beer-page.scss'
 })
 export class BeerPage {
+
+  loading: Loading;
 
   @State() beers: any[];
 
@@ -23,8 +25,16 @@ export class BeerPage {
     }
   }
 
+  componentDidUnload() {
+    this.loading.dismiss();
+  }
+
   fetchBeers(page) {
     this.loadingCtrl.create({ content: 'fetching beers...' }).then((loading) => {
+      // so we can dismiss the loading
+      // if the user goes back
+      this.loading = loading;
+
       loading.present().then(() => {
         fetch(`https://api.punkapi.com/v2/beers?page=${page}`).then((response) => {
           return response.json();
@@ -75,7 +85,7 @@ export class BeerPage {
         <ion-footer>
           <ion-toolbar color='dark'>
             <ion-buttons slot='start'>
-              <ion-button disabled={this.page === 1} clear onClick={() => this.previousPage()}>
+              <ion-button clear onClick={() => this.previousPage()}>
                 prev
               </ion-button>
             </ion-buttons>

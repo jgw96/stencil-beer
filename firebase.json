@@ -9,6 +9,14 @@
       {
         "source": "/googleGeocode",
         "function": "googleGeocode"
+      },
+      {
+        "source": "/bars/**",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/beers/**",
+        "destination": "/index.html"
       }
     ],
     "headers": [
@@ -20,7 +28,17 @@
             "value": "no-cache"
           }
         ]
+      },
+      {
+        "source": "/",
+        "headers": [
+          {
+            "key": "Link",
+            "value": "</build/app/app.ymij1atu.js>;rel=preload;as=script,</build/app/v7d20mpx.js>;rel=preload;as=script,</build/app/rxxjezd9.css>;rel=preload;as=style,</build/app/4gp3d0xt.js>;rel=preload;as=script,</build/app/78ucclxa.js>;rel=preload;as=script,</build/app/z4wpobp6.css>;rel=preload;as=style,</build/app/taqqg0q6.js>;rel=preload;as=script"
+          }
+        ]
       }
     ]
   }
 }
+
