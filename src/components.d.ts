@@ -32,6 +32,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BarDirectionsAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           match?: any,
           loadingCtrl?: any
@@ -61,6 +63,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BarListAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           bars?: any,
           toastCtrl?: any
@@ -90,6 +94,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BarPageAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           loadingCtrl?: any
       }
@@ -118,6 +124,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BeerDetailAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           match?: any,
           toastCtrl?: any
@@ -147,6 +155,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BeerListAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           beers?: any,
           toastCtrl?: any
@@ -176,6 +186,8 @@ declare global {
   }
   namespace JSXElements {
       export interface BeerPageAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
           loadingCtrl?: any
       }
@@ -204,6 +216,8 @@ declare global {
   }
   namespace JSXElements {
       export interface MainPageAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
       }
   }
@@ -231,6 +245,8 @@ declare global {
   }
   namespace JSXElements {
       export interface StencilBeerAttributes extends HTMLAttributes {
+          mode?: string,
+          color?: string,
         
       }
   }

@@ -39,8 +39,7 @@ export class barList {
 
                   <p>{bar.vicinity}</p>
 
-
-                  <ion-buttons slot='end'>
+                  <ion-buttons>
                     <stencil-route-link url={`/bars/directions/${bar.vicinity}}`} exact={true}>
                       <ion-button clear> Directions </ion-button>
                     </stencil-route-link>

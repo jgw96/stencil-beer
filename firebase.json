@@ -34,10 +34,10 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</build/app/app.ymij1atu.js>;rel=preload;as=script,</build/app/v7d20mpx.js>;rel=preload;as=script,</build/app/rxxjezd9.css>;rel=preload;as=style,</build/app/4gp3d0xt.js>;rel=preload;as=script,</build/app/78ucclxa.js>;rel=preload;as=script,</build/app/z4wpobp6.css>;rel=preload;as=style,</build/app/taqqg0q6.js>;rel=preload;as=script"
+            "value": "</build/app/app.eujcqoer.js>;rel=preload;as=script,</build/app/c398ps6m.js>;rel=preload;as=script,</build/app/mfk22ued.js>;rel=preload;as=script,</build/app/lc3eh6tv.js>;rel=preload;as=script,</build/app/wawblzzc.js>;rel=preload;as=script,</images/beers.jpeg>;rel=preload;as=image,</images/bars.jpeg>;rel=preload;as=image"
           }
         ]
-      }
+     }
     ]
   }
 }

@@ -19,5 +19,11 @@ bar-list {
   ion-card {
     position: relative !important;
   }
+
+  ion-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 15px;
+  }
   
 }

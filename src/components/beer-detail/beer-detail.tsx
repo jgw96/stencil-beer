@@ -13,12 +13,13 @@ export class BeerDetail {
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   componentDidLoad() {
-    console.log(this.match); 
-    fetch(`https://api.punkapi.com/v2/beers?ids=${this.match.params.id}`).then((response) => {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    console.log(this.match);
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${this.match.params.id}?key=${key}`).then((response) => {
       return response.json();
     }).then((data) => {
       console.log(data);
-      this.beer = data[0];
+      this.beer = data.data;
     })
   }
 
@@ -45,27 +46,18 @@ export class BeerDetail {
   render() {
     if (this.beer) {
 
-      const foods = this.beer.food_pairing.map((food: any) => {
-        return (
-          <div>{food}</div>
-        )
-      })
-
       return (
         <ion-page class='show-page'>
           <ion-content>
             <div id='img-block'>
-              <st-img src={this.beer.image_url} alt={this.beer.name}></st-img>
+              <st-img src={this.beer.labels ? this.beer.labels.medium : '../../images/beers.jpeg'} alt={this.beer.name}></st-img>
             </div>
             <h1>{this.beer.name}</h1>
 
-            <div>ABV: {this.beer.abv}</div>
-            <div>IBU: {this.beer.ibu}</div>
+            <div>ABV: {this.beer.abv ? this.beer.abv : 'Not available'}</div>
+            <div>IBU: {this.beer.ibu ? this.beer.ibu : 'Not available'}</div>
 
-            <p>{this.beer.description}</p>
-
-            <h4>Food Pairings</h4>
-            {foods}
+            <p>{this.beer.description ? this.beer.description : 'No description available'}</p>
 
             <ion-button onClick={() => this.share()} block color='primary'>Share</ion-button>
           </ion-content>

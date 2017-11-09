@@ -1,5 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { ToastController } from '@ionic/core';
+// import { ToastController } from '@ionic/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { ToastController } from '@ionic/core';
 export class BeerList {
 
   @Prop() beers: any[];
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl;
 
   share(bar) {
     if ((navigator as any).share) {
@@ -22,8 +22,6 @@ export class BeerList {
           toast.present();
         })
       })
-    } else {
-      window.open(`http://twitter.com/share?text=Check out this cool bar&url=window.location.href}/detail/${bar.id}`);
     }
   }
 
@@ -32,28 +30,28 @@ export class BeerList {
       const beers = this.beers.map((beer) => {
         return (
           <ion-card>
-            <st-img src={beer.image_url} alt='beer' />
+            <st-img src={beer.labels ? beer.labels.medium : '../../images/beers.jpeg'} alt='beer' />
             <ion-card-content>
               <ion-card-title>
                 {beer.name}
               </ion-card-title>
 
               <p>
-                {beer.description}
+                {beer.description ? beer.description : 'No description available'}
               </p>
-            </ion-card-content>
 
-            <ion-buttons slot='end'>
-              <stencil-route-link url={`/beers/detail/${beer.id}`}>
-                <ion-button color='primary' clear>
-                  Detail
+              <ion-buttons>
+                <stencil-route-link url={`/beers/detail/${beer.id}`}>
+                  <ion-button color='primary' clear>
+                    Detail
+                  </ion-button>
+                </stencil-route-link>
+
+                <ion-button onClick={() => this.share(beer)} clear icon-only>
+                  <ion-icon color='primary' name='share'></ion-icon>
                 </ion-button>
-              </stencil-route-link>
-
-              <ion-button onClick={() => this.share(beer)} clear icon-only>
-                <ion-icon color='primary' name='share'></ion-icon>
-              </ion-button>
-            </ion-buttons>
+              </ion-buttons>
+            </ion-card-content>
           </ion-card>
         )
       });
