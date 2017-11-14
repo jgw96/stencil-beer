@@ -1,5 +1,4 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
-// import { LoadingController, Loading } from '@ionic/core';
 
 
 @Component({
@@ -9,13 +8,11 @@ import { Component, State, Prop, Listen } from '@stencil/core';
 export class BeerPage {
 
   loading: any;
+  page: number;
 
   @State() beers: any[];
 
-  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: any;
   @Prop({ context: 'isServer' }) private isServer: boolean;
-
-  page: number;
 
   componentWillLoad() {
     this.page = 1;
@@ -25,27 +22,16 @@ export class BeerPage {
     }
   }
 
-  componentDidUnload() {
-    this.loading.dismiss();
-  }
-
   fetchBeers(page: number) {
+    this.beers = null;
+
     const key = 'c0b90d19385d7dabee991e89c24ea711';
 
-    this.loadingCtrl.create({ content: 'fetching beers...' }).then((loading) => {
-      // so we can dismiss the loading
-      // if the user goes back
-      this.loading = loading;
-
-      loading.present().then(() => {
-        fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`).then((response) => {
-          return response.json();
-        }).then((data) => {
-          this.beers = data.data;
-          console.log(data);
-          loading.dismiss();
-        })
-      })
+    fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`).then((response) => {
+      return response.json();
+    }).then((data) => {
+      this.beers = data.data;
+      console.log(data);
     })
   }
 

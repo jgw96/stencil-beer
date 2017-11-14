@@ -18,4 +18,41 @@ beer-list {
     display: flex;
     justify-content: flex-end;
   }
+
+  ion-card:first-child {
+    animation-duration: .5s;
+    animation-name: slidein;
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateX(20em);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  #fake-card {
+    margin: 1.5em;
+    height: 400px;
+
+    background-image:
+    linear-gradient( 100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80% ),
+    linear-gradient( lightgray 20px, transparent 0 ),
+    linear-gradient( lightgray 20px, transparent 0 ),
+    linear-gradient( lightgray 100px, transparent 0 );
+
+  background-repeat: repeat-y;
+
+  background-size:
+    300px 200px,
+    300px 200px,
+    250px 200px;
+
+  background-position: 10px 0, 10px 120px, 10px 160px;
+  }
 }

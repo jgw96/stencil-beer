@@ -189,7 +189,6 @@ declare global {
           mode?: string,
           color?: string,
         
-          loadingCtrl?: any
       }
   }
 }

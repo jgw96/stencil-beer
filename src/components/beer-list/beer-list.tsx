@@ -61,6 +61,12 @@ export class BeerList {
           {beers}
         </ion-list>
       )
+    } else {
+      return (
+        <ion-list>
+          <div id='fake-card'></div>
+        </ion-list>
+      )
     }
   }
 }

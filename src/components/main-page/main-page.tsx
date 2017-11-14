@@ -7,23 +7,6 @@ import { Component } from '@stencil/core';
 })
 export class MainPage {
 
-  componentDidLoad() {
-    const cards = document.querySelectorAll('.card');
-
-    if (cards[0].animate) {
-      (cards as any).forEach((card: Element) => {
-        card.animate(
-          [
-            { opacity: 0 },
-            { opacity: 1 }
-          ], {
-            duration: 500
-          }
-        )
-      });
-    }
-  }
-
   render() {
     return (
       <ion-page class='show-page'>

@@ -14,7 +14,7 @@ export class BeerDetail {
 
   componentDidLoad() {
     const key = 'c0b90d19385d7dabee991e89c24ea711';
-    console.log(this.match);
+
     fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${this.match.params.id}?key=${key}`).then((response) => {
       return response.json();
     }).then((data) => {
@@ -31,16 +31,8 @@ export class BeerDetail {
     }).then(() => {
       this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
         toast.present();
-      })
-    })
-      .catch((error) => {
-        console.error(error);
-        window.open(`http://twitter.com/share?text=Check out this cool beer&url=${window.location.href}`);
-
-        this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
-          toast.present();
-        })
       });
+    })
   }
 
   render() {
