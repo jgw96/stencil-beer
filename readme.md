@@ -1,4 +1,6 @@
-# Stencil Starter App
+# IonicBeer
+
+Live demo here: https://stencilbeer.firebaseapp.com/
 
 Stencil is a compiler for building fast web apps using Web Components.
 
