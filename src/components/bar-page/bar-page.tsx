@@ -1,6 +1,7 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
 import { LoadingController, Loading } from '@ionic/core';
 
+import { Bar } from '../../global/interfaces';
 
 @Component({
   tag: 'bar-page',
@@ -10,7 +11,7 @@ export class BarPage {
 
   loading: Loading;
 
-  @State() bars: any[];
+  @State() bars: Array<Bar>;
 
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
   @Prop({ context: 'isServer' }) private isServer: boolean;

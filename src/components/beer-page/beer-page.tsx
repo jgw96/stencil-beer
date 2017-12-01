@@ -1,5 +1,6 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
 
+import { Beer } from '../../global/interfaces';
 
 @Component({
   tag: 'beer-page',
@@ -7,10 +8,9 @@ import { Component, State, Prop, Listen } from '@stencil/core';
 })
 export class BeerPage {
 
-  loading: any;
   page: number;
 
-  @State() beers: any[];
+  @State() beers: Array<Beer>;
 
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
@@ -25,7 +25,7 @@ export class BeerPage {
   fetchBeers(page: number) {
     this.beers = null;
 
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const key = 'c0b90d19385d7dabee991e89c24ea711  ';
 
     fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`).then((response) => {
       return response.json();
@@ -49,12 +49,12 @@ export class BeerPage {
 
   @Listen('ionInput')
   search(ev) {
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const key = 'c0b90d19385d7dabee991e89c24ea711  ';
 
     setTimeout(() => {
       if (ev.target.value.length > 0) {
         console.log(ev.target.value);
-        fetch(`https://cors.now.sh/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`).then((response) => {
+        fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`).then((response) => {
           return response.json();
         }).then((data) => {
           this.beers = data.data;

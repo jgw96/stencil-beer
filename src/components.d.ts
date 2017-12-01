@@ -10,244 +10,36 @@ import '@ionic/core';
 
 import 'st-img';
 
-import { BarDirections as BarDirections } from './components/bar-directions/bar-directions';
+import {
+  Beer,
+} from './global/interfaces';
 
-interface HTMLBarDirectionsElement extends BarDirections, HTMLElement {
-}
-declare var HTMLBarDirectionsElement: {
-  prototype: HTMLBarDirectionsElement;
-  new (): HTMLBarDirectionsElement;
-};
+import {
+  BeerItem as BeerItem
+} from './components/beer-item/beer-item';
+
 declare global {
+  interface HTMLBeerItemElement extends BeerItem, HTMLElement {
+  }
+  var HTMLBeerItemElement: {
+    prototype: HTMLBeerItemElement;
+    new (): HTMLBeerItemElement;
+  };
   interface HTMLElementTagNameMap {
-      "bar-directions": HTMLBarDirectionsElement;
+    "beer-item": HTMLBeerItemElement;
   }
   interface ElementTagNameMap {
-      "bar-directions": HTMLBarDirectionsElement;
+    "beer-item": HTMLBeerItemElement;
   }
   namespace JSX {
-      interface IntrinsicElements {
-          "bar-directions": JSXElements.BarDirectionsAttributes;
-      }
+    interface IntrinsicElements {
+      "beer-item": JSXElements.BeerItemAttributes;
+    }
   }
   namespace JSXElements {
-      export interface BarDirectionsAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          match?: any,
-          loadingCtrl?: any
-      }
-  }
-}
-
-import { barList as BarList } from './components/bar-list/bar-list';
-
-interface HTMLBarListElement extends BarList, HTMLElement {
-}
-declare var HTMLBarListElement: {
-  prototype: HTMLBarListElement;
-  new (): HTMLBarListElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "bar-list": HTMLBarListElement;
-  }
-  interface ElementTagNameMap {
-      "bar-list": HTMLBarListElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "bar-list": JSXElements.BarListAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface BarListAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          bars?: any,
-          toastCtrl?: any
-      }
-  }
-}
-
-import { BarPage as BarPage } from './components/bar-page/bar-page';
-
-interface HTMLBarPageElement extends BarPage, HTMLElement {
-}
-declare var HTMLBarPageElement: {
-  prototype: HTMLBarPageElement;
-  new (): HTMLBarPageElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "bar-page": HTMLBarPageElement;
-  }
-  interface ElementTagNameMap {
-      "bar-page": HTMLBarPageElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "bar-page": JSXElements.BarPageAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface BarPageAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          loadingCtrl?: any
-      }
-  }
-}
-
-import { BeerDetail as BeerDetail } from './components/beer-detail/beer-detail';
-
-interface HTMLBeerDetailElement extends BeerDetail, HTMLElement {
-}
-declare var HTMLBeerDetailElement: {
-  prototype: HTMLBeerDetailElement;
-  new (): HTMLBeerDetailElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "beer-detail": HTMLBeerDetailElement;
-  }
-  interface ElementTagNameMap {
-      "beer-detail": HTMLBeerDetailElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "beer-detail": JSXElements.BeerDetailAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface BeerDetailAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          match?: any,
-          toastCtrl?: any
-      }
-  }
-}
-
-import { BeerList as BeerList } from './components/beer-list/beer-list';
-
-interface HTMLBeerListElement extends BeerList, HTMLElement {
-}
-declare var HTMLBeerListElement: {
-  prototype: HTMLBeerListElement;
-  new (): HTMLBeerListElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "beer-list": HTMLBeerListElement;
-  }
-  interface ElementTagNameMap {
-      "beer-list": HTMLBeerListElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "beer-list": JSXElements.BeerListAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface BeerListAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-          beers?: any,
-          toastCtrl?: any
-      }
-  }
-}
-
-import { BeerPage as BeerPage } from './components/beer-page/beer-page';
-
-interface HTMLBeerPageElement extends BeerPage, HTMLElement {
-}
-declare var HTMLBeerPageElement: {
-  prototype: HTMLBeerPageElement;
-  new (): HTMLBeerPageElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "beer-page": HTMLBeerPageElement;
-  }
-  interface ElementTagNameMap {
-      "beer-page": HTMLBeerPageElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "beer-page": JSXElements.BeerPageAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface BeerPageAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-      }
-  }
-}
-
-import { MainPage as MainPage } from './components/main-page/main-page';
-
-interface HTMLMainPageElement extends MainPage, HTMLElement {
-}
-declare var HTMLMainPageElement: {
-  prototype: HTMLMainPageElement;
-  new (): HTMLMainPageElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "main-page": HTMLMainPageElement;
-  }
-  interface ElementTagNameMap {
-      "main-page": HTMLMainPageElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "main-page": JSXElements.MainPageAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface MainPageAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-      }
-  }
-}
-
-import { StencilBeer as StencilBeer } from './components/stencil-beer/stencil-beer';
-
-interface HTMLStencilBeerElement extends StencilBeer, HTMLElement {
-}
-declare var HTMLStencilBeerElement: {
-  prototype: HTMLStencilBeerElement;
-  new (): HTMLStencilBeerElement;
-};
-declare global {
-  interface HTMLElementTagNameMap {
-      "stencil-beer": HTMLStencilBeerElement;
-  }
-  interface ElementTagNameMap {
-      "stencil-beer": HTMLStencilBeerElement;
-  }
-  namespace JSX {
-      interface IntrinsicElements {
-          "stencil-beer": JSXElements.StencilBeerAttributes;
-      }
-  }
-  namespace JSXElements {
-      export interface StencilBeerAttributes extends HTMLAttributes {
-          mode?: string,
-          color?: string,
-        
-      }
+    export interface BeerItemAttributes extends HTMLAttributes {
+      beer?: Beer;
+    }
   }
 }
 

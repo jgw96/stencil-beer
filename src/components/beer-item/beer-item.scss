@@ -1,0 +1,39 @@
+beer-item {
+
+  st-img {
+    display: flex;
+    justify-content: center;
+  }
+
+  st-img img {
+    height: 20em;
+  }
+
+  ion-icon svg {
+    width: 1.5em;
+    height: 1.2em;
+  }
+
+  ion-buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  .animateIn {
+    animation-duration: .5s;
+    animation-name: slidein;
+    animation-timing-function: cubic-bezier(.36,.66,.04,1);
+  }
+
+  @keyframes slidein {
+    from {
+      transform: translateX(20em);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+}

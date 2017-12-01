@@ -1,6 +1,7 @@
 import { Component, Prop } from '@stencil/core';
 import { ToastController } from '@ionic/core';
 
+import { Bar } from '../../global/interfaces';
 
 @Component({
   tag: 'bar-list',
@@ -8,10 +9,10 @@ import { ToastController } from '@ionic/core';
 })
 export class barList {
 
-  @Prop() bars: any[];
+  @Prop() bars: Array<Bar>;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
-  share(bar) {
+  share(bar: Bar) {
     if ((navigator as any).share) {
       (navigator as any).share({
         title: document.title,
@@ -31,7 +32,7 @@ export class barList {
     if (this.bars) {
       return (
         <ion-list>
-          {this.bars.map((bar) => {
+          {this.bars.map((bar: Bar) => {
             return (
               <ion-item>
                 <ion-label>
