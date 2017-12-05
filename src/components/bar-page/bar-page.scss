@@ -2,9 +2,21 @@ bar-page {
   ion-page {
     padding-top: 4em;
   }
+
+  .toolbar-background-md {
+    background: var(--theme-primary)
+  }
+
+  .toolbar-title-md {
+    color: white;
+  }
+
+  ion-icon {
+    fill: var(--theme-secondary)
+  }
   
   ion-scroll {
-    background: #ececec !important;
+    background: var(--theme-secondary) !important;
     margin-bottom: 4.0em;
   }
 

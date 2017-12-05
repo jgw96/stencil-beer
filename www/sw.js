@@ -28,15 +28,15 @@ const fileManifest = [
   },
   {
     "url": "bars/index.html",
-    "revision": "04d10b84bc00f46d1c3c352401ac84d6"
+    "revision": "d48324ae0e4e50c49851d6a922b1a634"
   },
   {
     "url": "beers/index.html",
-    "revision": "175a384267fedffe00c7e570c096ee9b"
+    "revision": "e4b9ba16543af5b60f67b37bbcedb885"
   },
   {
     "url": "build/app.js",
-    "revision": "8c8b8cc8ec6ffc9aa5164b09d13ce6d1"
+    "revision": "33eab119ab08204644aa234c1aebe811"
   },
   {
     "url": "build/app/0scd68xz.js",
@@ -89,6 +89,10 @@ const fileManifest = [
   {
     "url": "build/app/5qg45axt.js",
     "revision": "33d57287e67e692033e099870d2c7360"
+  },
+  {
+    "url": "build/app/5rezc9x6.js",
+    "revision": "6a9dc84cc33c22f78945eb6e2feec250"
   },
   {
     "url": "build/app/5svaocm0.js",
@@ -159,10 +163,6 @@ const fileManifest = [
     "revision": "3c1789f39ff5932d4c9ae71fe0b8342a"
   },
   {
-    "url": "build/app/adtxvt9a.js",
-    "revision": "457d481346934d3bb8fa4337136339b8"
-  },
-  {
     "url": "build/app/ah8vw7be.js",
     "revision": "078d6a8453b7b9511f8f55952160abfb"
   },
@@ -175,24 +175,24 @@ const fileManifest = [
     "revision": "6a4c50c6662228f5eafef96affc3d5b9"
   },
   {
-    "url": "build/app/app.anprczrs.js",
-    "revision": "63ba55988dd036c3c556a9f832931074"
+    "url": "build/app/app.45qlj8fw.js",
+    "revision": "e0256ccce18ef6511353cc2bcce78c3e"
   },
   {
-    "url": "build/app/app.dxkoksfz.js",
-    "revision": "6756ea2b2003d13e33454a5b48cca75f"
+    "url": "build/app/app.frxd5bij.js",
+    "revision": "9d2f7bbb94b859413b9aae2f07101126"
   },
   {
     "url": "build/app/app.global.js",
     "revision": "7db5a98e1337bad26ac312c24ba87219"
   },
   {
-    "url": "build/app/app.registry.json",
-    "revision": "700cdcf0aed8157a3bc0c98d2a0d2b4e"
+    "url": "build/app/app.oybnfpbm.js",
+    "revision": "1b8e928965560adefcb31cb1d4afa0e6"
   },
   {
-    "url": "build/app/app.vampgakx.js",
-    "revision": "08edeca723fc94b266d38c8aa207735b"
+    "url": "build/app/app.registry.json",
+    "revision": "a04cf4b7fda4d37c9c7eecfb2dc4efb1"
   },
   {
     "url": "build/app/azknedms.js",
@@ -205,6 +205,10 @@ const fileManifest = [
   {
     "url": "build/app/ba4j5s5r.js",
     "revision": "b6736c7bd402a830a3a1b460a90bba18"
+  },
+  {
+    "url": "build/app/bgt6ddvk.js",
+    "revision": "c4dab1d4bd2976c357175fe6f71a1c3d"
   },
   {
     "url": "build/app/brtdx3mx.js",
@@ -221,6 +225,10 @@ const fileManifest = [
   {
     "url": "build/app/bxumnecl.js",
     "revision": "80254d77474ba917c9d9c2e1b5c68f7c"
+  },
+  {
+    "url": "build/app/c1anslkg.js",
+    "revision": "c733f43c3caf949cf8224f62dbe0ff7b"
   },
   {
     "url": "build/app/cbchminz.js",
@@ -267,6 +275,10 @@ const fileManifest = [
     "revision": "ac80746a64f778f94726522175bf6725"
   },
   {
+    "url": "build/app/dtfh7byu.js",
+    "revision": "ebd0205b55d427883a42306041394492"
+  },
+  {
     "url": "build/app/dxi2xw1c.js",
     "revision": "0bdc785da78275d7460528714ca200ad"
   },
@@ -307,6 +319,10 @@ const fileManifest = [
     "revision": "2e566824e65f913a412e901a0bb11792"
   },
   {
+    "url": "build/app/fpujmn9k.js",
+    "revision": "b9812af396c4b81b37ec6a71c532812d"
+  },
+  {
     "url": "build/app/fs7p228j.js",
     "revision": "5b623f8abdbda48e0dd7327039614022"
   },
@@ -315,8 +331,8 @@ const fileManifest = [
     "revision": "1deb4a0cd905170da5fb6ed92fd637fa"
   },
   {
-    "url": "build/app/g1xpg3j7.js",
-    "revision": "3863f078e2202e0c2bd4c88ad2081e13"
+    "url": "build/app/g0vcj7lg.js",
+    "revision": "ec95fee78c13ac2fbfe0405de5c9f32d"
   },
   {
     "url": "build/app/ga7zzchw.js",
@@ -357,10 +373,6 @@ const fileManifest = [
   {
     "url": "build/app/ic2h05sm.js",
     "revision": "258c645fffa6bcdca061c8b49457e40c"
-  },
-  {
-    "url": "build/app/icy6acjg.js",
-    "revision": "ebdd3e177c7b1e8e58cd1146575b92d5"
   },
   {
     "url": "build/app/id8ibaqe.js",
@@ -407,10 +419,6 @@ const fileManifest = [
     "revision": "2729d1e4441397e14cfcdc84a72001ab"
   },
   {
-    "url": "build/app/kfnlbgew.js",
-    "revision": "8f58b6b30cb4b811967c659bbc841534"
-  },
-  {
     "url": "build/app/kkmhdyvt.js",
     "revision": "bd7e6345d444970aaac789eac9e9c719"
   },
@@ -425,10 +433,6 @@ const fileManifest = [
   {
     "url": "build/app/kquz8oii.js",
     "revision": "349eff25035ca10a24a572f2300e5f2c"
-  },
-  {
-    "url": "build/app/kwqhfnel.js",
-    "revision": "85dd521c5ed22d5cdb6b86edac62d82a"
   },
   {
     "url": "build/app/kzrntcj5.js",
@@ -495,18 +499,6 @@ const fileManifest = [
     "revision": "329952010298ccdc81ca31f52f59b7c6"
   },
   {
-    "url": "build/app/n1jykci1.js",
-    "revision": "600cfa2f1c73fa53d57209faf66bbb03"
-  },
-  {
-    "url": "build/app/n7vwziuo.js",
-    "revision": "8e0278f839e15bebffbfbbc257656c12"
-  },
-  {
-    "url": "build/app/n7vwziuo.sc.js",
-    "revision": "e3e690ddca9a71999697c61391f23cd6"
-  },
-  {
     "url": "build/app/ndra6zzu.js",
     "revision": "64b49c40e877d3ffaa9edf070d2d0213"
   },
@@ -539,6 +531,10 @@ const fileManifest = [
     "revision": "846b567857655c39ae193268315b408d"
   },
   {
+    "url": "build/app/pwcjgjiv.js",
+    "revision": "188ad207480703cac48969fe43925210"
+  },
+  {
     "url": "build/app/pwqojd2c.js",
     "revision": "7b948749cdb51e64c04da30f934752b6"
   },
@@ -553,6 +549,10 @@ const fileManifest = [
   {
     "url": "build/app/q4afvezm.js",
     "revision": "5cfb3512eac1937f3b30c52c35374088"
+  },
+  {
+    "url": "build/app/qa7bwh1k.js",
+    "revision": "b45a5e320bf3e3694aef51e1cc2888cc"
   },
   {
     "url": "build/app/qjcc66cs.js",
@@ -619,10 +619,6 @@ const fileManifest = [
     "revision": "b4e56898977b1909d24e9ef591bc27ac"
   },
   {
-    "url": "build/app/tfkdalby.js",
-    "revision": "bb986b11dbf1d0a7ca8b2c4328d6032c"
-  },
-  {
     "url": "build/app/tgzmiamw.js",
     "revision": "fe860365d9444c43acb4b69f06bb1e6f"
   },
@@ -641,6 +637,10 @@ const fileManifest = [
   {
     "url": "build/app/ucq6gxjb.js",
     "revision": "3e2ddceea566fcb1b3bc683ee70bf11a"
+  },
+  {
+    "url": "build/app/ud1yaw8h.js",
+    "revision": "b6bd562183aeae1b8482dd39524879c2"
   },
   {
     "url": "build/app/urrcnahm.js",
@@ -667,14 +667,6 @@ const fileManifest = [
     "revision": "6b2fb1a1b57f21a0867dc60c36315013"
   },
   {
-    "url": "build/app/vbsax5lp.js",
-    "revision": "1301ec975fa0a2ca38dc987687643954"
-  },
-  {
-    "url": "build/app/vbsax5lp.sc.js",
-    "revision": "56c2f6ea24589efd0329dcb73714cfe5"
-  },
-  {
     "url": "build/app/vendor/swiper.js",
     "revision": "f44ae3024a4323c4f98e7b69cefeee47"
   },
@@ -695,12 +687,12 @@ const fileManifest = [
     "revision": "73f5f00e0f69026a50c6eab3a0bd0dba"
   },
   {
-    "url": "build/app/wgloyufe.js",
-    "revision": "1fe14b23d84bf56f995a3e8b814c84a4"
+    "url": "build/app/vwqw6bmh.js",
+    "revision": "c2a68a0692fe1e5e202aac8740669e7c"
   },
   {
-    "url": "build/app/whrgnibp.js",
-    "revision": "86814c2b4cdfa2cdfe334f6bac7728de"
+    "url": "build/app/wgloyufe.js",
+    "revision": "1fe14b23d84bf56f995a3e8b814c84a4"
   },
   {
     "url": "build/app/wlurar8q.js",
@@ -812,27 +804,31 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "56a203f63225f497160442e9361804c4"
+    "revision": "24aff9588d23037ae5500e79d2884306"
   },
   {
     "url": "manifest.json",
-    "revision": "c1d318cee3e66000978b35d24e89ee48"
+    "revision": "f4a0b488dcfcfa7548ba2ffbb93a23f7"
+  },
+  {
+    "url": "variables.css",
+    "revision": "1d22523fbeeaa4af74fba77e51d84f51"
   },
   {
     "url": "workbox-sw.prod.v2.0.1.js",
-    "revision": "679d4e73dc756b21e46ee8f1bb52c882"
+    "revision": "ee0072ccd0e678b6cc6585341661a423"
   },
   {
     "url": "workbox-sw.prod.v2.0.3.js",
-    "revision": "60b4da760c6a02cbbf5efc80c4da7090"
+    "revision": "cf52011377fb0e40b087d1d45eb49302"
   },
   {
     "url": "workbox-sw.prod.v2.1.0.js",
-    "revision": "e5f207838d7fd9c81835d5705a73cfa2"
+    "revision": "278f01498704ddb80d3137e4afe941bb"
   },
   {
     "url": "workbox-sw.prod.v2.1.1.js",
-    "revision": "2a5638f9e33d09efc487b96804a0aa11"
+    "revision": "f1cd0b1cbd1bab95b0699b558db84172"
   }
 ];
 

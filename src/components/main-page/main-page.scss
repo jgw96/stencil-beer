@@ -1,7 +1,7 @@
 main-page {
   ion-page {
     padding-top: 4em;
-    background: black;
+    background: var(--theme-secondary);
   }
 
   img {
@@ -16,7 +16,7 @@ main-page {
   }
 
   ion-scroll {
-    background: black !important;
+    background: var(--theme-secondary) !important;
   }
 
   .card {

@@ -34,7 +34,7 @@ export class BeerItem {
           this.removeIntersectionObserver();
         }
       }, {
-        threshold: [0.3]
+        threshold: [0.2]
       })
 
       this.io.observe(this.el.querySelector('ion-card'));
@@ -85,7 +85,7 @@ export class BeerItem {
 
           <ion-buttons>
             <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
-              <ion-button color='primary' fill='clear'>
+              <ion-button id='detailButton' color='primary' fill='clear'>
                 Detail
             </ion-button>
             </stencil-route-link>

@@ -93,7 +93,7 @@ export class BeerPage {
   render() {
     return (
       <ion-page class='show-page'>
-        <ion-toolbar color='dark'>
+        <ion-toolbar>
           <ion-searchbar></ion-searchbar>
         </ion-toolbar>
 
@@ -108,7 +108,7 @@ export class BeerPage {
         </ion-fab>
 
         <ion-footer>
-          <ion-toolbar color='dark'>
+          <ion-toolbar>
             <ion-buttons slot='start'>
               <ion-button fill='clear' onClick={() => this.previousPage()} color='primary'>
                 prev

@@ -19,6 +19,10 @@ beer-item {
     justify-content: flex-end;
   }
 
+  #detailButton button {
+    color: #488aff !important;
+  }
+
   ion-card {
     opacity: 0;
   }
@@ -32,7 +36,7 @@ beer-item {
 
   @keyframes slidein {
     from {
-      transform: translateY(100px);
+      transform: translateY(30px);
       opacity: 0;
     }
   

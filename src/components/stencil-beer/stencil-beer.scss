@@ -1,0 +1,17 @@
+stencil-beer {
+  .toolbar-background-md {
+    background: var(--theme-primary)
+  }
+
+  .toolbar-title-md {
+    color: white;
+  }
+
+  ion-buttons ion-button button {
+    color: white !important;
+  }
+
+  ion-icon {
+    fill: white;
+  }
+}
