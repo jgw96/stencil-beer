@@ -1,4 +1,6 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
+import { ToastController } from '@ionic/core';
+import { RouterHistory } from '@stencil/router';
 
 import { Beer } from '../../global/interfaces';
 
@@ -13,26 +15,37 @@ export class BeerPage {
   @State() beers: Array<Beer>;
 
   @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop() history: RouterHistory;
 
-  componentWillLoad() {
+  componentDidLoad() {
     this.page = 1;
 
     if (!this.isServer) {
-      this.fetchBeers(this.page);
+      try {
+        this.fetchBeers(this.page);
+      }
+      catch (err) {
+        this.showErrorToast();
+      }
     }
   }
 
-  fetchBeers(page: number) {
+  async showErrorToast() {
+    const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
+    toast.present();
+  }
+
+  async fetchBeers(page: number) {
     this.beers = null;
 
-    const key = 'c0b90d19385d7dabee991e89c24ea711  ';
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
 
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`).then((response) => {
-      return response.json();
-    }).then((data) => {
-      this.beers = data.data;
-      console.log(data);
-    })
+    const response = await fetch(url);
+    const data = await response.json();
+
+    this.beers = data.data;
   }
 
   nextPage() {
@@ -47,20 +60,30 @@ export class BeerPage {
     }
   }
 
+  async doSearch(ev) {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    this.beers = data.data;
+  }
+
+  goToFavorites() {
+    this.history.push('/beers/favorites', {});
+  }
+
   @Listen('ionInput')
   search(ev) {
-    const key = 'c0b90d19385d7dabee991e89c24ea711  ';
-
     setTimeout(() => {
       if (ev.target.value.length > 0) {
-        console.log(ev.target.value);
-        fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`).then((response) => {
-          return response.json();
-        }).then((data) => {
-          this.beers = data.data;
-        }).catch(() => {
+        try {
+          this.doSearch(ev);
+        }
+        catch (err) {
           this.fetchBeers(this.page);
-        })
+        }
       } else {
         this.fetchBeers(1);
       }
@@ -78,17 +101,23 @@ export class BeerPage {
           <beer-list beers={this.beers}></beer-list>
         </ion-content>
 
+        <ion-fab bottom right>
+          <ion-fab-button onClick={() => this.goToFavorites()}>
+            <ion-icon name='star'></ion-icon>
+          </ion-fab-button>
+        </ion-fab>
+
         <ion-footer>
           <ion-toolbar color='dark'>
             <ion-buttons slot='start'>
-              <ion-button clear onClick={() => this.previousPage()} color='primary'>
+              <ion-button fill='clear' onClick={() => this.previousPage()} color='primary'>
                 prev
               </ion-button>
             </ion-buttons>
 
 
             <ion-buttons slot='end'>
-              <ion-button clear onClick={() => this.nextPage()} color='primary'>
+              <ion-button fill-='clear' onClick={() => this.nextPage()} color='primary'>
                 next
               </ion-button>
             </ion-buttons>

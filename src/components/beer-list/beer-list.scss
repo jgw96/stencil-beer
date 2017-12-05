@@ -4,20 +4,7 @@ beer-list {
     margin: 1.5em;
     height: 400px;
     background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 100px, transparent 0);
-    background-repeat: repeat-y;
-    background-size: 350px 220px;
+    background-size: 100% 220px;
     background-position: 10px 0, 10px 120px, 10px 160px;
-    animation-name: fadein;
-    animation-duration: .5s;
-  }
-
-  @keyframes fadein {
-    from {
-      opacity: 0;
-    }
-
-    to {
-      opacity: 1;
-    }
   }
 }

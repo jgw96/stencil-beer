@@ -29,6 +29,11 @@ export class StencilBeer {
           />
 
           <stencil-route
+            url='/beers/favorites'
+            component='favorites-page'
+          />
+
+          <stencil-route
             url='/beers/detail/:id'
             component='beer-detail'
           />
@@ -42,7 +47,6 @@ export class StencilBeer {
             url='/bars/directions/:address'
             component='bar-directions'
           />
-
         </stencil-router>
       </ion-app>
     );

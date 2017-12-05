@@ -1,5 +1,5 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
-import { LoadingController, Loading } from '@ionic/core';
+import { ToastController } from '@ionic/core';
 
 import { Bar } from '../../global/interfaces';
 
@@ -9,39 +9,37 @@ import { Bar } from '../../global/interfaces';
 })
 export class BarPage {
 
-  loading: Loading;
-
   @State() bars: Array<Bar>;
 
-  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
   @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   componentDidLoad() {
     if (!this.isServer) {
-      this.loadingCtrl.create({ content: 'fetching bars...' }).then((loading) => {
-
-        this.loading = loading;
-        
-        loading.present().then(() => {
-          navigator.geolocation.getCurrentPosition((position) => {
-            fetch('/googlePlaces', {
-              method: 'post',
-              body: JSON.stringify({ lat: position.coords.latitude, long: position.coords.longitude })
-            }).then((response) => {
-              return response.json()
-            }).then((data) => {
-              this.bars = data;
-
-              loading.dismiss();
-            })
-          });
-        })
-      })
+      navigator.geolocation.getCurrentPosition((position: Position) => {
+        try {
+          this.getBars(position);
+        }
+        catch (err) {
+          this.showErrorToast();
+        }
+      });
     }
   }
 
-  componentDidUnload() {
-    this.loading.dismiss();
+  async showErrorToast() {
+    const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
+    toast.present();
+  }
+
+  async getBars(position: Position) {
+    const response = await fetch('/googlePlaces', {
+      method: 'post',
+      body: JSON.stringify({ lat: position.coords.latitude, long: position.coords.longitude })
+    })
+    const data = await response.json();
+
+    this.bars = data;
   }
 
   @Listen('ionInput')

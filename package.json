@@ -16,14 +16,13 @@
   },
   "dependencies": {
     "@ionic/core": "0.0.2-20",
-    "@stencil/core": "0.0.8-5",
+    "@stencil/core": "0.0.8-9",
     "@stencil/router": "0.0.17-1",
-    "st-img": "0.0.5"
+    "st-img": "^0.3.0"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/web-animations-js": "^2.2.5"
+    "@stencil/utils": "latest"
   },
   "repository": {
     "type": "git",

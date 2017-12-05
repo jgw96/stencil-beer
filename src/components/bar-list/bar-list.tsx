@@ -42,10 +42,10 @@ export class barList {
 
                   <ion-buttons>
                     <stencil-route-link url={`/bars/directions/${bar.vicinity}}`} exact={true}>
-                      <ion-button clear> Directions </ion-button>
+                      <ion-button color='primary' fill='clear'> Directions </ion-button>
                     </stencil-route-link>
 
-                    <ion-button onClick={() => this.share(bar)} clear icon-only>
+                    <ion-button onClick={() => this.share(bar)} fill='clear' icon-only>
                       <ion-icon color='primary' name='share'></ion-icon>
                     </ion-button>
 
@@ -56,6 +56,12 @@ export class barList {
           })}
         </ion-list>
       );
+    } else {
+      return (
+        <ion-list>
+          <div id='fake-card'></div>
+        </ion-list>
+      )
     }
   }
 }

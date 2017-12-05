@@ -19,20 +19,25 @@ beer-item {
     justify-content: flex-end;
   }
 
+  ion-card {
+    opacity: 0;
+  }
+
   .animateIn {
     animation-duration: .5s;
     animation-name: slidein;
     animation-timing-function: cubic-bezier(.36,.66,.04,1);
+    animation-fill-mode: forwards;
   }
 
   @keyframes slidein {
     from {
-      transform: translateX(20em);
+      transform: translateY(100px);
       opacity: 0;
     }
   
     to {
-      transform: translateX(0);
+      transform: translateY(0);
       opacity: 1;
     }
   }

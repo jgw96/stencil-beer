@@ -16,25 +16,39 @@ export class BeerDetail {
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   componentWillLoad() {
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
-
-    fetch(`https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${this.match.params.id}?key=${key}`).then((response) => {
-      return response.json();
-    }).then((data) => {
-      this.beer = data.data;
-    })
+    try {
+      this.getBeerDetail();
+    }
+    catch (err) {
+      this.showErrorToast();
+      console.error(err);
+    }
   }
 
-  share() {
-    (navigator as any).share({
+  async showErrorToast() {
+    const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
+    toast.present();
+  }
+
+  async getBeerDetail() {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${this.match.params.id}?key=${key}`;
+
+    const response = await fetch(url);
+    const data = await response.json();
+
+    this.beer = data.data;
+  }
+
+  async share(beer) {
+    await (navigator as any).share({
       title: document.title,
       text: "Check out this cool beer",
-      url: `${window.location.href}/detail/${this.beer.id}`
-    }).then(() => {
-      this.toastCtrl.create({ message: 'Beer shared', duration: 1000 }).then((toast) => {
-        toast.present();
-      });
+      url: `${window.location.href}/detail/${beer.id}`
     })
+
+    const toast = await this.toastCtrl.create({ message: 'beer shared', duration: 1000 });
+    toast.present();
   }
 
   render() {
@@ -54,7 +68,12 @@ export class BeerDetail {
 
               <p>{this.beer.description ? this.beer.description : 'No description available'}</p>
 
-              <ion-button onClick={() => this.share()} block color='primary'>Share</ion-button>
+
+              <ion-fab bottom right>
+                <ion-fab-button onClick={() => this.share(this.beer)}>
+                  <ion-icon name='share'></ion-icon>
+                </ion-fab-button>
+              </ion-fab>
 
             </main>
           </ion-content>
