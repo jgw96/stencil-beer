@@ -7,29 +7,15 @@ import { Component } from '@stencil/core';
 })
 export class StencilBeer {
 
-  changeTheme() {
-    const colorValue = document.documentElement.style.getPropertyValue('--theme-primary');
-    console.log(colorValue);
-    if (colorValue === '#222' || colorValue === '') {
-      document.documentElement.style.setProperty('--theme-primary', '#488aff');
-      document.documentElement.style.setProperty('--theme-secondary', '#ececec');
-    } else {
-      document.documentElement.style.setProperty('--theme-primary', '#222');
-      document.documentElement.style.setProperty('--theme-secondary', 'black');
-    }
-  }
-
   render() {
     return (
       <ion-app>
-        <ion-header>
-          <ion-toolbar no-border-bottom>
+        <ion-header md-height="96px">
+          <ion-toolbar color='dark'>
             <ion-title>IonicBeer Beta</ion-title>
 
-            <ion-buttons slot='end'>
-              <ion-button onClick={() => this.changeTheme()}>
-                <ion-icon slot='icon-only' name='color-palette'></ion-icon>
-              </ion-button>
+            <ion-buttons>
+              
             </ion-buttons>
           </ion-toolbar>
         </ion-header>
@@ -37,32 +23,37 @@ export class StencilBeer {
         <stencil-router id='router'>
           <stencil-route
             url='/'
-            component='main-page'
+            component='auth-page'
             exact={true}
           />
 
+          <stencil-route 
+            url='/main'
+            component='main-page'
+          />
+
           <stencil-route
-            url='/beers'
+            url='/main/beers'
             component='beer-page'
           />
 
           <stencil-route
-            url='/beers/favorites'
+            url='/main/beers/favorites'
             component='favorites-page'
           />
 
           <stencil-route
-            url='/beers/detail/:id'
+            url='/main/beers/detail/:id'
             component='beer-detail'
           />
 
           <stencil-route
-            url='/bars'
+            url='/main/bars'
             component='bar-page'
           />
 
           <stencil-route
-            url='/bars/directions/:address'
+            url='/main/bars/directions/:address'
             component='bar-directions'
           />
         </stencil-router>

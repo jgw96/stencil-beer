@@ -11,6 +11,7 @@ import { Beer } from '../../global/interfaces';
 export class BeerPage {
 
   page: number;
+  worker: any;
 
   @State() beers: Array<Beer>;
 
@@ -19,9 +20,11 @@ export class BeerPage {
   @Prop() history: RouterHistory;
 
   componentDidLoad() {
-    this.page = 1;
-
     if (!this.isServer) {
+      console.log(this.isServer);
+      this.worker = new (window as any).Worker('../workers/worker-request.js');
+
+      this.page = 1;
       try {
         this.fetchBeers(this.page);
       }
@@ -31,21 +34,27 @@ export class BeerPage {
     }
   }
 
+  componentDidUnload() {
+    this.worker.terminate();
+  }
+
   async showErrorToast() {
     const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
     toast.present();
   }
 
-  async fetchBeers(page: number) {
+  fetchBeers(page: number) {
     this.beers = null;
 
     const key = 'c0b90d19385d7dabee991e89c24ea711';
     const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
 
-    const response = await fetch(url);
-    const data = await response.json();
+    this.worker.postMessage(url);
 
-    this.beers = data.data;
+    this.worker.onmessage = (e) => {
+      console.log(e);
+      this.beers = e.data.data;
+    }
   }
 
   nextPage() {
@@ -60,18 +69,21 @@ export class BeerPage {
     }
   }
 
-  async doSearch(ev) {
+  doSearch(ev) {
+    this.beers = null;
+
     const key = 'c0b90d19385d7dabee991e89c24ea711';
     const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`;
 
-    const response = await fetch(url);
-    const data = await response.json();
+    this.worker.postMessage(url);
 
-    this.beers = data.data;
+    this.worker.onmessage = (e) => {
+      this.beers = e.data.data;
+    }
   }
 
   goToFavorites() {
-    this.history.push('/beers/favorites', {});
+    this.history.push('/main/beers/favorites', {});
   }
 
   @Listen('ionInput')
@@ -87,21 +99,73 @@ export class BeerPage {
       } else {
         this.fetchBeers(1);
       }
-    }, 1000);
+    }, 2000);
+  }
+
+  takePicture() {
+    console.log('here')
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.name = 'image';
+    input.accept = 'image/*';
+    input.setAttribute('capture', 'camera');
+
+    input.click();
+
+    input.addEventListener('change', (ev: any) => {
+      console.log('changed');
+      console.log(ev.target.files);
+      this.google(ev.target.files[0]);
+    })
+  }
+
+  google(picture: Blob) {
+    this.beers = null;
+
+    const reader = new FileReader();
+    reader.readAsDataURL(picture);
+
+    reader.onloadend = () => {
+
+      fetch('/vision', {
+        method: 'POST',
+        body: JSON.stringify({ image: reader.result })
+      }).then((res) => {
+        return res.json()
+      }).then((data) => {
+        console.log(data);
+
+        const key = 'c0b90d19385d7dabee991e89c24ea711';
+        const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${data[0]}&type=beer`;
+    
+        this.worker.postMessage(url);
+    
+        this.worker.onmessage = (e) => {
+          this.beers = e.data.data;
+        }
+      })
+
+    }
   }
 
   render() {
     return (
       <ion-page class='show-page'>
-        <ion-toolbar>
+        <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
+
+          <ion-buttons slot='end'>
+            <ion-button icon-only onClick={() => this.takePicture()}>
+              <ion-icon id='cameraButton' name='camera'></ion-icon>
+            </ion-button>
+          </ion-buttons>
         </ion-toolbar>
 
         <ion-content>
-          <beer-list beers={this.beers}></beer-list>
+          <beer-list fave={false} beers={this.beers}></beer-list>
         </ion-content>
 
-        <ion-fab bottom right>
+        <ion-fab>
           <ion-fab-button onClick={() => this.goToFavorites()}>
             <ion-icon name='star'></ion-icon>
           </ion-fab-button>
@@ -117,7 +181,7 @@ export class BeerPage {
 
 
             <ion-buttons slot='end'>
-              <ion-button fill-='clear' onClick={() => this.nextPage()} color='primary'>
+              <ion-button fill='clear' onClick={() => this.nextPage()} color='primary'>
                 next
               </ion-button>
             </ion-buttons>

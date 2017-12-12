@@ -1,4 +1,4 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Listen } from '@stencil/core';
 
 import { getSavedBeers } from '../../global/save-service';
 
@@ -12,8 +12,30 @@ export class favoritesPage {
 
   @State() beers: Array<Beer>;
 
-  componentDidLoad() {
-    this.beers = getSavedBeers();
+  async componentDidLoad() {
+    const tempBeers = [];
+
+    getSavedBeers().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        tempBeers.push(doc.data().beer);
+      })
+
+      this.beers = tempBeers;
+      console.log(this.beers);
+    })
+  }
+
+  @Listen('beerDeleted')
+  getFreshBeers() {
+    const tempBeers = [];
+
+    getSavedBeers().then((querySnapshot) => {
+      querySnapshot.forEach((doc) => {
+        tempBeers.push(doc.data().beer);
+      })
+
+      this.beers = tempBeers;
+    })
   }
 
   render() {
@@ -21,7 +43,7 @@ export class favoritesPage {
       <ion-page class='show-page'>
         <ion-content>
           <h1>Favorite Beers</h1>
-          <beer-list beers={this.beers}></beer-list>
+          <beer-list fave={true} beers={this.beers}></beer-list>
         </ion-content>
       </ion-page>
     );

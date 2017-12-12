@@ -31,7 +31,7 @@ export class MainPage {
       <ion-page class='show-page'>
         <ion-content>
           <main>
-            <stencil-route-link url="/beers">
+            <stencil-route-link url="/main/beers">
               <div id='first-card' class='card'>
                 <img src={this.firstImageUrl} alt='beer' />
                 <div class="card-title">Beers</div>
@@ -39,7 +39,7 @@ export class MainPage {
               </div>
             </stencil-route-link>
 
-            <stencil-route-link url="/bars">
+            <stencil-route-link url="/main/bars">
               <div class='card'>
                 <img src={this.secondImageUrl} alt='bar' />
                 <div class="card-title">Bars</div>

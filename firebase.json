@@ -11,6 +11,10 @@
         "function": "googleGeocode"
       },
       {
+        "source": "/vision",
+        "function": "vision"
+      },
+      {
         "source": "/bars/**",
         "destination": "/index.html"
       },
@@ -34,7 +38,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</build/app/app.vampgakx.js>;rel=preload;as=script,</build/app/6oh2cztm.js>;rel=preload;as=script,</build/app/vqdmmwyk.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script,</build/app/5piuuqes.js>;rel=preload;as=script,</images/smaller-beers.jpeg>;rel=preload;as=image,</images/smaller-bars.jpeg>;rel=preload;as=image"
+            "value": "</build/app/app.bhbubiua.js>;rel=preload;as=script,</build/app/ndcx1naq.js>;rel=preload;as=script,</build/app/us9km9v7.js>;rel=preload;as=script,</build/app/lunprpvl.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script"
           }
         ]
      }

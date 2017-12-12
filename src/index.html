@@ -8,20 +8,36 @@
   <script src="/build/app.js"></script>
 
   <meta name="theme-color" content="#222">
-
+  
   <meta name="apple-mobile-web-app-capable" content="yes">
-  <link rel="apple-touch-icon" href="/assets/img/icon.png">
+  <link rel="apple-touch-icon" href="/assets/icon/icon.png">
+
 
   <link rel="manifest" href="/manifest.json">
   <link rel="icon" type="image/x-icon" href="/assets/icon/favicon.ico">
-
-  <link rel='stylesheet' href='/variables.css'>
 
 </head>
 
 <body>
 
   <stencil-beer></stencil-beer>
+
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.2/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/4.6.0/firebase-firestore.js"></script>
+  <script>
+    // Initialize Firebase
+    // TODO: Replace with your project's customized code snippet
+    var config = {
+      apiKey: "AIzaSyBRGthQnkQbObNUU1tXudYy8tC1c1JKF7c",
+      authDomain: "stencilbeer.firebaseapp.com",
+      databaseURL: "https://stencilbeer.firebaseio.com",
+      projectId: "stencilbeer",
+      storageBucket: "stencilbeer.appspot.com",
+      messagingSenderId: "1049557001786"
+    };
+    firebase.initializeApp(config);
+  </script>
 
 </body>
 

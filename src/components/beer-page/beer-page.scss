@@ -3,20 +3,14 @@ beer-page {
     padding-top: 4em;
   }
 
-  .toolbar-background-md {
-    background: var(--theme-primary)
-  }
-
-  .toolbar-title-md {
-    color: white;
-  }
-
-  ion-icon {
-    fill: var(--theme-secondary)
-  }
-
   ion-fab {
     bottom: 5em !important;
+    right: 10px;
+  }
+
+  #cameraButton {
+    width: 30px;
+    fill: white;
   }
 
   ion-scroll {

@@ -1,0 +1,27 @@
+auth-page {
+  ion-page {
+    padding-top: 4em;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: linear-gradient(#222 75%, #488aff);
+  }
+
+  ion-scroll {
+    background: transparent !important;
+  }
+
+  #imageBlock {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #iconImage {
+    width: 14em;
+  }
+
+  .scroll-inner {
+    height: 60%;
+  }
+}

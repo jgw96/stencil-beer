@@ -10,12 +10,13 @@ import { Beer } from '../../global/interfaces';
 export class BeerList {
 
   @Prop() beers: Array<Beer>;
+  @Prop() fave: Boolean;
 
   render() {
     if (this.beers) {
       const beers = this.beers.map((beer) => {
         return (
-          <beer-item beer={beer}></beer-item>
+          <beer-item fave={this.fave} beer={beer}></beer-item>
         )
       });
 

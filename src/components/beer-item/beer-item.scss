@@ -5,7 +5,7 @@ beer-item {
     justify-content: center;
   }
 
-  st-img img {
+  st-img {
     height: 20em;
   }
 
@@ -28,7 +28,7 @@ beer-item {
   }
 
   .animateIn {
-    animation-duration: .5s;
+    animation-duration: .3s;
     animation-name: slidein;
     animation-timing-function: cubic-bezier(.36,.66,.04,1);
     animation-fill-mode: forwards;
@@ -36,7 +36,7 @@ beer-item {
 
   @keyframes slidein {
     from {
-      transform: translateY(30px);
+      transform: translateY(20px);
       opacity: 0;
     }
   

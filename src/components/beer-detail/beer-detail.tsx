@@ -68,15 +68,14 @@ export class BeerDetail {
 
               <p>{this.beer.description ? this.beer.description : 'No description available'}</p>
 
-
-              <ion-fab bottom right>
-                <ion-fab-button onClick={() => this.share(this.beer)}>
-                  <ion-icon name='share'></ion-icon>
-                </ion-fab-button>
-              </ion-fab>
-
             </main>
           </ion-content>
+
+          <ion-fab>
+            <ion-fab-button onClick={() => this.share(this.beer)}>
+              <ion-icon name='share'></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
         </ion-page>
       )
     } else {

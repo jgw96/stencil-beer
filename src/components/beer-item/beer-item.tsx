@@ -1,7 +1,7 @@
-import { Component, Prop, Element } from '@stencil/core';
+import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
 import { ToastController } from '@ionic/core';
 
-import { saveBeer } from '../../global/save-service';
+import { saveBeer, deleteBeer } from '../../global/save-service';
 
 import { Beer } from '../../global/interfaces';
 
@@ -13,9 +13,12 @@ import { Beer } from '../../global/interfaces';
 export class BeerItem {
 
   @Prop() beer: Beer;
+  @Prop() fave: Boolean = false;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   @Element() el: HTMLElement;
+
+  @Event() beerDeleted: EventEmitter;
 
   io: IntersectionObserver;
 
@@ -34,8 +37,8 @@ export class BeerItem {
           this.removeIntersectionObserver();
         }
       }, {
-        threshold: [0.2]
-      })
+          threshold: [0.2]
+        })
 
       this.io.observe(this.el.querySelector('ion-card'));
     }
@@ -70,6 +73,15 @@ export class BeerItem {
     toast.present();
   }
 
+  async deleteBeer(beer: Beer) {
+    await deleteBeer(beer);
+
+    this.beerDeleted.emit();
+
+    const toast = await this.toastCtrl.create({ message: 'beer un-favorited', duration: 1000 });
+    toast.present();
+  }
+
   render() {
     return (
       <ion-card>
@@ -84,15 +96,21 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
+            <stencil-route-link url={`/main/beers/detail/${this.beer.id}`}>
               <ion-button id='detailButton' color='primary' fill='clear'>
                 Detail
             </ion-button>
             </stencil-route-link>
 
-            <ion-button onClick={() => this.save(this.beer)} fill='clear' icon-only>
-              <ion-icon color='primary' name='star'></ion-icon>
-            </ion-button>
+            {this.fave ?
+              <ion-button onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>
+                <ion-icon color='danger' name='trash'></ion-icon>
+              </ion-button>
+              :
+              <ion-button onClick={() => this.save(this.beer)} fill='clear' icon-only>
+                <ion-icon color='primary' name='star'></ion-icon>
+              </ion-button>
+            }
 
             <ion-button onClick={() => this.share(this.beer)} fill='clear' icon-only>
               <ion-icon color='primary' name='share'></ion-icon>
