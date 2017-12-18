@@ -28,19 +28,23 @@ const fileManifest = [
   },
   {
     "url": "assets/worker-request.js",
-    "revision": "be88a78b15df50f1c736e9bdd791ab69"
+    "revision": "06ecbb404b3b5055ad8a5c9fdb120033"
   },
   {
     "url": "bars/index.html",
-    "revision": "0c97e62a11aec8f5fc57525948ced113"
+    "revision": "588549de74217f02a7e191a1e084f451"
   },
   {
     "url": "beers/index.html",
-    "revision": "8e16d52065d71142f677685f81e7e44e"
+    "revision": "475bd9d02060d5d192fd2cabe9264b0d"
+  },
+  {
+    "url": "build/app.css",
+    "revision": "56056dd3e49e0299032734446f16e7fc"
   },
   {
     "url": "build/app.js",
-    "revision": "1e87ede17eef42972eb53520a3e69f2e"
+    "revision": "5d0beef34dee8b3b2977981457244cbf"
   },
   {
     "url": "build/app/08pp0bm5.js",
@@ -61,6 +65,10 @@ const fileManifest = [
   {
     "url": "build/app/1wjzxtro.js",
     "revision": "0591a9f66d508de8bb8f481295114d42"
+  },
+  {
+    "url": "build/app/22wajrrd.js",
+    "revision": "4c5a707e8423b526bef36a26aebdf953"
   },
   {
     "url": "build/app/2ddzatnm.js",
@@ -115,10 +123,6 @@ const fileManifest = [
     "revision": "d15d589d01b53534e0b0fe7b73aaf76e"
   },
   {
-    "url": "build/app/5xgfdzkf.js",
-    "revision": "1950d3b3bf68dda4fa58f359d3948194"
-  },
-  {
     "url": "build/app/6h3gn76l.js",
     "revision": "b46ee5986c7fda07d6efbd4caa777cde"
   },
@@ -143,10 +147,6 @@ const fileManifest = [
     "revision": "b6be19ffd49fd5e4d8e92ebb1bc61b2c"
   },
   {
-    "url": "build/app/9bgztowx.js",
-    "revision": "d68fd32260db9b430775becc621d1758"
-  },
-  {
     "url": "build/app/9pr0ia7k.js",
     "revision": "d337a546cf2c029df36d0559cc75479e"
   },
@@ -157,14 +157,6 @@ const fileManifest = [
   {
     "url": "build/app/a7ppgers.js",
     "revision": "c3581aedb91774e308efa00bf2ff5b4e"
-  },
-  {
-    "url": "build/app/aanvnmmv.js",
-    "revision": "9be964b527fbaa7f1112b2c7709f0e81"
-  },
-  {
-    "url": "build/app/aav7p7cx.js",
-    "revision": "1a24a9bbf8fb62f8c83eaa70fe030219"
   },
   {
     "url": "build/app/aavz6sml.js",
@@ -204,7 +196,7 @@ const fileManifest = [
   },
   {
     "url": "build/app/app.registry.json",
-    "revision": "bee6bd6843ae4ea370dbd4a33322f64b"
+    "revision": "56bbe43c84170850f1bd65de384f8ef3"
   },
   {
     "url": "build/app/aqhym4jj.js",
@@ -225,6 +217,10 @@ const fileManifest = [
   {
     "url": "build/app/bg9p9bg0.js",
     "revision": "d2187a4a30f6805e532dca7df3a22e4c"
+  },
+  {
+    "url": "build/app/bkwwbhbx.js",
+    "revision": "3b5255deb2cd7be0ac6a31f3f7e0f472"
   },
   {
     "url": "build/app/bp4bo98a.js",
@@ -303,12 +299,12 @@ const fileManifest = [
     "revision": "0da23c8a3a7da6647e622b93c3f56743"
   },
   {
-    "url": "build/app/euxnpt4q.js",
-    "revision": "61507dbacac21b33134f39482f6702a9"
+    "url": "build/app/elbxnhok.js",
+    "revision": "2c7807c6f211b76a97aff962c0ded5b2"
   },
   {
-    "url": "build/app/eyx67lwv.js",
-    "revision": "ab657b1d31985d2551966a6fb689630e"
+    "url": "build/app/euxnpt4q.js",
+    "revision": "61507dbacac21b33134f39482f6702a9"
   },
   {
     "url": "build/app/f3on1ybh.js",
@@ -321,6 +317,10 @@ const fileManifest = [
   {
     "url": "build/app/ffcqsixn.js",
     "revision": "e77ea29a8278295475a6a6d108acc6ba"
+  },
+  {
+    "url": "build/app/fg1nczl4.js",
+    "revision": "8b30f82510db1d5762d936e3b102c354"
   },
   {
     "url": "build/app/fgl5oqpl.js",
@@ -345,6 +345,14 @@ const fileManifest = [
   {
     "url": "build/app/gbnswczo.js",
     "revision": "cf69904c7f2405104ccc4e34c3e41ce4"
+  },
+  {
+    "url": "build/app/gffkar19.js",
+    "revision": "9922d57a6af31edc374dcc985ef83702"
+  },
+  {
+    "url": "build/app/ggvmpwlc.js",
+    "revision": "979cc2721d52b6866641fe45942df80a"
   },
   {
     "url": "build/app/gu4mjmna.js",
@@ -375,6 +383,10 @@ const fileManifest = [
     "revision": "cb4f684a09a9d0c31fe9cca99ec2e95a"
   },
   {
+    "url": "build/app/iijnalzj.js",
+    "revision": "e7ba47989db66d79b59b1ca8e15b0bb9"
+  },
+  {
     "url": "build/app/iivsp60s.js",
     "revision": "90700025ffe9238dae3351e3c4375a34"
   },
@@ -389,10 +401,6 @@ const fileManifest = [
   {
     "url": "build/app/il3lrymb.js",
     "revision": "0214594eb7d65e28343c37f3321e90e4"
-  },
-  {
-    "url": "build/app/ipbsfspp.js",
-    "revision": "9e609974da8673c4bcf150bf43d00510"
   },
   {
     "url": "build/app/iws5og3u.js",
@@ -423,6 +431,10 @@ const fileManifest = [
     "revision": "f76be489ed1fe1fd94f953fe1a5bd768"
   },
   {
+    "url": "build/app/krrxybo7.js",
+    "revision": "da27584913661b265cc357847e66f10e"
+  },
+  {
     "url": "build/app/ksrq91np.js",
     "revision": "3b32ff434006a1eece0527f99af3a318"
   },
@@ -451,12 +463,16 @@ const fileManifest = [
     "revision": "6b9b4828ebf1807423f5b41ce6af33df"
   },
   {
-    "url": "build/app/lvsuiv8a.js",
-    "revision": "437df4bed054f6396f67b698504584e0"
-  },
-  {
     "url": "build/app/m3on7drb.js",
     "revision": "673c258eeae6b21a0bcd9d7e5d622c2b"
+  },
+  {
+    "url": "build/app/m6zj5ium.js",
+    "revision": "d1fe9f4a1b492032904ff3812ef98ba8"
+  },
+  {
+    "url": "build/app/n5qvrwm6.js",
+    "revision": "c055ddb0543c908e6a637d9699f49a9d"
   },
   {
     "url": "build/app/n6kduioo.js",
@@ -491,6 +507,10 @@ const fileManifest = [
     "revision": "b7c263c28a847c7121640cec68a60fad"
   },
   {
+    "url": "build/app/nxmq7odm.js",
+    "revision": "74d423441ec19f7b83c3765ccaf42281"
+  },
+  {
     "url": "build/app/ny8ngbuy.js",
     "revision": "05a6d50b705913b303801dbd4b9f3922"
   },
@@ -507,14 +527,6 @@ const fileManifest = [
     "revision": "b0917cc672861958c4eba64fff378795"
   },
   {
-    "url": "build/app/o7fjfooo.js",
-    "revision": "49aae9ebcc3f37cc6ba4961ac0031bdd"
-  },
-  {
-    "url": "build/app/o8qvwbny.js",
-    "revision": "6c4c16ee7afc779345bbda99203b0746"
-  },
-  {
     "url": "build/app/oonthlyp.js",
     "revision": "469bc88a4f1958b622c665532466f5b0"
   },
@@ -523,8 +535,12 @@ const fileManifest = [
     "revision": "7438a81d2db06c201be7ba516d9071ca"
   },
   {
-    "url": "build/app/oysgcbip.js",
-    "revision": "62f8d7c60f13d499a0996bf0744d8410"
+    "url": "build/app/ouus0kmj.js",
+    "revision": "c01ea51aecd8a6490cd30ae1a750597d"
+  },
+  {
+    "url": "build/app/p2ada8h8.js",
+    "revision": "d365eeb6b4c1ac03d8f0151fcc6a9ea3"
   },
   {
     "url": "build/app/p5fxobkb.js",
@@ -549,10 +565,6 @@ const fileManifest = [
   {
     "url": "build/app/px3pxybe.js",
     "revision": "de1c8f49f57cfff0088e4b02618a3f80"
-  },
-  {
-    "url": "build/app/pxhm1p4i.js",
-    "revision": "47bede82718a8ce2292090c8b57e290e"
   },
   {
     "url": "build/app/q5atvxmm.js",
@@ -583,8 +595,8 @@ const fileManifest = [
     "revision": "3d1381561675bdf2c7ff38947e4ca814"
   },
   {
-    "url": "build/app/ri1geqgq.js",
-    "revision": "788124fef1399368c9b29d1c21e7de86"
+    "url": "build/app/rfn96wqh.js",
+    "revision": "fa8e0e7f23f5717cfcaee77fb35fd962"
   },
   {
     "url": "build/app/rkifqqn2.js",
@@ -623,10 +635,6 @@ const fileManifest = [
     "revision": "422c4aa1148e3137d918f1b62d731f24"
   },
   {
-    "url": "build/app/swlr23oi.js",
-    "revision": "1ec0a25aa46e8bae6ce5595705822115"
-  },
-  {
     "url": "build/app/tcrga0c0.js",
     "revision": "6880dceff2f7bec347d7dc6d1ae2e25b"
   },
@@ -653,10 +661,6 @@ const fileManifest = [
   {
     "url": "build/app/uqpoqnek.js",
     "revision": "eebbdaba6af4a46634c5f3fc5144ecca"
-  },
-  {
-    "url": "build/app/us9km9v7.js",
-    "revision": "9b2c8ec94498022826550b86f2675f0b"
   },
   {
     "url": "build/app/usakxnwk.js",
@@ -695,6 +699,10 @@ const fileManifest = [
     "revision": "578da9b10c8e7570ec006ee7a7fb6982"
   },
   {
+    "url": "build/app/wnuwaffq.js",
+    "revision": "0a97f28fc1e6243364d89fb8d503788f"
+  },
+  {
     "url": "build/app/wqjh6xpe.js",
     "revision": "7e798a206c3883445067b48c2f40ce8d"
   },
@@ -723,12 +731,16 @@ const fileManifest = [
     "revision": "85ce8db40643e94e65202d59ead24e01"
   },
   {
+    "url": "build/app/ziayfx7y.js",
+    "revision": "72a7dccf61d8b3cc3900bfaa16652f68"
+  },
+  {
     "url": "favicon.ico",
     "revision": "d2f619d796fbe8bed6200da2691aa5b6"
   },
   {
     "url": "host.config.json",
-    "revision": "3115b15a25ee7421ac11c4e56bf139b2"
+    "revision": "1201bf6afb9050d8b0e6be7d931db8a2"
   },
   {
     "url": "images/bars.jpeg",
@@ -748,19 +760,27 @@ const fileManifest = [
   },
   {
     "url": "index.html",
-    "revision": "d530bb2f02f0a9273d17691dfac0c052"
+    "revision": "4ee3395054111502c3ac31f6ecb2ab5d"
+  },
+  {
+    "url": "main/bars/index.html",
+    "revision": "a43116e0922fad4630644e8a782e1568"
+  },
+  {
+    "url": "main/beers/index.html",
+    "revision": "1524ae6600235d1617eb785d7e0114ae"
   },
   {
     "url": "manifest.json",
-    "revision": "c1d318cee3e66000978b35d24e89ee48"
+    "revision": "f4a0b488dcfcfa7548ba2ffbb93a23f7"
   },
   {
     "url": "workers/idb-keyval.js",
-    "revision": "d7826429e12a336c59581069b6dea6f0"
+    "revision": "81dfde4d837c26e0aad2d73a373c239a"
   },
   {
     "url": "workers/save-worker.js",
-    "revision": "3de29306a35473071a64b32edbae33d4"
+    "revision": "e67efab779fb61657474eb61d3375d2b"
   },
   {
     "url": "workers/storage-worker.js",
@@ -768,12 +788,11 @@ const fileManifest = [
   },
   {
     "url": "workers/worker-request.js",
-    "revision": "be88a78b15df50f1c736e9bdd791ab69"
+    "revision": "06ecbb404b3b5055ad8a5c9fdb120033"
   }
 ];
 
 const workboxSW = new self.WorkboxSW({
-  "skipWaiting": true,
   "clientsClaim": true
 });
 workboxSW.precache(fileManifest);

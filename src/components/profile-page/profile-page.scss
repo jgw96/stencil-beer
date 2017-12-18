@@ -1,0 +1,33 @@
+profile-page {
+  ion-page {
+    background: white;
+  }
+
+  ion-scroll {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  #imageBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  #imageBlock img {
+    height: 10em;
+    border-radius: 50%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  #logoutButton {
+    margin-top: 2em;
+  }
+}

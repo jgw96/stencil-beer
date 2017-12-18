@@ -10,16 +10,6 @@ export class StencilBeer {
   render() {
     return (
       <ion-app>
-        <ion-header md-height="96px">
-          <ion-toolbar color='dark'>
-            <ion-title>IonicBeer Beta</ion-title>
-
-            <ion-buttons>
-              
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-header>
-
         <stencil-router id='router'>
           <stencil-route
             url='/'
@@ -27,9 +17,14 @@ export class StencilBeer {
             exact={true}
           />
 
-          <stencil-route 
+          <stencil-route
             url='/main'
             component='main-page'
+          />
+
+          <stencil-route
+            url='/main/profile'
+            component='profile-page'
           />
 
           <stencil-route

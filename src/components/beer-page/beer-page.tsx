@@ -20,7 +20,7 @@ export class BeerPage {
   @Prop() history: RouterHistory;
 
   componentDidLoad() {
-    if (!this.isServer) {
+    if (!this.isServer && this.beers === undefined) {
       console.log(this.isServer);
       this.worker = new (window as any).Worker('../workers/worker-request.js');
 
@@ -137,9 +137,9 @@ export class BeerPage {
 
         const key = 'c0b90d19385d7dabee991e89c24ea711';
         const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${data[0]}&type=beer`;
-    
+
         this.worker.postMessage(url);
-    
+
         this.worker.onmessage = (e) => {
           this.beers = e.data.data;
         }
@@ -151,6 +151,9 @@ export class BeerPage {
   render() {
     return (
       <ion-page class='show-page'>
+        
+        <profile-header></profile-header>
+        
         <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
 

@@ -21,7 +21,6 @@ export class favoritesPage {
       })
 
       this.beers = tempBeers;
-      console.log(this.beers);
     })
   }
 
@@ -41,6 +40,8 @@ export class favoritesPage {
   render() {
     return (
       <ion-page class='show-page'>
+        <profile-header></profile-header>
+
         <ion-content>
           <h1>Favorite Beers</h1>
           <beer-list fave={true} beers={this.beers}></beer-list>

@@ -47,6 +47,12 @@ export class AuthPage {
   render() {
     return (
       <ion-page class='show-page'>
+        <ion-header md-height="96px">
+          <ion-toolbar color='dark'>
+            <ion-title>IonicBeer Beta</ion-title>
+          </ion-toolbar>
+        </ion-header>
+        
         <ion-content>
 
           <div id='imageBlock'>

@@ -56,6 +56,8 @@ export class BarPage {
   render() {
     return (
       <ion-page class='show-page'>
+        <profile-header></profile-header>
+
         <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
         </ion-toolbar>

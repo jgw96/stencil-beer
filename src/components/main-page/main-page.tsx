@@ -29,6 +29,8 @@ export class MainPage {
   render() {
     return (
       <ion-page class='show-page'>
+        <profile-header></profile-header>
+        
         <ion-content>
           <main>
             <stencil-route-link url="/main/beers">

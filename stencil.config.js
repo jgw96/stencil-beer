@@ -1,7 +1,8 @@
 exports.config = {
   bundles: [
     { components: ['stencil-beer', 'auth-page'] },
-    { components: ['main-page'] },
+    { components: ['main-page', 'profile-header'] },
+    { components: ['profile-page'] },
     { components: ['bar-page', 'bar-list'] },
     { components: ['beer-page', 'beer-list', 'beer-item'] },
     { components: ['beer-detail'] },
@@ -23,7 +24,8 @@ exports.config = {
     globIgnores: [
       'build/app/svg/*.js'
     ]
-  }
+  },
+  globalStyle: 'src/global/variables.css'
 };
 
 exports.devServer = {

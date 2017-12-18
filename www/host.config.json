@@ -6,7 +6,7 @@
         "headers": [
           {
             "name": "Link",
-            "value": "</build/app/app.dwef0gob.js>;rel=preload;as=script"
+            "value": "</app.dwef0gob.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
@@ -18,7 +18,7 @@
           },
           {
             "name": "Link",
-            "value": "</build/app/us9km9v7.js>;rel=preload;as=script"
+            "value": "</build/app/9rbdkty2.js>;rel=preload;as=script"
           },
           {
             "name": "Link",

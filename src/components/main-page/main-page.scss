@@ -1,7 +1,6 @@
 main-page {
   ion-page {
-    padding-top: 4em;
-    background: black;
+    background: var(--theme-secondary);
   }
 
   img {
@@ -16,7 +15,7 @@ main-page {
   }
 
   ion-scroll {
-    background: black !important;
+    background: var(--theme-secondary) !important;
   }
 
   .card {
@@ -32,7 +31,7 @@ main-page {
     font-size: 2.0em;
     font-weight: bold;
     color: white;
-    background: black;
+    background: var(--theme-secondary);
     padding-left: 0.8em;
     padding-right: 0.5em;
   }
@@ -42,7 +41,7 @@ main-page {
     position: absolute;
     top: 69%;
     color: white;
-    background: black;
+    background: var(--theme-secondary);
     padding-left: 1.1em;
     padding-right: 0.5em;
   }

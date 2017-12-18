@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "functionDev": "stencil build --dev --watch",
     "serve": "stencil-dev-server",
@@ -15,8 +15,8 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
-    "@ionic/core": "0.0.2-29",
-    "@stencil/core": "0.0.8",
+    "@ionic/core": "0.0.2-28",
+    "@stencil/core": "0.0.9-2",
     "@stencil/router": "0.0.17-1",
     "st-img": "^0.3.0"
   },

@@ -56,6 +56,9 @@ export class BeerDetail {
 
       return (
         <ion-page class='show-page'>
+          
+          <profile-header></profile-header>
+          
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
