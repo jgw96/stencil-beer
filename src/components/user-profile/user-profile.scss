@@ -1,0 +1,30 @@
+user-profile {
+  ion-page {
+    background: #ececec !important;
+  }
+
+  ion-scroll {
+    background: #ececec !important;
+  }
+
+  h1 {
+    margin-left: 15px;
+    margin-top: 2em;
+    font-weight: bold;
+  }
+
+  #imageBlock {
+    display: flex;
+    justify-content: center;
+    margin-top: 3em;
+  }
+
+  #imageBlock img {
+    height: 10em;
+    border-radius: 50%;
+  }
+
+  h2 {
+    text-align: center;
+  }
+}

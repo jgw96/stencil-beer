@@ -7,7 +7,9 @@ exports.config = {
     { components: ['beer-page', 'beer-list', 'beer-item'] },
     { components: ['beer-detail'] },
     { components: ['favorites-page'] },
-    { components: ['bar-directions'] }
+    { components: ['bar-directions'] },
+    { components: ['users-page', 'users-list'] },
+    { components: ['user-profile'] }
   ],
   collections: [
     { name: '@stencil/router' },

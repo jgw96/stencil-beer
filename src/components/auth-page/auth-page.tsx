@@ -11,8 +11,28 @@ export class AuthPage {
 
   @Prop() history: RouterHistory;
 
-  componentDidLoad() {
+  constructor() {
     const db = firebase.firestore();
+
+    firebase.auth().getRedirectResult().then((result) => {
+      if (result.credential) {
+        console.log(result.credential.accessToken);
+      }
+
+      db.collection('users').add({
+        name: result.user.displayName,
+        email: result.user.email,
+        photo: result.user.photoURL
+      })
+
+      console.log(result.user);
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+  componentDidLoad() {
+    console.log('called');
 
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -22,21 +42,6 @@ export class AuthPage {
         this.history.push('/main', {});
       };
     })
-
-    firebase.auth().getRedirectResult().then((result) => {
-      if (result.credential) {
-        console.log(result.credential.accessToken);
-      }
-
-      db.collection('users').add({
-        name: result.user.displayName,
-        email: result.user.email
-      })
-
-      console.log(result.user);
-    }).catch((error) => {
-      console.log(error);
-    });
   }
 
   login() {
@@ -52,7 +57,7 @@ export class AuthPage {
             <ion-title>IonicBeer Beta</ion-title>
           </ion-toolbar>
         </ion-header>
-        
+
         <ion-content>
 
           <div id='imageBlock'>

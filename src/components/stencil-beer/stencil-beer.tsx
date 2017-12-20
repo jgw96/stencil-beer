@@ -47,6 +47,16 @@ export class StencilBeer {
             component='bar-page'
           />
 
+          <stencil-route 
+            url='/main/users'
+            component='users-page'
+          />
+
+          <stencil-route 
+            url='/main/users/:user'
+            component='user-profile'
+          />
+
           <stencil-route
             url='/main/bars/directions/:address'
             component='bar-directions'

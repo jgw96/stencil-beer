@@ -1,4 +1,6 @@
-import { Component } from '@stencil/core';
+import { Component, Prop } from '@stencil/core';
+import { ActionSheetController } from '@ionic/core';
+import { ActiveRouter } from '@stencil/router';
 
 
 @Component({
@@ -7,6 +9,34 @@ import { Component } from '@stencil/core';
 })
 export class ProfileHeader {
 
+  @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
+  @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
+
+  openActionSheet() {
+    console.log(this.activeRouter.get());
+    this.actionCtrl.create({
+      title: 'Users',
+      buttons: [
+        {
+          text: 'My Profile',
+          icon: 'person',
+          handler: () => {
+            this.activeRouter.get().history.push('/main/profile', {});
+          }
+        },
+        {
+          text: 'All Users',
+          icon: 'people',
+          handler: () => {
+            this.activeRouter.get().history.push('/main/users', {});
+          }
+        }
+      ]
+    }).then((actionSheet) => {
+      actionSheet.present();
+    })
+  }
+
   render() {
     return (
       <ion-header md-height="96px">
@@ -14,11 +44,9 @@ export class ProfileHeader {
           <ion-title>IonicBeer Beta</ion-title>
 
           <ion-buttons slot='end'>
-            <stencil-route-link url='/main/profile'>
-              <ion-button fill='clear' icon-only>
-                <ion-icon name='person'></ion-icon>
-              </ion-button>
-            </stencil-route-link>
+            <ion-button fill='clear' onClick={() => this.openActionSheet()} icon-only>
+              <ion-icon name='person'></ion-icon>
+            </ion-button>
           </ion-buttons>
         </ion-toolbar>
       </ion-header>

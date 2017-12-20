@@ -11,34 +11,34 @@ import '@ionic/core';
 import 'st-img';
 
 import {
-  RouterHistory,
+  MatchResults,
 } from '@stencil/router';
 
 import {
-  BeerPage as BeerPage
-} from './components/beer-page/beer-page';
+  UserProfile as UserProfile
+} from './components/user-profile/user-profile';
 
 declare global {
-  interface HTMLBeerPageElement extends BeerPage, HTMLElement {
+  interface HTMLUserProfileElement extends UserProfile, HTMLElement {
   }
-  var HTMLBeerPageElement: {
-    prototype: HTMLBeerPageElement;
-    new (): HTMLBeerPageElement;
+  var HTMLUserProfileElement: {
+    prototype: HTMLUserProfileElement;
+    new (): HTMLUserProfileElement;
   };
   interface HTMLElementTagNameMap {
-    "beer-page": HTMLBeerPageElement;
+    "user-profile": HTMLUserProfileElement;
   }
   interface ElementTagNameMap {
-    "beer-page": HTMLBeerPageElement;
+    "user-profile": HTMLUserProfileElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "beer-page": JSXElements.BeerPageAttributes;
+      "user-profile": JSXElements.UserProfileAttributes;
     }
   }
   namespace JSXElements {
-    export interface BeerPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+    export interface UserProfileAttributes extends HTMLAttributes {
+      match?: MatchResults;
     }
   }
 }
