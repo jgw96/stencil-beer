@@ -9,7 +9,8 @@ exports.config = {
     { components: ['favorites-page'] },
     { components: ['bar-directions'] },
     { components: ['users-page', 'users-list'] },
-    { components: ['user-profile'] }
+    { components: ['user-profile'] },
+    { components: ['share-button'] }
   ],
   collections: [
     { name: '@stencil/router' },

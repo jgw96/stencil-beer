@@ -10,32 +10,67 @@ import '@ionic/core';
 
 import 'st-img';
 
+import {
+  Bar,
+  Beer,
+} from './global/interfaces';
 
 import {
-  UsersList as UsersList
-} from './components/users-list/users-list';
+  barList as BarList
+} from './components/bar-list/bar-list';
 
 declare global {
-  interface HTMLUsersListElement extends UsersList, HTMLElement {
+  interface HTMLBarListElement extends BarList, HTMLElement {
   }
-  var HTMLUsersListElement: {
-    prototype: HTMLUsersListElement;
-    new (): HTMLUsersListElement;
+  var HTMLBarListElement: {
+    prototype: HTMLBarListElement;
+    new (): HTMLBarListElement;
   };
   interface HTMLElementTagNameMap {
-    "users-list": HTMLUsersListElement;
+    "bar-list": HTMLBarListElement;
   }
   interface ElementTagNameMap {
-    "users-list": HTMLUsersListElement;
+    "bar-list": HTMLBarListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "users-list": JSXElements.UsersListAttributes;
+      "bar-list": JSXElements.BarListAttributes;
     }
   }
   namespace JSXElements {
-    export interface UsersListAttributes extends HTMLAttributes {
-      users?: any[];
+    export interface BarListAttributes extends HTMLAttributes {
+      bars?: Array<Bar>;
+    }
+  }
+}
+
+
+import {
+  BeerItem as BeerItem
+} from './components/beer-item/beer-item';
+
+declare global {
+  interface HTMLBeerItemElement extends BeerItem, HTMLElement {
+  }
+  var HTMLBeerItemElement: {
+    prototype: HTMLBeerItemElement;
+    new (): HTMLBeerItemElement;
+  };
+  interface HTMLElementTagNameMap {
+    "beer-item": HTMLBeerItemElement;
+  }
+  interface ElementTagNameMap {
+    "beer-item": HTMLBeerItemElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "beer-item": JSXElements.BeerItemAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface BeerItemAttributes extends HTMLAttributes {
+      beer?: Beer;
+      fave?: Boolean;
     }
   }
 }

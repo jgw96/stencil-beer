@@ -12,22 +12,6 @@ export class barList {
   @Prop() bars: Array<Bar>;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
-  share(bar: Bar) {
-    if ((navigator as any).share) {
-      (navigator as any).share({
-        title: document.title,
-        text: "Check out this cool bar",
-        url: `${window.location.href}/detail/${bar.id}`
-      }).then(() => {
-        this.toastCtrl.create({ message: 'bar shared', duration: 1000 }).then((toast) => {
-          toast.present();
-        })
-      })
-    } else {
-      window.open(`http://twitter.com/share?text=Check out this cool bar&url=window.location.href}/detail/${bar.id}`);
-    }
-  }
-
   render() {
     if (this.bars) {
       return (
@@ -45,9 +29,7 @@ export class barList {
                       <ion-button color='primary' fill='clear'> Directions </ion-button>
                     </stencil-route-link>
 
-                    <ion-button onClick={() => this.share(bar)} fill='clear' icon-only>
-                      <ion-icon color='primary' name='share'></ion-icon>
-                    </ion-button>
+                    <share-button beer={bar}></share-button>
 
                   </ion-buttons>
                 </ion-label>

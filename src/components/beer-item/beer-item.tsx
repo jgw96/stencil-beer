@@ -64,17 +64,6 @@ export class BeerItem {
     )
   }
 
-  async share(beer) {
-    await (navigator as any).share({
-      title: document.title,
-      text: "Check out this cool beer",
-      url: `${window.location.href}/detail/${beer.id}`
-    })
-
-    const toast = await this.toastCtrl.create({ message: 'beer shared', duration: 1000 });
-    toast.present();
-  }
-
   async save(beer: Beer) {
     saveBeer(beer);
 
@@ -121,9 +110,7 @@ export class BeerItem {
               </ion-button>
             }
 
-            <ion-button onClick={() => this.share(this.beer)} fill='clear' icon-only>
-              <ion-icon color='primary' name='share'></ion-icon>
-            </ion-button>
+            <share-button beer={this.beer}></share-button>
           </ion-buttons>
         </ion-card-content>
       </ion-card>
