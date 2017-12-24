@@ -26,23 +26,4 @@ beer-item {
   ion-card {
     opacity: 0;
   }
-
-  .animateIn {
-    animation-duration: .3s;
-    animation-name: slidein;
-    animation-timing-function: cubic-bezier(.36,.66,.04,1);
-    animation-fill-mode: forwards;
-  }
-
-  @keyframes slidein {
-    from {
-      transform: translateY(20px);
-      opacity: 0;
-    }
-  
-    to {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
 }

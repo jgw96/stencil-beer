@@ -51,8 +51,17 @@ export class BeerItem {
     }
   }
 
-  handleAnimation(element: Element) {
-    element.classList.add('animateIn');
+  handleAnimation(element: any) {
+    element.animate(
+      [
+        { transform: 'translateY(20px)', opacity: 0 },
+        { transform: 'translateY(0)', opacity: 1 }
+      ], {
+        duration: 300,
+        easing: 'cubic-bezier(.36,.66,.04,1)',
+        fill: 'forwards'
+      }
+    )
   }
 
   async share(beer) {
