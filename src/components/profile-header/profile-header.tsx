@@ -5,7 +5,8 @@ import { ActiveRouter } from '@stencil/router';
 
 @Component({
   tag: 'profile-header',
-  styleUrl: 'profile-header.scss'
+  styleUrl: 'profile-header.scss',
+  scoped: true
 })
 export class ProfileHeader {
 
