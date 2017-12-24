@@ -10,35 +10,32 @@ import '@ionic/core';
 
 import 'st-img';
 
-import {
-  MatchResults,
-} from '@stencil/router';
 
 import {
-  UserProfile as UserProfile
-} from './components/user-profile/user-profile';
+  UsersPage as UsersPage
+} from './components/users-page/users-page';
 
 declare global {
-  interface HTMLUserProfileElement extends UserProfile, HTMLElement {
+  interface HTMLUsersPageElement extends UsersPage, HTMLElement {
   }
-  var HTMLUserProfileElement: {
-    prototype: HTMLUserProfileElement;
-    new (): HTMLUserProfileElement;
+  var HTMLUsersPageElement: {
+    prototype: HTMLUsersPageElement;
+    new (): HTMLUsersPageElement;
   };
   interface HTMLElementTagNameMap {
-    "user-profile": HTMLUserProfileElement;
+    "users-page": HTMLUsersPageElement;
   }
   interface ElementTagNameMap {
-    "user-profile": HTMLUserProfileElement;
+    "users-page": HTMLUsersPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "user-profile": JSXElements.UserProfileAttributes;
+      "users-page": JSXElements.UsersPageAttributes;
     }
   }
   namespace JSXElements {
-    export interface UserProfileAttributes extends HTMLAttributes {
-      match?: MatchResults;
+    export interface UsersPageAttributes extends HTMLAttributes {
+      
     }
   }
 }
