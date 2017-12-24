@@ -17,7 +17,9 @@ export class UserProfile {
   async componentDidLoad() {
     const allData = await getCertainUser(this.match.params.user);
 
-    this.beers = allData[1];
+    if (allData[1].length > 0) {
+      this.beers = allData[1];
+    }
     console.log(this.beers);
     this.user = allData[0];
   }
@@ -34,9 +36,16 @@ export class UserProfile {
             </div>
 
             <h2>{this.user.name}</h2>
-            
-            <h1>Favorite Beers</h1>
-            <beer-list beers={this.beers} fave={false}></beer-list>
+
+            {this.beers ?
+              <h1>Favorite Beers</h1>
+              : null
+            }
+
+            {this.beers ?
+              <beer-list beers={this.beers} fave={false}></beer-list>
+              : null
+            }
 
           </ion-content>
         </ion-page>
