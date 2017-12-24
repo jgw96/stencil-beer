@@ -56,13 +56,13 @@ export class BeerDetail {
 
       return (
         <ion-page class='show-page'>
-          
+
           <profile-header></profile-header>
-          
+
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
-                <st-img src={this.beer.labels ? this.beer.labels.medium : '../../images/beers.jpeg'} alt={this.beer.name}></st-img>
+                <st-img src={this.beer.labels ? this.beer.labels.medium : '../../../images/beers.jpeg'} alt={this.beer.name}></st-img>
               </div>
               <h1>{this.beer.name}</h1>
 
