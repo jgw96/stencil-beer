@@ -35,6 +35,12 @@ export class UsersList {
           })}
         </ion-list>
       )
+    } else {
+      return (
+        <ion-list>
+          <div id='fake-card'></div>
+        </ion-list>
+      )
     }
   }
 }

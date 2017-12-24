@@ -12,30 +12,30 @@ import 'st-img';
 
 
 import {
-  UsersPage as UsersPage
-} from './components/users-page/users-page';
+  UsersList as UsersList
+} from './components/users-list/users-list';
 
 declare global {
-  interface HTMLUsersPageElement extends UsersPage, HTMLElement {
+  interface HTMLUsersListElement extends UsersList, HTMLElement {
   }
-  var HTMLUsersPageElement: {
-    prototype: HTMLUsersPageElement;
-    new (): HTMLUsersPageElement;
+  var HTMLUsersListElement: {
+    prototype: HTMLUsersListElement;
+    new (): HTMLUsersListElement;
   };
   interface HTMLElementTagNameMap {
-    "users-page": HTMLUsersPageElement;
+    "users-list": HTMLUsersListElement;
   }
   interface ElementTagNameMap {
-    "users-page": HTMLUsersPageElement;
+    "users-list": HTMLUsersListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "users-page": JSXElements.UsersPageAttributes;
+      "users-list": JSXElements.UsersListAttributes;
     }
   }
   namespace JSXElements {
-    export interface UsersPageAttributes extends HTMLAttributes {
-      
+    export interface UsersListAttributes extends HTMLAttributes {
+      users?: any[];
     }
   }
 }
