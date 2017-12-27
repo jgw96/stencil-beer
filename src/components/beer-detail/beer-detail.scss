@@ -1,4 +1,10 @@
 beer-detail {
+  display: block;
+  animation-duration: 280ms;
+  animation-name: slidein;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-out;
+  opacity: 0;
 
   ion-scroll {
     padding: 1em;

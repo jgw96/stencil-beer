@@ -2,3 +2,13 @@
   --theme-primary: #222;
   --theme-secondary: black;
 }
+
+@keyframes slidein {
+  from {
+    opacity: 0.01;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

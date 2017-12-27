@@ -1,7 +1,5 @@
 import { Component, Prop } from '@stencil/core';
-import { ToastController } from '@ionic/core';
-
-import { Beer } from '../../global/interfaces';
+import { AlertController } from '@ionic/core';
 
 
 @Component({
@@ -10,18 +8,45 @@ import { Beer } from '../../global/interfaces';
 })
 export class ShareButton {
 
-  @Prop() beer: Beer;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop() beer: any;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
 
   async share(beer) {
-    await (navigator as any).share({
-      title: document.title,
-      text: "Check out this cool beer",
-      url: `${window.location.href}/detail/${beer.id}`
-    })
+    const alert = await this.alertCtrl.create({
+      title: 'Share',
+      message: 'Message to Share',
+      inputs: [
+        {
+          name: 'shareText',
+          id: 'shareText',
+          placeholder: 'Check out this cool beer!'
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          cssClass: 'secondary',
+          handler: () => {
+            console.log('Confirm Cancel')
+          }
+        }, {
+          text: 'Ok',
+          handler: (data) => {
+            console.log('Confirm Ok', data);
+            const shareText = (document.querySelector('#shareText') as HTMLInputElement).value;
 
-    const toast = await this.toastCtrl.create({ message: 'beer shared', duration: 1000 });
-    toast.present();
+            (navigator as any).share({
+              title: document.title,
+              text: `${shareText}`,
+              url: `${window.location.href}/detail/${beer.id}`
+            });
+          }
+        }
+      ]
+    });
+
+    alert.present();
   }
 
   render() {
