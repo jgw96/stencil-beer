@@ -50,6 +50,16 @@ export class UserProfile {
           </ion-content>
         </ion-page>
       );
+    } else {
+      return (
+        <ion-page class='show-page'>
+          <profile-header></profile-header>
+
+          <ion-content>
+            <div id='fake-card'></div>
+          </ion-content>
+        </ion-page>
+      )
     }
   }
 }

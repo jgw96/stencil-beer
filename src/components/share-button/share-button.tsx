@@ -12,6 +12,14 @@ export class ShareButton {
   @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
 
   async share(beer) {
+    if ((navigator as any).share) {
+      this.handleNativeShare(beer);
+    } else {
+      window.open(`http://twitter.com/share?text=Check this out!&url=${window.location.href}/detail/${beer.id}`)
+    }
+  }
+
+  async handleNativeShare(beer) {
     const alert = await this.alertCtrl.create({
       title: 'Share',
       message: 'Message to Share',

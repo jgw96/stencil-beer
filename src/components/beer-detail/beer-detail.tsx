@@ -84,6 +84,9 @@ export class BeerDetail {
     } else {
       return (
         <ion-page class='show-page'>
+
+          <profile-header></profile-header>
+
           <ion-content>
             <main>
               <div id='fake-card'></div>

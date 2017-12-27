@@ -11,7 +11,6 @@ import { Beer } from '../../global/interfaces';
 export class BeerPage {
 
   page: number;
-  worker: any;
 
   @State() beers: Array<Beer>;
 
@@ -22,7 +21,6 @@ export class BeerPage {
   componentDidLoad() {
     if (!this.isServer && this.beers === undefined) {
       console.log(this.isServer);
-      this.worker = new (window as any).Worker('../workers/worker-request.js');
 
       this.page = 1;
       try {
@@ -34,27 +32,21 @@ export class BeerPage {
     }
   }
 
-  componentDidUnload() {
-    this.worker.terminate();
-  }
-
   async showErrorToast() {
     const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
     toast.present();
   }
 
-  fetchBeers(page: number) {
-    this.beers = null;
-
+  async fetchBeers(page: number) {
     const key = 'c0b90d19385d7dabee991e89c24ea711';
     const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
 
-    this.worker.postMessage(url);
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
 
-    this.worker.onmessage = (e) => {
-      console.log(e);
-      this.beers = e.data.data;
-    }
+    this.beers = null;
+    this.beers = data.data;
   }
 
   nextPage() {
@@ -69,21 +61,19 @@ export class BeerPage {
     }
   }
 
-  doSearch(ev) {
+  async doSearch(ev) {
     this.beers = null;
 
     const key = 'c0b90d19385d7dabee991e89c24ea711';
     const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`;
 
-    this.worker.postMessage(url);
-
-    this.worker.onmessage = (e) => {
-      this.beers = e.data.data;
-    }
+    const response = await fetch(url);
+    const data = await response.json();
+    this.beers = data.data;
   }
 
   goToFavorites() {
-    this.history.push('/main/beers/favorites', {});
+    this.history.push('/beers/favorites', {});
   }
 
   @Listen('ionInput')
@@ -138,11 +128,11 @@ export class BeerPage {
         const key = 'c0b90d19385d7dabee991e89c24ea711';
         const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${data[0]}&type=beer`;
 
-        this.worker.postMessage(url);
-
-        this.worker.onmessage = (e) => {
-          this.beers = e.data.data;
-        }
+        fetch(url).then((response) => {
+          return response.json()
+        }).then((data) => {
+          this.beers = data.data;
+        })
       })
 
     }
@@ -151,9 +141,9 @@ export class BeerPage {
   render() {
     return (
       <ion-page class='show-page'>
-        
+
         <profile-header></profile-header>
-        
+
         <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
 

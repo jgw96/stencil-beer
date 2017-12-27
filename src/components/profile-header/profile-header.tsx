@@ -22,14 +22,14 @@ export class ProfileHeader {
           text: 'My Profile',
           icon: 'person',
           handler: () => {
-            this.activeRouter.get().history.push('/main/profile', {});
+            this.activeRouter.get().history.push('/profile', {});
           }
         },
         {
           text: 'All Users',
           icon: 'people',
           handler: () => {
-            this.activeRouter.get().history.push('/main/users', {});
+            this.activeRouter.get().history.push('/users', {});
           }
         }
       ]

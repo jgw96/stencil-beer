@@ -20,50 +20,6 @@ export class BeerItem {
 
   @Event() beerDeleted: EventEmitter;
 
-  io: IntersectionObserver;
-
-  componentDidLoad() {
-    this.addIntersectionObserver();
-  }
-
-  addIntersectionObserver() {
-    if ('IntersectionObserver' in window) {
-      this.io = new IntersectionObserver((data: IntersectionObserverEntry[]) => {
-        // because there will only ever be one instance
-        // of the element we are observing
-        // we can just use data[0]
-        if (data[0].isIntersecting) {
-          this.handleAnimation(data[0].target);
-          this.removeIntersectionObserver();
-        }
-      }, {
-          threshold: [0.2]
-        })
-
-      this.io.observe(this.el.querySelector('ion-card'));
-    }
-  }
-
-  removeIntersectionObserver() {
-    if (this.io) {
-      this.io.disconnect();
-      this.io = null;
-    }
-  }
-
-  handleAnimation(element: any) {
-    element.animate(
-      [
-        { transform: 'translateY(20px)', opacity: 0 },
-        { transform: 'translateY(0)', opacity: 1 }
-      ], {
-        duration: 300,
-        easing: 'cubic-bezier(.36,.66,.04,1)',
-        fill: 'forwards'
-      }
-    )
-  }
-
   async save(beer: Beer) {
     saveBeer(beer);
 
@@ -94,7 +50,7 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <stencil-route-link url={`/main/beers/detail/${this.beer.id}`}>
+            <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
               <ion-button id='detailButton' color='primary' fill='clear'>
                 Detail
             </ion-button>

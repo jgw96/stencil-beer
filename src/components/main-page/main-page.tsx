@@ -30,10 +30,10 @@ export class MainPage {
     return (
       <ion-page class='show-page'>
         <profile-header></profile-header>
-        
+
         <ion-content>
           <main>
-            <stencil-route-link url="/main/beers">
+            <stencil-route-link url="/beers">
               <div id='first-card' class='card'>
                 <img src={this.firstImageUrl} alt='beer' />
                 <div class="card-title">Beers</div>
@@ -41,7 +41,7 @@ export class MainPage {
               </div>
             </stencil-route-link>
 
-            <stencil-route-link url="/main/bars">
+            <stencil-route-link url="/bars">
               <div class='card'>
                 <img src={this.secondImageUrl} alt='bar' />
                 <div class="card-title">Bars</div>

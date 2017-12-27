@@ -3,7 +3,7 @@
     "public": "www",
     "rewrites": [
       {
-        "source": "/googlePlaces", 
+        "source": "/googlePlaces",
         "function": "googlePlaces"
       },
       {
@@ -38,7 +38,7 @@
         "headers": [
           {
             "key": "Link",
-            "value": "</build/app/app.dwef0gob.js>;rel=preload;as=script,</build/app/rtoux5bg.js>;rel=preload;as=script,</build/app/ndcx1naq.js>;rel=preload;as=script,</build/app/lunprpvl.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script"
+            "value": "</build/app.css>;rel=preload;as=style,</build/app/app.qqcm3h1j.js>;rel=preload;as=script,</build/app/pxisnwof.js>;rel=preload;as=script,</build/app/ndcx1naq.js>;rel=preload;as=script,</build/app/lunprpvl.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script"
           }
         ]
      }

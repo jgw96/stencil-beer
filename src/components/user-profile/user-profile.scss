@@ -1,10 +1,4 @@
 user-profile {
-  display: block;
-  animation-duration: 280ms;
-  animation-name: slidein;
-  animation-fill-mode: forwards;
-  animation-timing-function: ease-out;
-  opacity: 0;
 
   ion-page {
     background: #ececec !important;
@@ -33,5 +27,14 @@ user-profile {
 
   h2 {
     text-align: center;
+  }
+
+  #fake-card {
+    margin: 1.5em;
+    height: 600px;
+    background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0);
+    background-repeat: repeat-y;
+    background-size: 100% 80px, 100% 80px, 20% 80px;
+    background-position: 10px 0, 10px 30px;
   }
 }

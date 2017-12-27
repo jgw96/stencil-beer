@@ -3,7 +3,7 @@ import { RouterHistory } from '@stencil/router';
 
 import { ToastController } from '@ionic/core';
 
-declare const firebase: any;
+declare let firebase: any;
 
 @Component({
   tag: 'profile-page',

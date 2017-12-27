@@ -18,47 +18,48 @@ export class StencilBeer {
           />
 
           <stencil-route
-            url='/main'
+            url={['/main', '/main/']}
             component='main-page'
           />
 
           <stencil-route
-            url='/main/profile'
+            url={['/profile', '/profile/']}
             component='profile-page'
           />
 
           <stencil-route
-            url='/main/beers'
+            url={['/beers', '/beers/']}
             component='beer-page'
           />
 
           <stencil-route
-            url='/main/beers/favorites'
+            url={['/beers/favorites', '/beers/favorites/']}
             component='favorites-page'
           />
 
           <stencil-route
-            url='/main/beers/detail/:id'
+            url={'/beers/detail/:id'}
             component='beer-detail'
           />
 
           <stencil-route
-            url='/main/bars'
+            url={['/bars', '/bars/']}
             component='bar-page'
           />
 
-          <stencil-route 
-            url='/main/users'
+          <stencil-route
+            url={['/users', '/users/']}
             component='users-page'
+            exact={true}
           />
 
-          <stencil-route 
-            url='/main/users/:user'
+          <stencil-route
+            url={'/users/:user'}
             component='user-profile'
           />
 
           <stencil-route
-            url='/main/bars/directions/:address'
+            url={'/bars/directions/:address'}
             component='bar-directions'
           />
         </stencil-router>

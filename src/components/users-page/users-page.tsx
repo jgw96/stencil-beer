@@ -1,8 +1,8 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Prop } from '@stencil/core';
 
 import { getUsers } from '../../global/save-service';
 
-declare const firebase: any;
+declare let firebase: any;
 
 @Component({
   tag: 'users-page',
@@ -11,22 +11,25 @@ declare const firebase: any;
 export class UsersPage {
 
   @State() users: any[];
+  @Prop({ context: 'isPrerender' }) private isPrerender: boolean;
 
   componentDidLoad() {
-    const tempUsers = [];
+    if (!this.isPrerender) {
+      const tempUsers = [];
 
-    const currentUser = firebase.auth().currentUser;
+      const currentUser = firebase.auth().currentUser;
 
-    getUsers().then((querySnapshot) => {
-      querySnapshot.forEach((doc) => {
-        if (doc.data().email !== currentUser.email) {
-          tempUsers.push(doc.data());
-        }
+      getUsers().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          if (doc.data().email !== currentUser.email) {
+            tempUsers.push(doc.data());
+          }
+        })
+
+        this.users = tempUsers;
+        console.log(this.users);
       })
-
-      this.users = tempUsers;
-      console.log(this.users);
-    })
+    }
   }
 
   render() {

@@ -24,7 +24,7 @@ export class UsersList {
                 </ion-label>
 
                 <ion-buttons>
-                  <stencil-route-link url={`/main/users/${user.name}`}>
+                  <stencil-route-link url={`/users/${user.name}`}>
                     <ion-button color='primary' fill='clear'>
                       See Profile
                     </ion-button>
