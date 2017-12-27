@@ -3,6 +3,8 @@ import { RouterHistory } from '@stencil/router';
 
 import { ToastController } from '@ionic/core';
 
+import { notify } from '../../global/notify-service';
+
 declare let firebase: any;
 
 @Component({
@@ -35,6 +37,10 @@ export class ProfilePage {
     toast.present();
   }
 
+  notications() {
+    notify();
+  }
+
   render() {
     return (
       <ion-page class='show-page'>
@@ -51,6 +57,8 @@ export class ProfilePage {
 
           <h2>{this.user.displayName}</h2>
           <p>{this.user.email}</p>
+
+          <ion-button onClick={() => this.notications()} expand='block' color='primary'>Get Notifications</ion-button>
 
           <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
         </ion-content>

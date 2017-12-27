@@ -1,7 +1,7 @@
 import { Component, Prop, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
-import { getCertainUser } from '../../global/save-service';
+import { getFullUser } from '../../global/save-service';
 
 
 @Component({
@@ -15,7 +15,7 @@ export class UserProfile {
   @State() user: any;
 
   async componentDidLoad() {
-    const allData = await getCertainUser(this.match.params.user);
+    const allData = await getFullUser(this.match.params.user);
 
     if (allData[1].length > 0) {
       this.beers = allData[1];

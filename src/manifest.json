@@ -9,5 +9,6 @@
     "type": "image/png"
   }],
   "background_color": "#222",
-  "theme_color": "#222"
+  "theme_color": "#222",
+  "gcm_sender_id": "103953800507"
 }

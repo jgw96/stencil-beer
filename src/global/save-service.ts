@@ -2,34 +2,38 @@ import { Beer } from './interfaces';
 
 declare const firebase: any;
 
-const db = firebase.firestore();
-const user = firebase.auth().currentUser;
+// const firebase.firestore() = firebase.firestore();
+//const user = firebase.auth().currentUser;
 
 export function saveBeer(value: Beer) {
-  db.collection('savedBeers').add({
-    author: user.email,
+  firebase.firestore().collection('savedBeers').add({
+    author: firebase.auth().currentUser.email,
     beer: value
   });
 }
 
 export function getSavedBeers() {
-  return db.collection('savedBeers').where('author', '==', user.email).get();
+  return firebase.firestore().collection('savedBeers').where('author', '==', firebase.auth().currentUser.email).get();
 }
 
 export function getUserBeers(email) {
-  return db.collection('savedBeers').where('author', '==', email).get();
+  return firebase.firestore().collection('savedBeers').where('author', '==', email).get();
 }
 
 export function getUsers() {
-  return db.collection('users').get();
+  return firebase.firestore().collection('users').get();
 }
 
-export async function getCertainUser(name) {
+export function getCertainUser(email) {
+  return firebase.firestore().collection('users').where('email', '==', email).get();
+}
+
+export async function getFullUser(name) {
   console.log(name);
   const fullUser = [];
   let userEmail = null;
 
-  const doc = await db.collection('users').where('name', '==', name).get();
+  const doc = await firebase.firestore().collection('users').where('name', '==', name).get();
 
   await doc.forEach((user) => {
     console.log(user);
@@ -52,9 +56,9 @@ export async function getCertainUser(name) {
 }
 
 export async function deleteBeer(passedBeer: Beer) {
-  const doc = await db.collection('savedBeers')
-    .where('beer.name', '==', passedBeer.name)
-    .where('author', '==', user.email)
+  const doc = await firebase.firestore().collection('savedBeers')
+    .where('beer.name', '==', passedBeer)
+    .where('author', '==', firebase.auth().currentUser.email)
     .get();
 
   doc.forEach((beer) => {

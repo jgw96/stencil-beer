@@ -1,7 +1,10 @@
 import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
+import { getCertainUser } from '../../global/save-service';
+
 declare let firebase: any;
+
 
 @Component({
   tag: 'auth-page',
@@ -10,38 +13,33 @@ declare let firebase: any;
 export class AuthPage {
 
   @Prop() history: RouterHistory;
-  @Prop({ context: 'isPrerender' }) private isPrerender: boolean;
 
-  constructor() {
-    if (!this.isPrerender) {
-      const db = firebase.firestore();
+  componentWillLoad() {
+    console.log(firebase);
 
-      firebase.auth().getRedirectResult().then((result) => {
-        if (result.credential) {
-          console.log(result.credential.accessToken);
-        }
-
-        db.collection('users').add({
-          name: result.user.displayName,
-          email: result.user.email,
-          photo: result.user.photoURL
-        })
-
-        console.log(result.user);
-      }).catch((error) => {
-        console.log(error);
-      });
-    }
+    firebase.auth().getRedirectResult().then((result) => {
+      console.log(result.user);
+    }).catch((error) => {
+      console.log(error);
+    });
   }
 
   componentDidLoad() {
-    if (!this.isPrerender) {
-      console.log('called');
+    console.log('called');
+    const db = firebase.firestore();
 
-      firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
-          // User is signed in.
-          console.log(user);
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+
+       getCertainUser(user.email).then((querySnapshot) => {
+          if (querySnapshot.empty) {
+            db.collection('users').add({
+              name: user.displayName,
+              email: user.email,
+              photo: user.photoURL
+            })
+          }
+        })
 
           this.history.replace('/main', {});
         };

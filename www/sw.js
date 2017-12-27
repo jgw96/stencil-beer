@@ -1,23 +1,12 @@
 importScripts('workbox-sw.prod.v2.1.2.js');
 
-/**
- * DO NOT EDIT THE FILE MANIFEST ENTRY
- *
- * The method precache() does the following:
- * 1. Cache URLs in the manifest to a local cache.
- * 2. When a network request is made for any of these URLs the response
- *    will ALWAYS comes from the cache, NEVER the network.
- * 3. When the service worker changes ONLY assets with a revision change are
- *    updated, old cache entries are left as is.
- *
- * By changing the file manifest manually, your users may end up not receiving
- * new versions of files because the revision hasn't changed.
- *
- * Please use workbox-build or some other tool / approach to generate the file
- * manifest which accounts for changes to local files and update the revision
- * accordingly.
- */
-const fileManifest = [
+const workboxSW = new self.WorkboxSW({
+  "skipWaiting": true,
+  "clientsClaim": true
+});
+
+
+workboxSW.precache([
   {
     "url": "assets/icon/favicon.ico",
     "revision": "d2f619d796fbe8bed6200da2691aa5b6"
@@ -191,20 +180,20 @@ const fileManifest = [
     "revision": "e6a18395f5a4461d7dc734ece3728965"
   },
   {
-    "url": "build/app/app.0waxecf6.js",
-    "revision": "ae3ff10fb5993f3a3f6439adbb8033e0"
+    "url": "build/app/ao6t7t6f.js",
+    "revision": "bbd367c3ad4710bc685d4607b482ee15"
   },
   {
-    "url": "build/app/app.dwef0gob.js",
-    "revision": "09892adb5ee96cb91268c3c3267d925b"
+    "url": "build/app/app.3tbthb3c.js",
+    "revision": "91653a40322bf9260ab0865b4e81bf8a"
   },
   {
     "url": "build/app/app.global.js",
     "revision": "864ebe2e5c3bda37daf1508c525c08e0"
   },
   {
-    "url": "build/app/app.qqcm3h1j.js",
-    "revision": "ffaaccb9aeb05e753b3aaadb20d1403d"
+    "url": "build/app/app.innrrwjq.js",
+    "revision": "f6efa75f411471ccff845ffe7d12e9d8"
   },
   {
     "url": "build/app/app.registry.json",
@@ -221,6 +210,10 @@ const fileManifest = [
   {
     "url": "build/app/axiskrin.js",
     "revision": "71cfe321bf2fade5c6ef336ae10f2174"
+  },
+  {
+    "url": "build/app/az6nb5hv.js",
+    "revision": "b91649ca76c37818855777a050a99fef"
   },
   {
     "url": "build/app/azbru2hc.js",
@@ -307,6 +300,10 @@ const fileManifest = [
     "revision": "a094da53b0393d4d61fe55fa7832ee4f"
   },
   {
+    "url": "build/app/eelap5lx.js",
+    "revision": "a9df061ac95090639add0616ca2a79fa"
+  },
+  {
     "url": "build/app/egrpgdxe.js",
     "revision": "ec5ecd137f3fda83cc3949bdcf611d48"
   },
@@ -343,6 +340,10 @@ const fileManifest = [
     "revision": "63bad92d5261c341ebe2e294bf560ec9"
   },
   {
+    "url": "build/app/figyrdvf.js",
+    "revision": "aca710facbc17aaf9e1403ab2fcf9833"
+  },
+  {
     "url": "build/app/fk8vlwj8.js",
     "revision": "7c700767cc09da1f599c1b32e3abfac8"
   },
@@ -353,6 +354,10 @@ const fileManifest = [
   {
     "url": "build/app/fm9tufhz.js",
     "revision": "5519fd38b6e460f5349bbcc4aa8ad983"
+  },
+  {
+    "url": "build/app/fqedlnmy.js",
+    "revision": "30ef55084851f851f4c2fdab681e769b"
   },
   {
     "url": "build/app/fuaxrhrm.js",
@@ -515,6 +520,10 @@ const fileManifest = [
     "revision": "f17375fe9dab939aec4adc42eead5865"
   },
   {
+    "url": "build/app/nhr5xo3k.js",
+    "revision": "e962e41e8711579500c4b93aefae33fb"
+  },
+  {
     "url": "build/app/nk9o76yg.js",
     "revision": "b7c263c28a847c7121640cec68a60fad"
   },
@@ -571,6 +580,10 @@ const fileManifest = [
     "revision": "b92e6b90c01261870cf7bf4161c5c859"
   },
   {
+    "url": "build/app/pjac83oy.js",
+    "revision": "87e1e77c71654686311f7bf6a4127c8c"
+  },
+  {
     "url": "build/app/psbze3vm.js",
     "revision": "e6857b14486510d4a503edeb1aaef008"
   },
@@ -621,6 +634,10 @@ const fileManifest = [
   {
     "url": "build/app/rkifqqn2.js",
     "revision": "6606c9062b5c2ca5abbb406f457494f8"
+  },
+  {
+    "url": "build/app/rwth2lgh.js",
+    "revision": "6015d66c0dea703d3d5c6200663d12f0"
   },
   {
     "url": "build/app/rxjhmtms.js",
@@ -830,10 +847,4 @@ const fileManifest = [
     "url": "workers/worker-request.js",
     "revision": "be88a78b15df50f1c736e9bdd791ab69"
   }
-];
-
-const workboxSW = new self.WorkboxSW({
-  "skipWaiting": true,
-  "clientsClaim": true
-});
-workboxSW.precache(fileManifest);
+]);
