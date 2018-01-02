@@ -5,6 +5,23 @@ const workboxSW = new self.WorkboxSW({
   "clientsClaim": true
 });
 
+/*
+  This is our code to handle push events.
+*/
+self.addEventListener('push', (event) => {
+  console.log('[Service Worker] Push Received.');
+  console.log(`[Service Worker] Push had this data: "${event.data.text()}"`);
+
+  const title = 'Push Notification';
+  const options = {
+    body: `${event.data.text()}`,
+    icon: 'images/icon.png',
+    badge: 'images/badge.png'
+  };
+
+  event.waitUntil(self.registration.showNotification(title, options));
+});
+
 
 workboxSW.precache([
   {
@@ -17,15 +34,15 @@ workboxSW.precache([
   },
   {
     "url": "assets/worker-request.js",
-    "revision": "be88a78b15df50f1c736e9bdd791ab69"
+    "revision": "06ecbb404b3b5055ad8a5c9fdb120033"
   },
   {
     "url": "bars/index.html",
-    "revision": "0c97e62a11aec8f5fc57525948ced113"
+    "revision": "d009eede289afa1329da3014175a2a97"
   },
   {
     "url": "beers/index.html",
-    "revision": "8e16d52065d71142f677685f81e7e44e"
+    "revision": "62fbe384be2bdd202f3cff5857a7f865"
   },
   {
     "url": "build/app.css",
@@ -33,27 +50,23 @@ workboxSW.precache([
   },
   {
     "url": "build/app.js",
-    "revision": "b1a75e334348be3643a606717c146e5f"
+    "revision": "76058a34487ae3fbd3ed8ff1be229f50"
   },
   {
     "url": "build/app/08pp0bm5.js",
     "revision": "0b7595bd1a1f928f0f768ba3f3efb7d2"
   },
   {
+    "url": "build/app/0flrkeji.js",
+    "revision": "5aeb6b759e811e10f496be3360533c2b"
+  },
+  {
     "url": "build/app/0svyxpfm.js",
     "revision": "1d7f9d59cda98b4fa78225c43bc3def1"
   },
   {
-    "url": "build/app/12qfiwol.js",
-    "revision": "617a7fb064d3f240cafb85378b97bfac"
-  },
-  {
     "url": "build/app/12uiuzxf.js",
     "revision": "3be3a7b9a634633e26110db95a29008c"
-  },
-  {
-    "url": "build/app/1e4y2tae.js",
-    "revision": "a9a3b8ec34b654f46250c22295863cbd"
   },
   {
     "url": "build/app/1oorymuz.js",
@@ -66,6 +79,14 @@ workboxSW.precache([
   {
     "url": "build/app/2ddzatnm.js",
     "revision": "b714277d4c2402de518629ecfc59c0cd"
+  },
+  {
+    "url": "build/app/2tya68ur.js",
+    "revision": "46ab6ec313cceefda5da6141231102eb"
+  },
+  {
+    "url": "build/app/2tya68ur.sc.js",
+    "revision": "73aa809e7ad5d0d82a097f41fdb5d2bd"
   },
   {
     "url": "build/app/2y1qlqzr.js",
@@ -88,16 +109,20 @@ workboxSW.precache([
     "revision": "85273b8c296ee36c99beccb7b9c30202"
   },
   {
-    "url": "build/app/4binqf4t.js",
-    "revision": "ef1395c2238e455052a4d6ab811197ee"
-  },
-  {
     "url": "build/app/4paxhno3.js",
     "revision": "b2a69e27068131fae2d5fa2c02f33ec1"
   },
   {
     "url": "build/app/4r6piqii.js",
     "revision": "382ff105b5f68cf1c1608c5cbfa53488"
+  },
+  {
+    "url": "build/app/4s5vjipl.js",
+    "revision": "6ca5a0a49e40064ef363c64a725d4408"
+  },
+  {
+    "url": "build/app/4s5vjipl.sc.js",
+    "revision": "eda5175d1055ea79f984875df26b4c00"
   },
   {
     "url": "build/app/4xpo7th3.js",
@@ -112,14 +137,6 @@ workboxSW.precache([
     "revision": "d8783a51d88a5fe606e0bd94a40261be"
   },
   {
-    "url": "build/app/5w8ehrat.js",
-    "revision": "d15d589d01b53534e0b0fe7b73aaf76e"
-  },
-  {
-    "url": "build/app/64sivrsv.js",
-    "revision": "31ba38693ba6a68a7d8e134118419411"
-  },
-  {
     "url": "build/app/6h3gn76l.js",
     "revision": "b46ee5986c7fda07d6efbd4caa777cde"
   },
@@ -132,12 +149,12 @@ workboxSW.precache([
     "revision": "7a0ca7ca22dca994af7c4105d6815f95"
   },
   {
-    "url": "build/app/7sosiamy.js",
-    "revision": "228dcd618c41a0e3f2284d17d37186f4"
-  },
-  {
     "url": "build/app/81dmydfb.js",
     "revision": "bf8b46e2a4cd01d6e77207bc06d56ed7"
+  },
+  {
+    "url": "build/app/8enwi2yp.js",
+    "revision": "f3c19bd635ffb598ad571961739c4898"
   },
   {
     "url": "build/app/8jtvzivl.js",
@@ -168,20 +185,12 @@ workboxSW.precache([
     "revision": "a5d8d3e7261b1408449d2d2bca057c10"
   },
   {
-    "url": "build/app/ahghgdyq.js",
-    "revision": "fa903f4ae926aec0a16e61d174ebae14"
-  },
-  {
     "url": "build/app/amekrhmw.js",
     "revision": "cd491effb82d9f9febd1fed339192b28"
   },
   {
     "url": "build/app/anaclevb.js",
     "revision": "e6a18395f5a4461d7dc734ece3728965"
-  },
-  {
-    "url": "build/app/ao6t7t6f.js",
-    "revision": "bbd367c3ad4710bc685d4607b482ee15"
   },
   {
     "url": "build/app/app.3tbthb3c.js",
@@ -197,7 +206,11 @@ workboxSW.precache([
   },
   {
     "url": "build/app/app.registry.json",
-    "revision": "8cc328c8040e0b6a555b33485877f178"
+    "revision": "1d3770e91f0fccfa65789f7c8fd0d77e"
+  },
+  {
+    "url": "build/app/app.vrqlhqdz.js",
+    "revision": "9fa49507d72c88e467d9314bcf5f9385"
   },
   {
     "url": "build/app/aqhym4jj.js",
@@ -210,10 +223,6 @@ workboxSW.precache([
   {
     "url": "build/app/axiskrin.js",
     "revision": "71cfe321bf2fade5c6ef336ae10f2174"
-  },
-  {
-    "url": "build/app/az6nb5hv.js",
-    "revision": "b91649ca76c37818855777a050a99fef"
   },
   {
     "url": "build/app/azbru2hc.js",
@@ -256,6 +265,10 @@ workboxSW.precache([
     "revision": "f12a120b81d0c73f890d61a37975bf8c"
   },
   {
+    "url": "build/app/cxfavi4b.js",
+    "revision": "bcad5d04730e9620928cd20f97a17caa"
+  },
+  {
     "url": "build/app/cxxofgl1.js",
     "revision": "17bb5fd1b20c16e58d54e802dc63cfe2"
   },
@@ -284,8 +297,8 @@ workboxSW.precache([
     "revision": "28ad01ee5639e72ef8b644377398c9c0"
   },
   {
-    "url": "build/app/dl7cjrep.js",
-    "revision": "8b3e738c3fe2d32459698a64a2a77347"
+    "url": "build/app/docrfgsf.js",
+    "revision": "708c69b34eaf85f3c8672297acf401ca"
   },
   {
     "url": "build/app/dojvzfoq.js",
@@ -312,24 +325,12 @@ workboxSW.precache([
     "revision": "0da23c8a3a7da6647e622b93c3f56743"
   },
   {
-    "url": "build/app/erf1kx6p.js",
-    "revision": "771f06a52535a1123a39b1e27bc717dd"
-  },
-  {
     "url": "build/app/euxnpt4q.js",
     "revision": "61507dbacac21b33134f39482f6702a9"
   },
   {
-    "url": "build/app/f3on1ybh.js",
-    "revision": "034d08e67bdbd7d3790e351e8298cd5e"
-  },
-  {
     "url": "build/app/f6pwflpp.js",
     "revision": "0e27133cdcd42eba567386712207d16a"
-  },
-  {
-    "url": "build/app/fb3h7huk.js",
-    "revision": "d1f2627859b125fb6b58ba81b139eddb"
   },
   {
     "url": "build/app/ffcqsixn.js",
@@ -338,10 +339,6 @@ workboxSW.precache([
   {
     "url": "build/app/fgl5oqpl.js",
     "revision": "63bad92d5261c341ebe2e294bf560ec9"
-  },
-  {
-    "url": "build/app/figyrdvf.js",
-    "revision": "aca710facbc17aaf9e1403ab2fcf9833"
   },
   {
     "url": "build/app/fk8vlwj8.js",
@@ -354,10 +351,6 @@ workboxSW.precache([
   {
     "url": "build/app/fm9tufhz.js",
     "revision": "5519fd38b6e460f5349bbcc4aa8ad983"
-  },
-  {
-    "url": "build/app/fqedlnmy.js",
-    "revision": "30ef55084851f851f4c2fdab681e769b"
   },
   {
     "url": "build/app/fuaxrhrm.js",
@@ -412,6 +405,10 @@ workboxSW.precache([
     "revision": "0214594eb7d65e28343c37f3321e90e4"
   },
   {
+    "url": "build/app/iuwfavgg.js",
+    "revision": "ebc2d4f03a8de8b8418ef2e38a676168"
+  },
+  {
     "url": "build/app/iws5og3u.js",
     "revision": "8873780544ac1fed769318ac316d2fbd"
   },
@@ -420,16 +417,20 @@ workboxSW.precache([
     "revision": "0f5aacd34303bf5c89183e4cc74e813f"
   },
   {
-    "url": "build/app/j9g7zv6n.js",
-    "revision": "9ff0e2e08766583edec6ef52d8883b50"
+    "url": "build/app/jalphtzc.js",
+    "revision": "03e78efeb442e13a2a6be861a2e21a8a"
   },
   {
     "url": "build/app/jgsay6qq.js",
     "revision": "25fc3adeb3c423259581532ecf617d87"
   },
   {
-    "url": "build/app/jheyyvrn.js",
-    "revision": "fd56339cf636897d860904a34af501b7"
+    "url": "build/app/jjf5hzrh.js",
+    "revision": "730557ac659abae1ddc39332035f4ab2"
+  },
+  {
+    "url": "build/app/jloftgx0.js",
+    "revision": "639039ca3169be37860daf0d574a42f0"
   },
   {
     "url": "build/app/jlxtwe5j.js",
@@ -438,14 +439,6 @@ workboxSW.precache([
   {
     "url": "build/app/jpxyurtn.js",
     "revision": "069c944568d09577c4cbaa976ddf787c"
-  },
-  {
-    "url": "build/app/jufo0kyv.js",
-    "revision": "872286c5f06633fffc71246ebee09877"
-  },
-  {
-    "url": "build/app/jufo0kyv.sc.js",
-    "revision": "88446370f3a4d560dbab4484c2228702"
   },
   {
     "url": "build/app/k8vpbwew.js",
@@ -460,12 +453,20 @@ workboxSW.precache([
     "revision": "3b32ff434006a1eece0527f99af3a318"
   },
   {
+    "url": "build/app/lebktr65.js",
+    "revision": "e924303394425e3b9ec840648a480e92"
+  },
+  {
     "url": "build/app/lk8klqc8.js",
     "revision": "b8a3ba0e354a36379867434e4614072f"
   },
   {
     "url": "build/app/lljm4afl.js",
     "revision": "45d0dbeb29a21adf7c1adc47597372e7"
+  },
+  {
+    "url": "build/app/lri87luw.js",
+    "revision": "7a7802e1a1f4898c55fa1771d57a1329"
   },
   {
     "url": "build/app/lsg7mdai.js",
@@ -482,6 +483,10 @@ workboxSW.precache([
   {
     "url": "build/app/lv1pj9wt.js",
     "revision": "6b9b4828ebf1807423f5b41ce6af33df"
+  },
+  {
+    "url": "build/app/lviian5k.js",
+    "revision": "6615716cdaf52ee7d26ecfb779575274"
   },
   {
     "url": "build/app/m3on7drb.js",
@@ -520,20 +525,12 @@ workboxSW.precache([
     "revision": "f17375fe9dab939aec4adc42eead5865"
   },
   {
-    "url": "build/app/nhr5xo3k.js",
-    "revision": "e962e41e8711579500c4b93aefae33fb"
+    "url": "build/app/nq9yexon.js",
+    "revision": "6148f38a01e0ace01e47b0a38ea6577c"
   },
   {
-    "url": "build/app/nk9o76yg.js",
-    "revision": "b7c263c28a847c7121640cec68a60fad"
-  },
-  {
-    "url": "build/app/nmfihjfk.js",
-    "revision": "102068a2d33a69e302c466848ce3b9e5"
-  },
-  {
-    "url": "build/app/nngcndm7.js",
-    "revision": "2884d36185a9bc96a6f65d203bcb1516"
+    "url": "build/app/nr8ak7a5.js",
+    "revision": "49253f70605402069cabfcc63a3423a2"
   },
   {
     "url": "build/app/nxmq7odm.js",
@@ -556,14 +553,6 @@ workboxSW.precache([
     "revision": "b0917cc672861958c4eba64fff378795"
   },
   {
-    "url": "build/app/o7jgyyqf.js",
-    "revision": "e71ca46431e2b1a5fe50529aed2e4497"
-  },
-  {
-    "url": "build/app/obv3se0q.js",
-    "revision": "07eaa78f9216ed1a0df39e0bc2ba6ebf"
-  },
-  {
     "url": "build/app/oonthlyp.js",
     "revision": "469bc88a4f1958b622c665532466f5b0"
   },
@@ -578,10 +567,6 @@ workboxSW.precache([
   {
     "url": "build/app/piilyobe.js",
     "revision": "b92e6b90c01261870cf7bf4161c5c859"
-  },
-  {
-    "url": "build/app/pjac83oy.js",
-    "revision": "87e1e77c71654686311f7bf6a4127c8c"
   },
   {
     "url": "build/app/psbze3vm.js",
@@ -600,16 +585,16 @@ workboxSW.precache([
     "revision": "de1c8f49f57cfff0088e4b02618a3f80"
   },
   {
-    "url": "build/app/pxisnwof.js",
-    "revision": "ce8fd320515c83c026b4682f0b6493e3"
-  },
-  {
     "url": "build/app/q5atvxmm.js",
     "revision": "347b96bdfff0658ee3b54d73f0f8c0d5"
   },
   {
     "url": "build/app/q5c0uf8u.js",
     "revision": "2f0eded3b720f15c5ab90b5534e14075"
+  },
+  {
+    "url": "build/app/q5rgiwft.js",
+    "revision": "f4f2f0df548415bb50254e0cae4f52c9"
   },
   {
     "url": "build/app/q6otl59s.js",
@@ -624,20 +609,16 @@ workboxSW.precache([
     "revision": "a9b02f74d6d0c4d435c95a8be3bcfc48"
   },
   {
+    "url": "build/app/r7i8v4zs.js",
+    "revision": "3a90396cf787c69fdf931d1708aa3601"
+  },
+  {
     "url": "build/app/rdmsk5gs.js",
     "revision": "3d1381561675bdf2c7ff38947e4ca814"
   },
   {
-    "url": "build/app/rdodfzj2.js",
-    "revision": "288e2b237566f4a25db0c4d1cf1ccabe"
-  },
-  {
     "url": "build/app/rkifqqn2.js",
     "revision": "6606c9062b5c2ca5abbb406f457494f8"
-  },
-  {
-    "url": "build/app/rwth2lgh.js",
-    "revision": "6015d66c0dea703d3d5c6200663d12f0"
   },
   {
     "url": "build/app/rxjhmtms.js",
@@ -672,12 +653,12 @@ workboxSW.precache([
     "revision": "422c4aa1148e3137d918f1b62d731f24"
   },
   {
-    "url": "build/app/tcrga0c0.js",
-    "revision": "6880dceff2f7bec347d7dc6d1ae2e25b"
+    "url": "build/app/t4ekpwpd.js",
+    "revision": "f4025acc9576fbf40555019e63b9433c"
   },
   {
-    "url": "build/app/tfzzfz7z.js",
-    "revision": "7debbdf8dfdf491f621cc3d420784b90"
+    "url": "build/app/tcrga0c0.js",
+    "revision": "6880dceff2f7bec347d7dc6d1ae2e25b"
   },
   {
     "url": "build/app/tk3s6ete.js",
@@ -708,14 +689,6 @@ workboxSW.precache([
     "revision": "bd2ba882697c20df86fa1c7807dc6def"
   },
   {
-    "url": "build/app/uvljaxtp.js",
-    "revision": "81f5e71670eb19e2f7fa8c44a486f5aa"
-  },
-  {
-    "url": "build/app/uvljaxtp.sc.js",
-    "revision": "7922609d51ecedc7818e5e5243d1f956"
-  },
-  {
     "url": "build/app/vbsax5lp.js",
     "revision": "1301ec975fa0a2ca38dc987687643954"
   },
@@ -736,6 +709,10 @@ workboxSW.precache([
     "revision": "4ad06daaa4948db0a3b627bbecf674c8"
   },
   {
+    "url": "build/app/vznvgzbd.js",
+    "revision": "1d0bfb9980f2a634ad7b94f0d02aa5b4"
+  },
+  {
     "url": "build/app/w31gosto.js",
     "revision": "8498d4d485b6ce14ead77580099f3717"
   },
@@ -748,8 +725,12 @@ workboxSW.precache([
     "revision": "578da9b10c8e7570ec006ee7a7fb6982"
   },
   {
-    "url": "build/app/wjljm8lw.js",
-    "revision": "1b0f7932be2acf53571467abc0817e78"
+    "url": "build/app/wkpinwzk.js",
+    "revision": "f982f6eca5a1cb592302a2bd41b370aa"
+  },
+  {
+    "url": "build/app/wpwtlp5l.js",
+    "revision": "b8209edd7a2058fb0da2e7539ba9a68d"
   },
   {
     "url": "build/app/wqjh6xpe.js",
@@ -760,12 +741,24 @@ workboxSW.precache([
     "revision": "9d19bafcf1558b91e2d1941ff4b7954a"
   },
   {
+    "url": "build/app/x2o35pgo.js",
+    "revision": "59623b2294401956abaef337916fb8fd"
+  },
+  {
     "url": "build/app/x4wcukxi.js",
     "revision": "af19f28448f4c865c5bc821f23d0a074"
   },
   {
+    "url": "build/app/xbqgikgi.js",
+    "revision": "8696d70b0798fae4f28bad262e2e8daf"
+  },
+  {
     "url": "build/app/xfutog2h.js",
     "revision": "43f138afdfb658f9b9185f57f72375a9"
+  },
+  {
+    "url": "build/app/xlvlupx5.js",
+    "revision": "13705c2f12c03d25244964c99ad4d8bc"
   },
   {
     "url": "build/app/ybhz2j0x.js",
@@ -776,10 +769,6 @@ workboxSW.precache([
     "revision": "9782c987331b1c1b63c7b2e1b5a9165f"
   },
   {
-    "url": "build/app/ynlsssnc.js",
-    "revision": "e433f0d25c4b14daa0f2bb93ea72e4cc"
-  },
-  {
     "url": "build/app/yqxeomh1.js",
     "revision": "cb380d2e4a8885456d868986fe881afe"
   },
@@ -788,8 +777,8 @@ workboxSW.precache([
     "revision": "85ce8db40643e94e65202d59ead24e01"
   },
   {
-    "url": "build/app/zgvq58cd.js",
-    "revision": "5416802e0854183c303b51ded17f3e43"
+    "url": "build/app/znm9itwm.js",
+    "revision": "263741f28d04c79c947f777b4729d878"
   },
   {
     "url": "favicon.ico",
@@ -797,7 +786,7 @@ workboxSW.precache([
   },
   {
     "url": "host.config.json",
-    "revision": "cb80567fc2c2fdc6866b5f6cfae03ee5"
+    "revision": "92c11bd0aa0e23c9ee8e3fbc1ba189e7"
   },
   {
     "url": "images/bars.jpeg",
@@ -817,7 +806,7 @@ workboxSW.precache([
   },
   {
     "url": "index.html",
-    "revision": "375e0c153511ca986e1eb94594d062ae"
+    "revision": "131956f3e96552202d420c70e32aebf7"
   },
   {
     "url": "main/bars/index.html",
@@ -829,22 +818,14 @@ workboxSW.precache([
   },
   {
     "url": "manifest.json",
-    "revision": "c1d318cee3e66000978b35d24e89ee48"
+    "revision": "37fa51e0adb6d06a091eb83d34f06110"
   },
   {
-    "url": "workers/idb-keyval.js",
-    "revision": "d7826429e12a336c59581069b6dea6f0"
+    "url": "sw.js",
+    "revision": "e70eae5a1a5278bf49c19388c475ee21"
   },
   {
-    "url": "workers/save-worker.js",
-    "revision": "3de29306a35473071a64b32edbae33d4"
-  },
-  {
-    "url": "workers/storage-worker.js",
-    "revision": "d41d8cd98f00b204e9800998ecf8427e"
-  },
-  {
-    "url": "workers/worker-request.js",
-    "revision": "be88a78b15df50f1c736e9bdd791ab69"
+    "url": "workbox-sw.prod.v2.1.2.js",
+    "revision": "685d1ceb6b9a9f94aacf71d6aeef8b51"
   }
 ]);

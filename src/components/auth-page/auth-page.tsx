@@ -13,33 +13,37 @@ declare let firebase: any;
 export class AuthPage {
 
   @Prop() history: RouterHistory;
+  @Prop({ context: 'isServer' }) private isServer: boolean;
+
 
   componentWillLoad() {
-    console.log(firebase);
+    if (!this.isServer) {
+      console.log(firebase);
 
-    firebase.auth().getRedirectResult().then((result) => {
-      console.log(result.user);
-    }).catch((error) => {
-      console.log(error);
-    });
+      firebase.auth().getRedirectResult().then((result) => {
+        console.log(result.user);
+      }).catch((error) => {
+        console.log(error);
+      });
+    }
   }
-
   componentDidLoad() {
-    console.log('called');
-    const db = firebase.firestore();
+    if (!this.isServer) {
+      console.log('called');
+      const db = firebase.firestore();
 
-    firebase.auth().onAuthStateChanged((user) => {
-      if (user) {
+      firebase.auth().onAuthStateChanged((user) => {
+        if (user) {
 
-       getCertainUser(user.email).then((querySnapshot) => {
-          if (querySnapshot.empty) {
-            db.collection('users').add({
-              name: user.displayName,
-              email: user.email,
-              photo: user.photoURL
-            })
-          }
-        })
+          getCertainUser(user.email).then((querySnapshot) => {
+            if (querySnapshot.empty) {
+              db.collection('users').add({
+                name: user.displayName,
+                email: user.email,
+                photo: user.photoURL
+              })
+            }
+          })
 
           this.history.replace('/main', {});
         };

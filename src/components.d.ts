@@ -382,6 +382,36 @@ declare global {
 
 
 import {
+  ShareButton as ShareButton
+} from './components/share-button/share-button';
+
+declare global {
+  interface HTMLShareButtonElement extends ShareButton, HTMLElement {
+  }
+  var HTMLShareButtonElement: {
+    prototype: HTMLShareButtonElement;
+    new (): HTMLShareButtonElement;
+  };
+  interface HTMLElementTagNameMap {
+    "share-button": HTMLShareButtonElement;
+  }
+  interface ElementTagNameMap {
+    "share-button": HTMLShareButtonElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "share-button": JSXElements.ShareButtonAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ShareButtonAttributes extends HTMLAttributes {
+      beer?: any;
+    }
+  }
+}
+
+
+import {
   StencilBeer as StencilBeer
 } from './components/stencil-beer/stencil-beer';
 
@@ -412,30 +442,30 @@ declare global {
 
 
 import {
-  AuthPage as AuthPage
-} from './components/auth-page/auth-page';
+  UserProfile as UserProfile
+} from './components/user-profile/user-profile';
 
 declare global {
-  interface HTMLAuthPageElement extends AuthPage, HTMLElement {
+  interface HTMLUserProfileElement extends UserProfile, HTMLElement {
   }
-  var HTMLAuthPageElement: {
-    prototype: HTMLAuthPageElement;
-    new (): HTMLAuthPageElement;
+  var HTMLUserProfileElement: {
+    prototype: HTMLUserProfileElement;
+    new (): HTMLUserProfileElement;
   };
   interface HTMLElementTagNameMap {
-    "auth-page": HTMLAuthPageElement;
+    "user-profile": HTMLUserProfileElement;
   }
   interface ElementTagNameMap {
-    "auth-page": HTMLAuthPageElement;
+    "user-profile": HTMLUserProfileElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "auth-page": JSXElements.AuthPageAttributes;
+      "user-profile": JSXElements.UserProfileAttributes;
     }
   }
   namespace JSXElements {
-    export interface AuthPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+    export interface UserProfileAttributes extends HTMLAttributes {
+      match?: MatchResults;
     }
   }
 }

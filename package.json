@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "stencil build",
+    "build": "stencil build --prerender",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "functionDev": "stencil build --dev --watch",
     "serve": "stencil-dev-server",

@@ -17,9 +17,6 @@ exports.config = {
     { name: '@ionic/core' },
     { name: 'st-img' }
   ],
-  copy: [
-    { src: 'workers/' }
-  ],
   serviceWorker: {
     swSrc: 'src/sw.js',
     globPatterns: [

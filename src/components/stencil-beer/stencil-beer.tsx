@@ -48,9 +48,8 @@ export class StencilBeer {
           />
 
           <stencil-route
-            url={['/users', '/users/']}
+            url={'/users'}
             component='users-page'
-            exact={true}
           />
 
           <stencil-route
