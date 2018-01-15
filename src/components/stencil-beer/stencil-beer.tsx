@@ -1,5 +1,5 @@
 import { Component } from '@stencil/core';
-
+import {  } from '@stencil/router';
 
 @Component({
   tag: 'stencil-beer',

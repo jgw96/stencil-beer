@@ -1,8 +1,9 @@
 import { Component, Prop, State } from '@stencil/core';
 import { MatchResults } from '@stencil/router';
 
-import { getFullUser } from '../../global/save-service';
+// import { getFullUser } from '../../global/save-service';
 
+declare var firebase: any;
 
 @Component({
   tag: 'user-profile',
@@ -15,13 +16,44 @@ export class UserProfile {
   @State() user: any;
 
   async componentDidLoad() {
-    const allData = await getFullUser(this.match.params.user);
+    const allData = await this.getFullUser(this.match.params.user);
 
     if (allData[1].length > 0) {
       this.beers = allData[1];
     }
     console.log(this.beers);
     this.user = allData[0];
+  }
+
+  getUserBeers(email) {
+    return firebase.firestore().collection('savedBeers').where('author', '==', email).get();
+  }
+
+  async getFullUser(name) {
+    console.log(name);
+    const fullUser = [];
+    let userEmail = null;
+  
+    const doc = await firebase.firestore().collection('users').where('name', '==', name).get();
+  
+    await doc.forEach((user) => {
+      console.log(user);
+      fullUser.push(user.data());
+      userEmail = user.data().email;
+    })
+  
+    const tempBeers = [];
+  
+    const beerDoc = await this.getUserBeers(userEmail)
+  
+    await beerDoc.forEach((doc) => {
+      tempBeers.push(doc.data().beer);
+    })
+  
+    fullUser.push(tempBeers);
+  
+    console.log(fullUser);
+    return fullUser;
   }
 
   render() {

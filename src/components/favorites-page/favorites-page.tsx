@@ -1,8 +1,8 @@
 import { Component, State, Listen } from '@stencil/core';
 
-import { getSavedBeers } from '../../global/save-service';
-
 import { Beer } from '../../global/interfaces';
+
+declare var firebase: any;
 
 @Component({
   tag: 'favorites-page',
@@ -15,7 +15,7 @@ export class favoritesPage {
   async componentDidLoad() {
     const tempBeers = [];
 
-    getSavedBeers().then((querySnapshot) => {
+    this.getSavedBeers().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         tempBeers.push(doc.data().beer);
       })
@@ -24,11 +24,15 @@ export class favoritesPage {
     })
   }
 
+  getSavedBeers() {
+    return firebase.firestore().collection('savedBeers').where('author', '==', (window as any).firebase.auth().currentUser.email).get();
+  }
+
   @Listen('beerDeleted')
   getFreshBeers() {
     const tempBeers = [];
 
-    getSavedBeers().then((querySnapshot) => {
+    this.getSavedBeers().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
         tempBeers.push(doc.data().beer);
       })

@@ -1,8 +1,8 @@
 import { Component, State, Prop } from '@stencil/core';
 
-import { getUsers } from '../../global/save-service';
+// import { getUsers } from '../../global/save-service';
 
-declare let firebase: any;
+declare var firebase: any;
 
 @Component({
   tag: 'users-page',
@@ -19,7 +19,7 @@ export class UsersPage {
 
       const currentUser = firebase.auth().currentUser;
 
-      getUsers().then((querySnapshot) => {
+      this.getUsers().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
           if (doc.data().email !== currentUser.email) {
             tempUsers.push(doc.data());
@@ -30,6 +30,10 @@ export class UsersPage {
         console.log(this.users);
       })
     }
+  }
+
+  getUsers() {
+    return firebase.firestore().collection('users').get();
   }
 
   render() {

@@ -3,6 +3,9 @@ import { ToastController } from '@ionic/core';
 import { RouterHistory } from '@stencil/router';
 
 import { Beer } from '../../global/interfaces';
+import { getBeers } from '../../assets/http-service';
+
+// import worker from 'workerize';
 
 @Component({
   tag: 'beer-page',
@@ -11,6 +14,7 @@ import { Beer } from '../../global/interfaces';
 export class BeerPage {
 
   page: number;
+  beerWorker: any;
 
   @State() beers: Array<Beer>;
 
@@ -18,7 +22,8 @@ export class BeerPage {
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
   @Prop() history: RouterHistory;
 
-  componentDidLoad() {
+  async componentDidLoad() {
+    
     if (!this.isServer && this.beers === undefined) {
       console.log(this.isServer);
 

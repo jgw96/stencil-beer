@@ -7,7 +7,7 @@
     "dist"
   ],
   "scripts": {
-    "build": "stencil build --prerender",
+    "build": "stencil build",
     "dev": "sd concurrent \"stencil build --dev --watch\" \"stencil-dev-server\" ",
     "functionDev": "stencil build --dev --watch",
     "serve": "stencil-dev-server",
@@ -16,10 +16,11 @@
   },
   "dependencies": {
     "@ionic/core": "0.0.2-28",
-    "@stencil/core": "^0.1.0",
+    "@stencil/core": "^0.1.1-0",
     "@stencil/router": "0.0.17-1",
     "firebase": "^4.8.1",
-    "st-img": "^0.3.0"
+    "st-img": "^0.3.0",
+    "workerize": "^0.1.2"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",

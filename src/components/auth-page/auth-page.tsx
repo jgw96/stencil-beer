@@ -1,10 +1,9 @@
 import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
 
-import { getCertainUser } from '../../global/save-service';
-
-declare let firebase: any;
-
+// import { getCertainUser } from '../../global/save-service';
+// import { firebase } from '../../global/interfaces';
+declare var firebase: any;
 
 @Component({
   tag: 'auth-page',
@@ -27,6 +26,7 @@ export class AuthPage {
       });
     }
   }
+
   componentDidLoad() {
     if (!this.isServer) {
       console.log('called');
@@ -35,7 +35,7 @@ export class AuthPage {
       firebase.auth().onAuthStateChanged((user) => {
         if (user) {
 
-          getCertainUser(user.email).then((querySnapshot) => {
+          this.getCertainUser(user.email).then((querySnapshot) => {
             if (querySnapshot.empty) {
               db.collection('users').add({
                 name: user.displayName,
@@ -45,7 +45,7 @@ export class AuthPage {
             }
           })
 
-          this.history.replace('/main', {});
+          this.history.push('/main', {});
         };
       })
     }
@@ -54,6 +54,10 @@ export class AuthPage {
   login() {
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
+  }
+
+  getCertainUser(email) {
+    return firebase.firestore().collection('users').where('email', '==', email).get();
   }
 
   render() {

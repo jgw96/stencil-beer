@@ -1,10 +1,11 @@
 import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
 import { ToastController } from '@ionic/core';
 
-import { saveBeer, deleteBeer } from '../../global/save-service';
+// import { saveBeer, deleteBeer } from '../../global/save-service';
 
 import { Beer } from '../../global/interfaces';
 
+declare var firebase: any;
 
 @Component({
   tag: 'beer-item',
@@ -21,19 +22,41 @@ export class BeerItem {
   @Event() beerDeleted: EventEmitter;
 
   async save(beer: Beer) {
-    saveBeer(beer);
+    this.saveBeer(beer);
 
     const toast = await this.toastCtrl.create({ message: 'beer favorited', duration: 1000 });
     toast.present();
   }
 
   async deleteBeer(beer: Beer) {
-    await deleteBeer(beer);
+    await this.deleteBeerHelper(beer);
 
     this.beerDeleted.emit();
 
     const toast = await this.toastCtrl.create({ message: 'beer un-favorited', duration: 1000 });
     toast.present();
+  }
+
+  saveBeer(value: Beer) {
+    firebase.firestore().collection('savedBeers').add({
+      author: (window as any).firebase.auth().currentUser.email,
+      beer: value
+    });
+  }
+
+  async deleteBeerHelper(passedBeer: Beer) {
+    const doc = await firebase.firestore().collection('savedBeers')
+      .where('beer.name', '==', passedBeer)
+      .where('author', '==', (window as any).firebase.auth().currentUser.email)
+      .get();
+  
+    doc.forEach((beer) => {
+      console.log(beer);
+      console.log(beer.data());
+      beer.ref.delete().then(() => {
+        console.log('deleted');
+      })
+    })
   }
 
   render() {
