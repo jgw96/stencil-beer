@@ -1,4 +1,5 @@
-import { Component, State } from '@stencil/core';
+import { Component, State, Prop } from '@stencil/core';
+import { RouterHistory } from '@stencil/router';
 
 
 @Component({
@@ -7,23 +8,17 @@ import { Component, State } from '@stencil/core';
 })
 export class MainPage {
 
-  @State() firstImageUrl: string = '../../images/smaller-beers.jpeg';
-  @State() secondImageUrl: string = '../../images/smaller-bars.jpeg';
+  @State() firstImageUrl: string = '../../images/beers.jpeg';
+  @State() secondImageUrl: string = '../../images/bars.jpeg';
+
+  @Prop() history: RouterHistory;
 
   componentDidLoad() {
-    const firstBigImage = new Image();
-    const secondBigImage = new Image();
+    setTimeout(() => {
+      console.log('fired');
 
-    firstBigImage.src = '../../images/beers.jpeg';
-    secondBigImage.src = '../../images/bars.jpeg';
-
-    firstBigImage.onload = () => {
-      this.firstImageUrl = firstBigImage.src;
-    };
-
-    secondBigImage.onload = () => {
-      this.secondImageUrl = secondBigImage.src;
-    };
+      this.history.push('/beers', {});
+    },4000)
   }
 
   render() {

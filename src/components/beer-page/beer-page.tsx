@@ -3,9 +3,6 @@ import { ToastController } from '@ionic/core';
 import { RouterHistory } from '@stencil/router';
 
 import { Beer } from '../../global/interfaces';
-import { getBeers } from '../../assets/http-service';
-
-// import worker from 'workerize';
 
 @Component({
   tag: 'beer-page',
@@ -23,7 +20,6 @@ export class BeerPage {
   @Prop() history: RouterHistory;
 
   async componentDidLoad() {
-    
     if (!this.isServer && this.beers === undefined) {
       console.log(this.isServer);
 
@@ -98,7 +94,6 @@ export class BeerPage {
   }
 
   takePicture() {
-    console.log('here')
     const input = document.createElement('input');
     input.type = 'file';
     input.name = 'image';

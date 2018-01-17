@@ -315,7 +315,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MainPageAttributes extends HTMLAttributes {
-      
+      history?: RouterHistory;
     }
   }
 }
