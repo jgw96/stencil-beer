@@ -80,12 +80,12 @@ export class BeerItem {
             </stencil-route-link>
 
             {this.fave ?
-              <ion-button onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>
-                <ion-icon color='danger' name='trash'></ion-icon>
+              <ion-button color='danger' onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>
+                remove
               </ion-button>
               :
-              <ion-button onClick={() => this.save(this.beer)} fill='clear' icon-only>
-                <ion-icon color='primary' name='star'></ion-icon>
+              <ion-button color='primary' onClick={() => this.save(this.beer)} fill='clear' icon-only>
+                favorite
               </ion-button>
             }
 

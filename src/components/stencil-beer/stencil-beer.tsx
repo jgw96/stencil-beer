@@ -18,7 +18,7 @@ export class StencilBeer {
           />
 
           <stencil-route
-            url={['/main', '/main/']}
+            url={['/home', '/home/']}
             component='main-page'
           />
 

@@ -45,7 +45,7 @@ export class AuthPage {
             }
           })
 
-          this.history.push('/main', {});
+          this.history.push('/home', {});
         };
       })
     }

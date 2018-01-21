@@ -1,7 +1,8 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { ActionSheetController } from '@ionic/core';
 import { ActiveRouter } from '@stencil/router';
 
+declare var firebase: any;
 
 @Component({
   tag: 'profile-header',
@@ -10,8 +11,15 @@ import { ActiveRouter } from '@stencil/router';
 })
 export class ProfileHeader {
 
+  @State() profilePic: string;
+
   @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
   @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
+
+  componentDidLoad() {
+    console.log(firebase.auth().currentUser);
+    this.profilePic = firebase.auth().currentUser.photoURL;
+  }
 
   openActionSheet() {
     console.log(this.activeRouter.get());
@@ -46,7 +54,7 @@ export class ProfileHeader {
 
           <ion-buttons slot='end'>
             <ion-button fill='clear' onClick={() => this.openActionSheet()} icon-only>
-              <ion-icon name='person'></ion-icon>
+              <img id='userImage' src={this.profilePic} alt='user profile'></img>
             </ion-button>
           </ion-buttons>
         </ion-toolbar>

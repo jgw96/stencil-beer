@@ -13,12 +13,12 @@ export class MainPage {
 
   @Prop() history: RouterHistory;
 
-  componentDidLoad() {
-    setTimeout(() => {
-      console.log('fired');
+  navigateToBeer() {
+    this.history.push('/beers', {})
+  }
 
-      this.history.push('/beers', {});
-    },4000)
+  navigateToBars() {
+    this.history.push('/bars', {})
   }
 
   render() {
@@ -30,17 +30,17 @@ export class MainPage {
           <main>
             <stencil-route-link url="/beers">
               <div id='first-card' class='card'>
-                <img src={this.firstImageUrl} alt='beer' />
+                <img class='cardImage' src={this.firstImageUrl} alt='beer' />
                 <div class="card-title">Beers</div>
-                <div class="card-subtitle">Find beers!</div>
+                <div class="card-subtitle">for you!</div>
               </div>
             </stencil-route-link>
 
             <stencil-route-link url="/bars">
               <div class='card'>
-                <img src={this.secondImageUrl} alt='bar' />
+                <img class='cardImage' src={this.secondImageUrl} alt='bar' />
                 <div class="card-title">Bars</div>
-                <div class="card-subtitle">Find bars near you!</div>
+                <div class="card-subtitle">near you!</div>
               </div>
             </stencil-route-link>
           </main>

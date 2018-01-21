@@ -11,7 +11,6 @@ import { Beer } from '../../global/interfaces';
 export class BeerPage {
 
   page: number;
-  beerWorker: any;
 
   @State() beers: Array<Beer>;
 
