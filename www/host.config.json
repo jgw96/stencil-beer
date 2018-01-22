@@ -6,85 +6,27 @@
         "headers": [
           {
             "name": "Link",
-            "value": "</app.coh323mc.js>;rel=preload;as=script"
+            "value": "</build/app/app.j6ye8zhh.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/app/lunprpvl.js>;rel=preload;as=script"
+            "value": "</build/app/vkoqnpww.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/app/ndcx1naq.js>;rel=preload;as=script"
+            "value": "</build/app/mhh252jf.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/app/nk9o76yg.js>;rel=preload;as=script"
+            "value": "</build/app/zbtu8moq.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/app/5e3mm8py.js>;rel=preload;as=script"
+            "value": "</build/app/yayakfgb.js>;rel=preload;as=script"
           },
           {
             "name": "Link",
-            "value": "</build/app/9xcbnbio.js>;rel=preload;as=script"
-          }
-        ]
-      },
-      {
-        "include": "/bars",
-        "headers": [
-          {
-            "name": "Link",
-            "value": "</app.coh323mc.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/lunprpvl.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/ndcx1naq.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/nk9o76yg.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/5e3mm8py.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/9xcbnbio.js>;rel=preload;as=script"
-          }
-        ]
-      },
-      {
-        "include": "/beers",
-        "headers": [
-          {
-            "name": "Link",
-            "value": "</app.coh323mc.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/lunprpvl.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/ndcx1naq.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/nk9o76yg.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/5e3mm8py.js>;rel=preload;as=script"
-          },
-          {
-            "name": "Link",
-            "value": "</build/app/9xcbnbio.js>;rel=preload;as=script"
+            "value": "</build/app/80ur5vvd.js>;rel=preload;as=script"
           }
         ]
       },

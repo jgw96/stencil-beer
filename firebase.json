@@ -44,16 +44,7 @@
             "value": "no-cache"
           }
         ]
-      },
-      {
-        "source": "/",
-        "headers": [
-          {
-            "key": "Link",
-            "value": "</build/app.css>;rel=preload;as=style,</build/app/app.qqcm3h1j.js>;rel=preload;as=script,</build/app/pxisnwof.js>;rel=preload;as=script,</build/app/ndcx1naq.js>;rel=preload;as=script,</build/app/lunprpvl.js>;rel=preload;as=script,</build/app/5e3mm8py.js>;rel=preload;as=script"
-          }
-        ]
-     }
+      }
     ]
   }
 }

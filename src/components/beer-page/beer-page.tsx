@@ -67,7 +67,11 @@ export class BeerPage {
     const key = 'c0b90d19385d7dabee991e89c24ea711';
     const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`;
 
-    const response = await fetch(url);
+    const response = await fetch(url, {
+      headers: {
+        'origin': 'https://stencilbeer-firebaseapp.com'
+      }
+    });
     const data = await response.json();
     this.beers = data.data;
   }
@@ -127,7 +131,11 @@ export class BeerPage {
         const key = 'c0b90d19385d7dabee991e89c24ea711';
         const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${data[0]}&type=beer`;
 
-        fetch(url).then((response) => {
+        fetch(url, {
+          headers: {
+            'origin': 'https://stencilbeer-firebaseapp.com'
+          }
+        }).then((response) => {
           return response.json()
         }).then((data) => {
           this.beers = data.data;
