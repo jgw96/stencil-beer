@@ -4,13 +4,9 @@ beer-page {
     right: 10px;
   }
 
-  #cameraButton {
-    width: 30px;
-    fill: white;
-  }
-
-  #cameraIcon {
-    width: 2.5em;
+  #cameraButton, #cameraButton svg {
+    height: 2em;
+    width: 2em;
   }
 
   ion-scroll {
