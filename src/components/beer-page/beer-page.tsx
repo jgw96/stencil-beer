@@ -93,7 +93,7 @@ export class BeerPage {
       } else {
         this.fetchBeers(1);
       }
-    }, 2000);
+    }, 500);
   }
 
   takePicture() {

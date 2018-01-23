@@ -60,7 +60,7 @@ self.workbox.precaching.precacheAndRoute([
   },
   {
     "url": "build/app.js",
-    "revision": "83a86c60eb210dd10fcdf1798700c9a6"
+    "revision": "6919d9c5751b2f0f447ca339db1ae140"
   },
   {
     "url": "build/app/0q7y9cqb.es5.js",
@@ -135,6 +135,14 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "bb610f130510576a5f951959d59935a8"
   },
   {
+    "url": "build/app/599wbicy.es5.js",
+    "revision": "bfcbcdbd3d4a10d633ffbe0d2f4f38e9"
+  },
+  {
+    "url": "build/app/599wbicy.js",
+    "revision": "85d0fd116705032a7bc5bfbe4ba24549"
+  },
+  {
     "url": "build/app/5puhq0i9.es5.js",
     "revision": "9d164e6d5cc5c0c323aa37676d5bc0af"
   },
@@ -173,6 +181,14 @@ self.workbox.precaching.precacheAndRoute([
   {
     "url": "build/app/7kbuyjam.js",
     "revision": "dedff339adc284855f76689338324920"
+  },
+  {
+    "url": "build/app/7krk8dzq.es5.js",
+    "revision": "5e419bfccbc16dce756ccdf07b57121f"
+  },
+  {
+    "url": "build/app/7krk8dzq.js",
+    "revision": "5981d89b363a5463286bc1353c490de5"
   },
   {
     "url": "build/app/80ur5vvd.es5.js",
@@ -243,16 +259,16 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "e2804f3e84b7171197d6b8e03c4f8459"
   },
   {
-    "url": "build/app/app.hk5vfrkv.js",
-    "revision": "c5af9811a8a27bd81109fd960b1aecd3"
+    "url": "build/app/app.junuz4hv.js",
+    "revision": "3102d12a3d12182784854841a8e95f7f"
   },
   {
-    "url": "build/app/app.j6ye8zhh.js",
-    "revision": "7c7913311abb518c4c9eef335b66c1ce"
+    "url": "build/app/app.pz6spwro.js",
+    "revision": "45148d265093246408ec00577f820767"
   },
   {
     "url": "build/app/app.registry.json",
-    "revision": "b5b99d3d5119ae302c9de5ad0a7a6757"
+    "revision": "182c9950d490e8317de13af30d48eafb"
   },
   {
     "url": "build/app/biuzizd5.es5.js",
@@ -687,22 +703,6 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "e17a6c9c7fa816546422482e50e00b5e"
   },
   {
-    "url": "build/app/uuivnqea.es5.js",
-    "revision": "3904786696cb35652f42bb204fd93393"
-  },
-  {
-    "url": "build/app/uuivnqea.js",
-    "revision": "883b55ba817013928e4bc293e7b74775"
-  },
-  {
-    "url": "build/app/uuivnqea.sc.es5.js",
-    "revision": "3904786696cb35652f42bb204fd93393"
-  },
-  {
-    "url": "build/app/uuivnqea.sc.js",
-    "revision": "cd26b4803826407fe64ac3b7456e9b3d"
-  },
-  {
     "url": "build/app/vendor/swiper.js",
     "revision": "f44ae3024a4323c4f98e7b69cefeee47"
   },
@@ -713,14 +713,6 @@ self.workbox.precaching.precacheAndRoute([
   {
     "url": "build/app/vkoqnpww.js",
     "revision": "ec934e44ec0338e7f7ef9e50f36bfa4f"
-  },
-  {
-    "url": "build/app/vt8l4wh2.es5.js",
-    "revision": "727f3f8ddda4e6c65ae480689f45b013"
-  },
-  {
-    "url": "build/app/vt8l4wh2.js",
-    "revision": "0065eeee73b6a6a189c5b2cff2b981f3"
   },
   {
     "url": "build/app/vy129wn8.es5.js",
@@ -816,7 +808,7 @@ self.workbox.precaching.precacheAndRoute([
   },
   {
     "url": "host.config.json",
-    "revision": "c4933b16d6408ab6e2d2ac00442741c2"
+    "revision": "0d402ec60e66a5cd71572dd16bdcbd20"
   },
   {
     "url": "images/bars.jpeg",
