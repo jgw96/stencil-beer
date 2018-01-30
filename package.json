@@ -16,16 +16,15 @@
   },
   "dependencies": {
     "@ionic/core": "0.0.2-48",
-    "@stencil/core": "^0.2.0",
+    "@stencil/core": "0.3.0-1",
     "@stencil/router": "latest",
-    "firebase": "^4.8.1",
+    "firebase": "^4.9.0",
     "st-img": "^0.3.0",
     "workerize": "^0.1.2"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
-    "@stencil/utils": "latest",
-    "@types/firebase": "^2.4.32"
+    "@stencil/utils": "latest"
   },
   "repository": {
     "type": "git",

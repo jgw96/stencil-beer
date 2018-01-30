@@ -2,6 +2,8 @@ import { Component, Prop, State } from '@stencil/core';
 import { ActionSheetController } from '@ionic/core';
 import { ActiveRouter } from '@stencil/router';
 
+// import firebase from 'firebase';
+
 declare var firebase: any;
 
 @Component({

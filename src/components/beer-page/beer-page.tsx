@@ -155,7 +155,7 @@ export class BeerPage {
           <ion-searchbar></ion-searchbar>
 
           <ion-buttons slot='end'>
-            <ion-button icon-only onClick={() => this.takePicture()}>
+            <ion-button fill='clear' icon-only onClick={() => this.takePicture()}>
               <ion-icon id='cameraButton' name='camera'></ion-icon>
             </ion-button>
           </ion-buttons>

@@ -5,7 +5,11 @@ import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
 
-declare var firebase: any;
+// import firebase from '@firebase/app';
+// import '@firebase/auth';
+// import 'firebase/firestore';
+
+declare var firebase;
 
 @Component({
   tag: 'beer-item',
