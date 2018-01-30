@@ -16,11 +16,11 @@
   },
   "dependencies": {
     "@ionic/core": "0.0.2-48",
-    "@stencil/core": "0.3.0-1",
+    "@stencil/core": "^0.3.0-1",
     "@stencil/router": "latest",
     "firebase": "^4.9.0",
-    "st-img": "^0.3.0",
-    "workerize": "^0.1.2"
+    "greenlet": "^0.1.2",
+    "st-img": "^0.3.0"
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",

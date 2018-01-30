@@ -1,6 +1,6 @@
 import { Component } from '@stencil/core';
 
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
 @Component({
   tag: 'stencil-beer',
@@ -8,7 +8,7 @@ import firebase from 'firebase';
 })
 export class StencilBeer {
 
-  componentWillLoad() {
+ /* componentWillLoad() {
     console.log(firebase);
     var config = {
       apiKey: "AIzaSyBRGthQnkQbObNUU1tXudYy8tC1c1JKF7c",
@@ -19,7 +19,7 @@ export class StencilBeer {
       messagingSenderId: "1049557001786"
     };
     firebase.initializeApp(config);
-  }
+  }*/
 
   render() {
     return (

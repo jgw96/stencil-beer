@@ -19,7 +19,12 @@ export class ProfileHeader {
 
   componentDidLoad() {
     console.log(firebase.auth().currentUser);
-    this.profilePic = firebase.auth().currentUser.photoURL;
+    // this.profilePic = firebase.auth().currentUser.photoURL;
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        this.profilePic = user.photoURL;
+      }
+    })
   }
 
   openActionSheet() {

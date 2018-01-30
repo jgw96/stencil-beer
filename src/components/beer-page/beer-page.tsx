@@ -3,6 +3,7 @@ import { ToastController } from '@ionic/core';
 import { RouterHistory } from '@stencil/router';
 
 import { Beer } from '../../global/interfaces';
+import { fetchBeers, doSearch } from '../../global/http-service';
 
 @Component({
   tag: 'beer-page',
@@ -24,9 +25,11 @@ export class BeerPage {
 
       this.page = 1;
       try {
-        this.fetchBeers(this.page);
+        this.beers = await fetchBeers(this.page);
+        console.log(this.beers);
       }
       catch (err) {
+        console.log(err);
         this.showErrorToast();
       }
     }
@@ -37,43 +40,16 @@ export class BeerPage {
     toast.present();
   }
 
-  async fetchBeers(page: number) {
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
-    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-
-    this.beers = null;
-    this.beers = data.data;
-  }
-
   nextPage() {
     this.page = this.page + 1;
-    this.fetchBeers(this.page);
+    fetchBeers(this.page);
   }
 
   previousPage() {
     if (this.page > 1) {
       this.page = this.page - 1;
-      this.fetchBeers(this.page);
+      fetchBeers(this.page);
     }
-  }
-
-  async doSearch(ev) {
-    this.beers = null;
-
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
-    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${ev.target.value}&type=beer`;
-
-    const response = await fetch(url, {
-      headers: {
-        'origin': 'https://stencilbeer-firebaseapp.com'
-      }
-    });
-    const data = await response.json();
-    this.beers = data.data;
   }
 
   goToFavorites() {
@@ -82,16 +58,17 @@ export class BeerPage {
 
   @Listen('ionInput')
   search(ev) {
-    setTimeout(() => {
+    setTimeout(async () => {
       if (ev.target.value.length > 0) {
         try {
-          this.doSearch(ev);
+          const searchTerm = ev.target.value;
+          this.beers = await doSearch(searchTerm);
         }
         catch (err) {
-          this.fetchBeers(this.page);
+          this.beers = await fetchBeers(this.page);
         }
       } else {
-        this.fetchBeers(1);
+        this.beers = await fetchBeers(1);
       }
     }, 500);
   }

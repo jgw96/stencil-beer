@@ -1,0 +1,29 @@
+import greenlet from 'greenlet';
+
+const fetchBeers = greenlet(
+  function (page: number) {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
+
+    return fetch(url).then((res) => {
+      return res.json()
+    }).then((data) => {
+      return data.data;
+    })
+  }
+);
+
+const doSearch = greenlet(
+  function(searchTerm: string) {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/search?key=${key}&q=${searchTerm}&type=beer`;
+
+    return fetch(url).then((res) => {
+      return res.json()
+    }).then((data) => {
+      return data.data;
+    })
+  }
+)
+
+export {fetchBeers, doSearch};
