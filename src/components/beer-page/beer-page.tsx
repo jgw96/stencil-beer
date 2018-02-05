@@ -24,9 +24,9 @@ export class BeerPage {
       console.log(this.isServer);
 
       this.page = 1;
+
       try {
         this.beers = await fetchBeers(this.page);
-        console.log(this.beers);
       }
       catch (err) {
         console.log(err);
@@ -40,15 +40,15 @@ export class BeerPage {
     toast.present();
   }
 
-  nextPage() {
+  async nextPage() {
     this.page = this.page + 1;
-    fetchBeers(this.page);
+    this.beers = await fetchBeers(this.page);
   }
 
-  previousPage() {
+  async previousPage() {
     if (this.page > 1) {
       this.page = this.page - 1;
-      fetchBeers(this.page);
+      this.beers = await fetchBeers(this.page);
     }
   }
 
@@ -89,7 +89,7 @@ export class BeerPage {
     })
   }
 
-  google(picture: Blob) {
+  async google(picture: Blob) {
     this.beers = null;
 
     const reader = new FileReader();

@@ -2,6 +2,8 @@ import { Component, State, Prop } from '@stencil/core';
 
 // import { getUsers } from '../../global/save-service';
 
+// import firebase from 'firebase';
+
 declare var firebase: any;
 
 @Component({

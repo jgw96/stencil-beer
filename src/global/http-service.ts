@@ -24,6 +24,19 @@ const doSearch = greenlet(
       return data.data;
     })
   }
+);
+
+const getBeerDetail = greenlet(
+  function(id: string) {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${id}?key=${key}`;
+
+    return fetch(url).then((res) => {
+      return res.json()
+    }).then((data) => {
+      return data.data;
+    })
+  }
 )
 
-export {fetchBeers, doSearch};
+export {fetchBeers, doSearch, getBeerDetail};

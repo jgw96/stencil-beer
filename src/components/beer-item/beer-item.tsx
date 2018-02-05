@@ -1,15 +1,11 @@
 import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
 import { ToastController } from '@ionic/core';
 
-// import { saveBeer, deleteBeer } from '../../global/save-service';
-
 import { Beer } from '../../global/interfaces';
 
-// import firebase from '@firebase/app';
-// import '@firebase/auth';
-// import 'firebase/firestore';
+// import firebase from 'firebase';
 
-declare var firebase;
+declare var firebase: any;
 
 @Component({
   tag: 'beer-item',
@@ -26,6 +22,7 @@ export class BeerItem {
   @Event() beerDeleted: EventEmitter;
 
   async save(beer: Beer) {
+    console.log('here');
     this.saveBeer(beer);
 
     const toast = await this.toastCtrl.create({ message: 'beer favorited', duration: 1000 });
@@ -43,7 +40,7 @@ export class BeerItem {
 
   saveBeer(value: Beer) {
     firebase.firestore().collection('savedBeers').add({
-      author: (window as any).firebase.auth().currentUser.email,
+      author: firebase.auth().currentUser.email,
       beer: value
     });
   }
@@ -55,11 +52,7 @@ export class BeerItem {
       .get();
   
     doc.forEach((beer) => {
-      console.log(beer);
-      console.log(beer.data());
-      beer.ref.delete().then(() => {
-        console.log('deleted');
-      })
+      beer.ref.delete();
     })
   }
 
@@ -80,7 +73,7 @@ export class BeerItem {
             <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
               <ion-button id='detailButton' color='primary' fill='clear'>
                 Detail
-            </ion-button>
+              </ion-button>
             </stencil-route-link>
 
             {this.fave ?

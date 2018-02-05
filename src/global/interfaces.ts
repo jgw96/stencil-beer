@@ -19,5 +19,3 @@ export interface Bar {
     name: string
   }
 }
-
-export var firebase: any;

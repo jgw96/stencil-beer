@@ -3,6 +3,7 @@ import { MatchResults } from '@stencil/router';
 import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
+import { getBeerDetail } from '../../global/http-service';
 
 @Component({
   tag: 'beer-detail',
@@ -21,7 +22,7 @@ export class BeerDetail {
     }
     catch (err) {
       this.showErrorToast();
-      console.error(err);
+      console.log(err);
     }
   }
 
@@ -31,13 +32,7 @@ export class BeerDetail {
   }
 
   async getBeerDetail() {
-    const key = 'c0b90d19385d7dabee991e89c24ea711';
-    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beer/${this.match.params.id}?key=${key}`;
-
-    const response = await fetch(url);
-    const data = await response.json();
-
-    this.beer = data.data;
+    this.beer = await getBeerDetail(this.match.params.id);
   }
 
   async share(beer) {
@@ -74,7 +69,7 @@ export class BeerDetail {
             </main>
           </ion-content>
 
-          <ion-fab>
+          <ion-fab slot='bottom right'>
             <ion-fab-button onClick={() => this.share(this.beer)}>
               <ion-icon name='share'></ion-icon>
             </ion-fab-button>

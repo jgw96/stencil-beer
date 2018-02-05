@@ -1,12 +1,10 @@
 import { Component, Prop } from '@stencil/core';
 import { RouterHistory } from '@stencil/router';
+import { ToastController } from '@ionic/core';
 
-// import { getCertainUser } from '../../global/save-service';
-/*import firebase from '@firebase/app'
-import '@firebase/auth';
-import '@firebase/firestore';*/
+// import firebase from 'firebase';
 
-declare var firebase;
+declare var firebase: any;
 
 @Component({
   tag: 'auth-page',
@@ -16,22 +14,23 @@ export class AuthPage {
 
   @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' }) private isServer: boolean;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
 
   componentWillLoad() {
     if (!this.isServer) {
-      console.log(firebase);
       firebase.auth().getRedirectResult().then((result) => {
         console.log(result.user);
       }).catch((error) => {
         console.log(error);
+        this.showErrorToast();
       });
     }
   }
 
   componentDidLoad() {
     if (!this.isServer) {
-      console.log('called');
+      console.log(firebase);
       const db = firebase.firestore();
 
       firebase.auth().onAuthStateChanged((user) => {
@@ -53,7 +52,13 @@ export class AuthPage {
     }
   }
 
+  async showErrorToast() {
+    const toast = await this.toastCtrl.create({ message: 'Error logging in', duration: 1000 });
+    toast.present();
+  }
+
   login() {
+    console.log(location.protocol);
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
   }

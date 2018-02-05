@@ -16,9 +16,9 @@
   },
   "dependencies": {
     "@ionic/core": "0.0.2-48",
-    "@stencil/core": "^0.3.0-1",
+    "@stencil/core": "^0.3.0-5",
     "@stencil/router": "latest",
-    "firebase": "^4.9.0",
+    "firebase": "4.8.2",
     "greenlet": "^0.1.2",
     "st-img": "^0.3.0"
   },

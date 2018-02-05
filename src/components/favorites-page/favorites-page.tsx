@@ -2,6 +2,9 @@ import { Component, State, Listen } from '@stencil/core';
 
 import { Beer } from '../../global/interfaces';
 
+// declare var firebase: any;
+//import firebase from 'firebase';
+
 declare var firebase: any;
 
 @Component({
@@ -25,7 +28,7 @@ export class favoritesPage {
   }
 
   getSavedBeers() {
-    return firebase.firestore().collection('savedBeers').where('author', '==', (window as any).firebase.auth().currentUser.email).get();
+    return firebase.firestore().collection('savedBeers').where('author', '==', firebase.auth().currentUser.email).get();
   }
 
   @Listen('beerDeleted')

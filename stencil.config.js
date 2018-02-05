@@ -23,7 +23,8 @@ exports.config = {
       '**/*.{js,css,json,html,ico,png,jpeg}'
     ],
     globIgnores: [
-      'build/app/svg/*.js'
+      'build/app/svg/*.js',
+      'build/app/*.es5.js'
     ]
   },
   globalStyle: 'src/global/variables.css'

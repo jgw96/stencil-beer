@@ -13,10 +13,21 @@ export class ShareButton {
 
   async share(beer) {
     if ((navigator as any).share) {
-      this.handleNativeShare(beer);
+      // have to catch here as web share
+      // is available on desktop chrome
+      // but fails
+      try {
+        this.handleNativeShare(beer);
+      } catch (e) {
+        this.handleTradShare(beer);
+      }
     } else {
-      window.open(`http://twitter.com/share?text=Check this out!&url=${window.location.href}/detail/${beer.id}`)
+      this.handleTradShare(beer);
     }
+  }
+
+  handleTradShare(beer) {
+    window.open(`http://twitter.com/share?text=Check this out!&url=${window.location.href}/detail/${beer.id}`);
   }
 
   async handleNativeShare(beer) {
@@ -40,8 +51,7 @@ export class ShareButton {
           }
         }, {
           text: 'Ok',
-          handler: (data) => {
-            console.log('Confirm Ok', data);
+          handler: () => {
             const shareText = (document.querySelector('#shareText') as HTMLInputElement).value;
 
             (navigator as any).share({

@@ -3,6 +3,8 @@ import { MatchResults } from '@stencil/router';
 
 // import { getFullUser } from '../../global/save-service';
 
+// import firebase from 'firebase';
+
 declare var firebase: any;
 
 @Component({

@@ -6,6 +6,7 @@ import { ActiveRouter } from '@stencil/router';
 
 declare var firebase: any;
 
+
 @Component({
   tag: 'profile-header',
   styleUrl: 'profile-header.scss'
@@ -18,8 +19,6 @@ export class ProfileHeader {
   @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
 
   componentDidLoad() {
-    console.log(firebase.auth().currentUser);
-    // this.profilePic = firebase.auth().currentUser.photoURL;
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.profilePic = user.photoURL;
@@ -27,9 +26,8 @@ export class ProfileHeader {
     })
   }
 
-  openActionSheet() {
-    console.log(this.activeRouter.get());
-    this.actionCtrl.create({
+  async openActionSheet() {
+    const actionSheet = await this.actionCtrl.create({
       title: 'Users',
       buttons: [
         {
@@ -47,9 +45,9 @@ export class ProfileHeader {
           }
         }
       ]
-    }).then((actionSheet) => {
-      actionSheet.present();
-    })
+    });
+
+    actionSheet.present();
   }
 
   render() {

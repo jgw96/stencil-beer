@@ -8,8 +8,8 @@ import { Component } from '@stencil/core';
 })
 export class StencilBeer {
 
- /* componentWillLoad() {
-    console.log(firebase);
+  componentWillLoad() {
+  /* console.log(firebase);
     var config = {
       apiKey: "AIzaSyBRGthQnkQbObNUU1tXudYy8tC1c1JKF7c",
       authDomain: "stencilbeer.firebaseapp.com",
@@ -18,8 +18,8 @@ export class StencilBeer {
       storageBucket: "stencilbeer.appspot.com",
       messagingSenderId: "1049557001786"
     };
-    firebase.initializeApp(config);
-  }*/
+    firebase.initializeApp(config);*/
+  }
 
   render() {
     return (

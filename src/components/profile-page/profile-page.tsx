@@ -5,7 +5,9 @@ import { ToastController } from '@ionic/core';
 
 import { notify } from '../../global/notify-service';
 
-declare let firebase: any;
+// import firebase from 'firebase';
+
+declare var firebase: any;
 
 @Component({
   tag: 'profile-page',
