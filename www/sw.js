@@ -23,12 +23,24 @@ self.addEventListener('push', (event) => {
 
 self.workbox.precaching.precacheAndRoute([
   {
+    "url": "assets/bars.jpeg",
+    "revision": "92f9bdebef255a78ba58c15068283e97"
+  },
+  {
+    "url": "assets/beers.jpeg",
+    "revision": "8aced51bdac089a8d7bee88f7c0aaec7"
+  },
+  {
     "url": "assets/favorite-heart-button.png",
     "revision": "a52d3fe6957c3f3680dc2609180e7b0e"
   },
   {
-    "url": "assets/http-service.js",
-    "revision": "9ae9aacb1a943f6852dcedd9b5d1a6e0"
+    "url": "assets/firebase-auth.js",
+    "revision": "b1b0404c2e9c0e4ec3e4adc0a440893b"
+  },
+  {
+    "url": "assets/firestore.js",
+    "revision": "a160e3304763e6f528dcf7d0edd82d75"
   },
   {
     "url": "assets/icon/favicon.ico",
@@ -43,16 +55,12 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "1977c7bc5fa09fd72a78bcdd6d5de963"
   },
   {
-    "url": "assets/worker-request.js",
-    "revision": "06ecbb404b3b5055ad8a5c9fdb120033"
-  },
-  {
     "url": "build/app.css",
     "revision": "1834da1c9cae8d43f5b063f7ef60e895"
   },
   {
     "url": "build/app.js",
-    "revision": "79fa3799f46320dad1a685ceb02eacbc"
+    "revision": "a4f6caa15907d7e58f0b1e72b1710978"
   },
   {
     "url": "build/app/0sefzzse.js",
@@ -103,16 +111,8 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "580b9df236b527561d8801c51925db21"
   },
   {
-    "url": "build/app/6kmcaqms.js",
-    "revision": "9ab5cea339dc3cdfc92f04d6230a2da7"
-  },
-  {
     "url": "build/app/6uwzoxfn.js",
     "revision": "c7779ecdcc4b21ba59edb799e254c1a0"
-  },
-  {
-    "url": "build/app/841osjfi.js",
-    "revision": "b48e84147d90b7a11bb8c817e5d5f96f"
   },
   {
     "url": "build/app/8fe5rc1p.js",
@@ -123,20 +123,24 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "0c0a456e8984cdd1777d104d89e7f2d1"
   },
   {
-    "url": "build/app/app.6pqvkbyk.js",
-    "revision": "72313ca4a9a2bdcbb46450f327e18922"
+    "url": "build/app/an1wfchn.js",
+    "revision": "bd37d67cb6d50fc2e47028441a002a20"
+  },
+  {
+    "url": "build/app/app.3titdhwa.js",
+    "revision": "e215888632bb9ff3644fdcfc1180e751"
+  },
+  {
+    "url": "build/app/app.cojv6ltc.js",
+    "revision": "a5735e8173860adcd89d6ff40e11a1f2"
   },
   {
     "url": "build/app/app.global.js",
     "revision": "926a66d1399962bf4a715b9fe557c473"
   },
   {
-    "url": "build/app/app.ija1oi9p.js",
-    "revision": "89ee0f50eefee1c2ec583e560070ade4"
-  },
-  {
     "url": "build/app/app.registry.json",
-    "revision": "d2febe25a7ae1f22a9d2f154c9aafcc0"
+    "revision": "c22657d647226e9abcbd264f775df9d6"
   },
   {
     "url": "build/app/befzc7q6.js",
@@ -161,14 +165,6 @@ self.workbox.precaching.precacheAndRoute([
   {
     "url": "build/app/brci1awp.js",
     "revision": "a4101ad500c2f651ffb95ade1b3cb483"
-  },
-  {
-    "url": "build/app/bsr4ofe1.js",
-    "revision": "434524aa964cb1cb45604d6aa1ec84fd"
-  },
-  {
-    "url": "build/app/bsr4ofe1.sc.js",
-    "revision": "dd5c5dd97844c1383509bbb23bca5976"
   },
   {
     "url": "build/app/bttvx9vk.js",
@@ -263,8 +259,20 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "0d91cb0c6ae08103861d176a36bfb9fa"
   },
   {
+    "url": "build/app/gldqwp7t.js",
+    "revision": "70d8e239ceaf9d6af1f257b02e625856"
+  },
+  {
+    "url": "build/app/glffwfzh.js",
+    "revision": "fa159a0947f97a231c717a0c9c6ac537"
+  },
+  {
     "url": "build/app/gmkdyfjn.js",
     "revision": "260358618061920e2846cfda8221ac68"
+  },
+  {
+    "url": "build/app/h0sxxi4e.js",
+    "revision": "f4263c6956ca3b4fa20c2d8d6606aee8"
   },
   {
     "url": "build/app/h1v84rww.js",
@@ -281,6 +289,10 @@ self.workbox.precaching.precacheAndRoute([
   {
     "url": "build/app/hfxewf2y.js",
     "revision": "e9fbff3e6b56e8432e247672a62875ff"
+  },
+  {
+    "url": "build/app/hk0cblun.js",
+    "revision": "e9bc55d570d7470e08b2585d78619315"
   },
   {
     "url": "build/app/hq5ymp8l.js",
@@ -367,8 +379,8 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "cdaeafa3db4a0110eb89064bf056b70f"
   },
   {
-    "url": "build/app/puaygksg.js",
-    "revision": "641fcd574990603e3b14f45a1d8306c6"
+    "url": "build/app/psdyx2bw.js",
+    "revision": "406e82b55150106c6e25d803df3e4c5a"
   },
   {
     "url": "build/app/puby85yf.js",
@@ -377,10 +389,6 @@ self.workbox.precaching.precacheAndRoute([
   {
     "url": "build/app/pvsinxia.js",
     "revision": "855348bc263388b2f0adc862c2eaa1b0"
-  },
-  {
-    "url": "build/app/qceihum1.js",
-    "revision": "d5b6032a43b8233a37a3c8bff4f0d2d3"
   },
   {
     "url": "build/app/qdrnmfxb.js",
@@ -459,10 +467,6 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "f44ae3024a4323c4f98e7b69cefeee47"
   },
   {
-    "url": "build/app/vh9j7eee.js",
-    "revision": "8244183fddbafa36c0c258cb887b4701"
-  },
-  {
     "url": "build/app/wimyj6sh.js",
     "revision": "655058eb55abb353e20bf4ae6ad10ca5"
   },
@@ -479,115 +483,15 @@ self.workbox.precaching.precacheAndRoute([
     "revision": "782d7e47ae33df56dfd53dc4c0bbb0e8"
   },
   {
-    "url": "favicon.ico",
-    "revision": "d2f619d796fbe8bed6200da2691aa5b6"
-  },
-  {
     "url": "host.config.json",
-    "revision": "2adfa65c4ae0e7867c87a38c459a5a16"
-  },
-  {
-    "url": "images/bars.jpeg",
-    "revision": "92f9bdebef255a78ba58c15068283e97"
-  },
-  {
-    "url": "images/beers.jpeg",
-    "revision": "8aced51bdac089a8d7bee88f7c0aaec7"
-  },
-  {
-    "url": "images/smaller-bars.jpeg",
-    "revision": "88b0cefd3a5bf3d56d96734562fd065c"
-  },
-  {
-    "url": "images/smaller-beers.jpeg",
-    "revision": "94bbfa83bf0d1a9ec32e6d6fab403680"
+    "revision": "709c35dd7aa6117a6fe8ff4405b72b8d"
   },
   {
     "url": "index.html",
-    "revision": "c04aa2dc47a5d31d1cb6e83f2869dc3b"
+    "revision": "d36ba73120c80ef6141aed95940b0454"
   },
   {
     "url": "manifest.json",
     "revision": "37fa51e0adb6d06a091eb83d34f06110"
-  },
-  {
-    "url": "workbox-sw.prod.v2.1.2.js",
-    "revision": "e6fcd3e6dda0e5072525e564d08db75f"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-background-sync.dev.js",
-    "revision": "3e5b1efdabbccb317ff1089b81e20e61"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-background-sync.prod.js",
-    "revision": "501307f9dc160f9e784447baf997db24"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-broadcast-cache-update.dev.js",
-    "revision": "36c7cd348d968c7ff9e38057a271fbeb"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-broadcast-cache-update.prod.js",
-    "revision": "82f82984526fb0247c5770f3de4a5bf6"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-cache-expiration.dev.js",
-    "revision": "7f3403744a1c4421d5ca9200c0e72108"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-cache-expiration.prod.js",
-    "revision": "76fc6cc3fd37c9891602558a9165fed7"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-cacheable-response.dev.js",
-    "revision": "df5962757ff1f9169c8f7013b82a0539"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-cacheable-response.prod.js",
-    "revision": "0e1da35878f60aec819da3dd5366b841"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-core.dev.js",
-    "revision": "7919498a22fe6e4256e12f266930e6ba"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-core.prod.js",
-    "revision": "40e897fe9993206f6c1538dfca2ba199"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-google-analytics.dev.js",
-    "revision": "21485ded613ce7d38d8189dee08ef493"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-google-analytics.prod.js",
-    "revision": "4eae1b556afd1ae221681fff9506c9ed"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-precaching.dev.js",
-    "revision": "18c1907d6168da29e550e87fffb06bb8"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-precaching.prod.js",
-    "revision": "4d567b5667d9c9f7ab4a6401891ecc59"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-routing.dev.js",
-    "revision": "99372080e689ef95b36d4155c426cf78"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-routing.prod.js",
-    "revision": "aa3745108108ef4577fa6518b31d938c"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-strategies.dev.js",
-    "revision": "00aaf74978017dab47d82a3c7af842c3"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-strategies.prod.js",
-    "revision": "d4a74cb15406e718a89c7776bbbf59c8"
-  },
-  {
-    "url": "workbox-v3.0.0-alpha.3/workbox-sw.js",
-    "revision": "5c061d8f7fda59b5a1a13cbad864e585"
   }
 ]);

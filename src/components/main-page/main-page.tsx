@@ -8,8 +8,8 @@ import { RouterHistory } from '@stencil/router';
 })
 export class MainPage {
 
-  @State() firstImageUrl: string = '../../images/beers.jpeg';
-  @State() secondImageUrl: string = '../../images/bars.jpeg';
+  @State() firstImageUrl: string = '/assets/beers.jpeg';
+  @State() secondImageUrl: string = '/assets/bars.jpeg';
 
   @Prop() history: RouterHistory;
 

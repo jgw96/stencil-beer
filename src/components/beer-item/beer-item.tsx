@@ -59,7 +59,7 @@ export class BeerItem {
   render() {
     return (
       <ion-card>
-        <st-img src={this.beer.labels ? this.beer.labels.medium : '../../images/beers.jpeg'} alt='beer' />
+        <st-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt='beer' />
         <ion-card-content>
           <ion-card-title>
             {this.beer.name}

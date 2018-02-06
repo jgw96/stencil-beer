@@ -44,6 +44,10 @@
             "value": "no-cache"
           }
         ]
+      },
+      {
+        "source": "/",
+        "headers": [{"key": "Link", "value": "</build/app/app.3titdhwa.js>;rel=preload;as=script,</build/app/psdyx2bw.js>;rel=preload;as=script,</build/app/onynqrjx.js>;rel=preload;as=script,</build/app/jr9a49fj.js>;rel=preload;as=script,</build/app/cyikxdml.js>;rel=preload;as=script,</build/app/nzyhlyce.js>;rel=preload;as=script,</build/app/egpjbbkg.js>;rel=preload;as=script,</build/app/mfcxg1az.js>;rel=preload;as=script,</build/app/chunk6.js>;rel=preload;as=script,</build/app/chunk5.js>;rel=preload;as=script,</build/app/chunk3.js>;rel=preload;as=script,</build/app/chunk2.js>;rel=preload;as=script"}]
       }
     ]
   }

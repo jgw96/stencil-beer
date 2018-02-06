@@ -8,19 +8,6 @@ import { Component } from '@stencil/core';
 })
 export class StencilBeer {
 
-  componentWillLoad() {
-  /* console.log(firebase);
-    var config = {
-      apiKey: "AIzaSyBRGthQnkQbObNUU1tXudYy8tC1c1JKF7c",
-      authDomain: "stencilbeer.firebaseapp.com",
-      databaseURL: "https://stencilbeer.firebaseio.com",
-      projectId: "stencilbeer",
-      storageBucket: "stencilbeer.appspot.com",
-      messagingSenderId: "1049557001786"
-    };
-    firebase.initializeApp(config);*/
-  }
-
   render() {
     return (
       <ion-app>

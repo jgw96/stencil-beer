@@ -79,7 +79,7 @@ export class AuthPage {
         <ion-content>
 
           <div id='imageBlock'>
-            <img id='iconImage' src='/assets/img/icon.png'></img>
+            <img id='iconImage' src='/assets/img/icon.png' alt='logo'></img>
           </div>
 
           <div id='buttonBlock'>
