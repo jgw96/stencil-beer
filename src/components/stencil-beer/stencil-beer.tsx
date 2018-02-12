@@ -30,7 +30,7 @@ export class StencilBeer {
 
           <stencil-route
             url={['/beers', '/beers/']}
-            component='beer-page'
+            component='tabs-page'
           />
 
           <stencil-route

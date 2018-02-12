@@ -31,7 +31,8 @@ export class ShareButton {
   }
 
   async handleNativeShare(beer) {
-    const alert = await this.alertCtrl.create({
+    console.log(beer);
+    /*const alert = await this.alertCtrl.create({
       title: 'Share',
       message: 'Message to Share',
       inputs: [
@@ -64,7 +65,12 @@ export class ShareButton {
       ]
     });
 
-    alert.present();
+    alert.present();*/
+    (navigator as any).share({
+      title: document.title,
+      text: 'Check out this cool beer',
+      url: `${window.location.href}/detail/${beer.id}`
+    })
   }
 
   render() {

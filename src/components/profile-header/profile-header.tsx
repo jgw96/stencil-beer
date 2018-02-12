@@ -1,6 +1,6 @@
-import { Component, Prop, State } from '@stencil/core';
-import { ActionSheetController } from '@ionic/core';
-import { ActiveRouter } from '@stencil/router';
+import { Component, Prop, State, Listen } from '@stencil/core';
+// import { ActionSheetController } from '@ionic/core';
+import { PopoverController, Popover } from '@ionic/core';
 
 // import firebase from 'firebase';
 
@@ -9,24 +9,42 @@ declare var firebase: any;
 
 @Component({
   tag: 'profile-header',
-  styleUrl: 'profile-header.scss'
+  styleUrl: 'profile-header.scss',
+  scoped: true
 })
 export class ProfileHeader {
 
+  popover: Popover;
+
   @State() profilePic: string;
 
-  @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
-  @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
+  // @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
+  @Prop({ connect: 'ion-popover-controller'}) popoverCtrl: PopoverController;
+  // @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
 
   componentDidLoad() {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.profilePic = user.photoURL;
       }
-    })
+    });
   }
 
-  async openActionSheet() {
+  @Listen('body:closePopover')
+  closePopover() {
+    this.popover.dismiss();
+  }
+
+  async openPopover(event) {
+    this.popover = await this.popoverCtrl.create({
+      component: 'popover-page',
+      ev: event
+    });
+    
+    await this.popover.present();
+  }
+
+  /*async openActionSheet() {
     const actionSheet = await this.actionCtrl.create({
       title: 'Users',
       buttons: [
@@ -48,7 +66,7 @@ export class ProfileHeader {
     });
 
     actionSheet.present();
-  }
+  }*/
 
   render() {
     return (
@@ -57,7 +75,7 @@ export class ProfileHeader {
           <ion-title>IonicBeer Beta</ion-title>
 
           <ion-buttons slot='end'>
-            <ion-button fill='clear' onClick={() => this.openActionSheet()} icon-only>
+            <ion-button fill='clear' onClick={() => this.openPopover(event)} icon-only>
               <img id='userImage' src={this.profilePic} alt='user profile'></img>
             </ion-button>
           </ion-buttons>
