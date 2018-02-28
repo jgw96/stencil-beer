@@ -1,22 +1,6 @@
+const sass = require('@stencil/sass');
+
 exports.config = {
-  bundles: [
-    { components: ['stencil-beer', 'auth-page'] },
-    { components: ['main-page', 'profile-header'] },
-    { components: ['profile-page'] },
-    { components: ['bar-page', 'bar-list'] },
-    { components: ['beer-page', 'beer-list', 'beer-item'] },
-    { components: ['beer-detail'] },
-    { components: ['favorites-page'] },
-    { components: ['bar-directions'] },
-    { components: ['users-page', 'users-list'] },
-    { components: ['user-profile'] },
-    { components: ['share-button'] }
-  ],
-  collections: [
-    { name: '@stencil/router' },
-    { name: '@ionic/core' },
-    { name: 'st-img' }
-  ],
   serviceWorker: {
     swSrc: 'src/sw.js',
     globPatterns: [
@@ -27,7 +11,11 @@ exports.config = {
       'build/app/*.es5.js'
     ]
   },
-  globalStyle: 'src/global/variables.css'
+  globalStyle: 'src/global/variables.css',
+  enableCache: false,
+  plugins: [
+    sass()
+  ]
 };
 
 exports.devServer = {

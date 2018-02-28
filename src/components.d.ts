@@ -3,12 +3,24 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+declare global {
+  namespace JSX {
+    interface Element {}
+    export interface IntrinsicElements {}
+  }
+  namespace JSXElements {}
 
+  interface HTMLStencilElement extends HTMLElement {
+    componentOnReady(): Promise<this>;
+    componentOnReady(done: (ele?: this) => void): void;
+  }
+
+  interface HTMLAttributes {}
+}
+
+import 'ionicons';
 import '@stencil/router';
-
 import '@ionic/core';
-
-import 'st-img';
 
 import {
   MatchResults,
@@ -24,7 +36,7 @@ import {
 } from './components/auth-page/auth-page';
 
 declare global {
-  interface HTMLAuthPageElement extends AuthPage, HTMLElement {
+  interface HTMLAuthPageElement extends AuthPage, HTMLStencilElement {
   }
   var HTMLAuthPageElement: {
     prototype: HTMLAuthPageElement;
@@ -54,7 +66,7 @@ import {
 } from './components/bar-directions/bar-directions';
 
 declare global {
-  interface HTMLBarDirectionsElement extends BarDirections, HTMLElement {
+  interface HTMLBarDirectionsElement extends BarDirections, HTMLStencilElement {
   }
   var HTMLBarDirectionsElement: {
     prototype: HTMLBarDirectionsElement;
@@ -84,7 +96,7 @@ import {
 } from './components/bar-list/bar-list';
 
 declare global {
-  interface HTMLBarListElement extends BarList, HTMLElement {
+  interface HTMLBarListElement extends BarList, HTMLStencilElement {
   }
   var HTMLBarListElement: {
     prototype: HTMLBarListElement;
@@ -114,7 +126,7 @@ import {
 } from './components/bar-page/bar-page';
 
 declare global {
-  interface HTMLBarPageElement extends BarPage, HTMLElement {
+  interface HTMLBarPageElement extends BarPage, HTMLStencilElement {
   }
   var HTMLBarPageElement: {
     prototype: HTMLBarPageElement;
@@ -144,7 +156,7 @@ import {
 } from './components/beer-detail/beer-detail';
 
 declare global {
-  interface HTMLBeerDetailElement extends BeerDetail, HTMLElement {
+  interface HTMLBeerDetailElement extends BeerDetail, HTMLStencilElement {
   }
   var HTMLBeerDetailElement: {
     prototype: HTMLBeerDetailElement;
@@ -174,7 +186,7 @@ import {
 } from './components/beer-item/beer-item';
 
 declare global {
-  interface HTMLBeerItemElement extends BeerItem, HTMLElement {
+  interface HTMLBeerItemElement extends BeerItem, HTMLStencilElement {
   }
   var HTMLBeerItemElement: {
     prototype: HTMLBeerItemElement;
@@ -205,7 +217,7 @@ import {
 } from './components/beer-list/beer-list';
 
 declare global {
-  interface HTMLBeerListElement extends BeerList, HTMLElement {
+  interface HTMLBeerListElement extends BeerList, HTMLStencilElement {
   }
   var HTMLBeerListElement: {
     prototype: HTMLBeerListElement;
@@ -236,7 +248,7 @@ import {
 } from './components/beer-page/beer-page';
 
 declare global {
-  interface HTMLBeerPageElement extends BeerPage, HTMLElement {
+  interface HTMLBeerPageElement extends BeerPage, HTMLStencilElement {
   }
   var HTMLBeerPageElement: {
     prototype: HTMLBeerPageElement;
@@ -266,7 +278,7 @@ import {
 } from './components/favorites-page/favorites-page';
 
 declare global {
-  interface HTMLFavoritesPageElement extends FavoritesPage, HTMLElement {
+  interface HTMLFavoritesPageElement extends FavoritesPage, HTMLStencilElement {
   }
   var HTMLFavoritesPageElement: {
     prototype: HTMLFavoritesPageElement;
@@ -296,7 +308,7 @@ import {
 } from './components/main-page/main-page';
 
 declare global {
-  interface HTMLMainPageElement extends MainPage, HTMLElement {
+  interface HTMLMainPageElement extends MainPage, HTMLStencilElement {
   }
   var HTMLMainPageElement: {
     prototype: HTMLMainPageElement;
@@ -322,11 +334,41 @@ declare global {
 
 
 import {
+  PopoverPage as PopoverPage
+} from './components/popover-page/popover-page';
+
+declare global {
+  interface HTMLPopoverPageElement extends PopoverPage, HTMLStencilElement {
+  }
+  var HTMLPopoverPageElement: {
+    prototype: HTMLPopoverPageElement;
+    new (): HTMLPopoverPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "popover-page": HTMLPopoverPageElement;
+  }
+  interface ElementTagNameMap {
+    "popover-page": HTMLPopoverPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "popover-page": JSXElements.PopoverPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PopoverPageAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   ProfileHeader as ProfileHeader
 } from './components/profile-header/profile-header';
 
 declare global {
-  interface HTMLProfileHeaderElement extends ProfileHeader, HTMLElement {
+  interface HTMLProfileHeaderElement extends ProfileHeader, HTMLStencilElement {
   }
   var HTMLProfileHeaderElement: {
     prototype: HTMLProfileHeaderElement;
@@ -356,7 +398,7 @@ import {
 } from './components/profile-page/profile-page';
 
 declare global {
-  interface HTMLProfilePageElement extends ProfilePage, HTMLElement {
+  interface HTMLProfilePageElement extends ProfilePage, HTMLStencilElement {
   }
   var HTMLProfilePageElement: {
     prototype: HTMLProfilePageElement;
@@ -386,7 +428,7 @@ import {
 } from './components/share-button/share-button';
 
 declare global {
-  interface HTMLShareButtonElement extends ShareButton, HTMLElement {
+  interface HTMLShareButtonElement extends ShareButton, HTMLStencilElement {
   }
   var HTMLShareButtonElement: {
     prototype: HTMLShareButtonElement;
@@ -416,7 +458,7 @@ import {
 } from './components/stencil-beer/stencil-beer';
 
 declare global {
-  interface HTMLStencilBeerElement extends StencilBeer, HTMLElement {
+  interface HTMLStencilBeerElement extends StencilBeer, HTMLStencilElement {
   }
   var HTMLStencilBeerElement: {
     prototype: HTMLStencilBeerElement;
@@ -442,11 +484,41 @@ declare global {
 
 
 import {
+  TabsPage as TabsPage
+} from './components/tabs-page/tabs-page';
+
+declare global {
+  interface HTMLTabsPageElement extends TabsPage, HTMLStencilElement {
+  }
+  var HTMLTabsPageElement: {
+    prototype: HTMLTabsPageElement;
+    new (): HTMLTabsPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "tabs-page": HTMLTabsPageElement;
+  }
+  interface ElementTagNameMap {
+    "tabs-page": HTMLTabsPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "tabs-page": JSXElements.TabsPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface TabsPageAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
   UserProfile as UserProfile
 } from './components/user-profile/user-profile';
 
 declare global {
-  interface HTMLUserProfileElement extends UserProfile, HTMLElement {
+  interface HTMLUserProfileElement extends UserProfile, HTMLStencilElement {
   }
   var HTMLUserProfileElement: {
     prototype: HTMLUserProfileElement;
@@ -476,7 +548,7 @@ import {
 } from './components/users-list/users-list';
 
 declare global {
-  interface HTMLUsersListElement extends UsersList, HTMLElement {
+  interface HTMLUsersListElement extends UsersList, HTMLStencilElement {
   }
   var HTMLUsersListElement: {
     prototype: HTMLUsersListElement;
@@ -506,7 +578,7 @@ import {
 } from './components/users-page/users-page';
 
 declare global {
-  interface HTMLUsersPageElement extends UsersPage, HTMLElement {
+  interface HTMLUsersPageElement extends UsersPage, HTMLStencilElement {
   }
   var HTMLUsersPageElement: {
     prototype: HTMLUsersPageElement;

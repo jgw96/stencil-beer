@@ -14,11 +14,11 @@ export class MainPage {
   @Prop() history: RouterHistory;
 
   navigateToBeer() {
-    this.history.push('/beers', {})
+    this.history.push('/beers', {});
   }
 
   navigateToBars() {
-    this.history.push('/bars', {})
+    this.history.push('/bars', {});
   }
 
   render() {
