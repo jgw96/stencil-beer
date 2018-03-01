@@ -24,6 +24,9 @@ main-page {
     text-align: center;
     will-change: opacity;
     margin-top: 10px;
+    animation-name: enterAni;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(.36,.66,.04,1);
   }
 
   .card-title {
@@ -45,6 +48,18 @@ main-page {
     background: var(--theme-secondary);
     padding-left: 1.1em;
     padding-right: 0.5em;
+  }
+
+  @keyframes enterAni {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
 
   @media (min-width: 550px) {

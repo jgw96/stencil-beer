@@ -6,13 +6,16 @@ beer-detail {
   ion-fab {
     bottom: 10px !important;
     right: 10px;
+    animation-name: slidefab;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-out;
   }
 
-  st-img {
+  lazy-img {
     margin-top: 2em;
   }
 
-  st-img img {
+  lazy-img {
     height: 256px;
   }
 
@@ -23,7 +26,8 @@ beer-detail {
 
   #animateIn {
     animation-name: fadein;
-    animation-duration: .5s;
+    animation-duration: 0.7s;
+    animation-timing-function: cubic-bezier(.36,.66,.04,1);
   }
 
   #fake-card {
@@ -37,9 +41,23 @@ beer-detail {
   @keyframes fadein {
     from {
       opacity: 0;
+      transform: translateY(30px);
     }
 
     to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slidefab {
+    from {
+      transform: translateX(30px);
+      opacity: 0;
+    }
+  
+    to {
+      transform: translatex(0);
       opacity: 1;
     }
   }

@@ -1,0 +1,17 @@
+ion-tabbar {
+  animation-name: slideup;
+  animation-timing-function: ease-out;
+  animation-duration: 0.5s;
+}
+
+@keyframes slideup {
+  from {
+    transform: translatey(40px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

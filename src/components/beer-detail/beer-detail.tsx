@@ -57,7 +57,7 @@ export class BeerDetail {
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
-                <st-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt={this.beer.name}></st-img>
+                <lazy-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
               </div>
               <h1>{this.beer.name}</h1>
 
@@ -82,7 +82,7 @@ export class BeerDetail {
 
           <profile-header></profile-header>
 
-          <ion-content>
+          <ion-content padding>
             <main>
               <div id='fake-card'></div>
             </main>

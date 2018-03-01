@@ -292,6 +292,37 @@ declare global {
 
 
 import {
+  LazyImg as LazyImg
+} from './components/lazy-img/lazy-img';
+
+declare global {
+  interface HTMLLazyImgElement extends LazyImg, HTMLStencilElement {
+  }
+  var HTMLLazyImgElement: {
+    prototype: HTMLLazyImgElement;
+    new (): HTMLLazyImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    "lazy-img": HTMLLazyImgElement;
+  }
+  interface ElementTagNameMap {
+    "lazy-img": HTMLLazyImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "lazy-img": JSXElements.LazyImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface LazyImgAttributes extends HTMLAttributes {
+      alt?: string;
+      src?: string;
+    }
+  }
+}
+
+
+import {
   MainPage as MainPage
 } from './components/main-page/main-page';
 

@@ -1,11 +1,15 @@
 beer-item {
 
-  st-img {
+  ion-card {
+    opacity: 0;
+  }
+
+  lazy-img {
     display: flex;
     justify-content: center;
   }
 
-  st-img {
+  lazy-img {
     height: 20em;
   }
 

@@ -1,11 +1,33 @@
-profile-header {
-  ion-icon {
-    fill: white;
-    width: 32px;
-  }
+
+ion-icon {
+  fill: white;
+  width: 32px;
+}
     
-  #userImage {
-    border-radius: 50%;
-    height: 3em;
+#userImage {
+  border-radius: 50%;
+  height: 3em;
+  animation-name: slidein;
+  animation-duration: 0.3s;
+  animation-timing-function: ease-in;
+}
+
+#fake-image {
+  height: 2.5em;
+  width: 2.5em;
+  background: grey;
+  border-radius: 50%;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translatex(0);
+    opacity: 1;
   }
 }
+

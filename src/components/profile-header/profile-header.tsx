@@ -57,8 +57,8 @@ export class ProfileHeader {
           <ion-title>IonicBeer Beta</ion-title>
 
           <ion-buttons slot='end'>
-            <ion-button fill='clear' onClick={() => this.openActionSheet()} icon-only>
-              <img id='userImage' src={this.profilePic} alt='user profile'></img>
+            <ion-button fill='clear' onClick={() => this.openPopover(event)} icon-only>
+              {this.profilePic ? <img id='userImage' src={this.profilePic} alt='user profile'></img> : <div id='fake-image'></div>}
             </ion-button>
           </ion-buttons>
         </ion-toolbar>

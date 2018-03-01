@@ -95,7 +95,7 @@ export class ProfilePage {
             </ion-toolbar>
           </ion-header>
 
-          <ion-content>
+          <ion-content padding>
             <div id='imageBlock'>
               <img src={this.user.photoURL}></img>
             </div>
@@ -119,7 +119,7 @@ export class ProfilePage {
           </ion-toolbar>
         </ion-header>
 
-        <ion-content>
+        <ion-content padding>
           <div id='imageBlock'>
             <img src={this.user.photoURL}></img>
           </div>
