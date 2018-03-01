@@ -2,9 +2,6 @@ import { Component, State, Listen } from '@stencil/core';
 
 import { Beer } from '../../global/interfaces';
 
-// declare var firebase: any;
-//import firebase from 'firebase';
-
 declare var firebase: any;
 
 @Component({
@@ -17,6 +14,7 @@ export class favoritesPage {
 
   async componentDidLoad() {
     const tempBeers = [];
+    
 
     this.getSavedBeers().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -50,7 +48,6 @@ export class favoritesPage {
         <profile-header></profile-header>
 
         <ion-content>
-          <h1>Favorite Beers</h1>
           <beer-list fave={true} beers={this.beers}></beer-list>
         </ion-content>
       </ion-page>

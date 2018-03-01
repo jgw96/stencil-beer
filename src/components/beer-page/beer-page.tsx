@@ -1,4 +1,4 @@
-import { Component, State, Prop, Listen } from '@stencil/core';
+import { Component, Element, State, Prop, Listen } from '@stencil/core';
 import { ToastController } from '@ionic/core';
 import { RouterHistory } from '@stencil/router';
 
@@ -11,49 +11,42 @@ import { fetchBeers, doSearch } from '../../global/http-service';
 })
 export class BeerPage {
 
-  page: number;
+  page: number = 1;
+  iScroll: any;
 
   @State() beers: Array<Beer>;
 
-  @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
   @Prop() history: RouterHistory;
 
-  async componentDidLoad() {
-    if (!this.isServer && this.beers === undefined) {
-      console.log(this.isServer);
+  @Element() el: Element;
 
-      this.page = 1;
+  async componentDidLoad() {
+    // set up with first bit of content
+    this.beers = await fetchBeers(this.page);
+
+    // now lets init infiniteScrolling
+    this.iScroll = this.el.querySelector('#infinite-scroll');
+
+    this.iScroll.addEventListener('ionInfinite', async () => {
+      this.page = this.page + 1;
+      console.log('here');
 
       try {
-        this.beers = await fetchBeers(this.page);
+        const newBeers = await fetchBeers(this.page);
+        this.beers = this.beers.concat(newBeers);
+        this.iScroll.complete();
       }
       catch (err) {
         console.log(err);
         this.showErrorToast();
       }
-    }
+    })
   }
 
   async showErrorToast() {
     const toast = await this.toastCtrl.create({ message: 'Error loading data', duration: 1000 });
     toast.present();
-  }
-
-  async nextPage() {
-    this.page = this.page + 1;
-    this.beers = await fetchBeers(this.page);
-  }
-
-  async previousPage() {
-    if (this.page > 1) {
-      this.page = this.page - 1;
-      this.beers = await fetchBeers(this.page);
-    }
-  }
-
-  goToFavorites() {
-    this.history.push('/beers/favorites', {});
   }
 
   @Listen('ionInput')
@@ -140,30 +133,14 @@ export class BeerPage {
 
         <ion-content>
           <beer-list fave={false} beers={this.beers}></beer-list>
+
+          <ion-infinite-scroll id="infinite-scroll">
+            <ion-infinite-scroll-content
+              loadingSpinner="bubbles"
+              loadingText="Loading more data...">
+            </ion-infinite-scroll-content>
+          </ion-infinite-scroll>
         </ion-content>
-
-        <ion-fab>
-          <ion-fab-button onClick={() => this.goToFavorites()}>
-            <ion-icon name='star'></ion-icon>
-          </ion-fab-button>
-        </ion-fab>
-
-        <ion-footer>
-          <ion-toolbar>
-            <ion-buttons slot='start'>
-              <ion-button fill='clear' onClick={() => this.previousPage()} color='primary'>
-                prev
-              </ion-button>
-            </ion-buttons>
-
-
-            <ion-buttons slot='end'>
-              <ion-button fill='clear' onClick={() => this.nextPage()} color='primary'>
-                next
-              </ion-button>
-            </ion-buttons>
-          </ion-toolbar>
-        </ion-footer>
       </ion-page>
     );
   }
