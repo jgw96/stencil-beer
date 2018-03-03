@@ -38,6 +38,7 @@ export class BarPage {
       body: JSON.stringify({ lat: position.coords.latitude, long: position.coords.longitude })
     })
     const data = await response.json();
+    console.log(data);
 
     this.bars = data;
   }
