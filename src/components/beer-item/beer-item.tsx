@@ -91,7 +91,7 @@ export class BeerItem {
 
   async deleteBeerHelper(passedBeer: Beer) {
     const doc = await firebase.firestore().collection('savedBeers')
-      .where('beer.name', '==', passedBeer)
+      .where('beer.name', '==', passedBeer.name)
       .where('author', '==', (window as any).firebase.auth().currentUser.email)
       .get();
   
