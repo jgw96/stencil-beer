@@ -18,6 +18,7 @@ exports.googlePlaces = functions.https.onRequest((req, res) => {
     fetch(`${placesApiRoot}?key=${apiKey}&location=${data.lat},${data.long}&radius=9000&type=bar`).then((response) => {
       return response.json()
     }).then((data) => {
+      console.log(data);
       res.send(data.results);
     })
 

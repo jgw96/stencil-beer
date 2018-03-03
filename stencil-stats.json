@@ -6,7 +6,7 @@
   "app": {
     "namespace": "App",
     "fsNamespace": "app",
-    "components": 65,
+    "components": 64,
     "entries": 23,
     "bundles": 37
   },
@@ -36,8 +36,7 @@
     {
       "tag": "bar-directions",
       "dependencies": [
-        "ion-content",
-        "profile-header"
+        "ion-content"
       ],
       "dependencyOf": []
     },
@@ -464,23 +463,6 @@
       ]
     },
     {
-      "tag": "ion-gesture-controller",
-      "dependencies": [],
-      "dependencyOf": [
-        "ion-scroll"
-      ]
-    },
-    {
-      "tag": "ion-scroll",
-      "dependencies": [
-        "ion-gesture-controller"
-      ],
-      "dependencyOf": [
-        "ion-content",
-        "ion-tabbar"
-      ]
-    },
-    {
       "tag": "ion-icon",
       "dependencies": [],
       "dependencyOf": [
@@ -519,6 +501,14 @@
       "dependencyOf": [
         "popover-page",
         "profile-header"
+      ]
+    },
+    {
+      "tag": "ion-scroll",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-content",
+        "ion-tabbar"
       ]
     },
     {
@@ -601,7 +591,6 @@
         "ion-toolbar"
       ],
       "dependencyOf": [
-        "bar-directions",
         "bar-page",
         "beer-detail",
         "beer-page",
@@ -743,8 +732,7 @@
         {
           "tag": "bar-directions",
           "dependencies": [
-            "ion-content",
-            "profile-header"
+            "ion-content"
           ],
           "dependencyOf": []
         }
@@ -752,7 +740,7 @@
       "bundles": [
         {
           "fileName": "bar-directions.js",
-          "size": 2573,
+          "size": 2811,
           "outputs": [
             "www/build/app/bar-directions.js"
           ]
@@ -802,7 +790,7 @@
       "bundles": [
         {
           "fileName": "bar-list.js",
-          "size": 4981,
+          "size": 5013,
           "outputs": [
             "www/build/app/bar-list.js"
           ]
@@ -981,7 +969,7 @@
       "bundles": [
         {
           "fileName": "beer-item.ios.js",
-          "size": 140983,
+          "size": 142002,
           "outputs": [
             "www/build/app/beer-item.ios.js"
           ],
@@ -989,7 +977,7 @@
         },
         {
           "fileName": "beer-item.md.js",
-          "size": 174351,
+          "size": 175370,
           "outputs": [
             "www/build/app/beer-item.md.js"
           ],
@@ -997,21 +985,21 @@
         }
       ],
       "inputs": [
+        "../ionic/packages/core/dist/collection/components/alert-controller/alert-controller.js",
+        "../ionic/packages/core/dist/collection/components/alert/alert.js",
+        "../ionic/packages/core/dist/collection/components/buttons/buttons.js",
+        "../ionic/packages/core/dist/collection/components/card-content/card-content.js",
+        "../ionic/packages/core/dist/collection/components/card-title/card-title.js",
+        "../ionic/packages/core/dist/collection/components/card/card.js",
+        "../ionic/packages/core/dist/collection/components/content/content.js",
+        "../ionic/packages/core/dist/collection/components/header/header.js",
+        "../ionic/packages/core/dist/collection/components/item/item.js",
+        "../ionic/packages/core/dist/collection/components/label/label.js",
+        "../ionic/packages/core/dist/collection/components/searchbar/searchbar.js",
+        "../ionic/packages/core/dist/collection/components/title/title.js",
         "dist/collection/components/beer-item/beer-item.js",
         "dist/collection/components/beer-list/beer-list.js",
-        "dist/collection/components/share-button/share-button.js",
-        "node_modules/@ionic/core/dist/collection/components/alert-controller/alert-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/alert/alert.js",
-        "node_modules/@ionic/core/dist/collection/components/buttons/buttons.js",
-        "node_modules/@ionic/core/dist/collection/components/card-content/card-content.js",
-        "node_modules/@ionic/core/dist/collection/components/card-title/card-title.js",
-        "node_modules/@ionic/core/dist/collection/components/card/card.js",
-        "node_modules/@ionic/core/dist/collection/components/content/content.js",
-        "node_modules/@ionic/core/dist/collection/components/header/header.js",
-        "node_modules/@ionic/core/dist/collection/components/item/item.js",
-        "node_modules/@ionic/core/dist/collection/components/label/label.js",
-        "node_modules/@ionic/core/dist/collection/components/searchbar/searchbar.js",
-        "node_modules/@ionic/core/dist/collection/components/title/title.js"
+        "dist/collection/components/share-button/share-button.js"
       ],
       "encapsulations": [
         "none"
@@ -1037,14 +1025,14 @@
       "bundles": [
         {
           "fileName": "ion-animation-controller.js",
-          "size": 38612,
+          "size": 39731,
           "outputs": [
             "www/build/app/ion-animation-controller.js"
           ]
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/animation-controller/animation-controller.js"
+        "../ionic/packages/core/dist/collection/components/animation-controller/animation-controller.js"
       ],
       "encapsulations": [
         "none"
@@ -1088,7 +1076,7 @@
       "bundles": [
         {
           "fileName": "users-list.ios.js",
-          "size": 3152,
+          "size": 3160,
           "outputs": [
             "www/build/app/users-list.ios.js"
           ],
@@ -1096,7 +1084,7 @@
         },
         {
           "fileName": "users-list.md.js",
-          "size": 10132,
+          "size": 10140,
           "outputs": [
             "www/build/app/users-list.md.js"
           ],
@@ -1104,9 +1092,9 @@
         }
       ],
       "inputs": [
+        "../ionic/packages/core/dist/collection/components/avatar/avatar.js",
         "dist/collection/components/users-list/users-list.js",
-        "dist/collection/components/users-page/users-page.js",
-        "node_modules/@ionic/core/dist/collection/components/avatar/avatar.js"
+        "dist/collection/components/users-page/users-page.js"
       ],
       "encapsulations": [
         "none"
@@ -1142,7 +1130,7 @@
       "bundles": [
         {
           "fileName": "ion-backdrop.ios.js",
-          "size": 5687,
+          "size": 5805,
           "outputs": [
             "www/build/app/ion-backdrop.ios.js"
           ],
@@ -1150,7 +1138,7 @@
         },
         {
           "fileName": "ion-backdrop.md.js",
-          "size": 19649,
+          "size": 19767,
           "outputs": [
             "www/build/app/ion-backdrop.md.js"
           ],
@@ -1158,8 +1146,8 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/backdrop/backdrop.js",
-        "node_modules/@ionic/core/dist/collection/components/ripple-effect/ripple-effect.js"
+        "../ionic/packages/core/dist/collection/components/backdrop/backdrop.js",
+        "../ionic/packages/core/dist/collection/components/ripple-effect/ripple-effect.js"
       ],
       "encapsulations": [
         "none"
@@ -1302,7 +1290,7 @@
       "bundles": [
         {
           "fileName": "beer-page.ios.js",
-          "size": 78347,
+          "size": 79160,
           "outputs": [
             "www/build/app/beer-page.ios.js"
           ],
@@ -1310,7 +1298,7 @@
         },
         {
           "fileName": "beer-page.md.js",
-          "size": 110260,
+          "size": 111073,
           "outputs": [
             "www/build/app/beer-page.md.js"
           ],
@@ -1318,18 +1306,18 @@
         }
       ],
       "inputs": [
+        "../ionic/packages/core/dist/collection/components/badge/badge.js",
+        "../ionic/packages/core/dist/collection/components/infinite-scroll-content/infinite-scroll-content.js",
+        "../ionic/packages/core/dist/collection/components/infinite-scroll/infinite-scroll.js",
+        "../ionic/packages/core/dist/collection/components/spinner/spinner.js",
+        "../ionic/packages/core/dist/collection/components/tab-button/tab-button.js",
+        "../ionic/packages/core/dist/collection/components/tab/tab.js",
+        "../ionic/packages/core/dist/collection/components/tabbar/tabbar.js",
+        "../ionic/packages/core/dist/collection/components/tabs/tabs.js",
         "dist/collection/components/beer-page/beer-page.js",
         "dist/collection/components/favorites-page/favorites-page.js",
         "dist/collection/components/profile-page/profile-page.js",
-        "dist/collection/components/tabs-page/tabs-page.js",
-        "node_modules/@ionic/core/dist/collection/components/badge/badge.js",
-        "node_modules/@ionic/core/dist/collection/components/infinite-scroll-content/infinite-scroll-content.js",
-        "node_modules/@ionic/core/dist/collection/components/infinite-scroll/infinite-scroll.js",
-        "node_modules/@ionic/core/dist/collection/components/spinner/spinner.js",
-        "node_modules/@ionic/core/dist/collection/components/tab-button/tab-button.js",
-        "node_modules/@ionic/core/dist/collection/components/tab/tab.js",
-        "node_modules/@ionic/core/dist/collection/components/tabbar/tabbar.js",
-        "node_modules/@ionic/core/dist/collection/components/tabs/tabs.js"
+        "dist/collection/components/tabs-page/tabs-page.js"
       ],
       "encapsulations": [
         "none"
@@ -1364,7 +1352,7 @@
       "bundles": [
         {
           "fileName": "ion-button.ios.js",
-          "size": 26619,
+          "size": 26723,
           "outputs": [
             "www/build/app/ion-button.ios.js"
           ],
@@ -1372,7 +1360,7 @@
         },
         {
           "fileName": "ion-button.md.js",
-          "size": 36991,
+          "size": 37095,
           "outputs": [
             "www/build/app/ion-button.md.js"
           ],
@@ -1380,7 +1368,7 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/button/button.js"
+        "../ionic/packages/core/dist/collection/components/button/button.js"
       ],
       "encapsulations": [
         "none"
@@ -1428,7 +1416,7 @@
       "bundles": [
         {
           "fileName": "beer-detail.ios.js",
-          "size": 19216,
+          "size": 19296,
           "outputs": [
             "www/build/app/beer-detail.ios.js"
           ],
@@ -1436,7 +1424,7 @@
         },
         {
           "fileName": "beer-detail.md.js",
-          "size": 25380,
+          "size": 25460,
           "outputs": [
             "www/build/app/beer-detail.md.js"
           ],
@@ -1444,60 +1432,9 @@
         }
       ],
       "inputs": [
-        "dist/collection/components/beer-detail/beer-detail.js",
-        "node_modules/@ionic/core/dist/collection/components/fab-button/fab-button.js",
-        "node_modules/@ionic/core/dist/collection/components/fab/fab.js"
-      ],
-      "encapsulations": [
-        "none"
-      ],
-      "modes": [
-        "ios",
-        "md"
-      ]
-    },
-    {
-      "entryId": "entry:ion-gesture-controller.ion-scroll",
-      "components": [
-        {
-          "tag": "ion-gesture-controller",
-          "dependencies": [],
-          "dependencyOf": [
-            "ion-scroll"
-          ]
-        },
-        {
-          "tag": "ion-scroll",
-          "dependencies": [
-            "ion-gesture-controller"
-          ],
-          "dependencyOf": [
-            "ion-content",
-            "ion-tabbar"
-          ]
-        }
-      ],
-      "bundles": [
-        {
-          "fileName": "ion-gesture-controller.ios.js",
-          "size": 15661,
-          "outputs": [
-            "www/build/app/ion-gesture-controller.ios.js"
-          ],
-          "mode": "ios"
-        },
-        {
-          "fileName": "ion-gesture-controller.md.js",
-          "size": 22460,
-          "outputs": [
-            "www/build/app/ion-gesture-controller.md.js"
-          ],
-          "mode": "md"
-        }
-      ],
-      "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/gesture-controller/gesture-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/scroll/scroll.js"
+        "../ionic/packages/core/dist/collection/components/fab-button/fab-button.js",
+        "../ionic/packages/core/dist/collection/components/fab/fab.js",
+        "dist/collection/components/beer-detail/beer-detail.js"
       ],
       "encapsulations": [
         "none"
@@ -1556,7 +1493,7 @@
       "bundles": [
         {
           "fileName": "ion-list.ios.js",
-          "size": 2260,
+          "size": 2286,
           "outputs": [
             "www/build/app/ion-list.ios.js"
           ],
@@ -1564,7 +1501,7 @@
         },
         {
           "fileName": "ion-list.md.js",
-          "size": 9047,
+          "size": 9073,
           "outputs": [
             "www/build/app/ion-list.md.js"
           ],
@@ -1572,7 +1509,7 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/list/list.js"
+        "../ionic/packages/core/dist/collection/components/list/list.js"
       ],
       "encapsulations": [
         "none"
@@ -1608,7 +1545,7 @@
       "bundles": [
         {
           "fileName": "ion-popover.ios.js",
-          "size": 20069,
+          "size": 20488,
           "outputs": [
             "www/build/app/ion-popover.ios.js"
           ],
@@ -1616,7 +1553,7 @@
         },
         {
           "fileName": "ion-popover.md.js",
-          "size": 26309,
+          "size": 26728,
           "outputs": [
             "www/build/app/ion-popover.md.js"
           ],
@@ -1624,8 +1561,49 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/popover-controller/popover-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/popover/popover.js"
+        "../ionic/packages/core/dist/collection/components/popover-controller/popover-controller.js",
+        "../ionic/packages/core/dist/collection/components/popover/popover.js"
+      ],
+      "encapsulations": [
+        "none"
+      ],
+      "modes": [
+        "ios",
+        "md"
+      ]
+    },
+    {
+      "entryId": "entry:ion-scroll",
+      "components": [
+        {
+          "tag": "ion-scroll",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-content",
+            "ion-tabbar"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "ion-scroll.ios.js",
+          "size": 9601,
+          "outputs": [
+            "www/build/app/ion-scroll.ios.js"
+          ],
+          "mode": "ios"
+        },
+        {
+          "fileName": "ion-scroll.md.js",
+          "size": 16400,
+          "outputs": [
+            "www/build/app/ion-scroll.md.js"
+          ],
+          "mode": "md"
+        }
+      ],
+      "inputs": [
+        "../ionic/packages/core/dist/collection/components/scroll/scroll.js"
       ],
       "encapsulations": [
         "none"
@@ -1671,7 +1649,7 @@
       "bundles": [
         {
           "fileName": "ion-toast.ios.js",
-          "size": 11590,
+          "size": 11818,
           "outputs": [
             "www/build/app/ion-toast.ios.js"
           ],
@@ -1679,7 +1657,7 @@
         },
         {
           "fileName": "ion-toast.md.js",
-          "size": 18148,
+          "size": 18376,
           "outputs": [
             "www/build/app/ion-toast.md.js"
           ],
@@ -1687,8 +1665,8 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/toast-controller/toast-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/toast/toast.js"
+        "../ionic/packages/core/dist/collection/components/toast-controller/toast-controller.js",
+        "../ionic/packages/core/dist/collection/components/toast/toast.js"
       ],
       "encapsulations": [
         "none"
@@ -1716,7 +1694,7 @@
       "bundles": [
         {
           "fileName": "ion-toolbar.ios.js",
-          "size": 168019,
+          "size": 168060,
           "outputs": [
             "www/build/app/ion-toolbar.ios.js"
           ],
@@ -1724,7 +1702,7 @@
         },
         {
           "fileName": "ion-toolbar.md.js",
-          "size": 160833,
+          "size": 160874,
           "outputs": [
             "www/build/app/ion-toolbar.md.js"
           ],
@@ -1732,7 +1710,7 @@
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/toolbar/toolbar.js"
+        "../ionic/packages/core/dist/collection/components/toolbar/toolbar.js"
       ],
       "encapsulations": [
         "none"
@@ -1853,7 +1831,6 @@
             "ion-toolbar"
           ],
           "dependencyOf": [
-            "bar-directions",
             "bar-page",
             "beer-detail",
             "beer-page",
@@ -1967,7 +1944,7 @@
       "bundles": [
         {
           "fileName": "stencil-beer.ios.js",
-          "size": 88684,
+          "size": 89132,
           "outputs": [
             "www/build/app/stencil-beer.ios.js"
           ],
@@ -1975,7 +1952,7 @@
         },
         {
           "fileName": "stencil-beer.md.js",
-          "size": 93658,
+          "size": 94106,
           "outputs": [
             "www/build/app/stencil-beer.md.js"
           ],
@@ -1983,13 +1960,13 @@
         }
       ],
       "inputs": [
+        "../ionic/packages/core/dist/collection/components/app/app.js",
+        "../ionic/packages/core/dist/collection/components/cordova-platform/cordova-platform.js",
+        "../ionic/packages/core/dist/collection/components/input-shims/input-shims.js",
+        "../ionic/packages/core/dist/collection/components/platform/platform.js",
+        "../ionic/packages/core/dist/collection/components/status-tap/status-tap.js",
+        "../ionic/packages/core/dist/collection/components/tap-click/tap-click.js",
         "dist/collection/components/stencil-beer/stencil-beer.js",
-        "node_modules/@ionic/core/dist/collection/components/app/app.js",
-        "node_modules/@ionic/core/dist/collection/components/cordova-platform/cordova-platform.js",
-        "node_modules/@ionic/core/dist/collection/components/input-shims/input-shims.js",
-        "node_modules/@ionic/core/dist/collection/components/platform/platform.js",
-        "node_modules/@ionic/core/dist/collection/components/status-tap/status-tap.js",
-        "node_modules/@ionic/core/dist/collection/components/tap-click/tap-click.js",
         "node_modules/@stencil/router/dist/collection/components/route/route.js",
         "node_modules/@stencil/router/dist/collection/components/router/router.js"
       ],
@@ -2061,6 +2038,41 @@
       ]
     }
   ],
-  "sourceGraph": {},
+  "sourceGraph": {
+    "src/components/auth-page/auth-page.tsx": [],
+    "src/components/bar-directions/bar-directions.tsx": [],
+    "src/components/bar-list/bar-list.tsx": [],
+    "src/components/bar-page/bar-page.tsx": [],
+    "src/components/beer-detail/beer-detail.tsx": [
+      "src/global/http-service"
+    ],
+    "src/components/beer-item/beer-item.tsx": [],
+    "src/components/beer-list/beer-list.tsx": [],
+    "src/components/beer-page/beer-page.tsx": [
+      "src/global/http-service"
+    ],
+    "src/components/favorites-page/favorites-page.tsx": [],
+    "src/components/lazy-img/lazy-img.tsx": [],
+    "src/components/main-page/main-page.tsx": [],
+    "src/components/popover-page/popover-page.tsx": [],
+    "src/components/profile-header/profile-header.tsx": [],
+    "src/components/profile-page/profile-page.tsx": [
+      "src/global/notify-service"
+    ],
+    "src/components/share-button/share-button.tsx": [],
+    "src/components/stencil-beer/stencil-beer.tsx": [],
+    "src/components/tabs-page/tabs-page.tsx": [],
+    "src/components/user-profile/user-profile.tsx": [],
+    "src/components/users-list/users-list.tsx": [],
+    "src/components/users-page/users-page.tsx": [],
+    "src/global/http-service.ts": [
+      "greenlet"
+    ],
+    "src/global/interfaces.ts": [],
+    "src/global/notify-service.ts": [
+      "src/global/utils"
+    ],
+    "src/global/utils.ts": []
+  },
   "collections": []
 }

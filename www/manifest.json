@@ -1,6 +1,6 @@
 {
-  "name": "StencilBeer",
-  "short_name": "StencilBeer",
+  "name": "IonicBeer",
+  "short_name": "IonicBeer",
   "start_url": "/",
   "display": "standalone",
   "icons": [{
