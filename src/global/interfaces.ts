@@ -15,7 +15,5 @@ export interface Bar {
   name: string,
   vicinity: string,
   id: string
-  brewery: {
-    name: string
-  }
+  rating: number;
 }

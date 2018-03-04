@@ -16,6 +16,25 @@ bar-list {
     right: 10px;
   }
 
+  ion-avatar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+
+  .good {
+    background: #4CAF50;
+  }
+
+  .ok {
+    background: #FFEB3B;
+  }
+
+  .bad {
+    background: #F44336;
+  }
+
   ion-card {
     position: relative !important;
   }

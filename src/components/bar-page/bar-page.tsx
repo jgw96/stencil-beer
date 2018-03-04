@@ -47,9 +47,11 @@ export class BarPage {
   search(ev) {
     setTimeout(() => {
       const term = ev.detail.target.value;
+      console.log(term);
+      console.log(this.bars);
 
       this.bars = this.bars.filter((bar) =>
-        bar.brewery.name.toLowerCase().indexOf(term.toLowerCase()) > -1
+        bar.name.toLowerCase().indexOf(term.toLowerCase()) > -1
       );
     }, 1000);
   }
