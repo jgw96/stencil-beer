@@ -91,7 +91,7 @@ export class ProfilePage {
         <ion-page class='show-page'>
           <ion-header md-height="96px">
             <ion-toolbar color='dark'>
-              <ion-title>IonicBeer Beta</ion-title>
+              <stencil-route-link url='/' exact={true}><ion-title>IonicBeer Beta</ion-title></stencil-route-link>
             </ion-toolbar>
           </ion-header>
 
@@ -115,7 +115,7 @@ export class ProfilePage {
       <ion-page class='show-page'>
         <ion-header md-height="96px">
           <ion-toolbar color='dark'>
-            <ion-title>IonicBeer Beta</ion-title>
+            <stencil-route-link url='/' exact={true}><ion-title>IonicBeer Beta</ion-title></stencil-route-link>
           </ion-toolbar>
         </ion-header>
 

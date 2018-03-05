@@ -40,7 +40,7 @@ export class ProfileHeader {
       component: 'popover-page',
       ev: event
     });
-    
+
     await this.popover.present();
   }
 
@@ -72,7 +72,7 @@ export class ProfileHeader {
     return (
       <ion-header md-height="96px">
         <ion-toolbar color='dark'>
-          <ion-title>IonicBeer Beta</ion-title>
+          <stencil-route-link url='/' exact={true}><ion-title>IonicBeer Beta</ion-title></stencil-route-link>
 
           <ion-buttons slot='end'>
             <ion-button fill='clear' onClick={() => this.openPopover(event)} icon-only>

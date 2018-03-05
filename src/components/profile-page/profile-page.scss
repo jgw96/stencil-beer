@@ -1,5 +1,9 @@
 profile-page {
 
+  stencil-route-link a {
+    text-decoration: none;
+  }
+
   ion-page {
     background: white;
   }
