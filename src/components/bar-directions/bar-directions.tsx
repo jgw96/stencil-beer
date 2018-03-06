@@ -34,16 +34,6 @@ export class BarDirections {
     await this.loadScript();
 
     this.script.addEventListener('load', async () => {
-      console.log('loaded');
-      /*fetch('/googleGeocode', {
-        method: 'post',
-        body: JSON.stringify({ address: this.match.params.address })
-      }).then((response) => {
-        return response.json()
-      }).then((data) => {
-        console.log(data);
-        
-      })*/
       const response = await fetch('/googleGeocode', {
         method: 'post',
         body: JSON.stringify({ address: this.match.params.address })
