@@ -12,7 +12,33 @@ import { fetchBeers, doSearch } from '../../global/http-service';
 export class BeerPage {
 
   page: number = 1;
-  iScroll: any;
+  currentStyle: number = 2;
+  styles: Array<any> = [
+    {
+      name: 'English IPA',
+      id: 2
+    },
+    {
+      name: 'Imperial IPA',
+      id: 31
+    },
+    {
+      name: 'Stout',
+      id: 20
+    },
+    {
+      name: 'Wheat',
+      id: 112
+    },
+    {
+      name: 'Oktoberfest',
+      id: 82
+    },
+    {
+      name: 'Lager',
+      id: 93
+    }
+  ];
 
   @State() beers: Array<Beer>;
 
@@ -22,26 +48,35 @@ export class BeerPage {
   @Element() el: Element;
 
   async componentDidLoad() {
+    this.setUpBeers();
+  }
+
+  async setUpBeers() {
     // set up with first bit of content
-    this.beers = await fetchBeers(this.page);
+    this.beers = await fetchBeers(this.page, this.currentStyle);
 
     // now lets init infiniteScrolling
-    this.iScroll = this.el.querySelector('#infinite-scroll');
+    const iScroll: any = this.el.querySelector('#infinite-scroll');
 
-    this.iScroll.addEventListener('ionInfinite', async () => {
+    iScroll.addEventListener('ionInfinite', async () => {
       this.page = this.page + 1;
       console.log('here');
 
       try {
-        const newBeers = await fetchBeers(this.page);
+        const newBeers = await fetchBeers(this.page, this.currentStyle);
         this.beers = this.beers.concat(newBeers);
-        this.iScroll.complete();
+        iScroll.complete();
       }
       catch (err) {
         console.log(err);
         this.showErrorToast();
       }
     })
+  }
+
+  async newStyle(id: number) {
+    this.beers = null;
+    this.beers = await fetchBeers(1, id);
   }
 
   async showErrorToast() {
@@ -132,6 +167,17 @@ export class BeerPage {
         </ion-toolbar>
 
         <ion-content>
+          <div id='stylesBar'>
+            {
+              this.styles.map((style) => {
+                return (
+                  <ion-button onClick={() => this.newStyle(style.id)} color='dark' round={true}>
+                    {style.name}
+                  </ion-button>
+                )
+              })
+            }
+          </div>
           <beer-list fave={false} beers={this.beers}></beer-list>
 
           <ion-infinite-scroll id="infinite-scroll">

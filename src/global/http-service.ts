@@ -1,9 +1,22 @@
 import greenlet from 'greenlet';
 
 const fetchBeers = greenlet(
-  function (page: number) {
+  function (page: number, style: number) {
     const key = 'c0b90d19385d7dabee991e89c24ea711';
-    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=2`;
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=${style}`;
+
+    return fetch(url).then((res) => {
+      return res.json()
+    }).then((data) => {
+      return data.data;
+    })
+  }
+);
+
+const fetchStyles = greenlet(
+  function () {
+    const key = 'c0b90d19385d7dabee991e89c24ea711';
+    const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/styles?key=${key}`;
 
     return fetch(url).then((res) => {
       return res.json()
@@ -39,4 +52,4 @@ const getBeerDetail = greenlet(
   }
 )
 
-export {fetchBeers, doSearch, getBeerDetail};
+export {fetchBeers, doSearch, getBeerDetail, fetchStyles};

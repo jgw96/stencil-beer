@@ -1,7 +1,14 @@
 beer-page {
-  ion-fab {
-    bottom: 5em !important;
-    right: 10px;
+
+  #stylesBar {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    margin: 10px;
+
+    ion-button {
+      margin-right: 5px;
+    }
   }
 
   #cameraButton, #cameraButton svg {
