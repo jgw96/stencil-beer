@@ -114,11 +114,11 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
+            <ion-anchor href={`/beers/beer/${this.beer.id}`}>
               <ion-button id='detailButton' color='primary' fill='clear'>
                 Detail
               </ion-button>
-            </stencil-route-link>
+            </ion-anchor>
 
             {this.fave ?
               <ion-button color='danger' onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>

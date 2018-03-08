@@ -15,9 +15,6 @@ export class TabsPage {
 
         <ion-tab title='favorites' icon='star' component='favorites-page'>
         </ion-tab>
-
-        <ion-tab title='my profile' icon='person' component='profile-page'>
-        </ion-tab>
       </ion-tabs>
     );
   }

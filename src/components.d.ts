@@ -19,8 +19,8 @@ declare global {
 }
 
 import 'ionicons';
-import '@stencil/router';
 import '@ionic/core';
+import '@stencil/router';
 
 import {
   Bar,
