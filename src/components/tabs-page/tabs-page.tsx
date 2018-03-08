@@ -10,7 +10,7 @@ export class TabsPage {
   render() {
     return (
       <ion-tabs color='dark'>
-        <ion-tab selected={true} title='beers' icon='beer' component='beer-page'>
+        <ion-tab selected={true} title='beers' icon='beer' name='beer-tab'>
           <ion-nav></ion-nav>
         </ion-tab>
 

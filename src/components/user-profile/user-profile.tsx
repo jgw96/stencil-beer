@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+// import { MatchResults } from '@stencil/router';
 
 // import { getFullUser } from '../../global/save-service';
 
@@ -13,12 +13,14 @@ declare var firebase: any;
 })
 export class UserProfile {
 
-  @Prop() match: MatchResults;
+  // @Prop() match: MatchResults;
+  @Prop() userName: any;
+
   @State() beers: any;
   @State() user: any;
 
   async componentDidLoad() {
-    const allData = await this.getFullUser(this.match.params.user);
+    const allData = await this.getFullUser(this.userName);
 
     if (allData[1].length > 0) {
       this.beers = allData[1];

@@ -19,7 +19,7 @@ export class ProfileHeader {
   @State() profilePic: string;
 
   // @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
-  @Prop({ connect: 'ion-popover-controller'}) popoverCtrl: PopoverController;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: PopoverController;
   // @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
 
   componentDidLoad() {
@@ -40,7 +40,7 @@ export class ProfileHeader {
       component: 'popover-page',
       ev: event
     });
-    
+
     await this.popover.present();
   }
 
@@ -72,6 +72,9 @@ export class ProfileHeader {
     return (
       <ion-header md-height="96px">
         <ion-toolbar color='dark'>
+          <ion-buttons slot="start">
+            {window.location.href.indexOf('home') > 0 ? null : <ion-back-button defaultHref='/home' />}
+          </ion-buttons>
           <ion-title>IonicBeer Beta</ion-title>
 
           <ion-buttons slot='end'>

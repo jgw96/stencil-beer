@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+// import { MatchResults } from '@stencil/router';
 import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
@@ -13,11 +13,12 @@ export class BeerDetail {
 
   @State() beer: Beer;
 
-  @Prop() match: MatchResults;
+  // @Prop() match: MatchResults;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop() beerId: string;
 
-  componentWillLoad() {
-    try {
+  componentDidLoad() {
+   try {
       this.getBeerDetail();
     }
     catch (err) {
@@ -32,7 +33,8 @@ export class BeerDetail {
   }
 
   async getBeerDetail() {
-    this.beer = await getBeerDetail(this.match.params.id);
+    console.log(this.beerId);
+    this.beer = await getBeerDetail(this.beerId);
   }
 
   async share(beer) {

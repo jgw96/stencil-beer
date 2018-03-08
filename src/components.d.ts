@@ -27,7 +27,6 @@ import {
   Beer,
 } from './global/interfaces';
 import {
-  MatchResults,
   RouterHistory,
 } from '@stencil/router';
 
@@ -175,7 +174,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BeerDetailAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      beerId?: string;
     }
   }
 }
@@ -448,7 +447,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ProfilePageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
     }
   }
 }
@@ -568,7 +567,7 @@ declare global {
   }
   namespace JSXElements {
     export interface UserProfileAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      userName?: any;
     }
   }
 }

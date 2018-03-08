@@ -100,8 +100,9 @@ export class BeerItem {
     })
   }
 
-  navigateToDetail(id: string) {
-    this.el.closest('ion-nav').push('beer-detail', id);
+  navigateToDetail(beerId: string) {
+
+    this.el.closest('ion-nav').push('beer-detail', {beerId});
   }
 
   render() {

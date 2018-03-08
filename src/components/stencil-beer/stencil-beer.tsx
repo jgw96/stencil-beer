@@ -67,10 +67,19 @@ export class StencilBeer {
           <ion-route path='/' component='auth-page'></ion-route>
           <ion-route path='/home' component='main-page'></ion-route>
           <ion-route path='/beers' component='tabs-page'>
-            <ion-route path='beer' component='beer-page'></ion-route>
-            <ion-route path='/beer/:id' component='beer-detail'></ion-route>
+
+            <ion-route component='beer-tab'>
+              <ion-route component='beer-page' />
+              <ion-route path='/beer/:beerId' component='beer-detail' />
+            </ion-route>
+
             <ion-route path='favorites' component='favorites-page'></ion-route>
           </ion-route>
+
+          <ion-route path='/profile' component='profile-page'></ion-route>
+          <ion-route path='/users' component='users-page'></ion-route>
+          <ion-route path='/users/:userName' component='user-profile'></ion-route>
+
         </ion-router>
 
         <ion-nav swipeBackEnabled={false} main></ion-nav>
