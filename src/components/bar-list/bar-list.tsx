@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Element, Prop } from '@stencil/core';
 
 import { Bar } from '../../global/interfaces';
 
@@ -10,6 +10,12 @@ export class barList {
 
   @Prop() bars: Array<Bar>;
 
+  @Element() el: Element;
+
+  goToDirections(address: string) {
+    this.el.closest('ion-nav').push('bar-directions', { address });
+  }
+
   render() {
     if (this.bars) {
       return (
@@ -20,9 +26,9 @@ export class barList {
             if (bar.rating >= 4.0) {
               color = 'good';
             } else if (bar.rating <= 3.9 && bar.rating > 2.9) {
-              color='ok'
+              color = 'ok'
             } else {
-              color='bad';
+              color = 'bad';
             };
 
             return (
@@ -36,9 +42,7 @@ export class barList {
                   <p>{bar.vicinity}</p>
 
                   <ion-buttons>
-                    <stencil-route-link url={`/bars/directions/${bar.vicinity}}`} exact={true}>
-                      <ion-button color='primary' fill='clear'> Directions </ion-button>
-                    </stencil-route-link>
+                    <ion-button onClick={() => this.goToDirections(bar.vicinity)} color='primary' fill='clear'> Directions </ion-button>
 
                     <share-button beer={bar}></share-button>
 

@@ -9,7 +9,8 @@ declare var google: any;
 })
 export class BarDirections {
 
-  @Prop() match: any;
+  // @Prop() match: any;
+  @Prop() address: string;
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
 
   url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
@@ -36,7 +37,7 @@ export class BarDirections {
     this.script.addEventListener('load', async () => {
       const response = await fetch('/googleGeocode', {
         method: 'post',
-        body: JSON.stringify({ address: this.match.params.address })
+        body: JSON.stringify({ address: this.address })
       });
       const data = await response.json();
 
@@ -77,7 +78,8 @@ export class BarDirections {
 
   render() {
     return (
-      <ion-page class='show-page'>
+      <ion-page>
+        <profile-header></profile-header>
         <ion-content>
           <div id='map'></div>
         </ion-content>

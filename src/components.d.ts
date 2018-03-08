@@ -84,7 +84,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BarDirectionsAttributes extends HTMLAttributes {
-      match?: any;
+      address?: string;
     }
   }
 }

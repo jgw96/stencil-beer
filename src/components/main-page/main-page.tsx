@@ -40,7 +40,7 @@ export class MainPage {
               </div>
             </div>
 
-            <div>
+            <div onClick={() => this.navigateToBars()}>
               <div class='card'>
                 <img class='cardImage' src={this.secondImageUrl} alt='bar' />
                 <div class="card-title">Bars</div>
