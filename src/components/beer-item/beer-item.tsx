@@ -100,6 +100,10 @@ export class BeerItem {
     })
   }
 
+  navigateToDetail(id: string) {
+    this.el.closest('ion-nav').push('beer-detail', id);
+  }
+
   render() {
     return (
       <ion-card>
@@ -115,7 +119,7 @@ export class BeerItem {
 
           <ion-buttons>
             <ion-anchor href={`/beers/beer/${this.beer.id}`}>
-              <ion-button id='detailButton' color='primary' fill='clear'>
+              <ion-button onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
                 Detail
               </ion-button>
             </ion-anchor>

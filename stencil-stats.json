@@ -7,8 +7,8 @@
     "namespace": "App",
     "fsNamespace": "app",
     "components": 70,
-    "entries": 28,
-    "bundles": 46
+    "entries": 29,
+    "bundles": 47
   },
   "options": {
     "generateWWW": true,
@@ -329,36 +329,10 @@
       ]
     },
     {
-      "tag": "ion-gesture",
-      "dependencies": [
-        "ion-gesture-controller"
-      ],
-      "dependencyOf": [
-        "ion-nav"
-      ]
-    },
-    {
-      "tag": "ion-gesture-controller",
-      "dependencies": [],
-      "dependencyOf": [
-        "ion-gesture"
-      ]
-    },
-    {
       "tag": "ion-input-shims",
       "dependencies": [],
       "dependencyOf": [
         "ion-app"
-      ]
-    },
-    {
-      "tag": "ion-nav",
-      "dependencies": [
-        "ion-animation-controller",
-        "ion-gesture"
-      ],
-      "dependencyOf": [
-        "stencil-beer"
       ]
     },
     {
@@ -401,6 +375,7 @@
     {
       "tag": "tabs-page",
       "dependencies": [
+        "ion-nav",
         "ion-tab",
         "ion-tabs"
       ],
@@ -499,6 +474,33 @@
       ],
       "dependencyOf": [
         "beer-detail"
+      ]
+    },
+    {
+      "tag": "ion-gesture",
+      "dependencies": [
+        "ion-gesture-controller"
+      ],
+      "dependencyOf": [
+        "ion-nav"
+      ]
+    },
+    {
+      "tag": "ion-gesture-controller",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-gesture"
+      ]
+    },
+    {
+      "tag": "ion-nav",
+      "dependencies": [
+        "ion-animation-controller",
+        "ion-gesture"
+      ],
+      "dependencyOf": [
+        "stencil-beer",
+        "tabs-page"
       ]
     },
     {
@@ -1109,7 +1111,7 @@
       "bundles": [
         {
           "fileName": "beer-item.ios.js",
-          "size": 132101,
+          "size": 132249,
           "outputs": [
             "www/build/app/beer-item.ios.js"
           ],
@@ -1117,7 +1119,7 @@
         },
         {
           "fileName": "beer-item.md.js",
-          "size": 165654,
+          "size": 165802,
           "outputs": [
             "www/build/app/beer-item.md.js"
           ],
@@ -1208,7 +1210,7 @@
       ]
     },
     {
-      "entryId": "entry:stencil-beer.ion-app.ion-cordova-platform.ion-gesture.ion-gesture-controller.ion-input-shims.ion-nav.ion-platform.ion-route.ion-router.ion-status-tap.ion-tap-click",
+      "entryId": "entry:stencil-beer.ion-app.ion-cordova-platform.ion-input-shims.ion-platform.ion-route.ion-router.ion-status-tap.ion-tap-click",
       "components": [
         {
           "tag": "stencil-beer",
@@ -1240,36 +1242,10 @@
           ]
         },
         {
-          "tag": "ion-gesture",
-          "dependencies": [
-            "ion-gesture-controller"
-          ],
-          "dependencyOf": [
-            "ion-nav"
-          ]
-        },
-        {
-          "tag": "ion-gesture-controller",
-          "dependencies": [],
-          "dependencyOf": [
-            "ion-gesture"
-          ]
-        },
-        {
           "tag": "ion-input-shims",
           "dependencies": [],
           "dependencyOf": [
             "ion-app"
-          ]
-        },
-        {
-          "tag": "ion-nav",
-          "dependencies": [
-            "ion-animation-controller",
-            "ion-gesture"
-          ],
-          "dependencyOf": [
-            "stencil-beer"
           ]
         },
         {
@@ -1313,7 +1289,7 @@
       "bundles": [
         {
           "fileName": "stencil-beer.ios.js",
-          "size": 135068,
+          "size": 58611,
           "outputs": [
             "www/build/app/stencil-beer.ios.js"
           ],
@@ -1321,7 +1297,7 @@
         },
         {
           "fileName": "stencil-beer.md.js",
-          "size": 140042,
+          "size": 63585,
           "outputs": [
             "www/build/app/stencil-beer.md.js"
           ],
@@ -1332,10 +1308,7 @@
         "dist/collection/components/stencil-beer/stencil-beer.js",
         "node_modules/@ionic/core/dist/collection/components/app/app.js",
         "node_modules/@ionic/core/dist/collection/components/cordova-platform/cordova-platform.js",
-        "node_modules/@ionic/core/dist/collection/components/gesture-controller/gesture-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/gesture/gesture.js",
         "node_modules/@ionic/core/dist/collection/components/input-shims/input-shims.js",
-        "node_modules/@ionic/core/dist/collection/components/nav/nav.js",
         "node_modules/@ionic/core/dist/collection/components/platform/platform.js",
         "node_modules/@ionic/core/dist/collection/components/route/route.js",
         "node_modules/@ionic/core/dist/collection/components/router/router.js",
@@ -1356,6 +1329,7 @@
         {
           "tag": "tabs-page",
           "dependencies": [
+            "ion-nav",
             "ion-tab",
             "ion-tabs"
           ],
@@ -1411,7 +1385,7 @@
       "bundles": [
         {
           "fileName": "tabs-page.ios.js",
-          "size": 37917,
+          "size": 37954,
           "outputs": [
             "www/build/app/tabs-page.ios.js"
           ],
@@ -1419,7 +1393,7 @@
         },
         {
           "fileName": "tabs-page.md.js",
-          "size": 56111,
+          "size": 56148,
           "outputs": [
             "www/build/app/tabs-page.md.js"
           ],
@@ -1557,6 +1531,55 @@
       "modes": [
         "ios",
         "md"
+      ]
+    },
+    {
+      "entryId": "entry:ion-gesture.ion-gesture-controller.ion-nav",
+      "components": [
+        {
+          "tag": "ion-gesture",
+          "dependencies": [
+            "ion-gesture-controller"
+          ],
+          "dependencyOf": [
+            "ion-nav"
+          ]
+        },
+        {
+          "tag": "ion-gesture-controller",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-gesture"
+          ]
+        },
+        {
+          "tag": "ion-nav",
+          "dependencies": [
+            "ion-animation-controller",
+            "ion-gesture"
+          ],
+          "dependencyOf": [
+            "stencil-beer",
+            "tabs-page"
+          ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "ion-gesture.js",
+          "size": 76648,
+          "outputs": [
+            "www/build/app/ion-gesture.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/gesture-controller/gesture-controller.js",
+        "node_modules/@ionic/core/dist/collection/components/gesture/gesture.js",
+        "node_modules/@ionic/core/dist/collection/components/nav/nav.js"
+      ],
+      "encapsulations": [
+        "none"
       ]
     },
     {
