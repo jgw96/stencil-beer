@@ -10,16 +10,13 @@ export class TabsPage {
   render() {
     return (
       <ion-tabs color='dark'>
-        <ion-tab title='beers' icon='beer'>
-          <beer-page></beer-page>
+        <ion-tab selected={true} title='beers' icon='beer' component='beer-page'>
         </ion-tab>
 
-        <ion-tab title='favorites' icon='star'>
-          <favorites-page></favorites-page>
+        <ion-tab title='favorites' icon='star' component='favorites-page'>
         </ion-tab>
 
-        <ion-tab title='my profile' icon='person'>
-          <profile-page></profile-page>
+        <ion-tab title='my profile' icon='person' component='profile-page'>
         </ion-tab>
       </ion-tabs>
     );

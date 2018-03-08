@@ -23,13 +23,13 @@ import '@stencil/router';
 import '@ionic/core';
 
 import {
-  MatchResults,
-  RouterHistory,
-} from '@stencil/router';
-import {
   Bar,
   Beer,
 } from './global/interfaces';
+import {
+  MatchResults,
+  RouterHistory,
+} from '@stencil/router';
 
 import {
   AuthPage as AuthPage
@@ -55,7 +55,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AuthPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
     }
   }
 }
@@ -358,7 +358,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MainPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
     }
   }
 }

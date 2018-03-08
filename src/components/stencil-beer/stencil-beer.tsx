@@ -11,7 +11,7 @@ export class StencilBeer {
   render() {
     return (
       <ion-app>
-        <stencil-router id='router'>
+        {/*<stencil-router id='router'>
           <stencil-route
             url='/'
             component='auth-page'
@@ -62,7 +62,15 @@ export class StencilBeer {
             url={'/bars/directions/:address'}
             component='bar-directions'
           />
-        </stencil-router>
+    </stencil-router>*/}
+        <ion-router useHash={false}>
+          <ion-route path='/' component='auth-page'></ion-route>
+          <ion-route path='/home' component='main-page'></ion-route>
+          <ion-route path='/beers' component='tabs-page'></ion-route>
+          <ion-route path='/beers/list' component='beer-page'></ion-route>
+        </ion-router>
+
+        <ion-nav swipeBackEnabled={false} main></ion-nav>
       </ion-app>
     );
   }

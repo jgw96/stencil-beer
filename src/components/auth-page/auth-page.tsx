@@ -1,5 +1,5 @@
-import { Component, Prop } from '@stencil/core';
-import { RouterHistory } from '@stencil/router';
+import { Component, Element, Prop } from '@stencil/core';
+// import { RouterHistory } from '@stencil/router';
 import { ToastController } from '@ionic/core';
 
 // import firebase from 'firebase';
@@ -12,9 +12,11 @@ declare var firebase: any;
 })
 export class AuthPage {
 
-  @Prop() history: RouterHistory;
+  // @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+
+  @Element() el: Element;
 
 
   componentWillLoad() {
@@ -46,7 +48,8 @@ export class AuthPage {
             }
           })
 
-          this.history.push('/home', {});
+          //  this.history.push('/home', {});
+          this.el.closest('ion-nav').push('main-page');
         };
       })
     }
