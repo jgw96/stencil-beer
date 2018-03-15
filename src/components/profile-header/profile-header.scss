@@ -1,9 +1,14 @@
+profile-header{
+  stencil-route-link a {
+    text-decoration: none;
+  }
+}
 
 ion-icon {
   fill: white;
   width: 32px;
 }
-    
+
 #userImage {
   border-radius: 50%;
   height: 3em;
