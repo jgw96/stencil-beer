@@ -8,6 +8,7 @@ const fetchBeers = greenlet(
     return fetch(url).then((res) => {
       return res.json()
     }).then((data) => {
+      console.log(data.data);
       return data.data;
     })
   }

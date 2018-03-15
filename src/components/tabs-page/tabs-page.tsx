@@ -14,6 +14,10 @@ export class TabsPage {
           <ion-nav></ion-nav>
         </ion-tab>
 
+        <ion-tab title='bars' icon='pint' name='bar-tab'>
+          <ion-nav></ion-nav>
+        </ion-tab>
+
         <ion-tab title='favorites' icon='star' component='favorites-page'>
         </ion-tab>
       </ion-tabs>

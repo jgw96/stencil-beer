@@ -54,12 +54,14 @@ export class BeerDetail {
       return (
         <ion-page class='show-page'>
 
-          <profile-header></profile-header>
+          <profile-header>
+            <ion-back-button defaultHref='/home' />
+          </profile-header>
 
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
-                <lazy-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
+                <lazy-img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
               </div>
               <h1>{this.beer.name}</h1>
 
@@ -82,7 +84,9 @@ export class BeerDetail {
       return (
         <ion-page class='show-page'>
 
-          <profile-header></profile-header>
+          <profile-header>
+            <ion-back-button defaultHref='/home' />
+          </profile-header>
 
           <ion-content padding>
             <main>

@@ -85,6 +85,7 @@ declare global {
   namespace JSXElements {
     export interface BarDirectionsAttributes extends HTMLAttributes {
       address?: string;
+      dest?: string;
     }
   }
 }
@@ -447,6 +448,36 @@ declare global {
   }
   namespace JSXElements {
     export interface ProfilePageAttributes extends HTMLAttributes {
+      
+    }
+  }
+}
+
+
+import {
+  SettingsPage as SettingsPage
+} from './components/settings-page/settings-page';
+
+declare global {
+  interface HTMLSettingsPageElement extends SettingsPage, HTMLStencilElement {
+  }
+  var HTMLSettingsPageElement: {
+    prototype: HTMLSettingsPageElement;
+    new (): HTMLSettingsPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "settings-page": HTMLSettingsPageElement;
+  }
+  interface ElementTagNameMap {
+    "settings-page": HTMLSettingsPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "settings-page": JSXElements.SettingsPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SettingsPageAttributes extends HTMLAttributes {
       
     }
   }

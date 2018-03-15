@@ -12,8 +12,8 @@ export class barList {
 
   @Element() el: Element;
 
-  goToDirections(address: string) {
-    this.el.closest('ion-nav').push('bar-directions', { address });
+  goToDirections(address: string, dest: string) {
+    this.el.closest('ion-nav').push('bar-directions', { address, dest });
   }
 
   render() {
@@ -42,7 +42,7 @@ export class barList {
                   <p>{bar.vicinity}</p>
 
                   <ion-buttons>
-                    <ion-button onClick={() => this.goToDirections(bar.vicinity)} color='primary' fill='clear'> Directions </ion-button>
+                    <ion-button onClick={() => this.goToDirections(bar.vicinity, bar.name)} color='primary' fill='clear'> Directions </ion-button>
 
                     <share-button beer={bar}></share-button>
 

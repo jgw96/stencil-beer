@@ -4,4 +4,14 @@ bar-directions {
     height: 100%;
     position: absolute !important;
   }
+
+  #bottomPaper {
+    z-index: 9999;
+    position: fixed;
+    background: white;
+    width: 100%;
+    bottom: 4em;
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
 }

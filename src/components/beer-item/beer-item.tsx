@@ -108,7 +108,7 @@ export class BeerItem {
   render() {
     return (
       <ion-card>
-        <lazy-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt='beer' />
+        <lazy-img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt='beer' />
         <ion-card-content>
           <ion-card-title>
             {this.beer.name}

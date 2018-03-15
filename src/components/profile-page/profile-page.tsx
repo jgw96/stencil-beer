@@ -19,7 +19,6 @@ export class ProfilePage {
   @State() subscribed: boolean;
   @State() swSupport: boolean;
 
-  // @Prop() history: RouterHistory;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
@@ -93,9 +92,9 @@ export class ProfilePage {
           <ion-header md-height="96px">
             <ion-toolbar color='dark'>
               <ion-buttons slot="start">
-                {window.location.href.indexOf('home') > 0 ? null : <ion-back-button defaultHref='/home' />}
+                <ion-back-button defaultHref='/home' />
               </ion-buttons>
-              <ion-title>IonicBeer Beta</ion-title>
+              <ion-title>IonicBeer</ion-title>
             </ion-toolbar>
           </ion-header>
 
@@ -120,9 +119,9 @@ export class ProfilePage {
         <ion-header md-height="96px">
           <ion-toolbar color='dark'>
             <ion-buttons slot="start">
-              {window.location.href.indexOf('home') > 0 ? null : <ion-back-button defaultHref='/home' />}
+              <ion-back-button defaultHref='/home' />
             </ion-buttons>
-            <ion-title>IonicBeer Beta</ion-title>
+            <ion-title>IonicBeer</ion-title>
           </ion-toolbar>
         </ion-header>
 

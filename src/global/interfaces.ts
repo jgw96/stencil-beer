@@ -8,7 +8,8 @@ export interface Beer {
 }
 
 export interface Labels {
-  medium: string
+  medium: string,
+  large: string
 }
 
 export interface Bar {

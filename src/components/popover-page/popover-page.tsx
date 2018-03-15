@@ -1,7 +1,5 @@
 import { Component, Element, Event, EventEmitter, Prop } from '@stencil/core';
 import { PopoverController } from '@ionic/core';
-// import { ActiveRouter } from '@stencil/router';
-
 
 @Component({
   tag: 'popover-page',
@@ -9,7 +7,6 @@ import { PopoverController } from '@ionic/core';
 })
 export class PopoverPage {
 
-  // @Prop({ context: 'activeRouter' }) activeRouter: ActiveRouter;
   @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: PopoverController;
 
   @Event() closePopover: EventEmitter;
@@ -18,15 +15,18 @@ export class PopoverPage {
 
   openProfile() {
     this.closePopover.emit();
-    // this.activeRouter.get().history.push('/profile', {});
     document.querySelector('ion-nav').push('profile-page');
 
   }
 
   openAll() {
     this.closePopover.emit();
-    // this.activeRouter.get().history.push('/users', {});
     document.querySelector('ion-nav').push('users-page');
+  }
+
+  settings() {
+    this.closePopover.emit();
+    document.querySelector('ion-nav').push('settings-page');
   }
 
   render() {
@@ -34,6 +34,7 @@ export class PopoverPage {
       <ion-list no-lines>
         <ion-item onClick={() => this.openProfile()}><ion-label>My Profile</ion-label></ion-item>
         <ion-item onClick={() => this.openAll()}><ion-label>All Users</ion-label></ion-item>
+        <ion-item onClick={() => this.settings()}><ion-label>Settings</ion-label></ion-item>
       </ion-list>
     );
   }

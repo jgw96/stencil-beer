@@ -45,7 +45,8 @@ export class favoritesPage {
   render() {
     return (
       <ion-page class='show-page'>
-        <profile-header></profile-header>
+        <profile-header>
+        </profile-header>
 
         <ion-content>
           <beer-list fave={true} beers={this.beers}></beer-list>
