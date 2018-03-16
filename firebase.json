@@ -31,7 +31,7 @@
       },
       {
         "source": "/",
-        "headers": [{"key": "Link", "value": "</build/app/app.qmsv3f6f.js>;rel=preload;as=script,</build/app/yyvokcyd.js>;rel=preload;as=script,</build/app/ao58p0gs.js>;rel=preload;as=script,</build/app/0xfj784q.js>;rel=preload;as=script,</build/app/ixi9kxxf.js>;rel=preload;as=script,</build/app/h2o7olvk.js>;rel=preload;as=script,</build/app/encg1bzs.js>;rel=preload;as=script,</build/app/xwmvco2y.js>;rel=preload;as=script,</build/app/chunk1.js>;rel=preload;as=script,</build/app/chunk2.js>;rel=preload;as=script,</build/app/chunk3.js>;rel=preload;as=script,</build/app/chunk5.js>;rel=preload;as=script"}]
+        "headers": [{"key": "Link", "value": "</build/app/app.xx0oagd0.js>;rel=preload;as=script,</build/app/udlkatjh.js>;rel=preload;as=script,</build/app/9g58nwzo.js>;rel=preload;as=script,</build/app/5pehdbyp.js>;rel=preload;as=script,</build/app/f1g4vzva.js>;rel=preload;as=script,</build/app/chunk1.js>;rel=preload;as=script,</build/app/xvdljh11.js>;rel=preload;as=script,</build/app/ixi9kxxf.js>;rel=preload;as=script,</build/app/fxqmm63z.js>;rel=preload;as=script,</build/app/chunk2.js>;rel=preload;as=script,</build/app/chunk3.js>;rel=preload;as=script,</build/app/zt4cnith.js>;rel=preload;as=script,</build/app/xwmvco2y.js>;rel=preload;as=script,</assets/img/icon.png>;rel=preload;as=image"}]
       }
     ]
   }

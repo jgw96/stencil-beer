@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-import { MatchResults } from '@stencil/router';
+// import { MatchResults } from '@stencil/router';
 import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
@@ -13,11 +13,12 @@ export class BeerDetail {
 
   @State() beer: Beer;
 
-  @Prop() match: MatchResults;
+  // @Prop() match: MatchResults;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop() beerId: string;
 
-  componentWillLoad() {
-    try {
+  componentDidLoad() {
+   try {
       this.getBeerDetail();
     }
     catch (err) {
@@ -32,7 +33,8 @@ export class BeerDetail {
   }
 
   async getBeerDetail() {
-    this.beer = await getBeerDetail(this.match.params.id);
+    console.log(this.beerId);
+    this.beer = await getBeerDetail(this.beerId);
   }
 
   async share(beer) {
@@ -52,12 +54,14 @@ export class BeerDetail {
       return (
         <ion-page class='show-page'>
 
-          <profile-header></profile-header>
+          <profile-header>
+            <ion-back-button defaultHref='/home' />
+          </profile-header>
 
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
-                <lazy-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
+                <lazy-img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
               </div>
               <h1>{this.beer.name}</h1>
 
@@ -80,7 +84,9 @@ export class BeerDetail {
       return (
         <ion-page class='show-page'>
 
-          <profile-header></profile-header>
+          <profile-header>
+            <ion-back-button defaultHref='/home' />
+          </profile-header>
 
           <ion-content padding>
             <main>

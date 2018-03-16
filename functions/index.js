@@ -4,7 +4,6 @@ const fetch = require('node-fetch');
 const cors = require('cors')({origin: true});
 
 const fs = require('fs');
-// const visionApi = require('@google-cloud/vision')();
 
 const placesApiRoot = 'https://maps.googleapis.com/maps/api/place/nearbysearch/json';
 const geocodeApiRoot = 'https://maps.googleapis.com/maps/api/geocode/json';

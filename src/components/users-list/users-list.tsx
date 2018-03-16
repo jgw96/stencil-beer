@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Element, Prop } from '@stencil/core';
 
 
 @Component({
@@ -8,6 +8,12 @@ import { Component, Prop } from '@stencil/core';
 export class UsersList {
 
   @Prop() users: any[];
+
+  @Element() el: Element;
+
+  goToUser(userName: string) {
+    this.el.closest('ion-nav').push('user-profile', {userName});
+  }
 
   render() {
     if (this.users) {
@@ -25,7 +31,7 @@ export class UsersList {
 
                 <ion-buttons>
                   <stencil-route-link url={`/users/${user.name}`}>
-                    <ion-button color='primary' fill='clear'>
+                    <ion-button onClick={() => this.goToUser(user.name)} color='primary' fill='clear'>
                       See Profile
                     </ion-button>
                   </stencil-route-link>

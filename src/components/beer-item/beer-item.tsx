@@ -100,10 +100,15 @@ export class BeerItem {
     })
   }
 
+  navigateToDetail(beerId: string) {
+
+    this.el.closest('ion-nav').push('beer-detail', {beerId});
+  }
+
   render() {
     return (
       <ion-card>
-        <lazy-img src={this.beer.labels ? this.beer.labels.medium : '/assets/beers.jpeg'} alt='beer' />
+        <lazy-img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt='beer' />
         <ion-card-content>
           <ion-card-title>
             {this.beer.name}
@@ -114,11 +119,11 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <stencil-route-link url={`/beers/detail/${this.beer.id}`}>
-              <ion-button id='detailButton' color='primary' fill='clear'>
+            <ion-anchor href={`/home/beer/${this.beer.id}`}>
+              <ion-button onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
                 Detail
               </ion-button>
-            </stencil-route-link>
+            </ion-anchor>
 
             {this.fave ?
               <ion-button color='danger' onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>

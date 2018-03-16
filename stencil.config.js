@@ -12,7 +12,6 @@ exports.config = {
     ]
   },
   globalStyle: 'src/global/variables.css',
-  enableCache: false,
   plugins: [
     sass()
   ]
