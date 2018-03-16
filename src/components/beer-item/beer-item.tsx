@@ -119,7 +119,7 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <ion-anchor href={`/beers/beer/${this.beer.id}`}>
+            <ion-anchor href={`/home/beer/${this.beer.id}`}>
               <ion-button onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
                 Detail
               </ion-button>
