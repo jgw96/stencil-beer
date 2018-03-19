@@ -108,11 +108,7 @@ export class BeerItem {
 
   navigateToDetail(beerId: string) {
 
-<<<<<<< HEAD
     this.el.closest('ion-nav').push('beer-detail', { beerId });
-=======
-    this.el.closest('ion-nav').push('beer-detail', {beerId});
->>>>>>> 4e01570a6c0f3d115b2ead95b938377f4ff33aa9
   }
 
   render() {
