@@ -1,11 +1,7 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
-// import { ActionSheetController } from '@ionic/core';
 import { PopoverController, Popover } from '@ionic/core';
 
-// import firebase from 'firebase';
-
 declare var firebase: any;
-
 
 @Component({
   tag: 'profile-header',
@@ -18,9 +14,7 @@ export class ProfileHeader {
 
   @State() profilePic: string;
 
-  // @Prop({ connect: 'ion-action-sheet-controller' }) actionCtrl: ActionSheetController;
-  @Prop({ connect: 'ion-popover-controller'}) popoverCtrl: PopoverController;
-  // @Prop({ context: 'activeRouter'}) activeRouter: ActiveRouter;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: PopoverController;
 
   componentDidLoad() {
     firebase.auth().onAuthStateChanged((user) => {
@@ -40,39 +34,18 @@ export class ProfileHeader {
       component: 'popover-page',
       ev: event
     });
-    
+
     await this.popover.present();
   }
-
-  /*async openActionSheet() {
-    const actionSheet = await this.actionCtrl.create({
-      title: 'Users',
-      buttons: [
-        {
-          text: 'My Profile',
-          icon: 'person',
-          handler: () => {
-            this.activeRouter.get().history.push('/profile', {});
-          }
-        },
-        {
-          text: 'All Users',
-          icon: 'people',
-          handler: () => {
-            this.activeRouter.get().history.push('/users', {});
-          }
-        }
-      ]
-    });
-
-    actionSheet.present();
-  }*/
 
   render() {
     return (
       <ion-header md-height="96px">
         <ion-toolbar color='dark'>
-          <ion-title>IonicBeer Beta</ion-title>
+          <ion-buttons slot="start">
+            <slot></slot>
+          </ion-buttons>
+          <ion-title>IonicBeer</ion-title>
 
           <ion-buttons slot='end'>
             <ion-button fill='clear' onClick={() => this.openPopover(event)} icon-only>

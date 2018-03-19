@@ -1,5 +1,5 @@
 import { Component, State, Prop } from '@stencil/core';
-import { RouterHistory } from '@stencil/router';
+// import { RouterHistory } from '@stencil/router';
 
 import { ToastController } from '@ionic/core';
 
@@ -19,7 +19,6 @@ export class ProfilePage {
   @State() subscribed: boolean;
   @State() swSupport: boolean;
 
-  @Prop() history: RouterHistory;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
@@ -63,7 +62,8 @@ export class ProfilePage {
     console.log('here');
     try {
       await firebase.auth().signOut();
-      this.history.replace('/', {});
+      // this.history.replace('/', {});
+      document.querySelector('ion-nav').setRoot('auth-page');
     } catch (e) {
       this.showErrorToast();
     }
@@ -91,7 +91,10 @@ export class ProfilePage {
         <ion-page class='show-page'>
           <ion-header md-height="96px">
             <ion-toolbar color='dark'>
-              <ion-title>IonicBeer Beta</ion-title>
+              <ion-buttons slot="start">
+                <ion-back-button defaultHref='/home' />
+              </ion-buttons>
+              <ion-title>IonicBeer</ion-title>
             </ion-toolbar>
           </ion-header>
 
@@ -115,7 +118,10 @@ export class ProfilePage {
       <ion-page class='show-page'>
         <ion-header md-height="96px">
           <ion-toolbar color='dark'>
-            <ion-title>IonicBeer Beta</ion-title>
+            <ion-buttons slot="start">
+              <ion-back-button defaultHref='/home' />
+            </ion-buttons>
+            <ion-title>IonicBeer</ion-title>
           </ion-toolbar>
         </ion-header>
 

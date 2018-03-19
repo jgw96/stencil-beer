@@ -1,7 +1,5 @@
 import { Component } from '@stencil/core';
 
-// import firebase from 'firebase';
-
 @Component({
   tag: 'stencil-beer',
   styleUrl: 'stencil-beer.scss'
@@ -11,58 +9,31 @@ export class StencilBeer {
   render() {
     return (
       <ion-app>
-        <stencil-router id='router'>
-          <stencil-route
-            url='/'
-            component='auth-page'
-            exact={true}
-          />
+        <ion-router useHash={false}>
+          <ion-route url='/' component='auth-page'></ion-route>
+          <ion-route url='/home' component='tabs-page'>
 
-          <stencil-route
-            url={['/home', '/home/']}
-            component='main-page'
-          />
+            <ion-route component='beer-tab'>
+              <ion-route component='beer-page' />
+              <ion-route url='/beer/:beerId' component='beer-detail' />
+            </ion-route>
 
-          <stencil-route
-            url={['/profile', '/profile/']}
-            component='profile-page'
-          />
+            <ion-route component='bar-tab'>
+              <ion-route url='/bars' component='bar-page'></ion-route>
+              <ion-route url='/bars/directions/:address/:dest' component='bar-directions'></ion-route>
+            </ion-route>
 
-          <stencil-route
-            url={['/beers', '/beers/']}
-            component='tabs-page'
-          />
+            <ion-route url='/favorites' component='favorites-page'></ion-route>
+          </ion-route>
 
-          <stencil-route
-            url={['/beers/favorites', '/beers/favorites/']}
-            component='favorites-page'
-          />
+          <ion-route url='/profile' component='profile-page'></ion-route>
+          <ion-route url='/users' component='users-page'></ion-route>
+          <ion-route url='/users/:userName' component='user-profile'></ion-route>
+          <ion-route url='/settings' component='settings-page'></ion-route>
 
-          <stencil-route
-            url={'/beers/detail/:id'}
-            component='beer-detail'
-          />
+        </ion-router>
 
-          <stencil-route
-            url={['/bars', '/bars/']}
-            component='bar-page'
-          />
-
-          <stencil-route
-            url={'/users'}
-            component='users-page'
-          />
-
-          <stencil-route
-            url={'/users/:user'}
-            component='user-profile'
-          />
-
-          <stencil-route
-            url={'/bars/directions/:address'}
-            component='bar-directions'
-          />
-        </stencil-router>
+        <ion-nav swipeBackEnabled={false} main></ion-nav>
       </ion-app>
     );
   }

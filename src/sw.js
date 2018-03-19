@@ -4,6 +4,28 @@ self.workbox.skipWaiting();
 self.workbox.clientsClaim();
 
 /*
+  Routes
+*/
+workbox.routing.registerRoute(
+  new RegExp('https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers/*'),
+  workbox.strategies.staleWhileRevalidate({
+    cacheName: 'apidata',
+    plugins: [
+      new workbox.expiration.Plugin({
+        maxEntries: 30,
+      }),
+    ],
+  }),
+);
+
+workbox.routing.registerRoute(
+  new RegExp('https://lh3.googleusercontent.com/*'),
+  workbox.strategies.cacheFirst({
+    cacheName: 'userprofile'
+  }),
+);
+
+/*
   This is our code to handle push events.
 */
 self.addEventListener('push', (event) => {

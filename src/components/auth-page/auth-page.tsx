@@ -1,8 +1,5 @@
-import { Component, Prop } from '@stencil/core';
-import { RouterHistory } from '@stencil/router';
+import { Component, Element, Prop } from '@stencil/core';
 import { ToastController } from '@ionic/core';
-
-// import firebase from 'firebase';
 
 declare var firebase: any;
 
@@ -12,9 +9,10 @@ declare var firebase: any;
 })
 export class AuthPage {
 
-  @Prop() history: RouterHistory;
   @Prop({ context: 'isServer' }) private isServer: boolean;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+
+  @Element() el: Element;
 
 
   componentWillLoad() {
@@ -46,7 +44,8 @@ export class AuthPage {
             }
           })
 
-          this.history.push('/home', {});
+          //  this.history.push('/home', {});
+          this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
         };
       })
     }
@@ -72,7 +71,7 @@ export class AuthPage {
       <ion-page class='show-page'>
         <ion-header md-height="96px">
           <ion-toolbar color='dark'>
-            <ion-title>IonicBeer Beta</ion-title>
+            <ion-title>IonicBeer</ion-title>
           </ion-toolbar>
         </ion-header>
 

@@ -1,4 +1,4 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 import { LoadingController, Loading } from '@ionic/core';
 
 declare var google: any;
@@ -9,8 +9,12 @@ declare var google: any;
 })
 export class BarDirections {
 
-  @Prop() match: any;
+  // @Prop() match: any;
+  @Prop() address: string;
+  @Prop() dest: string;
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
+
+  @State() directionsRequest: any;
 
   url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
   script: HTMLScriptElement;
@@ -36,7 +40,7 @@ export class BarDirections {
     this.script.addEventListener('load', async () => {
       const response = await fetch('/googleGeocode', {
         method: 'post',
-        body: JSON.stringify({ address: this.match.params.address })
+        body: JSON.stringify({ address: this.address })
       });
       const data = await response.json();
 
@@ -64,6 +68,9 @@ export class BarDirections {
         const directionsService = new google.maps.DirectionsService();
         directionsService.route(request, (response, status) => {
           if (status == 'OK') {
+            console.log(response);
+            this.directionsRequest = response.routes[0].legs[0];
+            console.log(this.directionsRequest);
             // Display the route on the map.
             directionsDisplay.setDirections(response);
             this.loading.dismiss();
@@ -75,11 +82,48 @@ export class BarDirections {
     });
   }
 
+  openMaps() {
+    window.open(`https://www.google.com/maps/dir/?api=1&origin=${this.directionsRequest.start_address}&destination=${this.directionsRequest.end_address}`);
+  }
+
   render() {
     return (
-      <ion-page class='show-page'>
+      <ion-page>
+        <profile-header>
+          <ion-back-button defaultHref='/home' />
+        </profile-header>
         <ion-content>
           <div id='map'></div>
+          <div id='bottomPaper'>
+
+            <ion-fab edge={true} horizontal='right' vertical='top'>
+              <ion-fab-button onClick={() => this.openMaps()}>
+                <ion-icon name='car'></ion-icon>
+              </ion-fab-button>
+            </ion-fab>
+
+            <ion-list no-lines>
+              <ion-item>
+                <ion-label>
+                  <h1>{this.dest}</h1>
+                </ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-label>
+                  {this.directionsRequest ? <h2>{this.directionsRequest.duration.text} away</h2> : <h2>'Loading...'</h2>}
+                </ion-label>
+              </ion-item>
+
+              <ion-item>
+                <ion-icon color='primary' name='pin' slot='start' size='large'></ion-icon>
+
+                <ion-label>
+                  {this.directionsRequest ? this.directionsRequest.end_address : 'Loading...'}
+                </ion-label>
+              </ion-item>
+            </ion-list>
+          </div>
         </ion-content>
       </ion-page>
     );

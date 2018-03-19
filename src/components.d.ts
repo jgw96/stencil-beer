@@ -13,23 +13,24 @@ declare global {
   interface HTMLStencilElement extends HTMLElement {
     componentOnReady(): Promise<this>;
     componentOnReady(done: (ele?: this) => void): void;
+
+    forceUpdate(): void;
   }
 
   interface HTMLAttributes {}
 }
 
 import 'ionicons';
-import '@stencil/router';
 import '@ionic/core';
+import '@stencil/router';
 
-import {
-  MatchResults,
-  RouterHistory,
-} from '@stencil/router';
 import {
   Bar,
   Beer,
 } from './global/interfaces';
+import {
+  RouterHistory,
+} from '@stencil/router';
 
 import {
   AuthPage as AuthPage
@@ -55,7 +56,7 @@ declare global {
   }
   namespace JSXElements {
     export interface AuthPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
     }
   }
 }
@@ -85,7 +86,8 @@ declare global {
   }
   namespace JSXElements {
     export interface BarDirectionsAttributes extends HTMLAttributes {
-      match?: any;
+      address?: string;
+      dest?: string;
     }
   }
 }
@@ -175,7 +177,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BeerDetailAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      beerId?: string;
     }
   }
 }
@@ -358,7 +360,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MainPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
     }
   }
 }
@@ -448,7 +450,37 @@ declare global {
   }
   namespace JSXElements {
     export interface ProfilePageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
+      
+    }
+  }
+}
+
+
+import {
+  SettingsPage as SettingsPage
+} from './components/settings-page/settings-page';
+
+declare global {
+  interface HTMLSettingsPageElement extends SettingsPage, HTMLStencilElement {
+  }
+  var HTMLSettingsPageElement: {
+    prototype: HTMLSettingsPageElement;
+    new (): HTMLSettingsPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "settings-page": HTMLSettingsPageElement;
+  }
+  interface ElementTagNameMap {
+    "settings-page": HTMLSettingsPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "settings-page": JSXElements.SettingsPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface SettingsPageAttributes extends HTMLAttributes {
+      
     }
   }
 }
@@ -568,7 +600,7 @@ declare global {
   }
   namespace JSXElements {
     export interface UserProfileAttributes extends HTMLAttributes {
-      match?: MatchResults;
+      userName?: any;
     }
   }
 }
