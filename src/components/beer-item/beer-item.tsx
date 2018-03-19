@@ -42,6 +42,8 @@ export class BeerItem {
         })
 
       this.io.observe(this.el.querySelector('ion-card'));
+    } else {
+      this.el.querySelector('ion-card').style.opacity = '1';
     }
   }
 
@@ -53,16 +55,20 @@ export class BeerItem {
   }
 
   handleAnimation(element: any) {
-    element.animate(
-      [
-        { transform: 'translateY(20px)', opacity: 0 },
-        { transform: 'translateY(0)', opacity: 1 }
-      ], {
-        duration: 300,
-        easing: 'cubic-bezier(.36,.66,.04,1)',
-        fill: 'forwards'
-      }
-    )
+    if ('animate' in element) {
+      element.animate(
+        [
+          { transform: 'translateY(20px)', opacity: 0 },
+          { transform: 'translateY(0)', opacity: 1 }
+        ], {
+          duration: 300,
+          easing: 'cubic-bezier(.36,.66,.04,1)',
+          fill: 'forwards'
+        }
+      )
+    } else {
+      this.el.querySelector('ion-card').style.opacity = '1';
+    }
   }
 
   async save(beer: Beer) {
@@ -94,10 +100,15 @@ export class BeerItem {
       .where('beer.name', '==', passedBeer.name)
       .where('author', '==', (window as any).firebase.auth().currentUser.email)
       .get();
-  
+
     doc.forEach((beer) => {
       beer.ref.delete();
     })
+  }
+
+  navigateToDetail(beerId: string) {
+
+    this.el.closest('ion-nav').push('beer-detail', { beerId });
   }
 
   render() {
