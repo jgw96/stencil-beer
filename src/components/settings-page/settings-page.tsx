@@ -1,4 +1,4 @@
-import { Component, Prop, State, Listen } from '@stencil/core';
+import { Component, Prop, State } from '@stencil/core';
 
 import { ToastController, AlertController } from '@ionic/core';
 
@@ -69,9 +69,9 @@ export class SettingsPage {
   }
 
 
-  @Listen('ionChange')
   async changed(ev) {
-    if (ev.target.name === 'offline' && ev.target.checked === true) {
+    console.log(ev);
+    /*if (ev.target.checked === true) {
       const alert = await this.alertCtrl.create({
         title: 'Are you sure?',
         message: 'Advanced Offline Mode will use more storage on your device',
@@ -94,10 +94,10 @@ export class SettingsPage {
         ]
       });
       return await alert.present();
-    } else if (ev.target.name === 'offline' && ev.target.checked === false) {
+    } else if (ev.target.checked === false) {
       this.disableOffline();
       localStorage.setItem('offlineEnabled', 'false');
-    }
+    }*/
   }
 
   render() {
@@ -122,7 +122,7 @@ export class SettingsPage {
                 <p>Use if you are frequently offline</p>
               </ion-label>
               <ion-buttons>
-                <ion-toggle checked={this.offlineChecked} name='offline'></ion-toggle>
+                <ion-toggle onIonChange={(event) => this.changed(event)} checked={this.offlineChecked}></ion-toggle>
               </ion-buttons>
             </ion-item>
           </ion-list>
