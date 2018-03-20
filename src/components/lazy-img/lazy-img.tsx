@@ -32,18 +32,22 @@ export class LazyImg {
   }
 
   componentWillUpdate() {
-    if (this.src !== this.oldSrc) {
+    console.log('componentWillUpdate called', this.src, this.oldSrc);
+    if (this.src !== this.el.shadowRoot.querySelector('img').getAttribute('data-src')) {
       this.addIntersectionObserver();
     }
   }
 
   handleImage() {
     const image: HTMLImageElement = this.el.shadowRoot.querySelector('img');
-    image.setAttribute('src', image.getAttribute('data-src'));
-    image.onload = () => {
-      image.removeAttribute('data-src');
-      this.lazyImgloaded.emit(image);
-    };
+    console.log(image.getAttribute('data-src'));
+    if (image.getAttribute('data-src')) {
+      image.setAttribute('src', image.getAttribute('data-src'));
+      image.onload = () => {
+        image.removeAttribute('data-src');
+        this.lazyImgloaded.emit(image);
+      };
+    }
   }
 
   addIntersectionObserver() {

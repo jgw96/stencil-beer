@@ -1,9 +1,4 @@
 import { Component, Prop, State } from '@stencil/core';
-// import { MatchResults } from '@stencil/router';
-
-// import { getFullUser } from '../../global/save-service';
-
-// import firebase from 'firebase';
 
 declare var firebase: any;
 
@@ -13,7 +8,6 @@ declare var firebase: any;
 })
 export class UserProfile {
 
-  // @Prop() match: MatchResults;
   @Prop() userName: any;
 
   @State() beers: any;
@@ -60,6 +54,15 @@ export class UserProfile {
     return fullUser;
   }
 
+  async follow() {
+    // const currentUser = firebase.auth().currentUser;
+    const doc = await firebase.firestore().collection('users').where('name', '==', this.userName).get();
+
+    await doc.forEach((user) => {
+      console.log(user.data());
+    });
+  }
+
   render() {
     if (this.user) {
       return (
@@ -72,6 +75,8 @@ export class UserProfile {
             </div>
 
             <h2>{this.user.name}</h2>
+
+            <ion-button expand='block' color='primary' onClick={() => this.follow()}>Follow</ion-button>
 
             {this.beers ?
               <h1>Favorite Beers</h1>

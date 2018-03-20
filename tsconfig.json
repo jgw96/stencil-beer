@@ -10,7 +10,7 @@
     ],
     "moduleResolution": "node",
     "module": "es2015",
-    "target": "es2016",
+    "target": "es2015",
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "jsx": "react",

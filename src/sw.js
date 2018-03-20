@@ -12,7 +12,7 @@ workbox.routing.registerRoute(
     cacheName: 'apidata',
     plugins: [
       new workbox.expiration.Plugin({
-        maxEntries: 30,
+        maxEntries: 3,
       }),
     ],
   }),

@@ -30,6 +30,7 @@ export class ProfileHeader {
   }
 
   async openPopover(event) {
+    console.log(event);
     this.popover = await this.popoverCtrl.create({
       component: 'popover-page',
       ev: event
@@ -48,7 +49,7 @@ export class ProfileHeader {
           <ion-title>IonicBeer</ion-title>
 
           <ion-buttons slot='end'>
-            <ion-button fill='clear' onClick={() => this.openPopover(event)} icon-only>
+            <ion-button fill='clear' onClick={(ev) => this.openPopover(ev)} icon-only>
               {this.profilePic ? <img id='userImage' src={this.profilePic} alt='user profile'></img> : <div id='fake-image'></div>}
             </ion-button>
           </ion-buttons>

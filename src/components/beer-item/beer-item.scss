@@ -4,6 +4,12 @@ beer-item {
     opacity: 0;
   }
 
+  p {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+
   lazy-img {
     display: flex;
     justify-content: center;
