@@ -1,7 +1,8 @@
 import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
-import { ToastController } from '@ionic/core';
+import { AlertController, ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
+import { checkAnon } from '../../global/utils';
 
 // import firebase from 'firebase';
 
@@ -16,6 +17,7 @@ export class BeerItem {
   @Prop() beer: Beer;
   @Prop() fave: Boolean = false;
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
 
   @Element() el: HTMLElement;
 
@@ -73,10 +75,34 @@ export class BeerItem {
 
   async save(beer: Beer) {
     console.log('here');
-    this.saveBeer(beer);
+    if (!checkAnon()) {
+      this.saveBeer(beer);
 
-    const toast = await this.toastCtrl.create({ message: 'beer favorited', duration: 1000 });
-    toast.present();
+      const toast = await this.toastCtrl.create({ message: 'beer favorited', duration: 1000 });
+      toast.present();
+    } else {
+      const alert = await this.alertCtrl.create({
+        title: 'Must login',
+        message: 'This feature is not available to anonymous users. Would you like to sign in with Google?',
+        buttons: [
+          {
+            text: 'Cancel',
+            role: 'cancel',
+            cssClass: 'secondary',
+            handler: () => {
+              console.log('Confirm Cancel: blah');
+            }
+          }, {
+            text: 'Yes',
+            handler: () => {
+              const provider = new firebase.auth.GoogleAuthProvider();
+              firebase.auth().currentUser.linkWithRedirect(provider);
+            }
+          }
+        ]
+      });
+      return await alert.present();
+    }
   }
 
   async deleteBeer(beer: Beer) {

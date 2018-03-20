@@ -1,5 +1,6 @@
 import { Component } from '@stencil/core';
 
+import { checkAnon } from '../../global/utils';
 
 @Component({
   tag: 'tabs-page',
@@ -18,8 +19,8 @@ export class TabsPage {
           <ion-nav></ion-nav>
         </ion-tab>
 
-        <ion-tab title='favorites' icon='star' component='favorites-page'>
-        </ion-tab>
+        {checkAnon() ? null : <ion-tab title='favorites' icon='star' component='favorites-page'>
+        </ion-tab>}
       </ion-tabs>
     );
   }

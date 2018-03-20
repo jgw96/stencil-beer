@@ -57,6 +57,7 @@ declare global {
   namespace JSXElements {
     export interface AuthPageAttributes extends HTMLAttributes {
       
+      
     }
   }
 }
@@ -88,6 +89,7 @@ declare global {
     export interface BarDirectionsAttributes extends HTMLAttributes {
       address?: string;
       dest?: string;
+      
     }
   }
 }
@@ -118,6 +120,7 @@ declare global {
   namespace JSXElements {
     export interface BarListAttributes extends HTMLAttributes {
       bars?: Array<Bar>;
+      
     }
   }
 }
@@ -147,6 +150,7 @@ declare global {
   }
   namespace JSXElements {
     export interface BarPageAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -178,6 +182,7 @@ declare global {
   namespace JSXElements {
     export interface BeerDetailAttributes extends HTMLAttributes {
       beerId?: string;
+      
     }
   }
 }
@@ -209,6 +214,7 @@ declare global {
     export interface BeerItemAttributes extends HTMLAttributes {
       beer?: Beer;
       fave?: Boolean;
+      onBeerDeleted?: (event: CustomEvent) => void;
     }
   }
 }
@@ -240,6 +246,7 @@ declare global {
     export interface BeerListAttributes extends HTMLAttributes {
       beers?: Array<Beer>;
       fave?: Boolean;
+      
     }
   }
 }
@@ -270,6 +277,7 @@ declare global {
   namespace JSXElements {
     export interface BeerPageAttributes extends HTMLAttributes {
       history?: RouterHistory;
+      
     }
   }
 }
@@ -299,6 +307,7 @@ declare global {
   }
   namespace JSXElements {
     export interface FavoritesPageAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -331,6 +340,7 @@ declare global {
     export interface LazyImgAttributes extends HTMLAttributes {
       alt?: string;
       src?: string;
+      onLazyImgloaded?: (event: CustomEvent<HTMLImageElement>) => void;
     }
   }
 }
@@ -360,6 +370,7 @@ declare global {
   }
   namespace JSXElements {
     export interface MainPageAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -391,6 +402,7 @@ declare global {
   namespace JSXElements {
     export interface PopoverPageAttributes extends HTMLAttributes {
       
+      onClosePopover?: (event: CustomEvent) => void;
     }
   }
 }
@@ -420,6 +432,7 @@ declare global {
   }
   namespace JSXElements {
     export interface ProfileHeaderAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -451,6 +464,7 @@ declare global {
   namespace JSXElements {
     export interface ProfilePageAttributes extends HTMLAttributes {
       
+      
     }
   }
 }
@@ -480,6 +494,7 @@ declare global {
   }
   namespace JSXElements {
     export interface SettingsPageAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -511,6 +526,7 @@ declare global {
   namespace JSXElements {
     export interface ShareButtonAttributes extends HTMLAttributes {
       beer?: any;
+      
     }
   }
 }
@@ -540,6 +556,7 @@ declare global {
   }
   namespace JSXElements {
     export interface StencilBeerAttributes extends HTMLAttributes {
+      
       
     }
   }
@@ -571,6 +588,7 @@ declare global {
   namespace JSXElements {
     export interface TabsPageAttributes extends HTMLAttributes {
       
+      
     }
   }
 }
@@ -601,6 +619,7 @@ declare global {
   namespace JSXElements {
     export interface UserProfileAttributes extends HTMLAttributes {
       userName?: any;
+      
     }
   }
 }
@@ -631,6 +650,7 @@ declare global {
   namespace JSXElements {
     export interface UsersListAttributes extends HTMLAttributes {
       users?: any[];
+      
     }
   }
 }
@@ -660,6 +680,7 @@ declare global {
   }
   namespace JSXElements {
     export interface UsersPageAttributes extends HTMLAttributes {
+      
       
     }
   }

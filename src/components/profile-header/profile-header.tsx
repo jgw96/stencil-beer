@@ -1,6 +1,8 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
 import { PopoverController, Popover } from '@ionic/core';
 
+import { checkAnon } from '../../global/utils';
+
 declare var firebase: any;
 
 @Component({
@@ -22,6 +24,8 @@ export class ProfileHeader {
         this.profilePic = user.photoURL;
       }
     });
+
+    console.log(checkAnon());
   }
 
   @Listen('body:closePopover')
@@ -48,11 +52,11 @@ export class ProfileHeader {
           </ion-buttons>
           <ion-title>IonicBeer</ion-title>
 
-          <ion-buttons slot='end'>
+          {checkAnon() ? null : <ion-buttons slot='end'>
             <ion-button fill='clear' onClick={(ev) => this.openPopover(ev)} icon-only>
               {this.profilePic ? <img id='userImage' src={this.profilePic} alt='user profile'></img> : <div id='fake-image'></div>}
             </ion-button>
-          </ion-buttons>
+          </ion-buttons>}
         </ion-toolbar>
       </ion-header>
     );

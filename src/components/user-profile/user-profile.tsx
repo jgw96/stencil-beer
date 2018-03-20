@@ -76,7 +76,7 @@ export class UserProfile {
 
             <h2>{this.user.name}</h2>
 
-            <ion-button expand='block' color='primary' onClick={() => this.follow()}>Follow</ion-button>
+            {/*<ion-button expand='block' color='primary' onClick={() => this.follow()}>Follow</ion-button>*/}
 
             {this.beers ?
               <h1>Favorite Beers</h1>

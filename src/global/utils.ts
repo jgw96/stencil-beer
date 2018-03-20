@@ -22,4 +22,8 @@ export function formatBytes(bytes: number, decimals?: number) {
   return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];
 }
 
+export function checkAnon() {
+  return sessionStorage.getItem('anon');
+}
+
 

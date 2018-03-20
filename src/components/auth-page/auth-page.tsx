@@ -1,5 +1,4 @@
 import { Component, Element, Prop } from '@stencil/core';
-import { ToastController } from '@ionic/core';
 
 declare var firebase: any;
 
@@ -10,21 +9,8 @@ declare var firebase: any;
 export class AuthPage {
 
   @Prop({ context: 'isServer' }) private isServer: boolean;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
 
   @Element() el: Element;
-
-
-  componentWillLoad() {
-    if (!this.isServer) {
-      firebase.auth().getRedirectResult().then((result) => {
-        console.log(result.user);
-      }).catch((error) => {
-        console.log(error);
-        this.showErrorToast();
-      });
-    }
-  }
 
   componentDidLoad() {
     if (!this.isServer) {
@@ -32,7 +18,7 @@ export class AuthPage {
       const db = firebase.firestore();
 
       firebase.auth().onAuthStateChanged((user) => {
-        if (user) {
+        if (user && !user.isAnonymous) {
 
           this.getCertainUser(user.email).then((querySnapshot) => {
             if (querySnapshot.empty) {
@@ -44,22 +30,27 @@ export class AuthPage {
             }
           })
 
-          //  this.history.push('/home', {});
           this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
-        };
+        } else if (user && user.isAnonymous) {
+          this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
+          sessionStorage.setItem('anon', 'true');
+        }
       })
     }
-  }
-
-  async showErrorToast() {
-    const toast = await this.toastCtrl.create({ message: 'Error logging in', duration: 1000 });
-    toast.present();
   }
 
   login() {
     console.log(location.protocol);
     const provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth().signInWithRedirect(provider);
+  }
+
+  async loginAnon() {
+    try {
+      await firebase.auth().signInAnonymously();
+    } catch (err) {
+      console.error(err);
+    }
   }
 
   getCertainUser(email) {
@@ -83,6 +74,7 @@ export class AuthPage {
 
           <div id='buttonBlock'>
             <ion-button onClick={() => this.login()} expand='block' color='primary'>Login with Google</ion-button>
+            <ion-button id='secondButton' onClick={() => this.loginAnon()} expand='block' color='secondary'>Login Anonymously</ion-button>
           </div>
         </ion-content>
       </ion-page>
