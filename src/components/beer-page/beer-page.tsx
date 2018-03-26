@@ -53,7 +53,13 @@ export class BeerPage {
 
   async setUpBeers() {
     // set up with first bit of content
-    this.beers = await fetchBeers(this.page, this.currentStyle);
+    try {
+      this.beers = await fetchBeers(this.page, this.currentStyle);
+    }
+    catch (err) {
+      console.log(err);
+      this.showErrorToast();
+    }
 
     // now lets init infiniteScrolling
     const iScroll: any = this.el.querySelector('#infinite-scroll');

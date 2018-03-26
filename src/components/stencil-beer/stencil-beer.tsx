@@ -18,6 +18,10 @@ export class StencilBeer {
           <ion-route url='/' component='auth-page'></ion-route>
           <ion-route url='/home' component='tabs-page'>
 
+            <ion-route component='feed-tab'>
+               <ion-route component='feed-page'></ion-route>
+            </ion-route>
+
             <ion-route component='beer-tab'>
               <ion-route component='beer-page' />
               <ion-route url='/beer/:beerId' component='beer-detail' />

@@ -73,7 +73,7 @@ export class BeerDetail {
             </main>
           </ion-content>
 
-          <ion-fab slot='bottom right'>
+          <ion-fab vertical='bottom' horizontal='right'>
             <ion-fab-button onClick={() => this.share(this.beer)}>
               <ion-icon name='share'></ion-icon>
             </ion-fab-button>

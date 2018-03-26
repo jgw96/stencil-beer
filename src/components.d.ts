@@ -315,6 +315,99 @@ declare global {
 
 
 import {
+  StencilComponent as FeedList
+} from './components/feed-list/feed-list';
+
+declare global {
+  interface HTMLFeedListElement extends FeedList, HTMLStencilElement {
+  }
+  var HTMLFeedListElement: {
+    prototype: HTMLFeedListElement;
+    new (): HTMLFeedListElement;
+  };
+  interface HTMLElementTagNameMap {
+    "feed-list": HTMLFeedListElement;
+  }
+  interface ElementTagNameMap {
+    "feed-list": HTMLFeedListElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "feed-list": JSXElements.FeedListAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FeedListAttributes extends HTMLAttributes {
+      posts?: any;
+      
+    }
+  }
+}
+
+
+import {
+  FeedPageModal as FeedPageModal
+} from './components/feed-page-modal/feed-page-modal';
+
+declare global {
+  interface HTMLFeedPageModalElement extends FeedPageModal, HTMLStencilElement {
+  }
+  var HTMLFeedPageModalElement: {
+    prototype: HTMLFeedPageModalElement;
+    new (): HTMLFeedPageModalElement;
+  };
+  interface HTMLElementTagNameMap {
+    "feed-page-modal": HTMLFeedPageModalElement;
+  }
+  interface ElementTagNameMap {
+    "feed-page-modal": HTMLFeedPageModalElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "feed-page-modal": JSXElements.FeedPageModalAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FeedPageModalAttributes extends HTMLAttributes {
+      
+      
+    }
+  }
+}
+
+
+import {
+  FeedPage as FeedPage
+} from './components/feed-page/feed-page';
+
+declare global {
+  interface HTMLFeedPageElement extends FeedPage, HTMLStencilElement {
+  }
+  var HTMLFeedPageElement: {
+    prototype: HTMLFeedPageElement;
+    new (): HTMLFeedPageElement;
+  };
+  interface HTMLElementTagNameMap {
+    "feed-page": HTMLFeedPageElement;
+  }
+  interface ElementTagNameMap {
+    "feed-page": HTMLFeedPageElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "feed-page": JSXElements.FeedPageAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface FeedPageAttributes extends HTMLAttributes {
+      
+      
+    }
+  }
+}
+
+
+import {
   LazyImg as LazyImg
 } from './components/lazy-img/lazy-img';
 
@@ -403,6 +496,69 @@ declare global {
     export interface PopoverPageAttributes extends HTMLAttributes {
       
       onClosePopover?: (event: CustomEvent) => void;
+    }
+  }
+}
+
+
+import {
+  PostImg as PostImg
+} from './components/post-img/post-img';
+
+declare global {
+  interface HTMLPostImgElement extends PostImg, HTMLStencilElement {
+  }
+  var HTMLPostImgElement: {
+    prototype: HTMLPostImgElement;
+    new (): HTMLPostImgElement;
+  };
+  interface HTMLElementTagNameMap {
+    "post-img": HTMLPostImgElement;
+  }
+  interface ElementTagNameMap {
+    "post-img": HTMLPostImgElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "post-img": JSXElements.PostImgAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PostImgAttributes extends HTMLAttributes {
+      alt?: string;
+      src?: string;
+      onLazyImgloaded?: (event: CustomEvent<HTMLImageElement>) => void;
+    }
+  }
+}
+
+
+import {
+  PostItem as PostItem
+} from './components/post-item/post-item';
+
+declare global {
+  interface HTMLPostItemElement extends PostItem, HTMLStencilElement {
+  }
+  var HTMLPostItemElement: {
+    prototype: HTMLPostItemElement;
+    new (): HTMLPostItemElement;
+  };
+  interface HTMLElementTagNameMap {
+    "post-item": HTMLPostItemElement;
+  }
+  interface ElementTagNameMap {
+    "post-item": HTMLPostItemElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      "post-item": JSXElements.PostItemAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PostItemAttributes extends HTMLAttributes {
+      post?: any;
+      
     }
   }
 }

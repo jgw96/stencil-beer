@@ -1,0 +1,33 @@
+import { Component, Prop } from '@stencil/core';
+
+
+@Component({
+  tag: 'feed-list',
+  styleUrl: 'feed-list.scss'
+})
+export class StencilComponent {
+
+  @Prop() posts: any;
+
+  render() {
+    if (this.posts) {
+      const posts = this.posts.map((post) => {
+        return (
+          <post-item post={post}></post-item>
+        )
+      });
+
+      return (
+        <ion-list>
+          {posts}
+        </ion-list>
+      )
+    } else {
+      return (
+        <ion-list>
+          <div id='fake-card'></div>
+        </ion-list>
+      )
+    }
+  }
+}
