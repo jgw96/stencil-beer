@@ -1,7 +1,8 @@
 :root {
-  --theme-primary: #222;
+  --theme-primary: #24282e;
   --theme-secondary: black;
   --ion-color-md-primary: #1167ff;
+  --ion-color-md-dark: #24282e;
 }
 
 ion-page {

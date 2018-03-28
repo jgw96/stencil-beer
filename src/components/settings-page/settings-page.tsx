@@ -122,7 +122,7 @@ export class SettingsPage {
                 <p>Use if you are frequently offline</p>
               </ion-label>
               <ion-buttons>
-                <ion-toggle onIonChange={(event) => this.changed(event)} checked={this.offlineChecked}></ion-toggle>
+                <ion-toggle onChange={(event) => this.changed(event)} checked={this.offlineChecked}></ion-toggle>
               </ion-buttons>
             </ion-item>
           </ion-list>

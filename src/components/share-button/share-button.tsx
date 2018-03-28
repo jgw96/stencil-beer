@@ -76,7 +76,7 @@ export class ShareButton {
   render() {
     return (
       <ion-button color='secondary' onClick={() => this.share(this.beer)} fill='clear' icon-only>
-        share
+        <ion-icon name='share'></ion-icon>
       </ion-button>
     );
   }

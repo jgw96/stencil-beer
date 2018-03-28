@@ -10,26 +10,24 @@ beer-item {
     text-overflow: ellipsis;
   }
 
-  lazy-img {
+  ion-buttons {
     display: flex;
-    justify-content: center;
+  }
+
+  #anchorDiv {
+    margin-left: auto;
   }
 
   lazy-img {
+    display: flex;
+    justify-content: center;
     height: 20em;
+    position: relative;
+    top: -8px;
   }
 
   ion-icon svg {
     width: 1.5em;
     height: 1.2em;
-  }
-
-  ion-buttons {
-    display: flex;
-    justify-content: flex-start;
-  }
-
-  #detailButton button {
-    color: #488aff !important;
   }
 }

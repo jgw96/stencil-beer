@@ -1,7 +1,5 @@
-:host {
-  display: block
-}
-
-img {
-  max-width: 100%;
+lazy-img {
+  img {
+    object-fit: none;
+  }
 }

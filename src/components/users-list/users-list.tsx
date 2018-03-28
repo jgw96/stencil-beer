@@ -11,6 +11,12 @@ export class UsersList {
 
   @Element() el: Element;
 
+  componentDidload() {
+    setTimeout(() => {
+      console.log(this.users);
+    }, 5000)
+  }
+
   goToUser(userName: string) {
     this.el.closest('ion-nav').push('user-profile', {userName});
   }
@@ -18,7 +24,7 @@ export class UsersList {
   render() {
     if (this.users) {
       return (
-        <ion-list>
+        <ion-list no-lines>
           {this.users.map((user) => {
             return (
               <ion-item>

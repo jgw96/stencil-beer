@@ -9,6 +9,19 @@ profile-page {
     padding-right: 10px;
   }
 
+  #profileButtonBlock {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 32px;
+    left: 0;
+    width: 100%;
+  }
+
+  #logoutButton {
+    padding-left: 15px;
+  }
+
   #imageBlock {
     display: flex;
     justify-content: center;
@@ -26,9 +39,5 @@ profile-page {
 
   p {
     text-align: center;
-  }
-
-  #logoutButton {
-    margin-top: 2em;
   }
 }

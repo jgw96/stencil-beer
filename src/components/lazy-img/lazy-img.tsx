@@ -11,8 +11,7 @@ import {Component, Element, Event, EventEmitter, Prop, State} from '@stencil/cor
 
 @Component({
   tag: 'lazy-img',
-  styleUrl: 'lazy-img.scss',
-  shadow: true
+  styleUrl: 'lazy-img.scss'
 })
 export class LazyImg {
 
@@ -33,13 +32,13 @@ export class LazyImg {
 
   componentWillUpdate() {
     console.log('componentWillUpdate called', this.src, this.oldSrc);
-    if (this.src !== this.el.shadowRoot.querySelector('img').getAttribute('data-src')) {
+    if (this.src !== this.el.querySelector('img').getAttribute('data-src')) {
       this.addIntersectionObserver();
     }
   }
 
   handleImage() {
-    const image: HTMLImageElement = this.el.shadowRoot.querySelector('img');
+    const image: HTMLImageElement = this.el.querySelector('img');
     console.log(image.getAttribute('data-src'));
     if (image.getAttribute('data-src')) {
       image.setAttribute('src', image.getAttribute('data-src'));
@@ -65,7 +64,7 @@ export class LazyImg {
         }
       })
 
-      this.io.observe(this.el.shadowRoot.querySelector('img'));
+      this.io.observe(this.el.querySelector('img'));
     } else {
       // fall back to just loading the image for Safari and IE
       this.handleImage();

@@ -41,14 +41,14 @@ export class FeedPageModal {
     this.beerNameValue = event.target.value;
   }
 
-  // @Listen('ionChange')
+  @Listen('ionChange')
   handleRatingValue(event) {
     console.log('I got an event', event);
-    /*console.log(event.target.localName);
+    console.log(event.target.localName);
     if (event.target.localName === 'ion-range') {
       console.log(event.detail.value);
       this.ratingValue = event.detail.value;
-    }*/
+    }
   }
 
   takePicture() {
@@ -167,7 +167,7 @@ export class FeedPageModal {
 
           <h3>Rating</h3>
           <ion-item>
-            <ion-range onIonChange={(event) => this.handleRatingValue(event)} color='primary' min={0} max={5} snaps={true}></ion-range>
+            <ion-range color='primary' min={0} max={5} snaps={true}></ion-range>
           </ion-item>
 
           <div id='modalButtonBlock'>

@@ -60,21 +60,17 @@ export class AuthPage {
   render() {
     return (
       <ion-page class='show-page'>
-        <ion-header md-height="96px">
-          <ion-toolbar color='dark'>
-            <ion-title>IonicBeer</ion-title>
-          </ion-toolbar>
-        </ion-header>
-
         <ion-content>
 
           <div id='imageBlock'>
             <img id='iconImage' src='/assets/img/icon.png' alt='logo'></img>
+
+            <h1>IonicBeer</h1>
           </div>
 
           <div id='buttonBlock'>
-            <ion-button onClick={() => this.login()} expand='block' color='primary'>Login with Google</ion-button>
-            <ion-button id='secondButton' onClick={() => this.loginAnon()} expand='block' color='secondary'>Login Anonymously</ion-button>
+            <ion-button onClick={() => this.login()} color='primary'>Login with Google</ion-button>
+            <ion-button id='secondButton' onClick={() => this.loginAnon()}>Anonymous Login</ion-button>
           </div>
         </ion-content>
       </ion-page>

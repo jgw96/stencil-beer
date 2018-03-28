@@ -18,13 +18,13 @@ export class StencilComponent {
       });
 
       return (
-        <ion-list>
+        <ion-list no-lines>
           {posts}
         </ion-list>
       )
     } else {
       return (
-        <ion-list>
+        <ion-list no-lines>
           <div id='fake-card'></div>
         </ion-list>
       )

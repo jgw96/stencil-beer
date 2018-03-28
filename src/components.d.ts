@@ -3,6 +3,9 @@
  * It contains typing information for all components that exist in this project
  * and imports for stencil collections that might be configured in your stencil.config.js file
  */
+
+import '@stencil/core';
+
 declare global {
   namespace JSX {
     interface Element {}
@@ -31,813 +34,872 @@ import {
 import {
   RouterHistory,
 } from '@stencil/router';
-
 import {
-  AuthPage as AuthPage
-} from './components/auth-page/auth-page';
+  EventEmitter,
+} from '@stencil/core';
 
 declare global {
-  interface HTMLAuthPageElement extends AuthPage, HTMLStencilElement {
+  interface HTMLAmRatingElement extends HTMLStencilElement {
+    /**
+     * Determines if half ratings are allowed
+     */
+    'allowHalfRatings': boolean;
+    /**
+     * The color to fill the rating with when it's outwith the max
+     */
+    'colorOff': string;
+    /**
+     * The color to fill the rating with when it's within the max
+     */
+    'colorOn': string;
+    /**
+     * The color to fill the rating with when it's outwith the max
+     */
+    'colorOutline': string;
+    /**
+     * The direction of the shading. Valid settings are 'ltr' (left to right) and 'ttb' (top to bottom)
+     */
+    'direction': string;
+    /**
+     * Determines if the user can set a rating
+     */
+    'interactive': boolean;
+    /**
+     * The maximum rating possible
+     */
+    'maxRating': number;
+    /**
+     * The minimum rating possible
+     */
+    'minRating': number;
+    /**
+     * The rating
+     */
+    'rating': number;
+    /**
+     * The rating identifier
+     */
+    'reference': string;
+    /**
+     * This is a star!
+     */
+    'svgPoints': string;
+    /**
+     * The view box for the SVG
+     */
+    'svgViewBox': string;
+  }
+  var HTMLAmRatingElement: {
+    prototype: HTMLAmRatingElement;
+    new (): HTMLAmRatingElement;
+  };
+  interface HTMLElementTagNameMap {
+    'am-rating': HTMLAmRatingElement;
+  }
+  interface ElementTagNameMap {
+    'am-rating': HTMLAmRatingElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'am-rating': JSXElements.AmRatingAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface AmRatingAttributes extends HTMLAttributes {
+      /**
+       * Determines if half ratings are allowed
+       */
+      'allowHalfRatings'?: boolean;
+      /**
+       * The color to fill the rating with when it's outwith the max
+       */
+      'colorOff'?: string;
+      /**
+       * The color to fill the rating with when it's within the max
+       */
+      'colorOn'?: string;
+      /**
+       * The color to fill the rating with when it's outwith the max
+       */
+      'colorOutline'?: string;
+      /**
+       * The direction of the shading. Valid settings are 'ltr' (left to right) and 'ttb' (top to bottom)
+       */
+      'direction'?: string;
+      /**
+       * Determines if the user can set a rating
+       */
+      'interactive'?: boolean;
+      /**
+       * The maximum rating possible
+       */
+      'maxRating'?: number;
+      /**
+       * The minimum rating possible
+       */
+      'minRating'?: number;
+      /**
+       * Event fired when the rating is updated by user input
+       */
+      'onRatingUpdated'?: (event: CustomEvent) => void;
+      /**
+       * The rating
+       */
+      'rating'?: number;
+      /**
+       * The rating identifier
+       */
+      'reference'?: string;
+      /**
+       * This is a star!
+       */
+      'svgPoints'?: string;
+      /**
+       * The view box for the SVG
+       */
+      'svgViewBox'?: string;
+    }
+  }
+}
+
+
+declare global {
+  interface HTMLAuthPageElement extends HTMLStencilElement {
+
   }
   var HTMLAuthPageElement: {
     prototype: HTMLAuthPageElement;
     new (): HTMLAuthPageElement;
   };
   interface HTMLElementTagNameMap {
-    "auth-page": HTMLAuthPageElement;
+    'auth-page': HTMLAuthPageElement;
   }
   interface ElementTagNameMap {
-    "auth-page": HTMLAuthPageElement;
+    'auth-page': HTMLAuthPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "auth-page": JSXElements.AuthPageAttributes;
+      'auth-page': JSXElements.AuthPageAttributes;
     }
   }
   namespace JSXElements {
     export interface AuthPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  BarDirections as BarDirections
-} from './components/bar-directions/bar-directions';
-
 declare global {
-  interface HTMLBarDirectionsElement extends BarDirections, HTMLStencilElement {
+  interface HTMLBarDirectionsElement extends HTMLStencilElement {
+    'address': string;
+    'dest': string;
   }
   var HTMLBarDirectionsElement: {
     prototype: HTMLBarDirectionsElement;
     new (): HTMLBarDirectionsElement;
   };
   interface HTMLElementTagNameMap {
-    "bar-directions": HTMLBarDirectionsElement;
+    'bar-directions': HTMLBarDirectionsElement;
   }
   interface ElementTagNameMap {
-    "bar-directions": HTMLBarDirectionsElement;
+    'bar-directions': HTMLBarDirectionsElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "bar-directions": JSXElements.BarDirectionsAttributes;
+      'bar-directions': JSXElements.BarDirectionsAttributes;
     }
   }
   namespace JSXElements {
     export interface BarDirectionsAttributes extends HTMLAttributes {
-      address?: string;
-      dest?: string;
-      
+      'address'?: string;
+      'dest'?: string;
     }
   }
 }
 
 
-import {
-  barList as BarList
-} from './components/bar-list/bar-list';
-
 declare global {
-  interface HTMLBarListElement extends BarList, HTMLStencilElement {
+  interface HTMLBarListElement extends HTMLStencilElement {
+    'bars': Array<Bar>;
   }
   var HTMLBarListElement: {
     prototype: HTMLBarListElement;
     new (): HTMLBarListElement;
   };
   interface HTMLElementTagNameMap {
-    "bar-list": HTMLBarListElement;
+    'bar-list': HTMLBarListElement;
   }
   interface ElementTagNameMap {
-    "bar-list": HTMLBarListElement;
+    'bar-list': HTMLBarListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "bar-list": JSXElements.BarListAttributes;
+      'bar-list': JSXElements.BarListAttributes;
     }
   }
   namespace JSXElements {
     export interface BarListAttributes extends HTMLAttributes {
-      bars?: Array<Bar>;
-      
+      'bars'?: Array<Bar>;
     }
   }
 }
 
 
-import {
-  BarPage as BarPage
-} from './components/bar-page/bar-page';
-
 declare global {
-  interface HTMLBarPageElement extends BarPage, HTMLStencilElement {
+  interface HTMLBarPageElement extends HTMLStencilElement {
+
   }
   var HTMLBarPageElement: {
     prototype: HTMLBarPageElement;
     new (): HTMLBarPageElement;
   };
   interface HTMLElementTagNameMap {
-    "bar-page": HTMLBarPageElement;
+    'bar-page': HTMLBarPageElement;
   }
   interface ElementTagNameMap {
-    "bar-page": HTMLBarPageElement;
+    'bar-page': HTMLBarPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "bar-page": JSXElements.BarPageAttributes;
+      'bar-page': JSXElements.BarPageAttributes;
     }
   }
   namespace JSXElements {
     export interface BarPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  BeerDetail as BeerDetail
-} from './components/beer-detail/beer-detail';
-
 declare global {
-  interface HTMLBeerDetailElement extends BeerDetail, HTMLStencilElement {
+  interface HTMLBeerDetailElement extends HTMLStencilElement {
+    'beerId': string;
   }
   var HTMLBeerDetailElement: {
     prototype: HTMLBeerDetailElement;
     new (): HTMLBeerDetailElement;
   };
   interface HTMLElementTagNameMap {
-    "beer-detail": HTMLBeerDetailElement;
+    'beer-detail': HTMLBeerDetailElement;
   }
   interface ElementTagNameMap {
-    "beer-detail": HTMLBeerDetailElement;
+    'beer-detail': HTMLBeerDetailElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "beer-detail": JSXElements.BeerDetailAttributes;
+      'beer-detail': JSXElements.BeerDetailAttributes;
     }
   }
   namespace JSXElements {
     export interface BeerDetailAttributes extends HTMLAttributes {
-      beerId?: string;
-      
+      'beerId'?: string;
     }
   }
 }
 
 
-import {
-  BeerItem as BeerItem
-} from './components/beer-item/beer-item';
-
 declare global {
-  interface HTMLBeerItemElement extends BeerItem, HTMLStencilElement {
+  interface HTMLBeerItemElement extends HTMLStencilElement {
+    'beer': Beer;
+    'fave': Boolean;
   }
   var HTMLBeerItemElement: {
     prototype: HTMLBeerItemElement;
     new (): HTMLBeerItemElement;
   };
   interface HTMLElementTagNameMap {
-    "beer-item": HTMLBeerItemElement;
+    'beer-item': HTMLBeerItemElement;
   }
   interface ElementTagNameMap {
-    "beer-item": HTMLBeerItemElement;
+    'beer-item': HTMLBeerItemElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "beer-item": JSXElements.BeerItemAttributes;
+      'beer-item': JSXElements.BeerItemAttributes;
     }
   }
   namespace JSXElements {
     export interface BeerItemAttributes extends HTMLAttributes {
-      beer?: Beer;
-      fave?: Boolean;
-      onBeerDeleted?: (event: CustomEvent) => void;
+      'beer'?: Beer;
+      'fave'?: Boolean;
+      'onBeerDeleted'?: (event: CustomEvent) => void;
     }
   }
 }
 
 
-import {
-  BeerList as BeerList
-} from './components/beer-list/beer-list';
-
 declare global {
-  interface HTMLBeerListElement extends BeerList, HTMLStencilElement {
+  interface HTMLBeerListElement extends HTMLStencilElement {
+    'beers': Array<Beer>;
+    'fave': Boolean;
   }
   var HTMLBeerListElement: {
     prototype: HTMLBeerListElement;
     new (): HTMLBeerListElement;
   };
   interface HTMLElementTagNameMap {
-    "beer-list": HTMLBeerListElement;
+    'beer-list': HTMLBeerListElement;
   }
   interface ElementTagNameMap {
-    "beer-list": HTMLBeerListElement;
+    'beer-list': HTMLBeerListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "beer-list": JSXElements.BeerListAttributes;
+      'beer-list': JSXElements.BeerListAttributes;
     }
   }
   namespace JSXElements {
     export interface BeerListAttributes extends HTMLAttributes {
-      beers?: Array<Beer>;
-      fave?: Boolean;
-      
+      'beers'?: Array<Beer>;
+      'fave'?: Boolean;
     }
   }
 }
 
 
-import {
-  BeerPage as BeerPage
-} from './components/beer-page/beer-page';
-
 declare global {
-  interface HTMLBeerPageElement extends BeerPage, HTMLStencilElement {
+  interface HTMLBeerPageElement extends HTMLStencilElement {
+    'history': RouterHistory;
   }
   var HTMLBeerPageElement: {
     prototype: HTMLBeerPageElement;
     new (): HTMLBeerPageElement;
   };
   interface HTMLElementTagNameMap {
-    "beer-page": HTMLBeerPageElement;
+    'beer-page': HTMLBeerPageElement;
   }
   interface ElementTagNameMap {
-    "beer-page": HTMLBeerPageElement;
+    'beer-page': HTMLBeerPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "beer-page": JSXElements.BeerPageAttributes;
+      'beer-page': JSXElements.BeerPageAttributes;
     }
   }
   namespace JSXElements {
     export interface BeerPageAttributes extends HTMLAttributes {
-      history?: RouterHistory;
-      
+      'history'?: RouterHistory;
     }
   }
 }
 
 
-import {
-  favoritesPage as FavoritesPage
-} from './components/favorites-page/favorites-page';
-
 declare global {
-  interface HTMLFavoritesPageElement extends FavoritesPage, HTMLStencilElement {
+  interface HTMLFavoritesPageElement extends HTMLStencilElement {
+
   }
   var HTMLFavoritesPageElement: {
     prototype: HTMLFavoritesPageElement;
     new (): HTMLFavoritesPageElement;
   };
   interface HTMLElementTagNameMap {
-    "favorites-page": HTMLFavoritesPageElement;
+    'favorites-page': HTMLFavoritesPageElement;
   }
   interface ElementTagNameMap {
-    "favorites-page": HTMLFavoritesPageElement;
+    'favorites-page': HTMLFavoritesPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "favorites-page": JSXElements.FavoritesPageAttributes;
+      'favorites-page': JSXElements.FavoritesPageAttributes;
     }
   }
   namespace JSXElements {
     export interface FavoritesPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  StencilComponent as FeedList
-} from './components/feed-list/feed-list';
-
 declare global {
-  interface HTMLFeedListElement extends FeedList, HTMLStencilElement {
+  interface HTMLFeedListElement extends HTMLStencilElement {
+    'posts': any;
   }
   var HTMLFeedListElement: {
     prototype: HTMLFeedListElement;
     new (): HTMLFeedListElement;
   };
   interface HTMLElementTagNameMap {
-    "feed-list": HTMLFeedListElement;
+    'feed-list': HTMLFeedListElement;
   }
   interface ElementTagNameMap {
-    "feed-list": HTMLFeedListElement;
+    'feed-list': HTMLFeedListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "feed-list": JSXElements.FeedListAttributes;
+      'feed-list': JSXElements.FeedListAttributes;
     }
   }
   namespace JSXElements {
     export interface FeedListAttributes extends HTMLAttributes {
-      posts?: any;
-      
+      'posts'?: any;
     }
   }
 }
 
 
-import {
-  FeedPageModal as FeedPageModal
-} from './components/feed-page-modal/feed-page-modal';
-
 declare global {
-  interface HTMLFeedPageModalElement extends FeedPageModal, HTMLStencilElement {
+  interface HTMLFeedPageModalElement extends HTMLStencilElement {
+
   }
   var HTMLFeedPageModalElement: {
     prototype: HTMLFeedPageModalElement;
     new (): HTMLFeedPageModalElement;
   };
   interface HTMLElementTagNameMap {
-    "feed-page-modal": HTMLFeedPageModalElement;
+    'feed-page-modal': HTMLFeedPageModalElement;
   }
   interface ElementTagNameMap {
-    "feed-page-modal": HTMLFeedPageModalElement;
+    'feed-page-modal': HTMLFeedPageModalElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "feed-page-modal": JSXElements.FeedPageModalAttributes;
+      'feed-page-modal': JSXElements.FeedPageModalAttributes;
     }
   }
   namespace JSXElements {
     export interface FeedPageModalAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  FeedPage as FeedPage
-} from './components/feed-page/feed-page';
-
 declare global {
-  interface HTMLFeedPageElement extends FeedPage, HTMLStencilElement {
+  interface HTMLFeedPageElement extends HTMLStencilElement {
+
   }
   var HTMLFeedPageElement: {
     prototype: HTMLFeedPageElement;
     new (): HTMLFeedPageElement;
   };
   interface HTMLElementTagNameMap {
-    "feed-page": HTMLFeedPageElement;
+    'feed-page': HTMLFeedPageElement;
   }
   interface ElementTagNameMap {
-    "feed-page": HTMLFeedPageElement;
+    'feed-page': HTMLFeedPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "feed-page": JSXElements.FeedPageAttributes;
+      'feed-page': JSXElements.FeedPageAttributes;
     }
   }
   namespace JSXElements {
     export interface FeedPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  LazyImg as LazyImg
-} from './components/lazy-img/lazy-img';
-
 declare global {
-  interface HTMLLazyImgElement extends LazyImg, HTMLStencilElement {
+  interface HTMLLazyImgElement extends HTMLStencilElement {
+    'alt': string;
+    'src': string;
   }
   var HTMLLazyImgElement: {
     prototype: HTMLLazyImgElement;
     new (): HTMLLazyImgElement;
   };
   interface HTMLElementTagNameMap {
-    "lazy-img": HTMLLazyImgElement;
+    'lazy-img': HTMLLazyImgElement;
   }
   interface ElementTagNameMap {
-    "lazy-img": HTMLLazyImgElement;
+    'lazy-img': HTMLLazyImgElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "lazy-img": JSXElements.LazyImgAttributes;
+      'lazy-img': JSXElements.LazyImgAttributes;
     }
   }
   namespace JSXElements {
     export interface LazyImgAttributes extends HTMLAttributes {
-      alt?: string;
-      src?: string;
-      onLazyImgloaded?: (event: CustomEvent<HTMLImageElement>) => void;
+      'alt'?: string;
+      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
+      'src'?: string;
     }
   }
 }
 
 
-import {
-  MainPage as MainPage
-} from './components/main-page/main-page';
-
 declare global {
-  interface HTMLMainPageElement extends MainPage, HTMLStencilElement {
+  interface HTMLMainPageElement extends HTMLStencilElement {
+
   }
   var HTMLMainPageElement: {
     prototype: HTMLMainPageElement;
     new (): HTMLMainPageElement;
   };
   interface HTMLElementTagNameMap {
-    "main-page": HTMLMainPageElement;
+    'main-page': HTMLMainPageElement;
   }
   interface ElementTagNameMap {
-    "main-page": HTMLMainPageElement;
+    'main-page': HTMLMainPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "main-page": JSXElements.MainPageAttributes;
+      'main-page': JSXElements.MainPageAttributes;
     }
   }
   namespace JSXElements {
     export interface MainPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  PopoverPage as PopoverPage
-} from './components/popover-page/popover-page';
-
 declare global {
-  interface HTMLPopoverPageElement extends PopoverPage, HTMLStencilElement {
+  interface HTMLPopoverPageElement extends HTMLStencilElement {
+
   }
   var HTMLPopoverPageElement: {
     prototype: HTMLPopoverPageElement;
     new (): HTMLPopoverPageElement;
   };
   interface HTMLElementTagNameMap {
-    "popover-page": HTMLPopoverPageElement;
+    'popover-page': HTMLPopoverPageElement;
   }
   interface ElementTagNameMap {
-    "popover-page": HTMLPopoverPageElement;
+    'popover-page': HTMLPopoverPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "popover-page": JSXElements.PopoverPageAttributes;
+      'popover-page': JSXElements.PopoverPageAttributes;
     }
   }
   namespace JSXElements {
     export interface PopoverPageAttributes extends HTMLAttributes {
-      
-      onClosePopover?: (event: CustomEvent) => void;
+      'onClosePopover'?: (event: CustomEvent) => void;
     }
   }
 }
 
 
-import {
-  PostImg as PostImg
-} from './components/post-img/post-img';
+declare global {
+  interface HTMLPostDetailElement extends HTMLStencilElement {
+    'post': any;
+  }
+  var HTMLPostDetailElement: {
+    prototype: HTMLPostDetailElement;
+    new (): HTMLPostDetailElement;
+  };
+  interface HTMLElementTagNameMap {
+    'post-detail': HTMLPostDetailElement;
+  }
+  interface ElementTagNameMap {
+    'post-detail': HTMLPostDetailElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'post-detail': JSXElements.PostDetailAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface PostDetailAttributes extends HTMLAttributes {
+      'post'?: any;
+    }
+  }
+}
+
 
 declare global {
-  interface HTMLPostImgElement extends PostImg, HTMLStencilElement {
+  interface HTMLPostImgElement extends HTMLStencilElement {
+    'alt': string;
+    'src': string;
   }
   var HTMLPostImgElement: {
     prototype: HTMLPostImgElement;
     new (): HTMLPostImgElement;
   };
   interface HTMLElementTagNameMap {
-    "post-img": HTMLPostImgElement;
+    'post-img': HTMLPostImgElement;
   }
   interface ElementTagNameMap {
-    "post-img": HTMLPostImgElement;
+    'post-img': HTMLPostImgElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "post-img": JSXElements.PostImgAttributes;
+      'post-img': JSXElements.PostImgAttributes;
     }
   }
   namespace JSXElements {
     export interface PostImgAttributes extends HTMLAttributes {
-      alt?: string;
-      src?: string;
-      onLazyImgloaded?: (event: CustomEvent<HTMLImageElement>) => void;
+      'alt'?: string;
+      'onLazyImgloaded'?: (event: CustomEvent<HTMLImageElement>) => void;
+      'src'?: string;
     }
   }
 }
 
 
-import {
-  PostItem as PostItem
-} from './components/post-item/post-item';
-
 declare global {
-  interface HTMLPostItemElement extends PostItem, HTMLStencilElement {
+  interface HTMLPostItemElement extends HTMLStencilElement {
+    'post': any;
   }
   var HTMLPostItemElement: {
     prototype: HTMLPostItemElement;
     new (): HTMLPostItemElement;
   };
   interface HTMLElementTagNameMap {
-    "post-item": HTMLPostItemElement;
+    'post-item': HTMLPostItemElement;
   }
   interface ElementTagNameMap {
-    "post-item": HTMLPostItemElement;
+    'post-item': HTMLPostItemElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "post-item": JSXElements.PostItemAttributes;
+      'post-item': JSXElements.PostItemAttributes;
     }
   }
   namespace JSXElements {
     export interface PostItemAttributes extends HTMLAttributes {
-      post?: any;
-      
+      'post'?: any;
     }
   }
 }
 
 
-import {
-  ProfileHeader as ProfileHeader
-} from './components/profile-header/profile-header';
-
 declare global {
-  interface HTMLProfileHeaderElement extends ProfileHeader, HTMLStencilElement {
+  interface HTMLProfileHeaderElement extends HTMLStencilElement {
+
   }
   var HTMLProfileHeaderElement: {
     prototype: HTMLProfileHeaderElement;
     new (): HTMLProfileHeaderElement;
   };
   interface HTMLElementTagNameMap {
-    "profile-header": HTMLProfileHeaderElement;
+    'profile-header': HTMLProfileHeaderElement;
   }
   interface ElementTagNameMap {
-    "profile-header": HTMLProfileHeaderElement;
+    'profile-header': HTMLProfileHeaderElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "profile-header": JSXElements.ProfileHeaderAttributes;
+      'profile-header': JSXElements.ProfileHeaderAttributes;
     }
   }
   namespace JSXElements {
     export interface ProfileHeaderAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  ProfilePage as ProfilePage
-} from './components/profile-page/profile-page';
-
 declare global {
-  interface HTMLProfilePageElement extends ProfilePage, HTMLStencilElement {
+  interface HTMLProfilePageElement extends HTMLStencilElement {
+
   }
   var HTMLProfilePageElement: {
     prototype: HTMLProfilePageElement;
     new (): HTMLProfilePageElement;
   };
   interface HTMLElementTagNameMap {
-    "profile-page": HTMLProfilePageElement;
+    'profile-page': HTMLProfilePageElement;
   }
   interface ElementTagNameMap {
-    "profile-page": HTMLProfilePageElement;
+    'profile-page': HTMLProfilePageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "profile-page": JSXElements.ProfilePageAttributes;
+      'profile-page': JSXElements.ProfilePageAttributes;
     }
   }
   namespace JSXElements {
     export interface ProfilePageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  SettingsPage as SettingsPage
-} from './components/settings-page/settings-page';
-
 declare global {
-  interface HTMLSettingsPageElement extends SettingsPage, HTMLStencilElement {
+  interface HTMLSettingsPageElement extends HTMLStencilElement {
+
   }
   var HTMLSettingsPageElement: {
     prototype: HTMLSettingsPageElement;
     new (): HTMLSettingsPageElement;
   };
   interface HTMLElementTagNameMap {
-    "settings-page": HTMLSettingsPageElement;
+    'settings-page': HTMLSettingsPageElement;
   }
   interface ElementTagNameMap {
-    "settings-page": HTMLSettingsPageElement;
+    'settings-page': HTMLSettingsPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "settings-page": JSXElements.SettingsPageAttributes;
+      'settings-page': JSXElements.SettingsPageAttributes;
     }
   }
   namespace JSXElements {
     export interface SettingsPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  ShareButton as ShareButton
-} from './components/share-button/share-button';
-
 declare global {
-  interface HTMLShareButtonElement extends ShareButton, HTMLStencilElement {
+  interface HTMLShareButtonElement extends HTMLStencilElement {
+    'beer': any;
   }
   var HTMLShareButtonElement: {
     prototype: HTMLShareButtonElement;
     new (): HTMLShareButtonElement;
   };
   interface HTMLElementTagNameMap {
-    "share-button": HTMLShareButtonElement;
+    'share-button': HTMLShareButtonElement;
   }
   interface ElementTagNameMap {
-    "share-button": HTMLShareButtonElement;
+    'share-button': HTMLShareButtonElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "share-button": JSXElements.ShareButtonAttributes;
+      'share-button': JSXElements.ShareButtonAttributes;
     }
   }
   namespace JSXElements {
     export interface ShareButtonAttributes extends HTMLAttributes {
-      beer?: any;
-      
+      'beer'?: any;
     }
   }
 }
 
 
-import {
-  StencilBeer as StencilBeer
-} from './components/stencil-beer/stencil-beer';
-
 declare global {
-  interface HTMLStencilBeerElement extends StencilBeer, HTMLStencilElement {
+  interface HTMLStencilBeerElement extends HTMLStencilElement {
+
   }
   var HTMLStencilBeerElement: {
     prototype: HTMLStencilBeerElement;
     new (): HTMLStencilBeerElement;
   };
   interface HTMLElementTagNameMap {
-    "stencil-beer": HTMLStencilBeerElement;
+    'stencil-beer': HTMLStencilBeerElement;
   }
   interface ElementTagNameMap {
-    "stencil-beer": HTMLStencilBeerElement;
+    'stencil-beer': HTMLStencilBeerElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "stencil-beer": JSXElements.StencilBeerAttributes;
+      'stencil-beer': JSXElements.StencilBeerAttributes;
     }
   }
   namespace JSXElements {
     export interface StencilBeerAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  TabsPage as TabsPage
-} from './components/tabs-page/tabs-page';
-
 declare global {
-  interface HTMLTabsPageElement extends TabsPage, HTMLStencilElement {
+  interface HTMLTabsPageElement extends HTMLStencilElement {
+
   }
   var HTMLTabsPageElement: {
     prototype: HTMLTabsPageElement;
     new (): HTMLTabsPageElement;
   };
   interface HTMLElementTagNameMap {
-    "tabs-page": HTMLTabsPageElement;
+    'tabs-page': HTMLTabsPageElement;
   }
   interface ElementTagNameMap {
-    "tabs-page": HTMLTabsPageElement;
+    'tabs-page': HTMLTabsPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "tabs-page": JSXElements.TabsPageAttributes;
+      'tabs-page': JSXElements.TabsPageAttributes;
     }
   }
   namespace JSXElements {
     export interface TabsPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }
 
 
-import {
-  UserProfile as UserProfile
-} from './components/user-profile/user-profile';
-
 declare global {
-  interface HTMLUserProfileElement extends UserProfile, HTMLStencilElement {
+  interface HTMLUserProfileElement extends HTMLStencilElement {
+    'userName': any;
   }
   var HTMLUserProfileElement: {
     prototype: HTMLUserProfileElement;
     new (): HTMLUserProfileElement;
   };
   interface HTMLElementTagNameMap {
-    "user-profile": HTMLUserProfileElement;
+    'user-profile': HTMLUserProfileElement;
   }
   interface ElementTagNameMap {
-    "user-profile": HTMLUserProfileElement;
+    'user-profile': HTMLUserProfileElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "user-profile": JSXElements.UserProfileAttributes;
+      'user-profile': JSXElements.UserProfileAttributes;
     }
   }
   namespace JSXElements {
     export interface UserProfileAttributes extends HTMLAttributes {
-      userName?: any;
-      
+      'userName'?: any;
     }
   }
 }
 
 
-import {
-  UsersList as UsersList
-} from './components/users-list/users-list';
-
 declare global {
-  interface HTMLUsersListElement extends UsersList, HTMLStencilElement {
+  interface HTMLUsersListElement extends HTMLStencilElement {
+    'users': any[];
   }
   var HTMLUsersListElement: {
     prototype: HTMLUsersListElement;
     new (): HTMLUsersListElement;
   };
   interface HTMLElementTagNameMap {
-    "users-list": HTMLUsersListElement;
+    'users-list': HTMLUsersListElement;
   }
   interface ElementTagNameMap {
-    "users-list": HTMLUsersListElement;
+    'users-list': HTMLUsersListElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "users-list": JSXElements.UsersListAttributes;
+      'users-list': JSXElements.UsersListAttributes;
     }
   }
   namespace JSXElements {
     export interface UsersListAttributes extends HTMLAttributes {
-      users?: any[];
-      
+      'users'?: any[];
     }
   }
 }
 
 
-import {
-  UsersPage as UsersPage
-} from './components/users-page/users-page';
-
 declare global {
-  interface HTMLUsersPageElement extends UsersPage, HTMLStencilElement {
+  interface HTMLUsersPageElement extends HTMLStencilElement {
+
   }
   var HTMLUsersPageElement: {
     prototype: HTMLUsersPageElement;
     new (): HTMLUsersPageElement;
   };
   interface HTMLElementTagNameMap {
-    "users-page": HTMLUsersPageElement;
+    'users-page': HTMLUsersPageElement;
   }
   interface ElementTagNameMap {
-    "users-page": HTMLUsersPageElement;
+    'users-page': HTMLUsersPageElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      "users-page": JSXElements.UsersPageAttributes;
+      'users-page': JSXElements.UsersPageAttributes;
     }
   }
   namespace JSXElements {
     export interface UsersPageAttributes extends HTMLAttributes {
-      
-      
+
     }
   }
 }

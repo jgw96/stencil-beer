@@ -67,7 +67,9 @@ export class UserProfile {
     if (this.user) {
       return (
         <ion-page class='show-page'>
-          <profile-header></profile-header>
+          <profile-header>
+            <ion-back-button defaultHref='/home' />
+          </profile-header>
 
           <ion-content>
             <div id='imageBlock'>

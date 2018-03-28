@@ -151,23 +151,26 @@ export class BeerItem {
           </p>
 
           <ion-buttons>
-            <ion-anchor href={`/home/beer/${this.beer.id}`}>
-              <ion-button onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
-                Detail
-              </ion-button>
-            </ion-anchor>
-
             {this.fave ?
               <ion-button color='danger' onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>
-                remove
+                <ion-icon name='trash'></ion-icon>
               </ion-button>
               :
               <ion-button color='primary' onClick={() => this.save(this.beer)} fill='clear' icon-only>
-                favorite
+                <ion-icon name='star'></ion-icon>
               </ion-button>
             }
 
             <share-button beer={this.beer}></share-button>
+
+            <div id='anchorDiv'>
+              <ion-anchor href={`/home/beer/${this.beer.id}`}>
+                <ion-button slot='end' onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
+                  Detail
+              </ion-button>
+              </ion-anchor>
+            </div>
+
           </ion-buttons>
         </ion-card-content>
       </ion-card>

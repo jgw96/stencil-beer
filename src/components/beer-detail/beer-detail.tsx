@@ -61,7 +61,7 @@ export class BeerDetail {
           <ion-content>
             <main id='animateIn'>
               <div id='img-block'>
-                <lazy-img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></lazy-img>
+                <img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></img>
               </div>
               <h1>{this.beer.name}</h1>
 

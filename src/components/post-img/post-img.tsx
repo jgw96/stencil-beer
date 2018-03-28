@@ -4,8 +4,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'post-img',
-  styleUrl: 'post-img.scss',
-  shadow: true
+  styleUrl: 'post-img.scss'
 })
 export class PostImg {
   @Element() el: HTMLElement;
@@ -26,13 +25,13 @@ export class PostImg {
 
   componentWillUpdate() {
     console.log('componentWillUpdate called', this.src, this.oldSrc);
-    if (this.src !== this.el.shadowRoot.querySelector('img').getAttribute('data-src')) {
+    if (this.src !== this.el.querySelector('img').getAttribute('data-src')) {
       this.addIntersectionObserver();
     }
   }
 
   async handleImage() {
-    const image: HTMLImageElement = this.el.shadowRoot.querySelector('img');
+    const image: HTMLImageElement = this.el.querySelector('img');
 
     const storage = firebase.storage();
     const imagePath = storage.ref(this.src);
@@ -61,7 +60,7 @@ export class PostImg {
         }
       })
 
-      this.io.observe(this.el.shadowRoot.querySelector('img'));
+      this.io.observe(this.el.querySelector('img'));
     } else {
       // fall back to just loading the image for Safari and IE
       this.handleImage();

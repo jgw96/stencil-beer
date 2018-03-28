@@ -20,6 +20,7 @@ export class StencilBeer {
 
             <ion-route component='feed-tab'>
                <ion-route component='feed-page'></ion-route>
+               <ion-route url='/post/:post' component='post-detail'></ion-route>
             </ion-route>
 
             <ion-route component='beer-tab'>

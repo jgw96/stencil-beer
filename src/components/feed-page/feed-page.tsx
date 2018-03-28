@@ -1,6 +1,8 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
 import { ModalController } from '@ionic/core';
 
+import { checkAnon } from '../../global/utils';
+
 declare var firebase: any;
 
 @Component({
@@ -53,11 +55,12 @@ export class FeedPage {
           <feed-list posts={this.posts}></feed-list>
         </ion-content>
 
-        <ion-fab vertical='bottom' horizontal='right'>
+
+        {checkAnon() ? null : <ion-fab vertical='bottom' horizontal='right'>
           <ion-fab-button onClick={() => this.makeNewPost()}>
             <ion-icon name='add'></ion-icon>
           </ion-fab-button>
-        </ion-fab>
+        </ion-fab>}
       </ion-page>
     );
   }

@@ -106,11 +106,13 @@ export class ProfilePage {
             <h2>{this.user.displayName}</h2>
             <p>{this.user.email}</p>
 
-            {this.subscribed ? <ion-button onClick={() => this.unsubscribe()} expand='block' color='danger'>Unsubscribe</ion-button>
-              : <ion-button onClick={() => this.notications()} expand='block' color='primary'>Get Notifications</ion-button>
-            }
+            <div id='profileButtonBlock'>
+              {this.subscribed ? <ion-button onClick={() => this.unsubscribe()} expand='block' color='danger'>Unsubscribe</ion-button>
+                : <ion-button onClick={() => this.notications()} expand='block' color='primary'>Get Notifications</ion-button>
+              }
 
-            <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
+              <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
+            </div>
           </ion-content>
         </ion-page>
       );
@@ -133,7 +135,9 @@ export class ProfilePage {
           <h2>{this.user.displayName}</h2>
           <p>{this.user.email}</p>
 
-          <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
+          <div id='noSwProfileButtonBlock'>
+            <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
+          </div>
         </ion-content>
       </ion-page>
     }
