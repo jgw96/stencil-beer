@@ -1,5 +1,5 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
-import { PopoverController, Popover } from '@ionic/core';
+import { PopoverController } from '@ionic/core';
 
 import { checkAnon } from '../../global/utils';
 
@@ -12,7 +12,7 @@ declare var firebase: any;
 })
 export class ProfileHeader {
 
-  popover: Popover;
+  popover: HTMLIonPopoverElement;
 
   @State() profilePic: string;
 

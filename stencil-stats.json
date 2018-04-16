@@ -1,14 +1,14 @@
 {
   "compiler": {
     "name": "@stencil/core",
-    "version": "0.7.7"
+    "version": "0.7.24"
   },
   "app": {
     "namespace": "App",
     "fsNamespace": "app",
-    "components": 87,
-    "entries": 39,
-    "bundles": 58
+    "components": 82,
+    "entries": 38,
+    "bundles": 56
   },
   "options": {
     "minifyJs": false,
@@ -81,9 +81,7 @@
       "dependencies": [
         "beer-list",
         "ion-button",
-        "ion-buttons",
         "ion-content",
-        "ion-icon",
         "ion-infinite-scroll",
         "ion-infinite-scroll-content",
         "ion-searchbar",
@@ -405,7 +403,6 @@
         "ion-app",
         "ion-nav",
         "ion-route",
-        "ion-route-redirect",
         "ion-router"
       ],
       "dependencyOf": []
@@ -414,19 +411,11 @@
       "tag": "ion-app",
       "dependencies": [
         "ion-input-shims",
-        "ion-platform",
         "ion-status-tap",
         "ion-tap-click"
       ],
       "dependencyOf": [
         "stencil-beer"
-      ]
-    },
-    {
-      "tag": "ion-cordova-platform",
-      "dependencies": [],
-      "dependencyOf": [
-        "ion-platform"
       ]
     },
     {
@@ -437,23 +426,7 @@
       ]
     },
     {
-      "tag": "ion-platform",
-      "dependencies": [
-        "ion-cordova-platform"
-      ],
-      "dependencyOf": [
-        "ion-app"
-      ]
-    },
-    {
       "tag": "ion-route",
-      "dependencies": [],
-      "dependencyOf": [
-        "stencil-beer"
-      ]
-    },
-    {
-      "tag": "ion-route-redirect",
       "dependencies": [],
       "dependencyOf": [
         "stencil-beer"
@@ -554,7 +527,6 @@
       "dependencyOf": [
         "bar-list",
         "beer-item",
-        "beer-page",
         "feed-page-modal",
         "profile-header",
         "profile-page",
@@ -576,7 +548,6 @@
         "favorites-page",
         "feed-page",
         "feed-page-modal",
-        "main-page",
         "post-detail",
         "profile-page",
         "settings-page",
@@ -609,7 +580,6 @@
         "bar-directions",
         "beer-detail",
         "beer-item",
-        "beer-page",
         "feed-page",
         "ion-back-button",
         "ion-fab-button",
@@ -869,14 +839,6 @@
       ]
     },
     {
-      "tag": "main-page",
-      "dependencies": [
-        "ion-content",
-        "profile-header"
-      ],
-      "dependencyOf": []
-    },
-    {
       "tag": "popover-page",
       "dependencies": [
         "ion-item",
@@ -924,7 +886,6 @@
         "beer-page",
         "favorites-page",
         "feed-page",
-        "main-page",
         "post-detail",
         "settings-page",
         "user-profile",
@@ -947,6 +908,16 @@
       "dependencyOf": []
     },
     {
+      "tag": "user-profile",
+      "dependencies": [
+        "beer-list",
+        "ion-back-button",
+        "ion-content",
+        "profile-header"
+      ],
+      "dependencyOf": []
+    },
+    {
       "tag": "users-list",
       "dependencies": [
         "ion-avatar",
@@ -954,8 +925,7 @@
         "ion-buttons",
         "ion-item",
         "ion-label",
-        "ion-list",
-        "stencil-route-link"
+        "ion-list"
       ],
       "dependencyOf": [
         "users-page"
@@ -970,23 +940,6 @@
         "ion-infinite-scroll-content",
         "profile-header",
         "users-list"
-      ],
-      "dependencyOf": []
-    },
-    {
-      "tag": "stencil-route-link",
-      "dependencies": [],
-      "dependencyOf": [
-        "users-list"
-      ]
-    },
-    {
-      "tag": "user-profile",
-      "dependencies": [
-        "beer-list",
-        "ion-back-button",
-        "ion-content",
-        "profile-header"
       ],
       "dependencyOf": []
     }
@@ -1043,7 +996,7 @@
       "bundles": [
         {
           "fileName": "auth-page.js",
-          "size": 4047,
+          "size": 4687,
           "outputs": [
             "www/build/app/auth-page.js"
           ]
@@ -1091,7 +1044,7 @@
       "bundles": [
         {
           "fileName": "bar-list.js",
-          "size": 5821,
+          "size": 6589,
           "outputs": [
             "www/build/app/bar-list.js"
           ]
@@ -1126,7 +1079,7 @@
       "bundles": [
         {
           "fileName": "beer-detail.js",
-          "size": 5227,
+          "size": 6279,
           "outputs": [
             "www/build/app/beer-detail.js"
           ]
@@ -1147,9 +1100,7 @@
           "dependencies": [
             "beer-list",
             "ion-button",
-            "ion-buttons",
             "ion-content",
-            "ion-icon",
             "ion-infinite-scroll",
             "ion-infinite-scroll-content",
             "ion-searchbar",
@@ -1164,7 +1115,7 @@
       "bundles": [
         {
           "fileName": "beer-page.js",
-          "size": 7128,
+          "size": 7353,
           "outputs": [
             "www/build/app/beer-page.js"
           ]
@@ -1193,7 +1144,7 @@
       "bundles": [
         {
           "fileName": "favorites-page.js",
-          "size": 2076,
+          "size": 2171,
           "outputs": [
             "www/build/app/favorites-page.js"
           ]
@@ -1249,7 +1200,7 @@
       "bundles": [
         {
           "fileName": "ion-alert.ios.js",
-          "size": 25448,
+          "size": 27995,
           "outputs": [
             "www/build/app/ion-alert.ios.js"
           ],
@@ -1257,7 +1208,7 @@
         },
         {
           "fileName": "ion-alert.md.js",
-          "size": 25031,
+          "size": 28219,
           "outputs": [
             "www/build/app/ion-alert.md.js"
           ],
@@ -1522,7 +1473,7 @@
       "bundles": [
         {
           "fileName": "beer-item.ios.js",
-          "size": 173904,
+          "size": 181374,
           "outputs": [
             "www/build/app/beer-item.ios.js"
           ],
@@ -1530,7 +1481,7 @@
         },
         {
           "fileName": "beer-item.md.js",
-          "size": 158503,
+          "size": 168900,
           "outputs": [
             "www/build/app/beer-item.md.js"
           ],
@@ -1599,7 +1550,7 @@
       "bundles": [
         {
           "fileName": "ion-animation-controller.ios.js",
-          "size": 41233,
+          "size": 42257,
           "outputs": [
             "www/build/app/ion-animation-controller.ios.js"
           ],
@@ -1607,7 +1558,7 @@
         },
         {
           "fileName": "ion-animation-controller.md.js",
-          "size": 41230,
+          "size": 42254,
           "outputs": [
             "www/build/app/ion-animation-controller.md.js"
           ],
@@ -1627,7 +1578,7 @@
       ]
     },
     {
-      "entryId": "entry:stencil-beer.ion-app.ion-cordova-platform.ion-input-shims.ion-platform.ion-route.ion-route-redirect.ion-router.ion-status-tap.ion-tap-click",
+      "entryId": "entry:stencil-beer.ion-app.ion-input-shims.ion-route.ion-router.ion-status-tap.ion-tap-click",
       "components": [
         {
           "tag": "stencil-beer",
@@ -1635,7 +1586,6 @@
             "ion-app",
             "ion-nav",
             "ion-route",
-            "ion-route-redirect",
             "ion-router"
           ],
           "dependencyOf": []
@@ -1644,19 +1594,11 @@
           "tag": "ion-app",
           "dependencies": [
             "ion-input-shims",
-            "ion-platform",
             "ion-status-tap",
             "ion-tap-click"
           ],
           "dependencyOf": [
             "stencil-beer"
-          ]
-        },
-        {
-          "tag": "ion-cordova-platform",
-          "dependencies": [],
-          "dependencyOf": [
-            "ion-platform"
           ]
         },
         {
@@ -1667,23 +1609,7 @@
           ]
         },
         {
-          "tag": "ion-platform",
-          "dependencies": [
-            "ion-cordova-platform"
-          ],
-          "dependencyOf": [
-            "ion-app"
-          ]
-        },
-        {
           "tag": "ion-route",
-          "dependencies": [],
-          "dependencyOf": [
-            "stencil-beer"
-          ]
-        },
-        {
-          "tag": "ion-route-redirect",
           "dependencies": [],
           "dependencyOf": [
             "stencil-beer"
@@ -1714,7 +1640,7 @@
       "bundles": [
         {
           "fileName": "stencil-beer.ios.js",
-          "size": 60300,
+          "size": 58285,
           "outputs": [
             "www/build/app/stencil-beer.ios.js"
           ],
@@ -1722,7 +1648,7 @@
         },
         {
           "fileName": "stencil-beer.md.js",
-          "size": 58290,
+          "size": 56275,
           "outputs": [
             "www/build/app/stencil-beer.md.js"
           ],
@@ -1732,10 +1658,7 @@
       "inputs": [
         "__tmp__in__memory__/components/stencil-beer/stencil-beer.js",
         "node_modules/@ionic/core/dist/collection/components/app/app.js",
-        "node_modules/@ionic/core/dist/collection/components/cordova-platform/cordova-platform.js",
         "node_modules/@ionic/core/dist/collection/components/input-shims/input-shims.js",
-        "node_modules/@ionic/core/dist/collection/components/platform/platform.js",
-        "node_modules/@ionic/core/dist/collection/components/route-redirect/route-redirect.js",
         "node_modules/@ionic/core/dist/collection/components/route/route.js",
         "node_modules/@ionic/core/dist/collection/components/router/router.js",
         "node_modules/@ionic/core/dist/collection/components/status-tap/status-tap.js",
@@ -1805,7 +1728,7 @@
       "bundles": [
         {
           "fileName": "tabs-page.ios.js",
-          "size": 35786,
+          "size": 38741,
           "outputs": [
             "www/build/app/tabs-page.ios.js"
           ],
@@ -1813,7 +1736,7 @@
         },
         {
           "fileName": "tabs-page.md.js",
-          "size": 32919,
+          "size": 37572,
           "outputs": [
             "www/build/app/tabs-page.md.js"
           ],
@@ -1861,7 +1784,7 @@
       "bundles": [
         {
           "fileName": "ion-button.ios.js",
-          "size": 26719,
+          "size": 26365,
           "outputs": [
             "www/build/app/ion-button.ios.js"
           ],
@@ -1869,7 +1792,7 @@
         },
         {
           "fileName": "ion-button.md.js",
-          "size": 31255,
+          "size": 30907,
           "outputs": [
             "www/build/app/ion-button.md.js"
           ],
@@ -1896,7 +1819,6 @@
           "dependencyOf": [
             "bar-list",
             "beer-item",
-            "beer-page",
             "feed-page-modal",
             "profile-header",
             "profile-page",
@@ -1938,7 +1860,6 @@
             "favorites-page",
             "feed-page",
             "feed-page-modal",
-            "main-page",
             "post-detail",
             "profile-page",
             "settings-page",
@@ -1950,7 +1871,7 @@
       "bundles": [
         {
           "fileName": "ion-content.js",
-          "size": 4421,
+          "size": 5221,
           "outputs": [
             "www/build/app/ion-content.js"
           ]
@@ -1988,7 +1909,7 @@
       "bundles": [
         {
           "fileName": "ion-gesture.js",
-          "size": 20954,
+          "size": 21594,
           "outputs": [
             "www/build/app/ion-gesture.js"
           ]
@@ -2012,7 +1933,6 @@
             "bar-directions",
             "beer-detail",
             "beer-item",
-            "beer-page",
             "feed-page",
             "ion-back-button",
             "ion-fab-button",
@@ -2074,7 +1994,7 @@
       "bundles": [
         {
           "fileName": "ion-item.ios.js",
-          "size": 22054,
+          "size": 24076,
           "outputs": [
             "www/build/app/ion-item.ios.js"
           ],
@@ -2082,7 +2002,7 @@
         },
         {
           "fileName": "ion-item.md.js",
-          "size": 21934,
+          "size": 23978,
           "outputs": [
             "www/build/app/ion-item.md.js"
           ],
@@ -2121,7 +2041,7 @@
       "bundles": [
         {
           "fileName": "ion-list.ios.js",
-          "size": 2207,
+          "size": 2492,
           "outputs": [
             "www/build/app/ion-list.ios.js"
           ],
@@ -2129,7 +2049,7 @@
         },
         {
           "fileName": "ion-list.md.js",
-          "size": 2010,
+          "size": 2295,
           "outputs": [
             "www/build/app/ion-list.md.js"
           ],
@@ -2166,7 +2086,7 @@
       "bundles": [
         {
           "fileName": "ion-loading.ios.js",
-          "size": 10406,
+          "size": 10949,
           "outputs": [
             "www/build/app/ion-loading.ios.js"
           ],
@@ -2174,7 +2094,7 @@
         },
         {
           "fileName": "ion-loading.md.js",
-          "size": 9970,
+          "size": 10618,
           "outputs": [
             "www/build/app/ion-loading.md.js"
           ],
@@ -2225,7 +2145,7 @@
       "bundles": [
         {
           "fileName": "bar-directions.js",
-          "size": 6786,
+          "size": 7102,
           "outputs": [
             "www/build/app/bar-directions.js"
           ]
@@ -2257,7 +2177,7 @@
       "bundles": [
         {
           "fileName": "ion-modal.ios.js",
-          "size": 12111,
+          "size": 12519,
           "outputs": [
             "www/build/app/ion-modal.ios.js"
           ],
@@ -2265,7 +2185,7 @@
         },
         {
           "fileName": "ion-modal.md.js",
-          "size": 12173,
+          "size": 12638,
           "outputs": [
             "www/build/app/ion-modal.md.js"
           ],
@@ -2336,7 +2256,7 @@
       "bundles": [
         {
           "fileName": "feed-list.js",
-          "size": 4873,
+          "size": 5277,
           "outputs": [
             "www/build/app/feed-list.js"
           ]
@@ -2370,7 +2290,7 @@
       "bundles": [
         {
           "fileName": "ion-nav.js",
-          "size": 44069,
+          "size": 41687,
           "outputs": [
             "www/build/app/ion-nav.js"
           ]
@@ -2402,7 +2322,7 @@
       "bundles": [
         {
           "fileName": "ion-popover.ios.js",
-          "size": 17848,
+          "size": 18647,
           "outputs": [
             "www/build/app/ion-popover.ios.js"
           ],
@@ -2410,7 +2330,7 @@
         },
         {
           "fileName": "ion-popover.md.js",
-          "size": 17034,
+          "size": 17979,
           "outputs": [
             "www/build/app/ion-popover.md.js"
           ],
@@ -2446,20 +2366,11 @@
       ],
       "bundles": [
         {
-          "fileName": "ion-ripple-effect.ios.js",
-          "size": 3237,
+          "fileName": "ion-ripple-effect.js",
+          "size": 3764,
           "outputs": [
-            "www/build/app/ion-ripple-effect.ios.js"
-          ],
-          "mode": "ios"
-        },
-        {
-          "fileName": "ion-ripple-effect.md.js",
-          "size": 3234,
-          "outputs": [
-            "www/build/app/ion-ripple-effect.md.js"
-          ],
-          "mode": "md"
+            "www/build/app/ion-ripple-effect.js"
+          ]
         }
       ],
       "inputs": [
@@ -2467,10 +2378,6 @@
       ],
       "encapsulations": [
         "none"
-      ],
-      "modes": [
-        "ios",
-        "md"
       ]
     },
     {
@@ -2488,7 +2395,7 @@
       "bundles": [
         {
           "fileName": "ion-scroll.ios.js",
-          "size": 9681,
+          "size": 9550,
           "outputs": [
             "www/build/app/ion-scroll.ios.js"
           ],
@@ -2496,7 +2403,7 @@
         },
         {
           "fileName": "ion-scroll.md.js",
-          "size": 9426,
+          "size": 9343,
           "outputs": [
             "www/build/app/ion-scroll.md.js"
           ],
@@ -2529,7 +2436,7 @@
       "bundles": [
         {
           "fileName": "ion-spinner.ios.js",
-          "size": 12091,
+          "size": 13631,
           "outputs": [
             "www/build/app/ion-spinner.ios.js"
           ],
@@ -2537,7 +2444,7 @@
         },
         {
           "fileName": "ion-spinner.md.js",
-          "size": 12007,
+          "size": 13547,
           "outputs": [
             "www/build/app/ion-spinner.md.js"
           ],
@@ -2570,7 +2477,7 @@
       "bundles": [
         {
           "fileName": "ion-tab.js",
-          "size": 3094,
+          "size": 2885,
           "outputs": [
             "www/build/app/ion-tab.js"
           ]
@@ -2606,7 +2513,7 @@
       "bundles": [
         {
           "fileName": "ion-toast.ios.js",
-          "size": 10289,
+          "size": 10871,
           "outputs": [
             "www/build/app/ion-toast.ios.js"
           ],
@@ -2614,7 +2521,7 @@
         },
         {
           "fileName": "ion-toast.md.js",
-          "size": 9793,
+          "size": 10425,
           "outputs": [
             "www/build/app/ion-toast.md.js"
           ],
@@ -2666,7 +2573,7 @@
       "bundles": [
         {
           "fileName": "settings-page.ios.js",
-          "size": 15389,
+          "size": 16516,
           "outputs": [
             "www/build/app/settings-page.ios.js"
           ],
@@ -2674,7 +2581,7 @@
         },
         {
           "fileName": "settings-page.md.js",
-          "size": 16225,
+          "size": 16922,
           "outputs": [
             "www/build/app/settings-page.md.js"
           ],
@@ -2711,7 +2618,7 @@
       "bundles": [
         {
           "fileName": "ion-toolbar.ios.js",
-          "size": 167917,
+          "size": 168960,
           "outputs": [
             "www/build/app/ion-toolbar.ios.js"
           ],
@@ -2719,7 +2626,7 @@
         },
         {
           "fileName": "ion-toolbar.md.js",
-          "size": 153597,
+          "size": 154689,
           "outputs": [
             "www/build/app/ion-toolbar.md.js"
           ],
@@ -2735,34 +2642,6 @@
       "modes": [
         "ios",
         "md"
-      ]
-    },
-    {
-      "entryId": "entry:main-page",
-      "components": [
-        {
-          "tag": "main-page",
-          "dependencies": [
-            "ion-content",
-            "profile-header"
-          ],
-          "dependencyOf": []
-        }
-      ],
-      "bundles": [
-        {
-          "fileName": "main-page.js",
-          "size": 3377,
-          "outputs": [
-            "www/build/app/main-page.js"
-          ]
-        }
-      ],
-      "inputs": [
-        "__tmp__in__memory__/components/main-page/main-page.js"
-      ],
-      "encapsulations": [
-        "none"
       ]
     },
     {
@@ -2876,7 +2755,6 @@
             "beer-page",
             "favorites-page",
             "feed-page",
-            "main-page",
             "post-detail",
             "settings-page",
             "user-profile",
@@ -2887,14 +2765,14 @@
       "bundles": [
         {
           "fileName": "profile-header.js",
-          "size": 2470,
+          "size": 2570,
           "outputs": [
             "www/build/app/profile-header.js"
           ]
         },
         {
           "fileName": "profile-header.sc.js",
-          "size": 2533,
+          "size": 2633,
           "outputs": [
             "www/build/app/profile-header.sc.js"
           ],
@@ -2930,7 +2808,7 @@
       "bundles": [
         {
           "fileName": "profile-page.js",
-          "size": 8654,
+          "size": 8988,
           "outputs": [
             "www/build/app/profile-page.js"
           ]
@@ -2938,62 +2816,6 @@
       ],
       "inputs": [
         "__tmp__in__memory__/components/profile-page/profile-page.js"
-      ],
-      "encapsulations": [
-        "none"
-      ]
-    },
-    {
-      "entryId": "entry:users-list.users-page.stencil-route-link",
-      "components": [
-        {
-          "tag": "users-list",
-          "dependencies": [
-            "ion-avatar",
-            "ion-button",
-            "ion-buttons",
-            "ion-item",
-            "ion-label",
-            "ion-list",
-            "stencil-route-link"
-          ],
-          "dependencyOf": [
-            "users-page"
-          ]
-        },
-        {
-          "tag": "users-page",
-          "dependencies": [
-            "ion-back-button",
-            "ion-content",
-            "ion-infinite-scroll",
-            "ion-infinite-scroll-content",
-            "profile-header",
-            "users-list"
-          ],
-          "dependencyOf": []
-        },
-        {
-          "tag": "stencil-route-link",
-          "dependencies": [],
-          "dependencyOf": [
-            "users-list"
-          ]
-        }
-      ],
-      "bundles": [
-        {
-          "fileName": "users-list.js",
-          "size": 16003,
-          "outputs": [
-            "www/build/app/users-list.js"
-          ]
-        }
-      ],
-      "inputs": [
-        "__tmp__in__memory__/components/users-list/users-list.js",
-        "__tmp__in__memory__/components/users-page/users-page.js",
-        "node_modules/@stencil/router/dist/collection/components/route-link/route-link.js"
       ],
       "encapsulations": [
         "none"
@@ -3016,7 +2838,7 @@
       "bundles": [
         {
           "fileName": "user-profile.js",
-          "size": 4630,
+          "size": 4797,
           "outputs": [
             "www/build/app/user-profile.js"
           ]
@@ -3028,63 +2850,55 @@
       "encapsulations": [
         "none"
       ]
+    },
+    {
+      "entryId": "entry:users-list.users-page",
+      "components": [
+        {
+          "tag": "users-list",
+          "dependencies": [
+            "ion-avatar",
+            "ion-button",
+            "ion-buttons",
+            "ion-item",
+            "ion-label",
+            "ion-list"
+          ],
+          "dependencyOf": [
+            "users-page"
+          ]
+        },
+        {
+          "tag": "users-page",
+          "dependencies": [
+            "ion-back-button",
+            "ion-content",
+            "ion-infinite-scroll",
+            "ion-infinite-scroll-content",
+            "profile-header",
+            "users-list"
+          ],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "users-list.js",
+          "size": 4869,
+          "outputs": [
+            "www/build/app/users-list.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/users-list/users-list.js",
+        "__tmp__in__memory__/components/users-page/users-page.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
     }
   ],
-  "sourceGraph": {
-    "src/components/am-rating/am-rating.tsx": [],
-    "src/components/auth-page/auth-page.tsx": [],
-    "src/components/bar-directions/bar-directions.tsx": [],
-    "src/components/bar-list/bar-list.tsx": [],
-    "src/components/bar-page/bar-page.tsx": [],
-    "src/components/beer-detail/beer-detail.tsx": [
-      "src/global/http-service"
-    ],
-    "src/components/beer-item/beer-item.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/beer-list/beer-list.tsx": [],
-    "src/components/beer-page/beer-page.tsx": [
-      "src/global/http-service"
-    ],
-    "src/components/favorites-page/favorites-page.tsx": [],
-    "src/components/feed-list/feed-list.tsx": [],
-    "src/components/feed-page-modal/feed-page-modal.tsx": [],
-    "src/components/feed-page/feed-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/lazy-img/lazy-img.tsx": [],
-    "src/components/main-page/main-page.tsx": [],
-    "src/components/popover-page/popover-page.tsx": [],
-    "src/components/post-detail/post-detail.tsx": [],
-    "src/components/post-img/post-img.tsx": [],
-    "src/components/post-item/post-item.tsx": [],
-    "src/components/profile-header/profile-header.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/profile-page/profile-page.tsx": [
-      "src/global/notify-service"
-    ],
-    "src/components/settings-page/settings-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/share-button/share-button.tsx": [],
-    "src/components/stencil-beer/stencil-beer.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/tabs-page/tabs-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/user-profile/user-profile.tsx": [],
-    "src/components/users-list/users-list.tsx": [],
-    "src/components/users-page/users-page.tsx": [],
-    "src/global/http-service.ts": [
-      "greenlet"
-    ],
-    "src/global/interfaces.ts": [],
-    "src/global/notify-service.ts": [
-      "src/global/utils"
-    ],
-    "src/global/utils.ts": []
-  },
+  "sourceGraph": {},
   "collections": []
 }

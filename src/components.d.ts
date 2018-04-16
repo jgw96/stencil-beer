@@ -25,70 +25,72 @@ declare global {
 
 import 'ionicons';
 import '@ionic/core';
-import '@stencil/router';
 
 import {
   Bar,
   Beer,
 } from './global/interfaces';
 import {
-  RouterHistory,
-} from '@stencil/router';
-import {
   EventEmitter,
 } from '@stencil/core';
 
 declare global {
-  interface HTMLAmRatingElement extends HTMLStencilElement {
-    /**
-     * Determines if half ratings are allowed
-     */
-    'allowHalfRatings': boolean;
-    /**
-     * The color to fill the rating with when it's outwith the max
-     */
-    'colorOff': string;
-    /**
-     * The color to fill the rating with when it's within the max
-     */
-    'colorOn': string;
-    /**
-     * The color to fill the rating with when it's outwith the max
-     */
-    'colorOutline': string;
-    /**
-     * The direction of the shading. Valid settings are 'ltr' (left to right) and 'ttb' (top to bottom)
-     */
-    'direction': string;
-    /**
-     * Determines if the user can set a rating
-     */
-    'interactive': boolean;
-    /**
-     * The maximum rating possible
-     */
-    'maxRating': number;
-    /**
-     * The minimum rating possible
-     */
-    'minRating': number;
-    /**
-     * The rating
-     */
-    'rating': number;
-    /**
-     * The rating identifier
-     */
-    'reference': string;
-    /**
-     * This is a star!
-     */
-    'svgPoints': string;
-    /**
-     * The view box for the SVG
-     */
-    'svgViewBox': string;
+
+  namespace StencilComponents {
+    interface AmRating {
+      /**
+       * Determines if half ratings are allowed
+       */
+      'allowHalfRatings': boolean;
+      /**
+       * The color to fill the rating with when it's outwith the max
+       */
+      'colorOff': string;
+      /**
+       * The color to fill the rating with when it's within the max
+       */
+      'colorOn': string;
+      /**
+       * The color to fill the rating with when it's outwith the max
+       */
+      'colorOutline': string;
+      /**
+       * The direction of the shading. Valid settings are 'ltr' (left to right) and 'ttb' (top to bottom)
+       */
+      'direction': string;
+      /**
+       * Determines if the user can set a rating
+       */
+      'interactive': boolean;
+      /**
+       * The maximum rating possible
+       */
+      'maxRating': number;
+      /**
+       * The minimum rating possible
+       */
+      'minRating': number;
+      /**
+       * The rating
+       */
+      'rating': number;
+      /**
+       * The rating identifier
+       */
+      'reference': string;
+      /**
+       * This is a star!
+       */
+      'svgPoints': string;
+      /**
+       * The view box for the SVG
+       */
+      'svgViewBox': string;
+    }
   }
+
+  interface HTMLAmRatingElement extends StencilComponents.AmRating, HTMLStencilElement {}
+
   var HTMLAmRatingElement: {
     prototype: HTMLAmRatingElement;
     new (): HTMLAmRatingElement;
@@ -164,9 +166,15 @@ declare global {
 
 
 declare global {
-  interface HTMLAuthPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface AuthPage {
+
+    }
   }
+
+  interface HTMLAuthPageElement extends StencilComponents.AuthPage, HTMLStencilElement {}
+
   var HTMLAuthPageElement: {
     prototype: HTMLAuthPageElement;
     new (): HTMLAuthPageElement;
@@ -191,10 +199,16 @@ declare global {
 
 
 declare global {
-  interface HTMLBarDirectionsElement extends HTMLStencilElement {
-    'address': string;
-    'dest': string;
+
+  namespace StencilComponents {
+    interface BarDirections {
+      'address': string;
+      'dest': string;
+    }
   }
+
+  interface HTMLBarDirectionsElement extends StencilComponents.BarDirections, HTMLStencilElement {}
+
   var HTMLBarDirectionsElement: {
     prototype: HTMLBarDirectionsElement;
     new (): HTMLBarDirectionsElement;
@@ -220,9 +234,15 @@ declare global {
 
 
 declare global {
-  interface HTMLBarListElement extends HTMLStencilElement {
-    'bars': Array<Bar>;
+
+  namespace StencilComponents {
+    interface BarList {
+      'bars': Array<Bar>;
+    }
   }
+
+  interface HTMLBarListElement extends StencilComponents.BarList, HTMLStencilElement {}
+
   var HTMLBarListElement: {
     prototype: HTMLBarListElement;
     new (): HTMLBarListElement;
@@ -247,9 +267,15 @@ declare global {
 
 
 declare global {
-  interface HTMLBarPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface BarPage {
+
+    }
   }
+
+  interface HTMLBarPageElement extends StencilComponents.BarPage, HTMLStencilElement {}
+
   var HTMLBarPageElement: {
     prototype: HTMLBarPageElement;
     new (): HTMLBarPageElement;
@@ -274,9 +300,15 @@ declare global {
 
 
 declare global {
-  interface HTMLBeerDetailElement extends HTMLStencilElement {
-    'beerId': string;
+
+  namespace StencilComponents {
+    interface BeerDetail {
+      'beerId': string;
+    }
   }
+
+  interface HTMLBeerDetailElement extends StencilComponents.BeerDetail, HTMLStencilElement {}
+
   var HTMLBeerDetailElement: {
     prototype: HTMLBeerDetailElement;
     new (): HTMLBeerDetailElement;
@@ -301,10 +333,16 @@ declare global {
 
 
 declare global {
-  interface HTMLBeerItemElement extends HTMLStencilElement {
-    'beer': Beer;
-    'fave': Boolean;
+
+  namespace StencilComponents {
+    interface BeerItem {
+      'beer': Beer;
+      'fave': Boolean;
+    }
   }
+
+  interface HTMLBeerItemElement extends StencilComponents.BeerItem, HTMLStencilElement {}
+
   var HTMLBeerItemElement: {
     prototype: HTMLBeerItemElement;
     new (): HTMLBeerItemElement;
@@ -331,10 +369,16 @@ declare global {
 
 
 declare global {
-  interface HTMLBeerListElement extends HTMLStencilElement {
-    'beers': Array<Beer>;
-    'fave': Boolean;
+
+  namespace StencilComponents {
+    interface BeerList {
+      'beers': Array<Beer>;
+      'fave': Boolean;
+    }
   }
+
+  interface HTMLBeerListElement extends StencilComponents.BeerList, HTMLStencilElement {}
+
   var HTMLBeerListElement: {
     prototype: HTMLBeerListElement;
     new (): HTMLBeerListElement;
@@ -360,9 +404,15 @@ declare global {
 
 
 declare global {
-  interface HTMLBeerPageElement extends HTMLStencilElement {
-    'history': RouterHistory;
+
+  namespace StencilComponents {
+    interface BeerPage {
+
+    }
   }
+
+  interface HTMLBeerPageElement extends StencilComponents.BeerPage, HTMLStencilElement {}
+
   var HTMLBeerPageElement: {
     prototype: HTMLBeerPageElement;
     new (): HTMLBeerPageElement;
@@ -380,16 +430,22 @@ declare global {
   }
   namespace JSXElements {
     export interface BeerPageAttributes extends HTMLAttributes {
-      'history'?: RouterHistory;
+
     }
   }
 }
 
 
 declare global {
-  interface HTMLFavoritesPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface FavoritesPage {
+
+    }
   }
+
+  interface HTMLFavoritesPageElement extends StencilComponents.FavoritesPage, HTMLStencilElement {}
+
   var HTMLFavoritesPageElement: {
     prototype: HTMLFavoritesPageElement;
     new (): HTMLFavoritesPageElement;
@@ -414,9 +470,15 @@ declare global {
 
 
 declare global {
-  interface HTMLFeedListElement extends HTMLStencilElement {
-    'posts': any;
+
+  namespace StencilComponents {
+    interface FeedList {
+      'posts': any;
+    }
   }
+
+  interface HTMLFeedListElement extends StencilComponents.FeedList, HTMLStencilElement {}
+
   var HTMLFeedListElement: {
     prototype: HTMLFeedListElement;
     new (): HTMLFeedListElement;
@@ -441,9 +503,15 @@ declare global {
 
 
 declare global {
-  interface HTMLFeedPageModalElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface FeedPageModal {
+
+    }
   }
+
+  interface HTMLFeedPageModalElement extends StencilComponents.FeedPageModal, HTMLStencilElement {}
+
   var HTMLFeedPageModalElement: {
     prototype: HTMLFeedPageModalElement;
     new (): HTMLFeedPageModalElement;
@@ -468,9 +536,15 @@ declare global {
 
 
 declare global {
-  interface HTMLFeedPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface FeedPage {
+
+    }
   }
+
+  interface HTMLFeedPageElement extends StencilComponents.FeedPage, HTMLStencilElement {}
+
   var HTMLFeedPageElement: {
     prototype: HTMLFeedPageElement;
     new (): HTMLFeedPageElement;
@@ -495,10 +569,16 @@ declare global {
 
 
 declare global {
-  interface HTMLLazyImgElement extends HTMLStencilElement {
-    'alt': string;
-    'src': string;
+
+  namespace StencilComponents {
+    interface LazyImg {
+      'alt': string;
+      'src': string;
+    }
   }
+
+  interface HTMLLazyImgElement extends StencilComponents.LazyImg, HTMLStencilElement {}
+
   var HTMLLazyImgElement: {
     prototype: HTMLLazyImgElement;
     new (): HTMLLazyImgElement;
@@ -525,36 +605,15 @@ declare global {
 
 
 declare global {
-  interface HTMLMainPageElement extends HTMLStencilElement {
 
-  }
-  var HTMLMainPageElement: {
-    prototype: HTMLMainPageElement;
-    new (): HTMLMainPageElement;
-  };
-  interface HTMLElementTagNameMap {
-    'main-page': HTMLMainPageElement;
-  }
-  interface ElementTagNameMap {
-    'main-page': HTMLMainPageElement;
-  }
-  namespace JSX {
-    interface IntrinsicElements {
-      'main-page': JSXElements.MainPageAttributes;
-    }
-  }
-  namespace JSXElements {
-    export interface MainPageAttributes extends HTMLAttributes {
+  namespace StencilComponents {
+    interface PopoverPage {
 
     }
   }
-}
 
+  interface HTMLPopoverPageElement extends StencilComponents.PopoverPage, HTMLStencilElement {}
 
-declare global {
-  interface HTMLPopoverPageElement extends HTMLStencilElement {
-
-  }
   var HTMLPopoverPageElement: {
     prototype: HTMLPopoverPageElement;
     new (): HTMLPopoverPageElement;
@@ -579,9 +638,15 @@ declare global {
 
 
 declare global {
-  interface HTMLPostDetailElement extends HTMLStencilElement {
-    'post': any;
+
+  namespace StencilComponents {
+    interface PostDetail {
+      'post': any;
+    }
   }
+
+  interface HTMLPostDetailElement extends StencilComponents.PostDetail, HTMLStencilElement {}
+
   var HTMLPostDetailElement: {
     prototype: HTMLPostDetailElement;
     new (): HTMLPostDetailElement;
@@ -606,10 +671,16 @@ declare global {
 
 
 declare global {
-  interface HTMLPostImgElement extends HTMLStencilElement {
-    'alt': string;
-    'src': string;
+
+  namespace StencilComponents {
+    interface PostImg {
+      'alt': string;
+      'src': string;
+    }
   }
+
+  interface HTMLPostImgElement extends StencilComponents.PostImg, HTMLStencilElement {}
+
   var HTMLPostImgElement: {
     prototype: HTMLPostImgElement;
     new (): HTMLPostImgElement;
@@ -636,9 +707,15 @@ declare global {
 
 
 declare global {
-  interface HTMLPostItemElement extends HTMLStencilElement {
-    'post': any;
+
+  namespace StencilComponents {
+    interface PostItem {
+      'post': any;
+    }
   }
+
+  interface HTMLPostItemElement extends StencilComponents.PostItem, HTMLStencilElement {}
+
   var HTMLPostItemElement: {
     prototype: HTMLPostItemElement;
     new (): HTMLPostItemElement;
@@ -663,9 +740,15 @@ declare global {
 
 
 declare global {
-  interface HTMLProfileHeaderElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface ProfileHeader {
+
+    }
   }
+
+  interface HTMLProfileHeaderElement extends StencilComponents.ProfileHeader, HTMLStencilElement {}
+
   var HTMLProfileHeaderElement: {
     prototype: HTMLProfileHeaderElement;
     new (): HTMLProfileHeaderElement;
@@ -690,9 +773,15 @@ declare global {
 
 
 declare global {
-  interface HTMLProfilePageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface ProfilePage {
+
+    }
   }
+
+  interface HTMLProfilePageElement extends StencilComponents.ProfilePage, HTMLStencilElement {}
+
   var HTMLProfilePageElement: {
     prototype: HTMLProfilePageElement;
     new (): HTMLProfilePageElement;
@@ -717,9 +806,15 @@ declare global {
 
 
 declare global {
-  interface HTMLSettingsPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface SettingsPage {
+
+    }
   }
+
+  interface HTMLSettingsPageElement extends StencilComponents.SettingsPage, HTMLStencilElement {}
+
   var HTMLSettingsPageElement: {
     prototype: HTMLSettingsPageElement;
     new (): HTMLSettingsPageElement;
@@ -744,9 +839,15 @@ declare global {
 
 
 declare global {
-  interface HTMLShareButtonElement extends HTMLStencilElement {
-    'beer': any;
+
+  namespace StencilComponents {
+    interface ShareButton {
+      'beer': any;
+    }
   }
+
+  interface HTMLShareButtonElement extends StencilComponents.ShareButton, HTMLStencilElement {}
+
   var HTMLShareButtonElement: {
     prototype: HTMLShareButtonElement;
     new (): HTMLShareButtonElement;
@@ -771,9 +872,15 @@ declare global {
 
 
 declare global {
-  interface HTMLStencilBeerElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface StencilBeer {
+
+    }
   }
+
+  interface HTMLStencilBeerElement extends StencilComponents.StencilBeer, HTMLStencilElement {}
+
   var HTMLStencilBeerElement: {
     prototype: HTMLStencilBeerElement;
     new (): HTMLStencilBeerElement;
@@ -798,9 +905,15 @@ declare global {
 
 
 declare global {
-  interface HTMLTabsPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface TabsPage {
+
+    }
   }
+
+  interface HTMLTabsPageElement extends StencilComponents.TabsPage, HTMLStencilElement {}
+
   var HTMLTabsPageElement: {
     prototype: HTMLTabsPageElement;
     new (): HTMLTabsPageElement;
@@ -825,9 +938,15 @@ declare global {
 
 
 declare global {
-  interface HTMLUserProfileElement extends HTMLStencilElement {
-    'userName': any;
+
+  namespace StencilComponents {
+    interface UserProfile {
+      'userName': any;
+    }
   }
+
+  interface HTMLUserProfileElement extends StencilComponents.UserProfile, HTMLStencilElement {}
+
   var HTMLUserProfileElement: {
     prototype: HTMLUserProfileElement;
     new (): HTMLUserProfileElement;
@@ -852,9 +971,15 @@ declare global {
 
 
 declare global {
-  interface HTMLUsersListElement extends HTMLStencilElement {
-    'users': any[];
+
+  namespace StencilComponents {
+    interface UsersList {
+      'users': any[];
+    }
   }
+
+  interface HTMLUsersListElement extends StencilComponents.UsersList, HTMLStencilElement {}
+
   var HTMLUsersListElement: {
     prototype: HTMLUsersListElement;
     new (): HTMLUsersListElement;
@@ -879,9 +1004,15 @@ declare global {
 
 
 declare global {
-  interface HTMLUsersPageElement extends HTMLStencilElement {
 
+  namespace StencilComponents {
+    interface UsersPage {
+
+    }
   }
+
+  interface HTMLUsersPageElement extends StencilComponents.UsersPage, HTMLStencilElement {}
+
   var HTMLUsersPageElement: {
     prototype: HTMLUsersPageElement;
     new (): HTMLUsersPageElement;

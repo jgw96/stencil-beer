@@ -82,7 +82,7 @@ export class BeerItem {
       toast.present();
     } else {
       const alert = await this.alertCtrl.create({
-        title: 'Must login',
+        header: 'Must login',
         message: 'This feature is not available to anonymous users. Would you like to sign in with Google?',
         buttons: [
           {

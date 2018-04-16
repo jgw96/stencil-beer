@@ -29,6 +29,9 @@ export class BeerList {
       return (
         <ion-list>
           <div id='fake-card'></div>
+          <div id='fake-card'></div>
+          <div id='fake-card'></div>
+          <div id='fake-card'></div>
         </ion-list>
       )
     }

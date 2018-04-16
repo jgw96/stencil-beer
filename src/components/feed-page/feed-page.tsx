@@ -56,7 +56,7 @@ export class FeedPage {
         </ion-content>
 
 
-        {checkAnon() ? null : <ion-fab vertical='bottom' horizontal='right'>
+        {checkAnon() ? null : <ion-fab vertical='bottom' horizontal='end'>
           <ion-fab-button onClick={() => this.makeNewPost()}>
             <ion-icon name='add'></ion-icon>
           </ion-fab-button>

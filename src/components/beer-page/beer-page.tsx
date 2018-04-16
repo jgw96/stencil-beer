@@ -1,6 +1,5 @@
 import { Component, Element, State, Prop, Listen } from '@stencil/core';
 import { ToastController } from '@ionic/core';
-import { RouterHistory } from '@stencil/router';
 
 import { Beer } from '../../global/interfaces';
 import { fetchBeers, doSearch } from '../../global/http-service';
@@ -43,7 +42,7 @@ export class BeerPage {
   @State() beers: Array<Beer>;
 
   @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
-  @Prop() history: RouterHistory;
+
 
   @Element() el: Element;
 
@@ -166,11 +165,11 @@ export class BeerPage {
         <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
 
-          <ion-buttons slot='end'>
+          {/*<ion-buttons slot='end'>
             <ion-button fill='clear' icon-only onClick={() => this.takePicture()}>
               <ion-icon id='cameraButton' name='camera'></ion-icon>
             </ion-button>
-          </ion-buttons>
+    </ion-buttons>*/}
         </ion-toolbar>
 
         <ion-content>

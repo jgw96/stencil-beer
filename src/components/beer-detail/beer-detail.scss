@@ -9,13 +9,10 @@ beer-detail {
     animation-timing-function: ease-out;
   }
 
-  lazy-img {
-    height: 351px;
-  }
-
   #img-block {
     display: flex;
     justify-content: center;
+    height: 20em;
   }
 
   #animateIn {
@@ -72,8 +69,8 @@ beer-detail {
 
   @media (min-width: 1200px) {
     ion-scroll {
-      padding-left: 23em;
-      padding-right: 23em;
+      padding-left: 26em;
+      padding-right: 26em;
     }
   }
  }

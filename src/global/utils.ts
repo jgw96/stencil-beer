@@ -23,7 +23,9 @@ export function formatBytes(bytes: number, decimals?: number) {
 }
 
 export function checkAnon() {
-  return sessionStorage.getItem('anon');
+  if (sessionStorage !== undefined) {
+    return sessionStorage.getItem('anon');
+  }
 }
 
 

@@ -31,7 +31,7 @@
       },
       {
         "source": "/",
-        "headers": [{"key": "Link", "value": "</build/app/app.4v6a4jh8.js>;rel=preload;as=script,</build/app/wj8msdah.js>;rel=preload;as=script,</build/app/e7y3bqsa.js>;rel=preload;as=script,</build/app/d4raltco.js>;rel=preload;as=script,</build/app/qji2q8vx.js>;rel=preload;as=script,</build/app/r0tespnl.js>;rel=preload;as=script,</build/app/kzyt6drg.js>;rel=preload;as=script,</build/app/muslxgnc.js>;rel=preload;as=script,</build/app/el4rgukr.js>;rel=preload;as=script,</build/app/chunk2.js>;rel=preload;as=script,</build/app/chunk3.js>;rel=preload;as=script,</build/app/m5uc4ope.js>;rel=preload;as=script,</build/app/chunk4.js>;rel=preload;as=script,</assets/img/icon.png>;rel=preload;as=image"}]
+        "headers": [{"key": "Link", "value": "</build/app/app.sdkn3fkz.js>;rel=preload;as=script,</build/app/812nexf5.js>;rel=preload;as=script,</build/app/geqnkfaw.js>;rel=preload;as=script,</build/app/lysj5xii.js>;rel=preload;as=script,</build/app/chunk5.js>;rel=preload;as=script,</build/app/chunk6.js>;rel=preload;as=script,</build/app/8gtkxb4y.js>;rel=preload;as=script,</build/app/hjedijbh.js>;rel=preload;as=script,</build/app/zsw4s2go.js>;rel=preload;as=script,</build/app/chunk3.js>;rel=preload;as=script,</build/app/ire9ciug.js>;rel=preload;as=script,</assets/img/icon.png>;rel=preload;as=image"}]
       }
     ]
   }

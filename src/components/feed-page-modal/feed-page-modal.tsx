@@ -94,7 +94,7 @@ export class FeedPageModal {
       this.dismiss();
     } else {
       const alert = await this.alertCtrl.create({
-        title: 'Cant Submit',
+        header: 'Cant Submit',
         message: 'You must enter a post, title and rating to submit. Would you like to discard this post?',
         buttons: [
           {
@@ -119,7 +119,7 @@ export class FeedPageModal {
 
   async cancel() {
     const alert = await this.alertCtrl.create({
-      title: 'Discard Post?',
+      header: 'Discard Post?',
       buttons: [
         {
           text: 'Cancel',
@@ -156,12 +156,12 @@ export class FeedPageModal {
 
         <ion-content padding class="outer-content">
           <ion-item>
-            <ion-label floating>Beer Name</ion-label>
+            <ion-label position='floating'>Beer Name</ion-label>
             <ion-input value={this.beerNameValue} onInput={(event) => { this.handleBeerNameValue(event) }} required></ion-input>
           </ion-item>
 
           <ion-item>
-            <ion-label floating>New Post</ion-label>
+            <ion-label position='floating'>New Post</ion-label>
             <ion-textarea value={this.postValue} onInput={(event) => { this.handlePostValue(event) }} required></ion-textarea>
           </ion-item>
 

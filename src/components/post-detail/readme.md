@@ -1,8 +1,22 @@
-# main-page
+# post-detail
 
 
 
 <!-- Auto Generated Below -->
+
+
+## Properties
+
+#### post
+
+any
+
+
+## Attributes
+
+#### post
+
+any
 
 
 

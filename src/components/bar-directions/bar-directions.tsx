@@ -1,5 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
-import { LoadingController, Loading } from '@ionic/core';
+import { LoadingController } from '@ionic/core';
 
 declare var google: any;
 
@@ -18,7 +18,7 @@ export class BarDirections {
 
   url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
   script: HTMLScriptElement;
-  loading: Loading;
+  loading: HTMLIonLoadingElement;
 
   loadScript() {
     return new Promise((resolve) => {
@@ -96,7 +96,7 @@ export class BarDirections {
           <div id='map'></div>
           <div id='bottomPaper'>
 
-            <ion-fab edge={true} horizontal='right' vertical='top'>
+            <ion-fab edge={true} horizontal='end' vertical='top'>
               <ion-fab-button onClick={() => this.openMaps()}>
                 <ion-icon name='car'></ion-icon>
               </ion-fab-button>

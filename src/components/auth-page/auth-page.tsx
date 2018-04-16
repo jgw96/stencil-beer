@@ -33,7 +33,9 @@ export class AuthPage {
           this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
         } else if (user && user.isAnonymous) {
           this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
-          sessionStorage.setItem('anon', 'true');
+          if (sessionStorage !== undefined) {
+            sessionStorage.setItem('anon', 'true');
+          }
         }
       })
     }

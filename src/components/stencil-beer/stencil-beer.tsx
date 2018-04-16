@@ -1,7 +1,5 @@
 import { Component } from '@stencil/core';
 
-import { checkAnon } from '../../global/utils';
-
 @Component({
   tag: 'stencil-beer',
   styleUrl: 'stencil-beer.scss'
@@ -13,17 +11,15 @@ export class StencilBeer {
       <ion-app>
         <ion-router useHash={false}>
 
-          {checkAnon() ? <ion-route-redirect from='/favorites' to='/home'></ion-route-redirect> : null}
-
           <ion-route url='/' component='auth-page'></ion-route>
           <ion-route url='/home' component='tabs-page'>
 
-            <ion-route component='feed-tab'>
-               <ion-route component='feed-page'></ion-route>
-               <ion-route url='/post/:post' component='post-detail'></ion-route>
+            <ion-route url='/feed' component='feed-tab'>
+              <ion-route component='feed-page'></ion-route>
+              <ion-route url='/post/:post' component='post-detail'></ion-route>
             </ion-route>
 
-            <ion-route component='beer-tab'>
+            <ion-route url='/beers' component='beer-tab'>
               <ion-route component='beer-page' />
               <ion-route url='/beer/:beerId' component='beer-detail' />
             </ion-route>
