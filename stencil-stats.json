@@ -6,9 +6,9 @@
   "app": {
     "namespace": "App",
     "fsNamespace": "app",
-    "components": 81,
-    "entries": 38,
-    "bundles": 56
+    "components": 82,
+    "entries": 39,
+    "bundles": 57
   },
   "options": {
     "minifyJs": false,
@@ -149,9 +149,9 @@
         "ion-card-content",
         "ion-card-title",
         "ion-icon",
+        "ion-img",
         "ion-toast",
         "ion-toast-controller",
-        "lazy-img",
         "share-button"
       ],
       "dependencyOf": [
@@ -188,13 +188,6 @@
         "ion-toolbar"
       ],
       "dependencyOf": []
-    },
-    {
-      "tag": "lazy-img",
-      "dependencies": [],
-      "dependencyOf": [
-        "beer-item"
-      ]
     },
     {
       "tag": "share-button",
@@ -281,6 +274,13 @@
         "bar-directions",
         "beer-detail",
         "feed-page"
+      ]
+    },
+    {
+      "tag": "ion-img",
+      "dependencies": [],
+      "dependencyOf": [
+        "beer-item"
       ]
     },
     {
@@ -831,6 +831,11 @@
       ]
     },
     {
+      "tag": "lazy-img",
+      "dependencies": [],
+      "dependencyOf": []
+    },
+    {
       "tag": "popover-page",
       "dependencies": [
         "ion-item",
@@ -1221,7 +1226,7 @@
       ]
     },
     {
-      "entryId": "entry:beer-item.beer-list.feed-page-modal.lazy-img.share-button.ion-anchor.ion-avatar.ion-back-button.ion-card.ion-card-content.ion-card-title.ion-fab.ion-fab-button.ion-infinite-scroll.ion-infinite-scroll-content.ion-input.ion-popover-controller.ion-range.ion-range-knob.ion-searchbar.ion-textarea.ion-title.ion-toast-controller",
+      "entryId": "entry:beer-item.beer-list.feed-page-modal.share-button.ion-anchor.ion-avatar.ion-back-button.ion-card.ion-card-content.ion-card-title.ion-fab.ion-fab-button.ion-img.ion-infinite-scroll.ion-infinite-scroll-content.ion-input.ion-popover-controller.ion-range.ion-range-knob.ion-searchbar.ion-textarea.ion-title.ion-toast-controller",
       "components": [
         {
           "tag": "beer-item",
@@ -1235,9 +1240,9 @@
             "ion-card-content",
             "ion-card-title",
             "ion-icon",
+            "ion-img",
             "ion-toast",
             "ion-toast-controller",
-            "lazy-img",
             "share-button"
           ],
           "dependencyOf": [
@@ -1274,13 +1279,6 @@
             "ion-toolbar"
           ],
           "dependencyOf": []
-        },
-        {
-          "tag": "lazy-img",
-          "dependencies": [],
-          "dependencyOf": [
-            "beer-item"
-          ]
         },
         {
           "tag": "share-button",
@@ -1367,6 +1365,13 @@
             "bar-directions",
             "beer-detail",
             "feed-page"
+          ]
+        },
+        {
+          "tag": "ion-img",
+          "dependencies": [],
+          "dependencyOf": [
+            "beer-item"
           ]
         },
         {
@@ -1465,7 +1470,7 @@
       "bundles": [
         {
           "fileName": "beer-item.ios.js",
-          "size": 187943,
+          "size": 186915,
           "outputs": [
             "www/build/app/beer-item.ios.js"
           ],
@@ -1473,7 +1478,7 @@
         },
         {
           "fileName": "beer-item.md.js",
-          "size": 175589,
+          "size": 174561,
           "outputs": [
             "www/build/app/beer-item.md.js"
           ],
@@ -1484,7 +1489,6 @@
         "__tmp__in__memory__/components/beer-item/beer-item.js",
         "__tmp__in__memory__/components/beer-list/beer-list.js",
         "__tmp__in__memory__/components/feed-page-modal/feed-page-modal.js",
-        "__tmp__in__memory__/components/lazy-img/lazy-img.js",
         "__tmp__in__memory__/components/share-button/share-button.js",
         "node_modules/@ionic/core/dist/collection/components/anchor/anchor.js",
         "node_modules/@ionic/core/dist/collection/components/avatar/avatar.js",
@@ -1494,6 +1498,7 @@
         "node_modules/@ionic/core/dist/collection/components/card/card.js",
         "node_modules/@ionic/core/dist/collection/components/fab-button/fab-button.js",
         "node_modules/@ionic/core/dist/collection/components/fab/fab.js",
+        "node_modules/@ionic/core/dist/collection/components/img/img.js",
         "node_modules/@ionic/core/dist/collection/components/infinite-scroll-content/infinite-scroll-content.js",
         "node_modules/@ionic/core/dist/collection/components/infinite-scroll/infinite-scroll.js",
         "node_modules/@ionic/core/dist/collection/components/input/input.js",
@@ -2628,6 +2633,31 @@
       ]
     },
     {
+      "entryId": "entry:lazy-img",
+      "components": [
+        {
+          "tag": "lazy-img",
+          "dependencies": [],
+          "dependencyOf": []
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "lazy-img.js",
+          "size": 3096,
+          "outputs": [
+            "www/build/app/lazy-img.js"
+          ]
+        }
+      ],
+      "inputs": [
+        "__tmp__in__memory__/components/lazy-img/lazy-img.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
       "entryId": "entry:popover-page",
       "components": [
         {
@@ -2882,58 +2912,6 @@
       ]
     }
   ],
-  "sourceGraph": {
-    "src/components/am-rating/am-rating.tsx": [],
-    "src/components/auth-page/auth-page.tsx": [],
-    "src/components/bar-directions/bar-directions.tsx": [],
-    "src/components/bar-list/bar-list.tsx": [],
-    "src/components/bar-page/bar-page.tsx": [],
-    "src/components/beer-detail/beer-detail.tsx": [
-      "src/global/http-service"
-    ],
-    "src/components/beer-item/beer-item.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/beer-list/beer-list.tsx": [],
-    "src/components/beer-page/beer-page.tsx": [
-      "src/global/http-service"
-    ],
-    "src/components/favorites-page/favorites-page.tsx": [],
-    "src/components/feed-list/feed-list.tsx": [],
-    "src/components/feed-page-modal/feed-page-modal.tsx": [],
-    "src/components/feed-page/feed-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/lazy-img/lazy-img.tsx": [],
-    "src/components/popover-page/popover-page.tsx": [],
-    "src/components/post-detail/post-detail.tsx": [],
-    "src/components/post-img/post-img.tsx": [],
-    "src/components/post-item/post-item.tsx": [],
-    "src/components/profile-header/profile-header.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/profile-page/profile-page.tsx": [
-      "src/global/notify-service"
-    ],
-    "src/components/settings-page/settings-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/share-button/share-button.tsx": [],
-    "src/components/stencil-beer/stencil-beer.tsx": [],
-    "src/components/tabs-page/tabs-page.tsx": [
-      "src/global/utils"
-    ],
-    "src/components/user-profile/user-profile.tsx": [],
-    "src/components/users-list/users-list.tsx": [],
-    "src/components/users-page/users-page.tsx": [],
-    "src/global/http-service.ts": [
-      "greenlet"
-    ],
-    "src/global/interfaces.ts": [],
-    "src/global/notify-service.ts": [
-      "src/global/utils"
-    ],
-    "src/global/utils.ts": []
-  },
+  "sourceGraph": {},
   "collections": []
 }
