@@ -30,9 +30,9 @@ export class AuthPage {
             }
           })
 
-          this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
+          this.el.closest('ion-nav').setRoot('tabs-page', null, { animated: true, direction: 'forward' });
         } else if (user && user.isAnonymous) {
-          this.el.closest('ion-nav').setRoot('tabs-page', null, { animate: true, direction: 'forward' });
+          this.el.closest('ion-nav').setRoot('tabs-page', null, { animated: true, direction: 'forward' });
           if (sessionStorage !== undefined) {
             sessionStorage.setItem('anon', 'true');
           }

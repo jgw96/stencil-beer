@@ -1,5 +1,4 @@
 import { Component, Prop, State, Listen } from '@stencil/core';
-import { PopoverController } from '@ionic/core';
 
 import { checkAnon } from '../../global/utils';
 
@@ -16,7 +15,7 @@ export class ProfileHeader {
 
   @State() profilePic: string;
 
-  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: PopoverController;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: HTMLIonPopoverControllerElement;
 
   componentDidLoad() {
     firebase.auth().onAuthStateChanged((user) => {

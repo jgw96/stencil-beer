@@ -1,5 +1,4 @@
 import { Component, Element, Event, EventEmitter, Prop } from '@stencil/core';
-import { PopoverController } from '@ionic/core';
 
 declare var firebase: any;
 
@@ -9,7 +8,7 @@ declare var firebase: any;
 })
 export class PopoverPage {
 
-  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: PopoverController;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: HTMLIonPopoverControllerElement;
 
   @Event() closePopover: EventEmitter;
 

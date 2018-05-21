@@ -1,5 +1,4 @@
 import { Component, Listen, Prop, State } from '@stencil/core';
-import { ModalController } from '@ionic/core';
 
 import { checkAnon } from '../../global/utils';
 
@@ -13,7 +12,7 @@ export class FeedPage {
 
   @State() posts: any = [];
 
-  @Prop({ connect: 'ion-modal-controller' }) modalCtrl: ModalController;
+  @Prop({ connect: 'ion-modal-controller' }) modalCtrl: HTMLIonModalControllerElement;
 
   componentDidLoad() {
     this.getPosts();

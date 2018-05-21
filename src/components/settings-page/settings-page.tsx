@@ -1,7 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
 
-import { ToastController, AlertController } from '@ionic/core';
-
 import { formatBytes } from '../../global/utils';
 
 declare var firebase: any;
@@ -15,8 +13,8 @@ export class SettingsPage {
   @State() storageUsed: string = '0';
   @State() offlineChecked: boolean;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   async componentDidLoad() {
     if ((navigator as any).storage) {

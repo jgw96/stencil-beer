@@ -1,5 +1,4 @@
 import { Component, Element, Listen, Prop, State } from '@stencil/core';
-import { AlertController } from '@ionic/core';
 
 declare var firebase: any;
 
@@ -14,7 +13,7 @@ export class FeedPageModal {
   @State() ratingValue: number = 0;
   @State() imageSrc: string;
 
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   @Element() el: Element;
 

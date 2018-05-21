@@ -1,5 +1,4 @@
 import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
-import { AlertController, ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
 import { checkAnon } from '../../global/utils';
@@ -16,8 +15,8 @@ export class BeerItem {
 
   @Prop() beer: Beer;
   @Prop() fave: Boolean = false;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   @Element() el: HTMLElement;
 

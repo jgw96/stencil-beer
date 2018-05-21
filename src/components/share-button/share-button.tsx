@@ -1,5 +1,4 @@
 import { Component, Prop } from '@stencil/core';
-import { AlertController } from '@ionic/core';
 
 
 @Component({
@@ -9,7 +8,7 @@ import { AlertController } from '@ionic/core';
 export class ShareButton {
 
   @Prop() beer: any;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: AlertController;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   async share(beer) {
     if ((navigator as any).share) {

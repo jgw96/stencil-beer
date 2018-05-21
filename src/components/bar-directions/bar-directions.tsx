@@ -1,5 +1,4 @@
 import { Component, Prop, State } from '@stencil/core';
-import { LoadingController } from '@ionic/core';
 
 declare var google: any;
 
@@ -12,7 +11,7 @@ export class BarDirections {
   // @Prop() match: any;
   @Prop() address: string;
   @Prop() dest: string;
-  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: LoadingController;
+  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: HTMLIonLoadingControllerElement;
 
   @State() directionsRequest: any;
 

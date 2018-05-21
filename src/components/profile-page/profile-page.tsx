@@ -1,8 +1,6 @@
 import { Component, State, Prop } from '@stencil/core';
 // import { RouterHistory } from '@stencil/router';
 
-import { ToastController } from '@ionic/core';
-
 import { notify } from '../../global/notify-service';
 
 // import firebase from 'firebase';
@@ -19,7 +17,7 @@ export class ProfilePage {
   @State() subscribed: boolean;
   @State() swSupport: boolean;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
   componentWillLoad() {

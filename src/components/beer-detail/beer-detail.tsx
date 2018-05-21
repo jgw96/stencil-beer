@@ -1,6 +1,5 @@
 import { Component, Prop, State } from '@stencil/core';
 // import { MatchResults } from '@stencil/router';
-import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
 import { getBeerDetail } from '../../global/http-service';
@@ -14,7 +13,7 @@ export class BeerDetail {
   @State() beer: Beer;
 
   // @Prop() match: MatchResults;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
   @Prop() beerId: string;
 
   componentDidLoad() {

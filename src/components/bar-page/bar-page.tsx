@@ -1,5 +1,4 @@
 import { Component, State, Prop, Listen } from '@stencil/core';
-import { ToastController } from '@ionic/core';
 
 import { Bar } from '../../global/interfaces';
 
@@ -12,7 +11,7 @@ export class BarPage {
   @State() bars: Array<Bar>;
 
   @Prop({ context: 'isServer' }) private isServer: boolean;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
   componentDidLoad() {
     if (!this.isServer) {

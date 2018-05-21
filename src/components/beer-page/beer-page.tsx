@@ -1,5 +1,4 @@
 import { Component, Element, State, Prop, Listen } from '@stencil/core';
-import { ToastController } from '@ionic/core';
 
 import { Beer } from '../../global/interfaces';
 import { fetchBeers, doSearch } from '../../global/http-service';
@@ -41,7 +40,7 @@ export class BeerPage {
 
   @State() beers: Array<Beer>;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: ToastController;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
 
   @Element() el: Element;
@@ -177,7 +176,7 @@ export class BeerPage {
             {
               this.styles.map((style) => {
                 return (
-                  <ion-button onClick={() => this.newStyle(style.id)} color='dark' round={true}>
+                  <ion-button onClick={() => this.newStyle(style.id)} color='dark' shape='round'>
                     {style.name}
                   </ion-button>
                 )
