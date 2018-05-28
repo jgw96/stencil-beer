@@ -26,9 +26,3 @@ exports.devServer = {
   root: 'www',
   watchGlob: '**/**'
 }
-
-
-{
-  type: 'www',
-  serviceWorker: false
-}
