@@ -11,13 +11,13 @@ export class BarDirections {
   // @Prop() match: any;
   @Prop() address: string;
   @Prop() dest: string;
-  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: HTMLIonLoadingControllerElement;
+  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: any;
 
   @State() directionsRequest: any;
 
   url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
   script: HTMLScriptElement;
-  loading: HTMLIonLoadingElement;
+  loading: any;
 
   loadScript() {
     return new Promise((resolve) => {

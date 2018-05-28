@@ -13,7 +13,7 @@ export class BeerDetail {
   @State() beer: Beer;
 
   // @Prop() match: MatchResults;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
   @Prop() beerId: string;
 
   componentDidLoad() {

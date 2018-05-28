@@ -11,11 +11,11 @@ declare var firebase: any;
 })
 export class ProfileHeader {
 
-  popover: HTMLIonPopoverElement;
+  popover: any;
 
   @State() profilePic: string;
 
-  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: HTMLIonPopoverControllerElement;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: any;
 
   componentDidLoad() {
     firebase.auth().onAuthStateChanged((user) => {

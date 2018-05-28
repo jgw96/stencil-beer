@@ -40,7 +40,7 @@ export class BeerPage {
 
   @State() beers: Array<Beer>;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
 
 
   @Element() el: Element;

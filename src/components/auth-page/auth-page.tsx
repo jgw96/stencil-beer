@@ -17,22 +17,23 @@ export class AuthPage {
       console.log(firebase);
       const db = firebase.firestore();
 
-      firebase.auth().onAuthStateChanged((user) => {
+      console.log(db);
+
+      firebase.auth().onAuthStateChanged(async (user) => {
         if (user && !user.isAnonymous) {
 
-          this.getCertainUser(user.email).then((querySnapshot) => {
-            if (querySnapshot.empty) {
-              db.collection('users').add({
-                name: user.displayName,
-                email: user.email,
-                photo: user.photoURL
-              })
-            }
-          })
+          const querySnapshot = await this.getCertainUser(user.email);
+          if (querySnapshot.empty) {
+            db.collection('users').add({
+              name: user.displayName,
+              email: user.email,
+              photo: user.photoURL
+            })
+          };
 
-          this.el.closest('ion-nav').setRoot('tabs-page', null, { animated: true, direction: 'forward' });
+          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: true, direction: 'forward' });
         } else if (user && user.isAnonymous) {
-          this.el.closest('ion-nav').setRoot('tabs-page', null, { animated: true, direction: 'forward' });
+          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: true, direction: 'forward' });
           if (sessionStorage !== undefined) {
             sessionStorage.setItem('anon', 'true');
           }
@@ -65,7 +66,11 @@ export class AuthPage {
         <ion-content>
 
           <div id='imageBlock'>
-            <img id='iconImage' src='/assets/img/icon.png' alt='logo'></img>
+            <picture id='iconImage'>
+              <source srcSet="/assets/img/icon.webp" type="image/webp"></source>
+              <source srcSet="/assets/img/icon.png" type="image/png"></source>
+              <img src="/assets/img/icon.png" alt="logo"></img>
+            </picture>
 
             <h1>IonicBeer</h1>
           </div>

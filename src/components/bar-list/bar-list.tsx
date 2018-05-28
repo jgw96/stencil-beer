@@ -13,7 +13,7 @@ export class barList {
   @Element() el: Element;
 
   goToDirections(address: string, dest: string) {
-    this.el.closest('ion-nav').push('bar-directions', { address, dest });
+    (this.el.closest('ion-nav') as any).push('bar-directions', { address, dest });
   }
 
   render() {

@@ -13,8 +13,8 @@ export class SettingsPage {
   @State() storageUsed: string = '0';
   @State() offlineChecked: boolean;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
 
   async componentDidLoad() {
     if ((navigator as any).storage) {

@@ -15,8 +15,8 @@ export class BeerItem {
 
   @Prop() beer: Beer;
   @Prop() fave: Boolean = false;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
 
   @Element() el: HTMLElement;
 
@@ -44,7 +44,7 @@ export class BeerItem {
 
       this.io.observe(this.el.querySelector('ion-card'));
     } else {
-      this.el.querySelector('ion-card').style.opacity = '1';
+      (this.el.querySelector('ion-card') as any).style.opacity = '1';
     }
   }
 
@@ -68,7 +68,7 @@ export class BeerItem {
         }
       )
     } else {
-      this.el.querySelector('ion-card').style.opacity = '1';
+      (this.el.querySelector('ion-card') as any).style.opacity = '1';
     }
   }
 
@@ -133,7 +133,7 @@ export class BeerItem {
 
   navigateToDetail(beerId: string) {
 
-    this.el.closest('ion-nav').push('beer-detail', { beerId });
+    (this.el.closest('ion-nav') as any).push('beer-detail', { beerId });
   }
 
   render() {

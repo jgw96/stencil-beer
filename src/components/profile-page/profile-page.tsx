@@ -17,7 +17,7 @@ export class ProfilePage {
   @State() subscribed: boolean;
   @State() swSupport: boolean;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
   componentWillLoad() {
@@ -61,7 +61,7 @@ export class ProfilePage {
     try {
       await firebase.auth().signOut();
       // this.history.replace('/', {});
-      document.querySelector('ion-nav').setRoot('auth-page');
+      (document.querySelector('ion-nav') as any).setRoot('auth-page');
     } catch (e) {
       this.showErrorToast();
     }

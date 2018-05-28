@@ -1,3 +1,4 @@
+import '@ionic/core';
 import { Component } from '@stencil/core';
 
 @Component({
@@ -14,10 +15,10 @@ export class StencilBeer {
           <ion-route url='/' component='auth-page'></ion-route>
           <ion-route url='/home' component='tabs-page'>
 
-            <ion-route url='/feed' component='feed-tab'>
+            {/*<ion-route url='/feed' component='feed-tab'>
               <ion-route component='feed-page'></ion-route>
               <ion-route url='/post/:post' component='post-detail'></ion-route>
-            </ion-route>
+    </ion-route>*/}
 
             <ion-route url='/beers' component='beer-tab'>
               <ion-route component='beer-page' />

@@ -11,9 +11,9 @@ export class TabsPage {
   render() {
     return (
       <ion-tabs color='dark'>
-        <ion-tab label='feed' icon='paper' name='feed-tab'>
+        {/*<ion-tab label='feed' icon='paper' name='feed-tab'>
           <ion-nav></ion-nav>
-        </ion-tab>
+    </ion-tab>*/}
 
         <ion-tab selected={true} label='beers' icon='beer' name='beer-tab'>
           <ion-nav></ion-nav>

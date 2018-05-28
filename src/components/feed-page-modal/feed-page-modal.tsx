@@ -13,7 +13,7 @@ export class FeedPageModal {
   @State() ratingValue: number = 0;
   @State() imageSrc: string;
 
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
 
   @Element() el: Element;
 
@@ -28,7 +28,7 @@ export class FeedPageModal {
   }
 
   dismiss() {
-    (this.el.closest('ion-modal') as HTMLIonModalElement).dismiss();
+    (this.el.closest('ion-modal') as any).dismiss();
   }
 
   handlePostValue(event) {

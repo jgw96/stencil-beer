@@ -18,7 +18,7 @@ export class UsersList {
   }
 
   goToUser(userName: string) {
-    this.el.closest('ion-nav').push('user-profile', {userName});
+    (this.el.closest('ion-nav') as any).push('user-profile', {userName});
   }
 
   render() {

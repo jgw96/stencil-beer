@@ -12,7 +12,7 @@ export class FeedPage {
 
   @State() posts: any = [];
 
-  @Prop({ connect: 'ion-modal-controller' }) modalCtrl: HTMLIonModalControllerElement;
+  @Prop({ connect: 'ion-modal-controller' }) modalCtrl: any;
 
   componentDidLoad() {
     this.getPosts();
