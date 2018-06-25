@@ -26,7 +26,8 @@
   "devDependencies": {
     "@stencil/dev-server": "latest",
     "@stencil/sass": "0.0.2",
-    "@stencil/utils": "latest"
+    "@stencil/utils": "latest",
+    "@types/googlemaps": "^3.30.10"
   },
   "repository": {
     "type": "git",

@@ -50,7 +50,7 @@ export class PostImg {
       return;
     }
     if ('IntersectionObserver' in window) {
-      this.io = new IntersectionObserver((data: any) => {
+      this.io = new IntersectionObserver((data: IntersectionObserverEntry[]) => {
         // because there will only ever be one instance
         // of the element we are observing
         // we can just use data[0]

@@ -1,23 +1,20 @@
 import { Component, Prop, State } from '@stencil/core';
 
-declare var google: any;
-
 @Component({
   tag: 'bar-directions',
   styleUrl: 'bar-directions.scss'
 })
 export class BarDirections {
 
-  // @Prop() match: any;
   @Prop() address: string;
   @Prop() dest: string;
   @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: HTMLIonLoadingControllerElement;
 
-  @State() directionsRequest: any;
+  @State() directionsLeg: google.maps.DirectionsLeg;
 
   url = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCb9lhLYxUnRjSp1oIGl6aAsXLODc3o-f4';
   script: HTMLScriptElement;
-  loading: any;
+  loading: HTMLIonLoadingElement;
 
   loadScript() {
     return new Promise((resolve) => {
@@ -60,16 +57,16 @@ export class BarDirections {
         const request = {
           destination: dest,
           origin: start,
-          travelMode: 'DRIVING'
+          travelMode: google.maps.TravelMode.DRIVING
         };
 
         // Pass the directions request to the directions service.
         const directionsService = new google.maps.DirectionsService();
         directionsService.route(request, (response, status) => {
-          if (status == 'OK') {
+          if (status === google.maps.DirectionsStatus.OK) {
             console.log(response);
-            this.directionsRequest = response.routes[0].legs[0];
-            console.log(this.directionsRequest);
+            this.directionsLeg = response.routes[0].legs[0];
+            console.log(this.directionsLeg);
             // Display the route on the map.
             directionsDisplay.setDirections(response);
             this.loading.dismiss();
@@ -82,7 +79,7 @@ export class BarDirections {
   }
 
   openMaps() {
-    window.open(`https://www.google.com/maps/dir/?api=1&origin=${this.directionsRequest.start_address}&destination=${this.directionsRequest.end_address}`);
+    window.open(`https://www.google.com/maps/dir/?api=1&origin=${this.directionsLeg.start_address}&destination=${this.directionsLeg.end_address}`);
   }
 
   render() {
@@ -110,7 +107,7 @@ export class BarDirections {
 
               <ion-item>
                 <ion-label>
-                  {this.directionsRequest ? <h2>{this.directionsRequest.duration.text} away</h2> : <h2>'Loading...'</h2>}
+                  {this.directionsLeg ? <h2>{this.directionsLeg.duration.text} away</h2> : <h2>'Loading...'</h2>}
                 </ion-label>
               </ion-item>
 
@@ -118,7 +115,7 @@ export class BarDirections {
                 <ion-icon color='primary' name='pin' slot='start' size='large'></ion-icon>
 
                 <ion-label>
-                  {this.directionsRequest ? this.directionsRequest.end_address : 'Loading...'}
+                  {this.directionsLeg ? this.directionsLeg.end_address : 'Loading...'}
                 </ion-label>
               </ion-item>
             </ion-list>

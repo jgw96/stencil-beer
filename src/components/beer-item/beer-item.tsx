@@ -35,7 +35,7 @@ export class BeerItem {
         // of the element we are observing
         // we can just use data[0]
         if (data[0].isIntersecting) {
-          this.handleAnimation(data[0].target);
+          this.handleAnimation((data[0].target as HTMLElement));
           this.removeIntersectionObserver();
         }
       }, {
@@ -55,7 +55,7 @@ export class BeerItem {
     }
   }
 
-  handleAnimation(element: any) {
+  handleAnimation(element: HTMLElement) {
     if ('animate' in element) {
       element.animate(
         [

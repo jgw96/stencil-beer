@@ -15,7 +15,7 @@ export class ProfileHeader {
 
   @State() profilePic: string;
 
-  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: any;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: HTMLIonPopoverControllerElement;
 
   componentDidLoad() {
     firebase.auth().onAuthStateChanged((user) => {

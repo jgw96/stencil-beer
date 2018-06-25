@@ -58,10 +58,10 @@ export class FeedPageModal {
     input.accept = 'image/*';
     input.setAttribute('capture', 'camera');
 
-    input.addEventListener('change', (ev: any) => {
+    input.addEventListener('change', (ev: Event) => {
       console.log('changed', ev);
-      console.log(ev.target.files);
-      this.fileToUpload = ev.target.files[0];
+      console.log((ev.target as HTMLInputElement).files);
+      this.fileToUpload = (ev.target as HTMLInputElement).files[0];
 
       const reader = new FileReader();
       reader.onloadend = () => {

@@ -11,7 +11,7 @@ export class BeerPage {
 
   page: number = 1;
   currentStyle: number = 2;
-  styles: Array<any> = [
+  styles: Array<{name: string, id: number}> = [
     {
       name: 'English IPA',
       id: 2
@@ -106,7 +106,7 @@ export class BeerPage {
   }
 
   takePicture() {
-    const input = document.createElement('input');
+    const input: HTMLInputElement = document.createElement('input');
     input.type = 'file';
     input.name = 'image';
     input.accept = 'image/*';
@@ -114,10 +114,10 @@ export class BeerPage {
 
     input.click();
 
-    input.addEventListener('change', (ev: any) => {
+    input.addEventListener('change', (ev: Event) => {
       console.log('changed');
-      console.log(ev.target.files);
-      this.google(ev.target.files[0]);
+      console.log((ev.target as HTMLInputElement).files);
+      this.google((ev.target as HTMLInputElement).files[0]);
     })
   }
 

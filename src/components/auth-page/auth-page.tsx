@@ -62,6 +62,9 @@ export class AuthPage {
 
   render() {
     return (
+
+      // Note: Using the `ion-page` component is not necessary anymore
+      // this will be removed soon
       <ion-page class='show-page'>
         <ion-content>
 

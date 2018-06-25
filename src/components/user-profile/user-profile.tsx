@@ -1,5 +1,7 @@
 import { Component, Prop, State } from '@stencil/core';
 
+import { Beer } from '../../global/interfaces';
+
 declare var firebase: any;
 
 @Component({
@@ -10,7 +12,7 @@ export class UserProfile {
 
   @Prop() userName: string;
 
-  @State() beers: any;
+  @State() beers: Array<Beer>;
   @State() user: any;
 
   async componentDidLoad() {
@@ -77,8 +79,6 @@ export class UserProfile {
             </div>
 
             <h2>{this.user.name}</h2>
-
-            {/*<ion-button expand='block' color='primary' onClick={() => this.follow()}>Follow</ion-button>*/}
 
             {this.beers ?
               <h1>Favorite Beers</h1>
