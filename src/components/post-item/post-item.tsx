@@ -16,7 +16,7 @@ export class PostItem {
   }
 
   clickedDetail(post) {
-    (this.el.closest('ion-nav')as any).push('post-detail', {post});
+    (this.el.closest('ion-nav')as HTMLIonNavElement).push('post-detail', {post});
   }
 
   render() {

@@ -15,8 +15,8 @@ export class BeerItem {
 
   @Prop() beer: Beer;
   @Prop() fave: Boolean = false;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   @Element() el: HTMLElement;
 
@@ -133,7 +133,7 @@ export class BeerItem {
 
   navigateToDetail(beerId: string) {
 
-    (this.el.closest('ion-nav') as any).push('beer-detail', { beerId });
+    (this.el.closest('ion-nav') as HTMLIonNavElement).push('beer-detail', { beerId });
   }
 
   render() {

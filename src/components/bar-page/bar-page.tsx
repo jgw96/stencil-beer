@@ -11,7 +11,7 @@ export class BarPage {
   @State() bars: Array<Bar>;
 
   @Prop({ context: 'isServer' }) private isServer: boolean;
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
   componentDidLoad() {
     if (!this.isServer) {

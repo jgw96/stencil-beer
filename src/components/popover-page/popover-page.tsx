@@ -8,7 +8,7 @@ declare var firebase: any;
 })
 export class PopoverPage {
 
-  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: any;
+  @Prop({ connect: 'ion-popover-controller' }) popoverCtrl: HTMLIonPopoverControllerElement;
 
   @Event() closePopover: EventEmitter;
 
@@ -16,18 +16,18 @@ export class PopoverPage {
 
   openProfile() {
     this.closePopover.emit();
-    (document.querySelector('ion-nav') as any).push('profile-page');
+    (document.querySelector('ion-nav') as HTMLIonNavElement).push('profile-page');
 
   }
 
   openAll() {
     this.closePopover.emit();
-    (document.querySelector('ion-nav') as any).push('users-page');
+    (document.querySelector('ion-nav') as HTMLIonNavElement).push('users-page');
   }
 
   settings() {
     this.closePopover.emit();
-    (document.querySelector('ion-nav') as any).push('settings-page');
+    (document.querySelector('ion-nav') as HTMLIonNavElement).push('settings-page');
   }
 
   async logout() {
@@ -35,7 +35,7 @@ export class PopoverPage {
     this.closePopover.emit();
     await firebase.auth().signOut();
     // this.history.replace('/', {});
-    (document.querySelector('ion-nav') as any).setRoot('auth-page');
+    (document.querySelector('ion-nav') as HTMLIonNavElement).setRoot('auth-page');
   }
 
   render() {

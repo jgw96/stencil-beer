@@ -40,7 +40,7 @@ export class BeerPage {
 
   @State() beers: Array<Beer>;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
 
 
   @Element() el: Element;
@@ -60,7 +60,7 @@ export class BeerPage {
     }
 
     // now lets init infiniteScrolling
-    const iScroll: any = this.el.querySelector('#infinite-scroll');
+    const iScroll: HTMLIonInfiniteScrollElement = this.el.querySelector('#infinite-scroll');
 
     iScroll.addEventListener('ionInfinite', async () => {
       this.page = this.page + 1;
@@ -163,12 +163,6 @@ export class BeerPage {
 
         <ion-toolbar color='dark'>
           <ion-searchbar></ion-searchbar>
-
-          {/*<ion-buttons slot='end'>
-            <ion-button fill='clear' icon-only onClick={() => this.takePicture()}>
-              <ion-icon id='cameraButton' name='camera'></ion-icon>
-            </ion-button>
-    </ion-buttons>*/}
         </ion-toolbar>
 
         <ion-content>

@@ -8,7 +8,7 @@ import { Component, Prop } from '@stencil/core';
 export class ShareButton {
 
   @Prop() beer: any;
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   async share(beer) {
     if ((navigator as any).share) {
@@ -30,41 +30,6 @@ export class ShareButton {
   }
 
   async handleNativeShare(beer) {
-    console.log(beer);
-    /*const alert = await this.alertCtrl.create({
-      title: 'Share',
-      message: 'Message to Share',
-      inputs: [
-        {
-          name: 'shareText',
-          id: 'shareText',
-          placeholder: 'Check out this cool beer!'
-        }
-      ],
-      buttons: [
-        {
-          text: 'Cancel',
-          role: 'cancel',
-          cssClass: 'secondary',
-          handler: () => {
-            console.log('Confirm Cancel')
-          }
-        }, {
-          text: 'Ok',
-          handler: () => {
-            const shareText = (document.querySelector('#shareText') as HTMLInputElement).value;
-
-            (navigator as any).share({
-              title: document.title,
-              text: `${shareText}`,
-              url: `${window.location.href}/detail/${beer.id}`
-            });
-          }
-        }
-      ]
-    });
-
-    alert.present();*/
     (navigator as any).share({
       title: document.title,
       text: 'Check out this cool beer',

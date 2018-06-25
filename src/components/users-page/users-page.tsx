@@ -13,8 +13,8 @@ export class UsersPage {
 
   @Element() el: Element;
 
-  iScroll: any;
-  last: any;
+  iScroll: HTMLIonInfiniteScrollElement;
+  last: number;
 
   componentDidLoad() {
     if (!this.isPrerender) {

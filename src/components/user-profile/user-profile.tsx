@@ -8,7 +8,7 @@ declare var firebase: any;
 })
 export class UserProfile {
 
-  @Prop() userName: any;
+  @Prop() userName: string;
 
   @State() beers: any;
   @State() user: any;

@@ -13,7 +13,7 @@ export class FeedPageModal {
   @State() ratingValue: number = 0;
   @State() imageSrc: string;
 
-  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: any;
+  @Prop({ connect: 'ion-alert-controller' }) alertCtrl: HTMLIonAlertControllerElement;
 
   @Element() el: Element;
 

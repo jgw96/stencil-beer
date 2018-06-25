@@ -11,7 +11,7 @@ export class BarDirections {
   // @Prop() match: any;
   @Prop() address: string;
   @Prop() dest: string;
-  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: any;
+  @Prop({ connect: 'ion-loading-controller' }) loadingCtrl: HTMLIonLoadingControllerElement;
 
   @State() directionsRequest: any;
 

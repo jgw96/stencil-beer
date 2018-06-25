@@ -19,7 +19,8 @@ exports.config = {
   globalStyle: 'src/global/variables.css',
   plugins: [
     sass()
-  ]
+  ],
+  enableCache: false
 };
 
 exports.devServer = {

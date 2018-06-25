@@ -1,9 +1,6 @@
 import { Component, State, Prop } from '@stencil/core';
-// import { RouterHistory } from '@stencil/router';
 
 import { notify } from '../../global/notify-service';
-
-// import firebase from 'firebase';
 
 declare var firebase: any;
 
@@ -17,7 +14,7 @@ export class ProfilePage {
   @State() subscribed: boolean;
   @State() swSupport: boolean;
 
-  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: any;
+  @Prop({ connect: 'ion-toast-controller' }) toastCtrl: HTMLIonToastControllerElement;
   @Prop({ context: 'isServer' }) private isServer: boolean;
 
   componentWillLoad() {
@@ -61,7 +58,7 @@ export class ProfilePage {
     try {
       await firebase.auth().signOut();
       // this.history.replace('/', {});
-      (document.querySelector('ion-nav') as any).setRoot('auth-page');
+      (document.querySelector('ion-nav') as HTMLIonNavElement).setRoot('auth-page');
     } catch (e) {
       this.showErrorToast();
     }

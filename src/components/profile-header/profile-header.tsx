@@ -11,7 +11,7 @@ declare var firebase: any;
 })
 export class ProfileHeader {
 
-  popover: any;
+  popover: HTMLIonPopoverElement;
 
   @State() profilePic: string;
 
