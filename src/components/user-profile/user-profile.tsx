@@ -6,7 +6,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'user-profile',
-  styleUrl: 'user-profile.scss'
+  styleUrl: 'user-profile.css'
 })
 export class UserProfile {
 

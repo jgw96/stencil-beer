@@ -11,7 +11,7 @@ import {Component, Element, Event, EventEmitter, Prop, State} from '@stencil/cor
 
 @Component({
   tag: 'lazy-img',
-  styleUrl: 'lazy-img.scss'
+  styleUrl: 'lazy-img.css'
 })
 export class LazyImg {
 

@@ -9,7 +9,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'beer-item',
-  styleUrl: 'beer-item.scss'
+  styleUrl: 'beer-item.css'
 })
 export class BeerItem {
 

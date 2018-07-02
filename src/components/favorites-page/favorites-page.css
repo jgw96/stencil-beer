@@ -1,0 +1,7 @@
+favorites-page h1 {
+  margin-left: 10px;
+}
+
+favorites-page ion-scroll {
+  background: #ececec !important;
+}

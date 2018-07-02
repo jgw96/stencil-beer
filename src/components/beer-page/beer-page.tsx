@@ -5,7 +5,7 @@ import { fetchBeers, doSearch } from '../../global/http-service';
 
 @Component({
   tag: 'beer-page',
-  styleUrl: 'beer-page.scss'
+  styleUrl: 'beer-page.css'
 })
 export class BeerPage {
 

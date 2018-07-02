@@ -3,7 +3,7 @@ import { Component } from '@stencil/core';
 
 @Component({
   tag: 'stencil-beer',
-  styleUrl: 'stencil-beer.scss'
+  styleUrl: 'stencil-beer.css'
 })
 export class StencilBeer {
 

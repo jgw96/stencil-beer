@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@ionic/core": "^4.0.0-alpha.7",
-    "@stencil/core": "^0.9.10",
+    "@stencil/core": "^0.10.0-9",
     "am-rating": "0.0.7",
     "firebase": "4.8.2",
     "greenlet": "^0.1.2",
@@ -25,7 +25,6 @@
   },
   "devDependencies": {
     "@stencil/dev-server": "latest",
-    "@stencil/sass": "0.0.2",
     "@stencil/utils": "latest",
     "@types/googlemaps": "^3.30.10"
   },

@@ -4,7 +4,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'auth-page',
-  styleUrl: 'auth-page.scss'
+  styleUrl: 'auth-page.css'
 })
 export class AuthPage {
 

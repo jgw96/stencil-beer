@@ -6,7 +6,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'profile-header',
-  styleUrl: 'profile-header.scss',
+  styleUrl: 'profile-header.css',
   scoped: true
 })
 export class ProfileHeader {

@@ -4,7 +4,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'feed-page-modal',
-  styleUrl: 'feed-page-modal.scss'
+  styleUrl: 'feed-page-modal.css'
 })
 export class FeedPageModal {
 

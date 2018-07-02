@@ -4,7 +4,7 @@ import { Bar } from '../../global/interfaces';
 
 @Component({
   tag: 'bar-page',
-  styleUrl: 'bar-page.scss'
+  styleUrl: 'bar-page.css'
 })
 export class BarPage {
 

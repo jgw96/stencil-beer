@@ -3,19 +3,13 @@ import { Component, Element, Prop } from '@stencil/core';
 
 @Component({
   tag: 'users-list',
-  styleUrl: 'users-list.scss'
+  styleUrl: 'users-list.css'
 })
 export class UsersList {
 
   @Prop() users: any[];
 
   @Element() el: Element;
-
-  componentDidload() {
-    setTimeout(() => {
-      console.log(this.users);
-    }, 5000)
-  }
 
   goToUser(userName: string) {
     (this.el.closest('ion-nav') as HTMLIonNavElement).push('user-profile', {userName});

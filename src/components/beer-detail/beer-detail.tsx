@@ -5,7 +5,7 @@ import { getBeerDetail } from '../../global/http-service';
 
 @Component({
   tag: 'beer-detail',
-  styleUrl: 'beer-detail.scss'
+  styleUrl: 'beer-detail.css'
 })
 export class BeerDetail {
 

@@ -3,8 +3,7 @@ import { Component } from '@stencil/core';
 import { checkAnon } from '../../global/utils';
 
 @Component({
-  tag: 'tabs-page',
-  styleUrl: 'tabs-page.scss'
+  tag: 'tabs-page'
 })
 export class TabsPage {
 

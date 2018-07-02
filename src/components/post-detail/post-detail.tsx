@@ -2,8 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 
 @Component({
-  tag: 'post-detail',
-  styleUrl: 'post-detail.scss'
+  tag: 'post-detail'
 })
 export class PostDetail {
 

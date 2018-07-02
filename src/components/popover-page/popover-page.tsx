@@ -3,8 +3,7 @@ import { Component, Element, Event, EventEmitter, Prop } from '@stencil/core';
 declare var firebase: any;
 
 @Component({
-  tag: 'popover-page',
-  styleUrl: 'popover-page.scss'
+  tag: 'popover-page'
 })
 export class PopoverPage {
 

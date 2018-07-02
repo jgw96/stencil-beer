@@ -4,7 +4,7 @@ import { Component, Prop, State, Event, EventEmitter } from '@stencil/core';
  */
 @Component({
   tag: 'am-rating',
-  styleUrl: 'am-rating.scss',
+  styleUrl: 'am-rating.css',
   shadow: true
 })
 export class AMRating {

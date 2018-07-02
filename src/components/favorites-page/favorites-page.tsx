@@ -6,7 +6,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'favorites-page',
-  styleUrl: 'favorites-page.scss'
+  styleUrl: 'favorites-page.css'
 })
 export class favoritesPage {
 

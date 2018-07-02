@@ -1,8 +1,7 @@
 import { Component, Prop } from '@stencil/core';
 
 @Component({
-  tag: 'feed-list',
-  styleUrl: 'feed-list.scss'
+  tag: 'feed-list'
 })
 export class StencilComponent {
 

@@ -1,0 +1,28 @@
+bar-page lazy-img img {
+  height: 224px;
+}
+
+bar-page ion-label {
+  margin-bottom: -5px !important;
+}
+
+@media (min-width: 550px) {
+  bar-page ion-scroll {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+@media (min-width: 800px) {
+  bar-page ion-scroll {
+    padding-left: 12em;
+    padding-right: 12em;
+  }
+}
+
+@media (min-width: 1200px) {
+  bar-page ion-scroll {
+    padding-left: 26em;
+    padding-right: 26em;
+  }
+}

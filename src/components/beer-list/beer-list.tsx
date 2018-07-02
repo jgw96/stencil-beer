@@ -5,7 +5,7 @@ import { Beer } from '../../global/interfaces';
 
 @Component({
   tag: 'beer-list',
-  styleUrl: 'beer-list.scss'
+  styleUrl: 'beer-list.css'
 })
 export class BeerList {
 

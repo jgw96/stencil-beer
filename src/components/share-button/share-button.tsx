@@ -2,8 +2,7 @@ import { Component, Prop } from '@stencil/core';
 
 
 @Component({
-  tag: 'share-button',
-  styleUrl: 'share-button.scss'
+  tag: 'share-button'
 })
 export class ShareButton {
 

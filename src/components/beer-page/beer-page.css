@@ -1,0 +1,28 @@
+beer-page #stylesBar {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  margin: 10px;
+}
+
+beer-page #stylesBar ion-button {
+  margin-right: 5px;
+}
+
+beer-page #cameraButton, beer-page #cameraButton svg {
+  height: 2em;
+  width: 2em;
+  fill: white;
+}
+
+beer-page ion-scroll {
+  background: #ececec !important;
+}
+
+beer-page ion-button[disabled] {
+  opacity: 0.5;
+}
+
+beer-page ion-button[disabled] button {
+  color: grey;
+}

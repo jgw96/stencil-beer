@@ -3,8 +3,7 @@ import { Component, Element, Event, EventEmitter, Prop, State } from '@stencil/c
 declare var firebase: any;
 
 @Component({
-  tag: 'post-img',
-  styleUrl: 'post-img.scss'
+  tag: 'post-img'
 })
 export class PostImg {
   @Element() el: HTMLElement;

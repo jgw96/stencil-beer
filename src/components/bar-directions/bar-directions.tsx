@@ -2,7 +2,7 @@ import { Component, Prop, State } from '@stencil/core';
 
 @Component({
   tag: 'bar-directions',
-  styleUrl: 'bar-directions.scss'
+  styleUrl: 'bar-directions.css'
 })
 export class BarDirections {
 

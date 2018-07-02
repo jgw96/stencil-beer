@@ -3,8 +3,7 @@ import { Component, Element, State, Prop } from '@stencil/core';
 declare var firebase: any;
 
 @Component({
-  tag: 'users-page',
-  styleUrl: 'users-page.scss'
+  tag: 'users-page'
 })
 export class UsersPage {
 

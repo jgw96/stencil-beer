@@ -6,7 +6,7 @@ declare var firebase: any;
 
 @Component({
   tag: 'feed-page',
-  styleUrl: 'feed-page.scss'
+  styleUrl: 'feed-page.css'
 })
 export class FeedPage {
 

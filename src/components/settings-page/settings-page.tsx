@@ -5,8 +5,7 @@ import { formatBytes } from '../../global/utils';
 declare var firebase: any;
 
 @Component({
-  tag: 'settings-page',
-  styleUrl: 'settings-page.scss'
+  tag: 'settings-page'
 })
 export class SettingsPage {
 

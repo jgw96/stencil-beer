@@ -1,0 +1,66 @@
+beer-detail ion-scroll {
+  padding: 1em;
+}
+
+beer-detail #img-block {
+  display: flex;
+  justify-content: center;
+  height: 20em;
+}
+
+beer-detail #animateIn {
+  animation-name: fadein;
+  animation-duration: 0.7s;
+  animation-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+}
+
+beer-detail #fake-card {
+  margin: 1.5em;
+  height: 400px;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 100px, transparent 0);
+  background-size: 100%;
+  background-position: 10px 0, 10px 120px, 10px 160px;
+}
+
+@keyframes fadein {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slidefab {
+  from {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translatex(0);
+    opacity: 1;
+  }
+}
+
+@media (min-width: 550px) {
+  beer-detail ion-scroll {
+    padding-left: 3em;
+    padding-right: 3em;
+  }
+}
+
+@media (min-width: 800px) {
+  beer-detail ion-scroll {
+    padding-left: 12em;
+    padding-right: 12em;
+  }
+}
+
+@media (min-width: 1200px) {
+  beer-detail ion-scroll {
+    padding-left: 26em;
+    padding-right: 26em;
+  }
+}

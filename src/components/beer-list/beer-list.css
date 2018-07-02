@@ -1,0 +1,14 @@
+@media (min-width: 768px) {
+  beer-list ion-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  }
+}
+
+beer-list #fake-card {
+  margin: 1.5em;
+  height: 400px;
+  background-image: linear-gradient(100deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5) 50%, rgba(255, 255, 255, 0) 80%), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 20px, transparent 0), linear-gradient(lightgray 100px, transparent 0);
+  background-size: 100% 220px;
+  background-position: 10px 0, 10px 120px, 10px 160px;
+}

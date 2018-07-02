@@ -1,0 +1,30 @@
+beer-item ion-card {
+  opacity: 0;
+}
+
+beer-item p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+beer-item ion-buttons {
+  display: flex;
+}
+
+beer-item #anchorDiv {
+  margin-left: auto;
+}
+
+beer-item ion-img {
+  display: flex;
+  justify-content: center;
+  height: 20em;
+  position: relative;
+  top: -8px;
+}
+
+beer-item ion-icon svg {
+  width: 1.5em;
+  height: 1.2em;
+}
