@@ -8,7 +8,7 @@
   ],
   "scripts": {
     "build": "stencil build --stats",
-    "dev": "sd concurrent \"stencil build --dev --watch --serve\"",
+    "dev": "stencil build --dev --watch --serve",
     "devWithSW": "sd concurrent \"stencil build --dev --service-worker --watch\"",
     "functionDev": "stencil build --dev --watch",
     "serve": "stencil-dev-server",
