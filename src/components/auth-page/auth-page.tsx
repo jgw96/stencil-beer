@@ -31,9 +31,9 @@ export class AuthPage {
             })
           };
 
-          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: true, direction: 'forward' });
+          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: false, direction: 'forward' });
         } else if (user && user.isAnonymous) {
-          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: true, direction: 'forward' });
+          (this.el.closest('ion-nav') as HTMLIonNavElement).setRoot('tabs-page', null, { animated: false, direction: 'forward' });
           if (sessionStorage !== undefined) {
             sessionStorage.setItem('anon', 'true');
           }

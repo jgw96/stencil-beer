@@ -30,7 +30,6 @@ export class BeerDetail {
   }
 
   async getBeerDetail() {
-    console.log(this.beerId);
     this.beer = await getBeerDetail(this.beerId);
   }
 

@@ -132,7 +132,6 @@ export class BeerItem {
   }
 
   navigateToDetail(beerId: string) {
-
     (this.el.closest('ion-nav') as HTMLIonNavElement).push('beer-detail', { beerId });
   }
 

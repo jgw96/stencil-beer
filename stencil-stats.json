@@ -960,8 +960,8 @@
           "outputs": [
             "www/build/app/am-rating.js"
           ],
-          "size": 6876,
-          "gzip": 1964
+          "size": 6874,
+          "gzip": 1963
         },
         {
           "fileName": "am-rating.sc.js",
@@ -998,8 +998,8 @@
           "outputs": [
             "www/build/app/auth-page.js"
           ],
-          "size": 4822,
-          "gzip": 1563
+          "size": 4944,
+          "gzip": 1622
         }
       ],
       "inputs": [
@@ -1045,8 +1045,8 @@
           "outputs": [
             "www/build/app/bar-directions.js"
           ],
-          "size": 7563,
-          "gzip": 2218
+          "size": 7576,
+          "gzip": 2225
         }
       ],
       "inputs": [
@@ -1989,8 +1989,8 @@
           "outputs": [
             "www/build/app/ion-icon.js"
           ],
-          "size": 10350,
-          "gzip": 2980
+          "size": 10212,
+          "gzip": 2972
         },
         {
           "fileName": "ion-icon.sc.js",
@@ -2691,8 +2691,8 @@
           "outputs": [
             "www/build/app/profile-header.js"
           ],
-          "size": 2700,
-          "gzip": 1075
+          "size": 2685,
+          "gzip": 1073
         },
         {
           "fileName": "profile-header.sc.js",

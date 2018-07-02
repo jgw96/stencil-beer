@@ -28,11 +28,4 @@ beer-page {
   ion-button[disabled] button {
     color: grey;
   }
-
-  ion-infinite-scroll-content {
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
 }
