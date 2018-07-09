@@ -49,7 +49,7 @@ export class BeerDetail {
 
       return [
         <profile-header>
-          <ion-back-button defaultHref='/home' />
+          <ion-back-button defaultHref='/home/beers' />
         </profile-header>,
 
         <ion-content>
@@ -76,7 +76,7 @@ export class BeerDetail {
     } else {
       return [
         <profile-header>
-          <ion-back-button defaultHref='/home' />
+          <ion-back-button defaultHref='/home/beers' />
         </profile-header>,
 
         <ion-content padding>
