@@ -15,7 +15,7 @@ export class BeerDetail {
   @Prop() beerId: string;
 
   componentDidLoad() {
-   try {
+    try {
       this.getBeerDetail();
     }
     catch (err) {
@@ -47,50 +47,44 @@ export class BeerDetail {
   render() {
     if (this.beer) {
 
-      return (
-        <ion-page class='show-page'>
+      return [
+        <profile-header>
+          <ion-back-button defaultHref='/home' />
+        </profile-header>,
 
-          <profile-header>
-            <ion-back-button defaultHref='/home' />
-          </profile-header>
+        <ion-content>
+          <main id='animateIn'>
+            <div id='img-block'>
+              <img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></img>
+            </div>
+            <h1>{this.beer.name}</h1>
 
-          <ion-content>
-            <main id='animateIn'>
-              <div id='img-block'>
-                <img src={this.beer.labels ? this.beer.labels.large : '/assets/beers.jpeg'} alt={this.beer.name}></img>
-              </div>
-              <h1>{this.beer.name}</h1>
+            <div>ABV: {this.beer.abv ? this.beer.abv : 'Not available'}</div>
+            <div>IBU: {this.beer.ibu ? this.beer.ibu : 'Not available'}</div>
 
-              <div>ABV: {this.beer.abv ? this.beer.abv : 'Not available'}</div>
-              <div>IBU: {this.beer.ibu ? this.beer.ibu : 'Not available'}</div>
+            <p>{this.beer.description ? this.beer.description : 'No description available'}</p>
 
-              <p>{this.beer.description ? this.beer.description : 'No description available'}</p>
+          </main>
 
-            </main>
-          </ion-content>
-
-          <ion-fab vertical='bottom' horizontal='end'>
+          <ion-fab vertical='bottom' horizontal='end' slot='fixed'>
             <ion-fab-button onClick={() => this.share(this.beer)}>
               <ion-icon name='share'></ion-icon>
             </ion-fab-button>
           </ion-fab>
-        </ion-page>
-      )
+        </ion-content>
+      ]
     } else {
-      return (
-        <ion-page class='show-page'>
+      return [
+        <profile-header>
+          <ion-back-button defaultHref='/home' />
+        </profile-header>,
 
-          <profile-header>
-            <ion-back-button defaultHref='/home' />
-          </profile-header>
-
-          <ion-content padding>
-            <main>
-              <div id='fake-card'></div>
-            </main>
-          </ion-content>
-        </ion-page>
-      );
+        <ion-content padding>
+          <main>
+            <div id='fake-card'></div>
+          </main>
+        </ion-content>
+      ];
     }
   }
 }

@@ -1,11 +1,11 @@
-beer-detail ion-scroll {
-  padding: 1em;
-}
-
 beer-detail #img-block {
   display: flex;
   justify-content: center;
   height: 20em;
+}
+
+beer-detail main {
+  padding: 15px;
 }
 
 beer-detail #animateIn {

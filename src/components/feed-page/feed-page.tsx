@@ -52,14 +52,14 @@ export class FeedPage {
 
         <ion-content>
           <feed-list posts={this.posts}></feed-list>
+
+          {checkAnon() ? null : <ion-fab vertical='bottom' horizontal='end' slot='fixed'>
+            <ion-fab-button onClick={() => this.makeNewPost()}>
+              <ion-icon name='add'></ion-icon>
+            </ion-fab-button>
+          </ion-fab>}
         </ion-content>
 
-
-        {checkAnon() ? null : <ion-fab vertical='bottom' horizontal='end'>
-          <ion-fab-button onClick={() => this.makeNewPost()}>
-            <ion-icon name='add'></ion-icon>
-          </ion-fab-button>
-        </ion-fab>}
       </ion-page>
     );
   }

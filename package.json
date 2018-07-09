@@ -20,7 +20,6 @@
     "@stencil/core": "^0.10.0",
     "am-rating": "0.0.7",
     "firebase": "4.8.2",
-    "greenlet": "^0.1.2",
     "st-img": "^0.3.0"
   },
   "devDependencies": {

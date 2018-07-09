@@ -83,45 +83,44 @@ export class BarDirections {
   }
 
   render() {
-    return (
-      <ion-page>
-        <profile-header>
-          <ion-back-button defaultHref='/home' />
-        </profile-header>
-        <ion-content>
-          <div id='map'></div>
-          <div id='bottomPaper'>
+    return [
+      <profile-header>
+        <ion-back-button defaultHref='/home' />
+      </profile-header>,
+      
+      <ion-content>
+        <div id='map'></div>
+        <div id='bottomPaper'>
 
-            <ion-fab edge={true} horizontal='end' vertical='top'>
-              <ion-fab-button onClick={() => this.openMaps()}>
-                <ion-icon name='car'></ion-icon>
-              </ion-fab-button>
-            </ion-fab>
+          <ion-fab edge={true} horizontal='end' vertical='top'>
+            <ion-fab-button onClick={() => this.openMaps()}>
+              <ion-icon name='car'></ion-icon>
+            </ion-fab-button>
+          </ion-fab>
 
-            <ion-list no-lines>
-              <ion-item>
-                <ion-label>
-                  <h1>{this.dest}</h1>
-                </ion-label>
-              </ion-item>
+          <ion-list no-lines>
+            <ion-item>
+              <ion-label>
+                <h1>{this.dest}</h1>
+              </ion-label>
+            </ion-item>
 
-              <ion-item>
-                <ion-label>
-                  {this.directionsLeg ? <h2>{this.directionsLeg.duration.text} away</h2> : <h2>'Loading...'</h2>}
-                </ion-label>
-              </ion-item>
+            <ion-item>
+              <ion-label>
+                {this.directionsLeg ? <h2>{this.directionsLeg.duration.text} away</h2> : <h2>'Loading...'</h2>}
+              </ion-label>
+            </ion-item>
 
-              <ion-item>
-                <ion-icon color='primary' name='pin' slot='start' size='large'></ion-icon>
+            <ion-item>
+              <ion-icon color='primary' name='pin' slot='start' size='large'></ion-icon>
 
-                <ion-label>
-                  {this.directionsLeg ? this.directionsLeg.end_address : 'Loading...'}
-                </ion-label>
-              </ion-item>
-            </ion-list>
-          </div>
-        </ion-content>
-      </ion-page>
-    );
+              <ion-label>
+                {this.directionsLeg ? this.directionsLeg.end_address : 'Loading...'}
+              </ion-label>
+            </ion-item>
+          </ion-list>
+        </div>
+      </ion-content>
+    ];
   }
 }

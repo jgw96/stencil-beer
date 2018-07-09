@@ -159,7 +159,7 @@ export class BeerItem {
 
             <share-button beer={this.beer}></share-button>
 
-            <ion-button href={`/home/beer/${this.beer.id}`} slot='end' id='detailButton' color='primary' fill='clear'>
+            <ion-button href={`/home/beers/beer/${this.beer.id}`} slot='end' id='detailButton' color='primary' fill='clear'>
               Detail
             </ion-button>
           </ion-buttons>
