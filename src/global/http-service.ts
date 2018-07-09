@@ -1,6 +1,6 @@
 const fetchBeers = (page: number, style: number = 1) => {
   const key = '0ebd6396901832ee0176a008410ef5d9';
-  const url = `https://crossorigin.me/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=${style}`;
+  const url = `https://cors-anywhere.herokuapp.com/http://api.brewerydb.com/v2/beers?key=${key}&p=${page}&styleId=${style}`;
 
   return fetch(url).then((res) => {
     return res.json()

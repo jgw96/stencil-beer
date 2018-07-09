@@ -12,3 +12,11 @@ beer-list #fake-card {
   background-size: 100% 220px;
   background-position: 10px 0, 10px 120px, 10px 160px;
 }
+
+beer-list ion-list {
+  background: #ececec;
+}
+
+beer-list ion-card {
+  background: white !important;
+}

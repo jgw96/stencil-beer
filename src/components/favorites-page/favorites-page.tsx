@@ -14,7 +14,7 @@ export class favoritesPage {
 
   async componentDidLoad() {
     const tempBeers = [];
-    
+
 
     this.getSavedBeers().then((querySnapshot) => {
       querySnapshot.forEach((doc) => {
@@ -43,15 +43,13 @@ export class favoritesPage {
   }
 
   render() {
-    return (
-      <ion-page class='show-page'>
-        <profile-header>
-        </profile-header>
+    return [
+      <profile-header>
+      </profile-header>,
 
-        <ion-content>
-          <beer-list fave={true} beers={this.beers}></beer-list>
-        </ion-content>
-      </ion-page>
-    );
+      <ion-content>
+        <beer-list fave={true} beers={this.beers}></beer-list>
+      </ion-content>
+    ];
   }
 }

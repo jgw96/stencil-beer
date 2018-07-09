@@ -82,37 +82,7 @@ export class ProfilePage {
 
   render() {
     if (this.user && this.swSupport) {
-      return (
-        <ion-page class='show-page'>
-          <ion-header md-height="96px">
-            <ion-toolbar color='dark'>
-              <ion-buttons slot="start">
-                <ion-back-button defaultHref='/home' />
-              </ion-buttons>
-              <ion-title>IonicBeer</ion-title>
-            </ion-toolbar>
-          </ion-header>
-
-          <ion-content padding>
-            <div id='imageBlock'>
-              <img src={this.user.photoURL}></img>
-            </div>
-
-            <h2>{this.user.displayName}</h2>
-            <p>{this.user.email}</p>
-
-            <div id='profileButtonBlock'>
-              {this.subscribed ? <ion-button onClick={() => this.unsubscribe()} expand='block' color='danger'>Unsubscribe</ion-button>
-                : <ion-button onClick={() => this.notications()} expand='block' color='primary'>Get Notifications</ion-button>
-              }
-
-              <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
-            </div>
-          </ion-content>
-        </ion-page>
-      );
-    } else if (this.user && !this.swSupport) {
-      <ion-page class='show-page'>
+      return [
         <ion-header md-height="96px">
           <ion-toolbar color='dark'>
             <ion-buttons slot="start">
@@ -120,7 +90,35 @@ export class ProfilePage {
             </ion-buttons>
             <ion-title>IonicBeer</ion-title>
           </ion-toolbar>
-        </ion-header>
+        </ion-header>,
+
+        <ion-content padding>
+          <div id='imageBlock'>
+            <img src={this.user.photoURL}></img>
+          </div>
+
+          <h2>{this.user.displayName}</h2>
+          <p>{this.user.email}</p>
+
+          <div id='profileButtonBlock'>
+            {this.subscribed ? <ion-button onClick={() => this.unsubscribe()} expand='block' color='danger'>Unsubscribe</ion-button>
+              : <ion-button onClick={() => this.notications()} expand='block' color='primary'>Get Notifications</ion-button>
+            }
+
+            <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
+          </div>
+        </ion-content>
+      ];
+    } else if (this.user && !this.swSupport) {
+      return [
+        <ion-header md-height="96px">
+          <ion-toolbar color='dark'>
+            <ion-buttons slot="start">
+              <ion-back-button defaultHref='/home' />
+            </ion-buttons>
+            <ion-title>IonicBeer</ion-title>
+          </ion-toolbar>
+        </ion-header>,
 
         <ion-content padding>
           <div id='imageBlock'>
@@ -134,7 +132,7 @@ export class ProfilePage {
             <ion-button onClick={() => this.logout()} id='logoutButton' expand='block' color='danger'>Logout</ion-button>
           </div>
         </ion-content>
-      </ion-page>
+      ]
     }
   }
 }

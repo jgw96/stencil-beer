@@ -3,8 +3,6 @@ import { Component, Prop, Element, Event, EventEmitter } from '@stencil/core';
 import { Beer } from '../../global/interfaces';
 import { checkAnon } from '../../global/utils';
 
-// import firebase from 'firebase';
-
 declare var firebase: any;
 
 @Component({
@@ -78,7 +76,7 @@ export class BeerItem {
       this.saveBeer(beer);
 
       const toast = await this.toastCtrl.create({ message: 'beer favorited', duration: 1000 });
-      toast.present();
+      await toast.present();
     } else {
       const alert = await this.alertCtrl.create({
         header: 'Must login',
@@ -148,7 +146,7 @@ export class BeerItem {
             {this.beer.description ? this.beer.description : 'No description available'}
           </p>
 
-          <ion-buttons>
+          <ion-buttons slot='start'>
             {this.fave ?
               <ion-button color='danger' onClick={() => this.deleteBeer(this.beer)} fill='clear' icon-only>
                 <ion-icon name='trash'></ion-icon>
@@ -161,15 +159,11 @@ export class BeerItem {
 
             <share-button beer={this.beer}></share-button>
 
-            <div id='anchorDiv'>
-              <ion-anchor href={`/home/beer/${this.beer.id}`}>
-                <ion-button slot='end' onClick={() => this.navigateToDetail(this.beer.id)} id='detailButton' color='primary' fill='clear'>
-                  Detail
-              </ion-button>
-              </ion-anchor>
-            </div>
-
+            <ion-button href={`/home/beer/${this.beer.id}`} slot='end' id='detailButton' color='primary' fill='clear'>
+              Detail
+            </ion-button>
           </ion-buttons>
+
         </ion-card-content>
       </ion-card>
     );

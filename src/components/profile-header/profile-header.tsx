@@ -57,6 +57,8 @@ export class ProfileHeader {
             </ion-button>
           </ion-buttons>}
         </ion-toolbar>
+
+        <slot name='searchbarSlot'></slot>
       </ion-header>
     );
   }

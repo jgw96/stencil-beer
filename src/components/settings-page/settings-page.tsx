@@ -98,34 +98,30 @@ export class SettingsPage {
   }
 
   render() {
-    return (
-      <ion-page>
+    return [
+      <profile-header>
+        <ion-back-button defaultHref='/home' />
+      </profile-header>,
 
-        <profile-header>
-          <ion-back-button defaultHref='/home' />
-        </profile-header>
-
-        <ion-content>
-          <ion-list no-lines>
-            <ion-item>
-              <ion-label>
-                <h2>Storage Used</h2>
-                <p>{this.storageUsed}</p>
-              </ion-label>
-            </ion-item>
-            <ion-item>
-              <ion-label>
-                <h2>Advanced Offline Mode</h2>
-                <p>Use if you are frequently offline</p>
-              </ion-label>
-              <ion-buttons>
-                <ion-toggle onChange={(event) => this.changed(event)} checked={this.offlineChecked}></ion-toggle>
-              </ion-buttons>
-            </ion-item>
-          </ion-list>
-        </ion-content>
-
-      </ion-page>
-    );
+      <ion-content>
+        <ion-list no-lines>
+          <ion-item>
+            <ion-label>
+              <h2>Storage Used</h2>
+              <p>{this.storageUsed}</p>
+            </ion-label>
+          </ion-item>
+          <ion-item>
+            <ion-label>
+              <h2>Advanced Offline Mode</h2>
+              <p>Use if you are frequently offline</p>
+            </ion-label>
+            <ion-buttons>
+              <ion-toggle onChange={(event) => this.changed(event)} checked={this.offlineChecked}></ion-toggle>
+            </ion-buttons>
+          </ion-item>
+        </ion-list>
+      </ion-content>
+    ];
   }
 }

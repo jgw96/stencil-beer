@@ -2,7 +2,7 @@ beer-page #stylesBar {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  margin: 10px;
+  padding: 10px;
 }
 
 beer-page #stylesBar ion-button {
@@ -15,7 +15,7 @@ beer-page #cameraButton, beer-page #cameraButton svg {
   fill: white;
 }
 
-beer-page ion-scroll {
+beer-page ion-content {
   background: #ececec !important;
 }
 

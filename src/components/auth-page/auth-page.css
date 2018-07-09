@@ -2,9 +2,16 @@ auth-page ion-page {
   background: #222;
 }
 
-auth-page ion-scroll.scroll-md {
+/*auth-page ion-scroll.scroll-md {
   background: url(/assets/img/beer-bg-img.jpg) no-repeat center center fixed !important;
   background-size: cover !important;
+}*/
+
+
+main {
+  height: 100vh;
+  background: url(/assets/img/beer-bg-img.jpg) no-repeat center center fixed;
+  background-size: cover;
 }
 
 auth-page #buttonBlock {

@@ -75,23 +75,21 @@ export class UsersPage {
   }
 
   render() {
-    return (
-      <ion-page class='show-page'>
-        <profile-header>
-          <ion-back-button defaultHref='/home' />
-        </profile-header>
+    return [
+      <profile-header>
+        <ion-back-button defaultHref='/home' />
+      </profile-header>,
 
-        <ion-content>
-          <users-list users={this.users}></users-list>
+      <ion-content>
+        <users-list users={this.users}></users-list>
 
-          <ion-infinite-scroll id="infinite-scroll">
-            <ion-infinite-scroll-content
-              loadingSpinner="bubbles"
-              loadingText="Loading more data...">
-            </ion-infinite-scroll-content>
-          </ion-infinite-scroll>
-        </ion-content>
-      </ion-page>
-    );
+        <ion-infinite-scroll id="infinite-scroll">
+          <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ion-content>
+    ];
   }
 }

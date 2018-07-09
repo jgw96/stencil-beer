@@ -28,3 +28,7 @@ beer-item ion-icon svg {
   width: 1.5em;
   height: 1.2em;
 }
+
+beer-item #detailButton {
+  float: right;
+}

@@ -56,19 +56,17 @@ export class BarPage {
   }
 
   render() {
-    return (
-      <ion-page class='show-page'>
-        <profile-header>
-        </profile-header>
+    return [
+      <profile-header>
+      </profile-header>,
 
-        <ion-toolbar color='dark'>
-          <ion-searchbar></ion-searchbar>
-        </ion-toolbar>
+      <ion-toolbar color='dark'>
+        <ion-searchbar></ion-searchbar>
+      </ion-toolbar>,
 
-        <ion-content>
-          <bar-list bars={this.bars}></bar-list>
-        </ion-content>
-      </ion-page>
-    );
+      <ion-content>
+        <bar-list bars={this.bars}></bar-list>
+      </ion-content>
+    ];
   }
 }

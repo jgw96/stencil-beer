@@ -113,38 +113,34 @@ export class BeerPage {
   }
 
   render() {
-    return (
-      <ion-page class='show-page'>
-
-        <profile-header>
-        </profile-header>
-
-        <ion-toolbar color='dark'>
+    return [
+      <profile-header>
+        <ion-toolbar slot='searchbarSlot' color='dark'>
           <ion-searchbar></ion-searchbar>
         </ion-toolbar>
+      </profile-header>,
 
-        <ion-content>
-          <div id='stylesBar'>
-            {
-              this.styles.map((style) => {
-                return (
-                  <ion-button onClick={() => this.newStyle(style.id)} color='dark' shape='round'>
-                    {style.name}
-                  </ion-button>
-                )
-              })
-            }
-          </div>
-          <beer-list fave={false} beers={this.beers}></beer-list>
+      <ion-content>
+        <div id='stylesBar'>
+          {
+            this.styles.map((style) => {
+              return (
+                <ion-button onClick={() => this.newStyle(style.id)} color='dark' shape='round'>
+                  {style.name}
+                </ion-button>
+              )
+            })
+          }
+        </div>
+        <beer-list fave={false} beers={this.beers}></beer-list>
 
-          <ion-infinite-scroll id="infinite-scroll">
-            <ion-infinite-scroll-content
-              loadingSpinner="bubbles"
-              loadingText="Loading more data...">
-            </ion-infinite-scroll-content>
-          </ion-infinite-scroll>
-        </ion-content>
-      </ion-page>
-    );
+        <ion-infinite-scroll id="infinite-scroll">
+          <ion-infinite-scroll-content
+            loadingSpinner="bubbles"
+            loadingText="Loading more data...">
+          </ion-infinite-scroll-content>
+        </ion-infinite-scroll>
+      </ion-content>
+    ];
   }
 }

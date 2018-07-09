@@ -62,12 +62,8 @@ export class AuthPage {
 
   render() {
     return (
-
-      // Note: Using the `ion-page` component is not necessary anymore
-      // this will be removed soon
-      <ion-page class='show-page'>
-        <ion-content>
-
+      <ion-content>
+        <main>
           <div id='imageBlock'>
             <picture id='iconImage'>
               <source srcSet="/assets/img/icon.webp" type="image/webp"></source>
@@ -82,8 +78,8 @@ export class AuthPage {
             <ion-button onClick={() => this.login()} color='primary'>Login with Google</ion-button>
             <ion-button id='secondButton' onClick={() => this.loginAnon()}>Anonymous Login</ion-button>
           </div>
-        </ion-content>
-      </ion-page>
+        </main>
+      </ion-content>
     );
   }
 }
