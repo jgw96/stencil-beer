@@ -115,7 +115,7 @@ export class BeerPage {
   render() {
     return [
       <profile-header>
-        <ion-toolbar slot='searchbarSlot' color='dark'>
+        <ion-toolbar id='searchbar' slot='searchbarSlot' color='dark'>
           <ion-searchbar></ion-searchbar>
         </ion-toolbar>
       </profile-header>,

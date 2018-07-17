@@ -26,3 +26,26 @@ beer-page ion-button[disabled] {
 beer-page ion-button[disabled] button {
   color: grey;
 }
+
+@media(min-width: 980px) {
+   beer-page ion-toolbar#searchbar{
+    padding-left: 16em;
+    padding-right: 16em;
+  }
+
+  beer-page #stylesBar {
+    justify-content: center;
+  }
+}
+
+@media(min-width: 1300px) {
+  beer-page ion-toolbar#searchbar {
+    padding-left: 23em;
+    padding-right: 23em;
+  }
+
+  beer-page #stylesBar {
+    justify-content: center;
+  }
+}
+

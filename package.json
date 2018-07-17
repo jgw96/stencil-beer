@@ -20,6 +20,7 @@
     "@stencil/core": "^0.10.7",
     "am-rating": "0.0.7",
     "firebase": "4.8.2",
+    "idb-keyval": "^3.0.5",
     "st-img": "^0.3.0"
   },
   "devDependencies": {

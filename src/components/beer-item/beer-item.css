@@ -2,6 +2,12 @@ beer-item ion-card {
   opacity: 0;
 }
 
+beer-item ion-card-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
 beer-item p {
   overflow: hidden;
   white-space: nowrap;
@@ -32,3 +38,4 @@ beer-item ion-icon svg {
 beer-item #detailButton {
   float: right;
 }
+

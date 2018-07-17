@@ -45,21 +45,21 @@ beer-detail #fake-card {
 }
 
 @media (min-width: 550px) {
-  beer-detail ion-scroll {
+  beer-detail main {
     padding-left: 3em;
     padding-right: 3em;
   }
 }
 
 @media (min-width: 800px) {
-  beer-detail ion-scroll {
+  beer-detail main {
     padding-left: 12em;
     padding-right: 12em;
   }
 }
 
 @media (min-width: 1200px) {
-  beer-detail ion-scroll {
+  beer-detail main {
     padding-left: 26em;
     padding-right: 26em;
   }

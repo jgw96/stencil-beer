@@ -1,14 +1,14 @@
 {
   "compiler": {
     "name": "@stencil/core",
-    "version": "0.10.0"
+    "version": "0.10.7"
   },
   "app": {
     "namespace": "App",
     "fsNamespace": "app",
-    "components": 82,
+    "components": 80,
     "entries": 37,
-    "bundles": 112
+    "bundles": 156
   },
   "options": {
     "minifyJs": true,
@@ -24,6 +24,41 @@
       "dependencyOf": [
         "post-detail",
         "post-item"
+      ]
+    },
+    {
+      "tag": "ion-backdrop",
+      "dependencies": [],
+      "dependencyOf": [
+        "ion-alert",
+        "ion-loading",
+        "ion-modal",
+        "ion-popover"
+      ]
+    },
+    {
+      "tag": "ion-item",
+      "dependencies": [
+        "ion-icon",
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "bar-directions",
+        "bar-list",
+        "feed-page-modal",
+        "popover-page",
+        "post-item",
+        "settings-page",
+        "users-list"
+      ]
+    },
+    {
+      "tag": "ion-toggle",
+      "dependencies": [
+        "ion-gesture"
+      ],
+      "dependencyOf": [
+        "settings-page"
       ]
     },
     {
@@ -114,7 +149,6 @@
       "tag": "beer-item",
       "dependencies": [
         "ion-alert-controller",
-        "ion-anchor",
         "ion-button",
         "ion-buttons",
         "ion-card",
@@ -172,81 +206,16 @@
       ]
     },
     {
-      "tag": "ion-anchor",
-      "dependencies": [],
-      "dependencyOf": [
-        "beer-item"
-      ]
-    },
-    {
-      "tag": "ion-avatar",
-      "dependencies": [],
-      "dependencyOf": [
-        "bar-list",
-        "post-item",
-        "users-list"
-      ]
-    },
-    {
-      "tag": "ion-back-button",
+      "tag": "tabs-page",
       "dependencies": [
-        "ion-icon",
-        "ion-ripple-effect"
+        "ion-nav",
+        "ion-tab",
+        "ion-tabs"
       ],
-      "dependencyOf": [
-        "bar-directions",
-        "beer-detail",
-        "post-detail",
-        "profile-page",
-        "settings-page",
-        "user-profile",
-        "users-page"
-      ]
-    },
-    {
-      "tag": "ion-card",
-      "dependencies": [],
-      "dependencyOf": [
-        "beer-item"
-      ]
+      "dependencyOf": []
     },
     {
       "tag": "ion-card-content",
-      "dependencies": [],
-      "dependencyOf": [
-        "beer-item"
-      ]
-    },
-    {
-      "tag": "ion-card-title",
-      "dependencies": [],
-      "dependencyOf": [
-        "beer-item"
-      ]
-    },
-    {
-      "tag": "ion-fab",
-      "dependencies": [],
-      "dependencyOf": [
-        "bar-directions",
-        "beer-detail",
-        "feed-page"
-      ]
-    },
-    {
-      "tag": "ion-fab-button",
-      "dependencies": [
-        "ion-icon",
-        "ion-ripple-effect"
-      ],
-      "dependencyOf": [
-        "bar-directions",
-        "beer-detail",
-        "feed-page"
-      ]
-    },
-    {
-      "tag": "ion-img",
       "dependencies": [],
       "dependencyOf": [
         "beer-item"
@@ -271,23 +240,6 @@
       ]
     },
     {
-      "tag": "ion-input",
-      "dependencies": [],
-      "dependencyOf": [
-        "feed-page-modal"
-      ]
-    },
-    {
-      "tag": "ion-range",
-      "dependencies": [
-        "ion-gesture",
-        "ion-range-knob"
-      ],
-      "dependencyOf": [
-        "feed-page-modal"
-      ]
-    },
-    {
       "tag": "ion-range-knob",
       "dependencies": [],
       "dependencyOf": [
@@ -295,29 +247,10 @@
       ]
     },
     {
-      "tag": "ion-searchbar",
-      "dependencies": [
-        "ion-icon"
-      ],
-      "dependencyOf": [
-        "bar-page",
-        "beer-page"
-      ]
-    },
-    {
-      "tag": "ion-textarea",
+      "tag": "ion-tab",
       "dependencies": [],
       "dependencyOf": [
-        "feed-page-modal"
-      ]
-    },
-    {
-      "tag": "ion-title",
-      "dependencies": [],
-      "dependencyOf": [
-        "feed-page-modal",
-        "profile-header",
-        "profile-page"
+        "tabs-page"
       ]
     },
     {
@@ -400,17 +333,6 @@
       ]
     },
     {
-      "tag": "ion-alert",
-      "dependencies": [
-        "ion-animation-controller",
-        "ion-backdrop",
-        "ion-ripple-effect"
-      ],
-      "dependencyOf": [
-        "ion-alert-controller"
-      ]
-    },
-    {
       "tag": "ion-alert-controller",
       "dependencies": [
         "ion-alert"
@@ -444,23 +366,81 @@
       ]
     },
     {
-      "tag": "ion-backdrop",
+      "tag": "ion-avatar",
       "dependencies": [],
       "dependencyOf": [
-        "ion-alert",
-        "ion-loading",
-        "ion-modal",
-        "ion-popover"
+        "bar-list",
+        "post-item",
+        "users-list"
       ]
     },
     {
-      "tag": "tabs-page",
+      "tag": "ion-card-title",
+      "dependencies": [],
+      "dependencyOf": [
+        "beer-item"
+      ]
+    },
+    {
+      "tag": "ion-fab",
+      "dependencies": [],
+      "dependencyOf": [
+        "bar-directions",
+        "beer-detail",
+        "feed-page"
+      ]
+    },
+    {
+      "tag": "ion-fab-button",
       "dependencies": [
-        "ion-nav",
-        "ion-tab",
-        "ion-tabs"
+        "ion-icon",
+        "ion-ripple-effect"
       ],
-      "dependencyOf": []
+      "dependencyOf": [
+        "bar-directions",
+        "beer-detail",
+        "feed-page"
+      ]
+    },
+    {
+      "tag": "ion-img",
+      "dependencies": [],
+      "dependencyOf": [
+        "beer-item"
+      ]
+    },
+    {
+      "tag": "ion-input",
+      "dependencies": [],
+      "dependencyOf": [
+        "feed-page-modal"
+      ]
+    },
+    {
+      "tag": "ion-range",
+      "dependencies": [
+        "ion-gesture",
+        "ion-range-knob"
+      ],
+      "dependencyOf": [
+        "feed-page-modal"
+      ]
+    },
+    {
+      "tag": "ion-textarea",
+      "dependencies": [],
+      "dependencyOf": [
+        "feed-page-modal"
+      ]
+    },
+    {
+      "tag": "ion-title",
+      "dependencies": [],
+      "dependencyOf": [
+        "feed-page-modal",
+        "profile-header",
+        "profile-page"
+      ]
     },
     {
       "tag": "ion-badge",
@@ -495,7 +475,6 @@
     {
       "tag": "ion-tabs",
       "dependencies": [
-        "ion-tab",
         "ion-tabbar"
       ],
       "dependencyOf": [
@@ -583,25 +562,11 @@
         "feed-page",
         "ion-back-button",
         "ion-fab-button",
+        "ion-item",
         "ion-searchbar",
         "ion-tab-button",
         "ion-tabbar",
         "share-button"
-      ]
-    },
-    {
-      "tag": "ion-item",
-      "dependencies": [
-        "ion-ripple-effect"
-      ],
-      "dependencyOf": [
-        "bar-directions",
-        "bar-list",
-        "feed-page-modal",
-        "popover-page",
-        "post-item",
-        "settings-page",
-        "users-list"
       ]
     },
     {
@@ -687,14 +652,6 @@
       "dependencyOf": [
         "ion-infinite-scroll-content",
         "ion-loading"
-      ]
-    },
-    {
-      "tag": "ion-tab",
-      "dependencies": [],
-      "dependencyOf": [
-        "ion-tabs",
-        "tabs-page"
       ]
     },
     {
@@ -790,6 +747,50 @@
       ]
     },
     {
+      "tag": "ion-alert",
+      "dependencies": [
+        "ion-animation-controller",
+        "ion-backdrop",
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "ion-alert-controller"
+      ]
+    },
+    {
+      "tag": "ion-back-button",
+      "dependencies": [
+        "ion-icon",
+        "ion-ripple-effect"
+      ],
+      "dependencyOf": [
+        "bar-directions",
+        "beer-detail",
+        "post-detail",
+        "profile-page",
+        "settings-page",
+        "user-profile",
+        "users-page"
+      ]
+    },
+    {
+      "tag": "ion-card",
+      "dependencies": [],
+      "dependencyOf": [
+        "beer-item"
+      ]
+    },
+    {
+      "tag": "ion-searchbar",
+      "dependencies": [
+        "ion-icon"
+      ],
+      "dependencyOf": [
+        "bar-page",
+        "beer-page"
+      ]
+    },
+    {
       "tag": "profile-page",
       "dependencies": [
         "ion-back-button",
@@ -820,15 +821,6 @@
       "dependencyOf": []
     },
     {
-      "tag": "ion-toggle",
-      "dependencies": [
-        "ion-gesture"
-      ],
-      "dependencyOf": [
-        "settings-page"
-      ]
-    },
-    {
       "tag": "stencil-beer",
       "dependencies": [
         "ion-app",
@@ -841,7 +833,6 @@
     {
       "tag": "ion-app",
       "dependencies": [
-        "ion-status-tap",
         "ion-tap-click"
       ],
       "dependencyOf": [
@@ -860,13 +851,6 @@
       "dependencies": [],
       "dependencyOf": [
         "stencil-beer"
-      ]
-    },
-    {
-      "tag": "ion-status-tap",
-      "dependencies": [],
-      "dependencyOf": [
-        "ion-app"
       ]
     },
     {
@@ -915,7 +899,7 @@
   ],
   "entries": [
     {
-      "entryId": "entry:am-rating",
+      "entryId": "entry:am-rating.ion-backdrop.ion-item.ion-toggle",
       "components": [
         {
           "tag": "am-rating",
@@ -924,47 +908,129 @@
             "post-detail",
             "post-item"
           ]
+        },
+        {
+          "tag": "ion-backdrop",
+          "dependencies": [],
+          "dependencyOf": [
+            "ion-alert",
+            "ion-loading",
+            "ion-modal",
+            "ion-popover"
+          ]
+        },
+        {
+          "tag": "ion-item",
+          "dependencies": [
+            "ion-icon",
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "bar-directions",
+            "bar-list",
+            "feed-page-modal",
+            "popover-page",
+            "post-item",
+            "settings-page",
+            "users-list"
+          ]
+        },
+        {
+          "tag": "ion-toggle",
+          "dependencies": [
+            "ion-gesture"
+          ],
+          "dependencyOf": [
+            "settings-page"
+          ]
         }
       ],
       "bundles": [
         {
-          "fileName": "itt1ss5x.js",
+          "fileName": "i45a134y.js",
           "outputs": [
-            "www/build/app/itt1ss5x.js"
+            "www/build/app/i45a134y.js"
           ],
-          "size": 3026
+          "size": 18286,
+          "mode": "md"
         },
         {
-          "fileName": "itt1ss5x.sc.js",
+          "fileName": "i45a134y.sc.js",
           "outputs": [
-            "www/build/app/itt1ss5x.sc.js"
+            "www/build/app/i45a134y.sc.js"
           ],
-          "size": 3042,
+          "size": 19809,
+          "mode": "md",
           "scopedStyles": true
         },
         {
-          "fileName": "itt1ss5x.es5.js",
+          "fileName": "ydtzdynp.js",
           "outputs": [
-            "www/build/app/itt1ss5x.es5.js"
+            "www/build/app/ydtzdynp.js"
           ],
-          "size": 3528,
-          "target": "es5"
+          "size": 19068,
+          "mode": "ios"
         },
         {
-          "fileName": "itt1ss5x.sc.es5.js",
+          "fileName": "ydtzdynp.sc.js",
           "outputs": [
-            "www/build/app/itt1ss5x.sc.es5.js"
+            "www/build/app/ydtzdynp.sc.js"
           ],
-          "size": 3544,
+          "size": 20764,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "i45a134y.es5.js",
+          "outputs": [
+            "www/build/app/i45a134y.es5.js"
+          ],
+          "size": 20628,
           "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "i45a134y.sc.es5.js",
+          "outputs": [
+            "www/build/app/i45a134y.sc.es5.js"
+          ],
+          "size": 22151,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "ydtzdynp.es5.js",
+          "outputs": [
+            "www/build/app/ydtzdynp.es5.js"
+          ],
+          "size": 21410,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "ydtzdynp.sc.es5.js",
+          "outputs": [
+            "www/build/app/ydtzdynp.sc.es5.js"
+          ],
+          "size": 23106,
+          "target": "es5",
+          "mode": "ios",
           "scopedStyles": true
         }
       ],
       "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/backdrop/backdrop.js",
+        "node_modules/@ionic/core/dist/collection/components/item/item.js",
+        "node_modules/@ionic/core/dist/collection/components/toggle/toggle.js",
         "src/components/am-rating/am-rating.js"
       ],
       "encapsulations": [
         "shadow"
+      ],
+      "modes": [
+        "ios",
+        "md"
       ]
     },
     {
@@ -981,18 +1047,18 @@
       ],
       "bundles": [
         {
-          "fileName": "dfsel9b4.js",
+          "fileName": "uhvsou2g.js",
           "outputs": [
-            "www/build/app/dfsel9b4.js"
+            "www/build/app/uhvsou2g.js"
           ],
-          "size": 2872
+          "size": 2805
         },
         {
-          "fileName": "dfsel9b4.es5.js",
+          "fileName": "uhvsou2g.es5.js",
           "outputs": [
-            "www/build/app/dfsel9b4.es5.js"
+            "www/build/app/uhvsou2g.es5.js"
           ],
-          "size": 4727,
+          "size": 4660,
           "target": "es5"
         }
       ],
@@ -1045,38 +1111,38 @@
       ],
       "bundles": [
         {
-          "fileName": "s0v7odhg.js",
+          "fileName": "hxtimolg.js",
           "outputs": [
-            "www/build/app/s0v7odhg.js"
+            "www/build/app/hxtimolg.js"
           ],
-          "size": 9831,
-          "mode": "ios"
-        },
-        {
-          "fileName": "bjtu6ifc.js",
-          "outputs": [
-            "www/build/app/bjtu6ifc.js"
-          ],
-          "size": 9552,
+          "size": 9324,
           "mode": "md"
         },
         {
-          "fileName": "s0v7odhg.es5.js",
+          "fileName": "efc5tqt9.js",
           "outputs": [
-            "www/build/app/s0v7odhg.es5.js"
+            "www/build/app/efc5tqt9.js"
           ],
-          "size": 13094,
-          "target": "es5",
+          "size": 9513,
           "mode": "ios"
         },
         {
-          "fileName": "bjtu6ifc.es5.js",
+          "fileName": "hxtimolg.es5.js",
           "outputs": [
-            "www/build/app/bjtu6ifc.es5.js"
+            "www/build/app/hxtimolg.es5.js"
           ],
-          "size": 12815,
+          "size": 12545,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "efc5tqt9.es5.js",
+          "outputs": [
+            "www/build/app/efc5tqt9.es5.js"
+          ],
+          "size": 12734,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -1125,18 +1191,18 @@
       ],
       "bundles": [
         {
-          "fileName": "j6ivqii5.js",
+          "fileName": "tl5jgkzq.js",
           "outputs": [
-            "www/build/app/j6ivqii5.js"
+            "www/build/app/tl5jgkzq.js"
           ],
-          "size": 3856
+          "size": 3829
         },
         {
-          "fileName": "j6ivqii5.es5.js",
+          "fileName": "tl5jgkzq.es5.js",
           "outputs": [
-            "www/build/app/j6ivqii5.es5.js"
+            "www/build/app/tl5jgkzq.es5.js"
           ],
-          "size": 5957,
+          "size": 5930,
           "target": "es5"
         }
       ],
@@ -1167,18 +1233,18 @@
       ],
       "bundles": [
         {
-          "fileName": "z18v9uhv.js",
+          "fileName": "nahx4xcn.js",
           "outputs": [
-            "www/build/app/z18v9uhv.js"
+            "www/build/app/nahx4xcn.js"
           ],
-          "size": 3763
+          "size": 3701
         },
         {
-          "fileName": "z18v9uhv.es5.js",
+          "fileName": "nahx4xcn.es5.js",
           "outputs": [
-            "www/build/app/z18v9uhv.es5.js"
+            "www/build/app/nahx4xcn.es5.js"
           ],
-          "size": 5593,
+          "size": 5531,
           "target": "es5"
         }
       ],
@@ -1190,13 +1256,12 @@
       ]
     },
     {
-      "entryId": "entry:beer-item.beer-list.feed-page-modal.share-button.ion-anchor.ion-avatar.ion-back-button.ion-card.ion-card-content.ion-card-title.ion-fab.ion-fab-button.ion-img.ion-infinite-scroll.ion-infinite-scroll-content.ion-input.ion-range.ion-range-knob.ion-searchbar.ion-textarea.ion-title",
+      "entryId": "entry:beer-item.beer-list.feed-page-modal.share-button.tabs-page.ion-card-content.ion-infinite-scroll.ion-infinite-scroll-content.ion-range-knob.ion-tab",
       "components": [
         {
           "tag": "beer-item",
           "dependencies": [
             "ion-alert-controller",
-            "ion-anchor",
             "ion-button",
             "ion-buttons",
             "ion-card",
@@ -1254,81 +1319,16 @@
           ]
         },
         {
-          "tag": "ion-anchor",
-          "dependencies": [],
-          "dependencyOf": [
-            "beer-item"
-          ]
-        },
-        {
-          "tag": "ion-avatar",
-          "dependencies": [],
-          "dependencyOf": [
-            "bar-list",
-            "post-item",
-            "users-list"
-          ]
-        },
-        {
-          "tag": "ion-back-button",
+          "tag": "tabs-page",
           "dependencies": [
-            "ion-icon",
-            "ion-ripple-effect"
+            "ion-nav",
+            "ion-tab",
+            "ion-tabs"
           ],
-          "dependencyOf": [
-            "bar-directions",
-            "beer-detail",
-            "post-detail",
-            "profile-page",
-            "settings-page",
-            "user-profile",
-            "users-page"
-          ]
-        },
-        {
-          "tag": "ion-card",
-          "dependencies": [],
-          "dependencyOf": [
-            "beer-item"
-          ]
+          "dependencyOf": []
         },
         {
           "tag": "ion-card-content",
-          "dependencies": [],
-          "dependencyOf": [
-            "beer-item"
-          ]
-        },
-        {
-          "tag": "ion-card-title",
-          "dependencies": [],
-          "dependencyOf": [
-            "beer-item"
-          ]
-        },
-        {
-          "tag": "ion-fab",
-          "dependencies": [],
-          "dependencyOf": [
-            "bar-directions",
-            "beer-detail",
-            "feed-page"
-          ]
-        },
-        {
-          "tag": "ion-fab-button",
-          "dependencies": [
-            "ion-icon",
-            "ion-ripple-effect"
-          ],
-          "dependencyOf": [
-            "bar-directions",
-            "beer-detail",
-            "feed-page"
-          ]
-        },
-        {
-          "tag": "ion-img",
           "dependencies": [],
           "dependencyOf": [
             "beer-item"
@@ -1353,23 +1353,6 @@
           ]
         },
         {
-          "tag": "ion-input",
-          "dependencies": [],
-          "dependencyOf": [
-            "feed-page-modal"
-          ]
-        },
-        {
-          "tag": "ion-range",
-          "dependencies": [
-            "ion-gesture",
-            "ion-range-knob"
-          ],
-          "dependencyOf": [
-            "feed-page-modal"
-          ]
-        },
-        {
           "tag": "ion-range-knob",
           "dependencies": [],
           "dependencyOf": [
@@ -1377,90 +1360,60 @@
           ]
         },
         {
-          "tag": "ion-searchbar",
-          "dependencies": [
-            "ion-icon"
-          ],
-          "dependencyOf": [
-            "bar-page",
-            "beer-page"
-          ]
-        },
-        {
-          "tag": "ion-textarea",
+          "tag": "ion-tab",
           "dependencies": [],
           "dependencyOf": [
-            "feed-page-modal"
-          ]
-        },
-        {
-          "tag": "ion-title",
-          "dependencies": [],
-          "dependencyOf": [
-            "feed-page-modal",
-            "profile-header",
-            "profile-page"
+            "tabs-page"
           ]
         }
       ],
       "bundles": [
         {
-          "fileName": "4da3ywhh.js",
+          "fileName": "qghlp1ay.js",
           "outputs": [
-            "www/build/app/4da3ywhh.js"
+            "www/build/app/qghlp1ay.js"
           ],
-          "size": 121049,
+          "size": 17838,
           "mode": "ios"
         },
         {
-          "fileName": "jqdtkvux.js",
+          "fileName": "lmkg2jib.js",
           "outputs": [
-            "www/build/app/jqdtkvux.js"
+            "www/build/app/lmkg2jib.js"
           ],
-          "size": 108612,
+          "size": 17856,
           "mode": "md"
         },
         {
-          "fileName": "jqdtkvux.es5.js",
+          "fileName": "qghlp1ay.es5.js",
           "outputs": [
-            "www/build/app/jqdtkvux.es5.js"
+            "www/build/app/qghlp1ay.es5.js"
           ],
-          "size": 120947,
-          "target": "es5",
-          "mode": "md"
-        },
-        {
-          "fileName": "4da3ywhh.es5.js",
-          "outputs": [
-            "www/build/app/4da3ywhh.es5.js"
-          ],
-          "size": 133384,
+          "size": 23974,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "lmkg2jib.es5.js",
+          "outputs": [
+            "www/build/app/lmkg2jib.es5.js"
+          ],
+          "size": 23992,
+          "target": "es5",
+          "mode": "md"
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/anchor/anchor.js",
-        "node_modules/@ionic/core/dist/collection/components/avatar/avatar.js",
-        "node_modules/@ionic/core/dist/collection/components/back-button/back-button.js",
         "node_modules/@ionic/core/dist/collection/components/card-content/card-content.js",
-        "node_modules/@ionic/core/dist/collection/components/card-title/card-title.js",
-        "node_modules/@ionic/core/dist/collection/components/card/card.js",
-        "node_modules/@ionic/core/dist/collection/components/fab-button/fab-button.js",
-        "node_modules/@ionic/core/dist/collection/components/fab/fab.js",
-        "node_modules/@ionic/core/dist/collection/components/img/img.js",
         "node_modules/@ionic/core/dist/collection/components/infinite-scroll-content/infinite-scroll-content.js",
         "node_modules/@ionic/core/dist/collection/components/infinite-scroll/infinite-scroll.js",
-        "node_modules/@ionic/core/dist/collection/components/input/input.js",
         "node_modules/@ionic/core/dist/collection/components/range-knob/range-knob.js",
-        "node_modules/@ionic/core/dist/collection/components/range/range.js",
-        "node_modules/@ionic/core/dist/collection/components/searchbar/searchbar.js",
-        "node_modules/@ionic/core/dist/collection/components/textarea/textarea.js",
-        "node_modules/@ionic/core/dist/collection/components/title/title.js",
+        "node_modules/@ionic/core/dist/collection/components/tab/tab.js",
         "src/components/beer-item/beer-item.js",
         "src/components/beer-list/beer-list.js",
         "src/components/feed-page-modal/feed-page-modal.js",
-        "src/components/share-button/share-button.js"
+        "src/components/share-button/share-button.js",
+        "src/components/tabs-page/tabs-page.js"
       ],
       "encapsulations": [
         "none"
@@ -1491,18 +1444,18 @@
       ],
       "bundles": [
         {
-          "fileName": "xqcheyhm.js",
+          "fileName": "dty5fdcu.js",
           "outputs": [
-            "www/build/app/xqcheyhm.js"
+            "www/build/app/dty5fdcu.js"
           ],
-          "size": 2744
+          "size": 2734
         },
         {
-          "fileName": "xqcheyhm.es5.js",
+          "fileName": "dty5fdcu.es5.js",
           "outputs": [
-            "www/build/app/xqcheyhm.es5.js"
+            "www/build/app/dty5fdcu.es5.js"
           ],
-          "size": 5369,
+          "size": 5359,
           "target": "es5"
         }
       ],
@@ -1528,18 +1481,18 @@
       ],
       "bundles": [
         {
-          "fileName": "r8apzuku.js",
+          "fileName": "vta8qet4.js",
           "outputs": [
-            "www/build/app/r8apzuku.js"
+            "www/build/app/vta8qet4.js"
           ],
-          "size": 1177
+          "size": 1144
         },
         {
-          "fileName": "r8apzuku.es5.js",
+          "fileName": "vta8qet4.es5.js",
           "outputs": [
-            "www/build/app/r8apzuku.es5.js"
+            "www/build/app/vta8qet4.es5.js"
           ],
-          "size": 2804,
+          "size": 2771,
           "target": "es5"
         }
       ],
@@ -1611,38 +1564,38 @@
       ],
       "bundles": [
         {
-          "fileName": "tdzbtawz.js",
+          "fileName": "d9nht3yp.js",
           "outputs": [
-            "www/build/app/tdzbtawz.js"
+            "www/build/app/d9nht3yp.js"
           ],
-          "size": 8655,
-          "mode": "ios"
-        },
-        {
-          "fileName": "lhwwadiv.js",
-          "outputs": [
-            "www/build/app/lhwwadiv.js"
-          ],
-          "size": 8747,
+          "size": 8684,
           "mode": "md"
         },
         {
-          "fileName": "tdzbtawz.es5.js",
+          "fileName": "gnwnrn5l.js",
           "outputs": [
-            "www/build/app/tdzbtawz.es5.js"
+            "www/build/app/gnwnrn5l.js"
           ],
-          "size": 12501,
-          "target": "es5",
+          "size": 8592,
           "mode": "ios"
         },
         {
-          "fileName": "lhwwadiv.es5.js",
+          "fileName": "d9nht3yp.es5.js",
           "outputs": [
-            "www/build/app/lhwwadiv.es5.js"
+            "www/build/app/d9nht3yp.es5.js"
           ],
-          "size": 12593,
+          "size": 12488,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "gnwnrn5l.es5.js",
+          "outputs": [
+            "www/build/app/gnwnrn5l.es5.js"
+          ],
+          "size": 12396,
+          "target": "es5",
+          "mode": "ios"
         }
       ],
       "inputs": [
@@ -1661,19 +1614,8 @@
       ]
     },
     {
-      "entryId": "entry:ion-alert.ion-alert-controller.ion-header",
+      "entryId": "entry:ion-alert-controller.ion-header",
       "components": [
-        {
-          "tag": "ion-alert",
-          "dependencies": [
-            "ion-animation-controller",
-            "ion-backdrop",
-            "ion-ripple-effect"
-          ],
-          "dependencyOf": [
-            "ion-alert-controller"
-          ]
-        },
         {
           "tag": "ion-alert-controller",
           "dependencies": [
@@ -1698,43 +1640,42 @@
       ],
       "bundles": [
         {
-          "fileName": "rgbes4w4.js",
+          "fileName": "qoo1jvnb.js",
           "outputs": [
-            "www/build/app/rgbes4w4.js"
+            "www/build/app/qoo1jvnb.js"
           ],
-          "size": 16589,
+          "size": 1823,
           "mode": "ios"
         },
         {
-          "fileName": "kwpybeql.js",
+          "fileName": "4q25gnn0.js",
           "outputs": [
-            "www/build/app/kwpybeql.js"
+            "www/build/app/4q25gnn0.js"
           ],
-          "size": 16798,
+          "size": 1873,
           "mode": "md"
         },
         {
-          "fileName": "rgbes4w4.es5.js",
+          "fileName": "qoo1jvnb.es5.js",
           "outputs": [
-            "www/build/app/rgbes4w4.es5.js"
+            "www/build/app/qoo1jvnb.es5.js"
           ],
-          "size": 18685,
+          "size": 2589,
           "target": "es5",
           "mode": "ios"
         },
         {
-          "fileName": "kwpybeql.es5.js",
+          "fileName": "4q25gnn0.es5.js",
           "outputs": [
-            "www/build/app/kwpybeql.es5.js"
+            "www/build/app/4q25gnn0.es5.js"
           ],
-          "size": 18894,
+          "size": 2639,
           "target": "es5",
           "mode": "md"
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/alert-controller/alert-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/alert/alert.js",
         "node_modules/@ionic/core/dist/collection/components/header/header.js"
       ],
       "encapsulations": [
@@ -1746,7 +1687,7 @@
       ]
     },
     {
-      "entryId": "entry:ion-animation-controller.ion-backdrop",
+      "entryId": "entry:ion-animation-controller",
       "components": [
         {
           "tag": "ion-animation-controller",
@@ -1759,60 +1700,200 @@
             "ion-popover",
             "ion-toast"
           ]
+        }
+      ],
+      "bundles": [
+        {
+          "fileName": "igjmorue.js",
+          "outputs": [
+            "www/build/app/igjmorue.js"
+          ],
+          "size": 11317
         },
         {
-          "tag": "ion-backdrop",
+          "fileName": "igjmorue.es5.js",
+          "outputs": [
+            "www/build/app/igjmorue.es5.js"
+          ],
+          "size": 12759,
+          "target": "es5"
+        }
+      ],
+      "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/animation-controller/animation-controller.js"
+      ],
+      "encapsulations": [
+        "none"
+      ]
+    },
+    {
+      "entryId": "entry:ion-avatar.ion-card-title.ion-fab.ion-fab-button.ion-img.ion-input.ion-range.ion-textarea.ion-title",
+      "components": [
+        {
+          "tag": "ion-avatar",
           "dependencies": [],
           "dependencyOf": [
-            "ion-alert",
-            "ion-loading",
-            "ion-modal",
-            "ion-popover"
+            "bar-list",
+            "post-item",
+            "users-list"
+          ]
+        },
+        {
+          "tag": "ion-card-title",
+          "dependencies": [],
+          "dependencyOf": [
+            "beer-item"
+          ]
+        },
+        {
+          "tag": "ion-fab",
+          "dependencies": [],
+          "dependencyOf": [
+            "bar-directions",
+            "beer-detail",
+            "feed-page"
+          ]
+        },
+        {
+          "tag": "ion-fab-button",
+          "dependencies": [
+            "ion-icon",
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "bar-directions",
+            "beer-detail",
+            "feed-page"
+          ]
+        },
+        {
+          "tag": "ion-img",
+          "dependencies": [],
+          "dependencyOf": [
+            "beer-item"
+          ]
+        },
+        {
+          "tag": "ion-input",
+          "dependencies": [],
+          "dependencyOf": [
+            "feed-page-modal"
+          ]
+        },
+        {
+          "tag": "ion-range",
+          "dependencies": [
+            "ion-gesture",
+            "ion-range-knob"
+          ],
+          "dependencyOf": [
+            "feed-page-modal"
+          ]
+        },
+        {
+          "tag": "ion-textarea",
+          "dependencies": [],
+          "dependencyOf": [
+            "feed-page-modal"
+          ]
+        },
+        {
+          "tag": "ion-title",
+          "dependencies": [],
+          "dependencyOf": [
+            "feed-page-modal",
+            "profile-header",
+            "profile-page"
           ]
         }
       ],
       "bundles": [
         {
-          "fileName": "aohvomyd.js",
+          "fileName": "utqezthy.js",
           "outputs": [
-            "www/build/app/aohvomyd.js"
+            "www/build/app/utqezthy.js"
           ],
-          "size": 13038,
-          "mode": "md"
-        },
-        {
-          "fileName": "3g3z7sjh.js",
-          "outputs": [
-            "www/build/app/3g3z7sjh.js"
-          ],
-          "size": 13041,
+          "size": 28249,
           "mode": "ios"
         },
         {
-          "fileName": "3g3z7sjh.es5.js",
+          "fileName": "utqezthy.sc.js",
           "outputs": [
-            "www/build/app/3g3z7sjh.es5.js"
+            "www/build/app/utqezthy.sc.js"
           ],
-          "size": 15043,
+          "size": 30219,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "kqgicoar.js",
+          "outputs": [
+            "www/build/app/kqgicoar.js"
+          ],
+          "size": 29532,
+          "mode": "md"
+        },
+        {
+          "fileName": "kqgicoar.sc.js",
+          "outputs": [
+            "www/build/app/kqgicoar.sc.js"
+          ],
+          "size": 31631,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "kqgicoar.es5.js",
+          "outputs": [
+            "www/build/app/kqgicoar.es5.js"
+          ],
+          "size": 34735,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "kqgicoar.sc.es5.js",
+          "outputs": [
+            "www/build/app/kqgicoar.sc.es5.js"
+          ],
+          "size": 36834,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "utqezthy.es5.js",
+          "outputs": [
+            "www/build/app/utqezthy.es5.js"
+          ],
+          "size": 33452,
           "target": "es5",
           "mode": "ios"
         },
         {
-          "fileName": "aohvomyd.es5.js",
+          "fileName": "utqezthy.sc.es5.js",
           "outputs": [
-            "www/build/app/aohvomyd.es5.js"
+            "www/build/app/utqezthy.sc.es5.js"
           ],
-          "size": 15040,
+          "size": 35422,
           "target": "es5",
-          "mode": "md"
+          "mode": "ios",
+          "scopedStyles": true
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/animation-controller/animation-controller.js",
-        "node_modules/@ionic/core/dist/collection/components/backdrop/backdrop.js"
+        "node_modules/@ionic/core/dist/collection/components/avatar/avatar.js",
+        "node_modules/@ionic/core/dist/collection/components/card-title/card-title.js",
+        "node_modules/@ionic/core/dist/collection/components/fab-button/fab-button.js",
+        "node_modules/@ionic/core/dist/collection/components/fab/fab.js",
+        "node_modules/@ionic/core/dist/collection/components/img/img.js",
+        "node_modules/@ionic/core/dist/collection/components/input/input.js",
+        "node_modules/@ionic/core/dist/collection/components/range/range.js",
+        "node_modules/@ionic/core/dist/collection/components/textarea/textarea.js",
+        "node_modules/@ionic/core/dist/collection/components/title/title.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ],
       "modes": [
         "ios",
@@ -1820,17 +1901,8 @@
       ]
     },
     {
-      "entryId": "entry:tabs-page.ion-badge.ion-tab-button.ion-tabbar.ion-tabs",
+      "entryId": "entry:ion-badge.ion-tab-button.ion-tabbar.ion-tabs",
       "components": [
-        {
-          "tag": "tabs-page",
-          "dependencies": [
-            "ion-nav",
-            "ion-tab",
-            "ion-tabs"
-          ],
-          "dependencyOf": []
-        },
         {
           "tag": "ion-badge",
           "dependencies": [],
@@ -1864,7 +1936,6 @@
         {
           "tag": "ion-tabs",
           "dependencies": [
-            "ion-tab",
             "ion-tabbar"
           ],
           "dependencyOf": [
@@ -1874,49 +1945,86 @@
       ],
       "bundles": [
         {
-          "fileName": "kf026dep.js",
+          "fileName": "lclfpn7u.js",
           "outputs": [
-            "www/build/app/kf026dep.js"
+            "www/build/app/lclfpn7u.js"
           ],
-          "size": 27452,
+          "size": 16755,
           "mode": "ios"
         },
         {
-          "fileName": "tjspvze1.js",
+          "fileName": "lclfpn7u.sc.js",
           "outputs": [
-            "www/build/app/tjspvze1.js"
+            "www/build/app/lclfpn7u.sc.js"
           ],
-          "size": 26285,
+          "size": 19032,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "nhlndbbs.js",
+          "outputs": [
+            "www/build/app/nhlndbbs.js"
+          ],
+          "size": 17959,
           "mode": "md"
         },
         {
-          "fileName": "kf026dep.es5.js",
+          "fileName": "nhlndbbs.sc.js",
           "outputs": [
-            "www/build/app/kf026dep.es5.js"
+            "www/build/app/nhlndbbs.sc.js"
           ],
-          "size": 32181,
+          "size": 20396,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "lclfpn7u.es5.js",
+          "outputs": [
+            "www/build/app/lclfpn7u.es5.js"
+          ],
+          "size": 21556,
           "target": "es5",
           "mode": "ios"
         },
         {
-          "fileName": "tjspvze1.es5.js",
+          "fileName": "lclfpn7u.sc.es5.js",
           "outputs": [
-            "www/build/app/tjspvze1.es5.js"
+            "www/build/app/lclfpn7u.sc.es5.js"
           ],
-          "size": 31014,
+          "size": 23833,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "nhlndbbs.es5.js",
+          "outputs": [
+            "www/build/app/nhlndbbs.es5.js"
+          ],
+          "size": 22760,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "nhlndbbs.sc.es5.js",
+          "outputs": [
+            "www/build/app/nhlndbbs.sc.es5.js"
+          ],
+          "size": 25197,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/badge/badge.js",
         "node_modules/@ionic/core/dist/collection/components/tab-button/tab-button.js",
         "node_modules/@ionic/core/dist/collection/components/tabbar/tabbar.js",
-        "node_modules/@ionic/core/dist/collection/components/tabs/tabs.js",
-        "src/components/tabs-page/tabs-page.js"
+        "node_modules/@ionic/core/dist/collection/components/tabs/tabs.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ],
       "modes": [
         "ios",
@@ -1948,45 +2056,83 @@
       ],
       "bundles": [
         {
-          "fileName": "kcr8mbwx.js",
+          "fileName": "otsq263p.js",
           "outputs": [
-            "www/build/app/kcr8mbwx.js"
+            "www/build/app/otsq263p.js"
           ],
-          "size": 19628,
+          "size": 6854,
           "mode": "ios"
         },
         {
-          "fileName": "pujhsdz9.js",
+          "fileName": "otsq263p.sc.js",
           "outputs": [
-            "www/build/app/pujhsdz9.js"
+            "www/build/app/otsq263p.sc.js"
           ],
-          "size": 23962,
+          "size": 7586,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "c1a5gbkk.js",
+          "outputs": [
+            "www/build/app/c1a5gbkk.js"
+          ],
+          "size": 6692,
           "mode": "md"
         },
         {
-          "fileName": "pujhsdz9.es5.js",
+          "fileName": "c1a5gbkk.sc.js",
           "outputs": [
-            "www/build/app/pujhsdz9.es5.js"
+            "www/build/app/c1a5gbkk.sc.js"
           ],
-          "size": 24546,
+          "size": 7279,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "otsq263p.es5.js",
+          "outputs": [
+            "www/build/app/otsq263p.es5.js"
+          ],
+          "size": 7504,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "otsq263p.sc.es5.js",
+          "outputs": [
+            "www/build/app/otsq263p.sc.es5.js"
+          ],
+          "size": 8236,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "c1a5gbkk.es5.js",
+          "outputs": [
+            "www/build/app/c1a5gbkk.es5.js"
+          ],
+          "size": 7342,
           "target": "es5",
           "mode": "md"
         },
         {
-          "fileName": "kcr8mbwx.es5.js",
+          "fileName": "c1a5gbkk.sc.es5.js",
           "outputs": [
-            "www/build/app/kcr8mbwx.es5.js"
+            "www/build/app/c1a5gbkk.sc.es5.js"
           ],
-          "size": 20212,
+          "size": 7929,
           "target": "es5",
-          "mode": "ios"
+          "mode": "md",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/button/button.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ],
       "modes": [
         "ios",
@@ -2012,26 +2158,87 @@
       ],
       "bundles": [
         {
-          "fileName": "egmmiitd.js",
+          "fileName": "mm4gwdif.js",
           "outputs": [
-            "www/build/app/egmmiitd.js"
+            "www/build/app/mm4gwdif.js"
           ],
-          "size": 176
+          "size": 1635,
+          "mode": "md"
         },
         {
-          "fileName": "egmmiitd.es5.js",
+          "fileName": "mm4gwdif.sc.js",
           "outputs": [
-            "www/build/app/egmmiitd.es5.js"
+            "www/build/app/mm4gwdif.sc.js"
           ],
-          "size": 417,
-          "target": "es5"
+          "size": 1845,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "3qznajf6.js",
+          "outputs": [
+            "www/build/app/3qznajf6.js"
+          ],
+          "size": 1498,
+          "mode": "ios"
+        },
+        {
+          "fileName": "3qznajf6.sc.js",
+          "outputs": [
+            "www/build/app/3qznajf6.sc.js"
+          ],
+          "size": 1808,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "mm4gwdif.es5.js",
+          "outputs": [
+            "www/build/app/mm4gwdif.es5.js"
+          ],
+          "size": 2000,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "mm4gwdif.sc.es5.js",
+          "outputs": [
+            "www/build/app/mm4gwdif.sc.es5.js"
+          ],
+          "size": 2210,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "3qznajf6.es5.js",
+          "outputs": [
+            "www/build/app/3qznajf6.es5.js"
+          ],
+          "size": 1863,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "3qznajf6.sc.es5.js",
+          "outputs": [
+            "www/build/app/3qznajf6.sc.es5.js"
+          ],
+          "size": 2173,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/buttons/buttons.js"
       ],
       "encapsulations": [
-        "none"
+        "scoped"
+      ],
+      "modes": [
+        "ios",
+        "md"
       ]
     },
     {
@@ -2061,26 +2268,87 @@
       ],
       "bundles": [
         {
-          "fileName": "kpvbbshy.js",
+          "fileName": "npk0ozqi.js",
           "outputs": [
-            "www/build/app/kpvbbshy.js"
+            "www/build/app/npk0ozqi.js"
           ],
-          "size": 2724
+          "size": 3058,
+          "mode": "md"
         },
         {
-          "fileName": "kpvbbshy.es5.js",
+          "fileName": "npk0ozqi.sc.js",
           "outputs": [
-            "www/build/app/kpvbbshy.es5.js"
+            "www/build/app/npk0ozqi.sc.js"
           ],
-          "size": 3375,
-          "target": "es5"
+          "size": 3157,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "i8npcxbu.js",
+          "outputs": [
+            "www/build/app/i8npcxbu.js"
+          ],
+          "size": 3070,
+          "mode": "ios"
+        },
+        {
+          "fileName": "i8npcxbu.sc.js",
+          "outputs": [
+            "www/build/app/i8npcxbu.sc.js"
+          ],
+          "size": 3174,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "npk0ozqi.es5.js",
+          "outputs": [
+            "www/build/app/npk0ozqi.es5.js"
+          ],
+          "size": 3758,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "npk0ozqi.sc.es5.js",
+          "outputs": [
+            "www/build/app/npk0ozqi.sc.es5.js"
+          ],
+          "size": 3857,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "i8npcxbu.es5.js",
+          "outputs": [
+            "www/build/app/i8npcxbu.es5.js"
+          ],
+          "size": 3770,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "i8npcxbu.sc.es5.js",
+          "outputs": [
+            "www/build/app/i8npcxbu.sc.es5.js"
+          ],
+          "size": 3874,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/content/content.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
+      ],
+      "modes": [
+        "ios",
+        "md"
       ]
     },
     {
@@ -2107,18 +2375,18 @@
       ],
       "bundles": [
         {
-          "fileName": "ppp1qtko.js",
+          "fileName": "8x30ntlx.js",
           "outputs": [
-            "www/build/app/ppp1qtko.js"
+            "www/build/app/8x30ntlx.js"
           ],
-          "size": 9476
+          "size": 9174
         },
         {
-          "fileName": "ppp1qtko.es5.js",
+          "fileName": "8x30ntlx.es5.js",
           "outputs": [
-            "www/build/app/ppp1qtko.es5.js"
+            "www/build/app/8x30ntlx.es5.js"
           ],
-          "size": 12898,
+          "size": 12560,
           "target": "es5"
         }
       ],
@@ -2143,6 +2411,7 @@
             "feed-page",
             "ion-back-button",
             "ion-fab-button",
+            "ion-item",
             "ion-searchbar",
             "ion-tab-button",
             "ion-tabbar",
@@ -2152,34 +2421,34 @@
       ],
       "bundles": [
         {
-          "fileName": "tp9wsanh.js",
+          "fileName": "ewqpcphl.js",
           "outputs": [
-            "www/build/app/tp9wsanh.js"
+            "www/build/app/ewqpcphl.js"
           ],
-          "size": 4088
+          "size": 4282
         },
         {
-          "fileName": "tp9wsanh.sc.js",
+          "fileName": "ewqpcphl.sc.js",
           "outputs": [
-            "www/build/app/tp9wsanh.sc.js"
+            "www/build/app/ewqpcphl.sc.js"
           ],
-          "size": 4292,
+          "size": 4486,
           "scopedStyles": true
         },
         {
-          "fileName": "tp9wsanh.es5.js",
+          "fileName": "ewqpcphl.es5.js",
           "outputs": [
-            "www/build/app/tp9wsanh.es5.js"
+            "www/build/app/ewqpcphl.es5.js"
           ],
-          "size": 4660,
+          "size": 4878,
           "target": "es5"
         },
         {
-          "fileName": "tp9wsanh.sc.es5.js",
+          "fileName": "ewqpcphl.sc.es5.js",
           "outputs": [
-            "www/build/app/tp9wsanh.sc.es5.js"
+            "www/build/app/ewqpcphl.sc.es5.js"
           ],
-          "size": 4864,
+          "size": 5082,
           "target": "es5",
           "scopedStyles": true
         }
@@ -2192,23 +2461,8 @@
       ]
     },
     {
-      "entryId": "entry:ion-item.ion-label",
+      "entryId": "entry:ion-label",
       "components": [
-        {
-          "tag": "ion-item",
-          "dependencies": [
-            "ion-ripple-effect"
-          ],
-          "dependencyOf": [
-            "bar-directions",
-            "bar-list",
-            "feed-page-modal",
-            "popover-page",
-            "post-item",
-            "settings-page",
-            "users-list"
-          ]
-        },
         {
           "tag": "ion-label",
           "dependencies": [],
@@ -2225,46 +2479,83 @@
       ],
       "bundles": [
         {
-          "fileName": "c1qogt8v.js",
+          "fileName": "zwhkxlre.js",
           "outputs": [
-            "www/build/app/c1qogt8v.js"
+            "www/build/app/zwhkxlre.js"
           ],
-          "size": 18363,
+          "size": 2955,
           "mode": "ios"
         },
         {
-          "fileName": "m7h7dhup.js",
+          "fileName": "zwhkxlre.sc.js",
           "outputs": [
-            "www/build/app/m7h7dhup.js"
+            "www/build/app/zwhkxlre.sc.js"
           ],
-          "size": 18232,
+          "size": 3676,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "njs2uqg3.js",
+          "outputs": [
+            "www/build/app/njs2uqg3.js"
+          ],
+          "size": 2967,
           "mode": "md"
         },
         {
-          "fileName": "m7h7dhup.es5.js",
+          "fileName": "njs2uqg3.sc.js",
           "outputs": [
-            "www/build/app/m7h7dhup.es5.js"
+            "www/build/app/njs2uqg3.sc.js"
           ],
-          "size": 19247,
+          "size": 3737,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "njs2uqg3.es5.js",
+          "outputs": [
+            "www/build/app/njs2uqg3.es5.js"
+          ],
+          "size": 3558,
           "target": "es5",
           "mode": "md"
         },
         {
-          "fileName": "c1qogt8v.es5.js",
+          "fileName": "njs2uqg3.sc.es5.js",
           "outputs": [
-            "www/build/app/c1qogt8v.es5.js"
+            "www/build/app/njs2uqg3.sc.es5.js"
           ],
-          "size": 19378,
+          "size": 4328,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "zwhkxlre.es5.js",
+          "outputs": [
+            "www/build/app/zwhkxlre.es5.js"
+          ],
+          "size": 3546,
           "target": "es5",
           "mode": "ios"
+        },
+        {
+          "fileName": "zwhkxlre.sc.es5.js",
+          "outputs": [
+            "www/build/app/zwhkxlre.sc.es5.js"
+          ],
+          "size": 4267,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/item/item.js",
         "node_modules/@ionic/core/dist/collection/components/label/label.js"
       ],
       "encapsulations": [
-        "none"
+        "scoped"
       ],
       "modes": [
         "ios",
@@ -2290,36 +2581,36 @@
       ],
       "bundles": [
         {
-          "fileName": "y3lng7tf.js",
+          "fileName": "qdocvlss.js",
           "outputs": [
-            "www/build/app/y3lng7tf.js"
+            "www/build/app/qdocvlss.js"
           ],
-          "size": 1839,
-          "mode": "md"
-        },
-        {
-          "fileName": "eycoacxz.js",
-          "outputs": [
-            "www/build/app/eycoacxz.js"
-          ],
-          "size": 2025,
+          "size": 1795,
           "mode": "ios"
         },
         {
-          "fileName": "eycoacxz.es5.js",
+          "fileName": "devtbpkr.js",
           "outputs": [
-            "www/build/app/eycoacxz.es5.js"
+            "www/build/app/devtbpkr.js"
           ],
-          "size": 2552,
+          "size": 1758,
+          "mode": "md"
+        },
+        {
+          "fileName": "qdocvlss.es5.js",
+          "outputs": [
+            "www/build/app/qdocvlss.es5.js"
+          ],
+          "size": 2252,
           "target": "es5",
           "mode": "ios"
         },
         {
-          "fileName": "y3lng7tf.es5.js",
+          "fileName": "devtbpkr.es5.js",
           "outputs": [
-            "www/build/app/y3lng7tf.es5.js"
+            "www/build/app/devtbpkr.es5.js"
           ],
-          "size": 2366,
+          "size": 2215,
           "target": "es5",
           "mode": "md"
         }
@@ -2352,26 +2643,43 @@
       ],
       "bundles": [
         {
-          "fileName": "xdzyllot.js",
+          "fileName": "ujcnobbz.js",
           "outputs": [
-            "www/build/app/xdzyllot.js"
+            "www/build/app/ujcnobbz.js"
           ],
-          "size": 11988
+          "size": 12246
         },
         {
-          "fileName": "xdzyllot.es5.js",
+          "fileName": "ujcnobbz.sc.js",
           "outputs": [
-            "www/build/app/xdzyllot.es5.js"
+            "www/build/app/ujcnobbz.sc.js"
           ],
-          "size": 17187,
+          "size": 12288,
+          "scopedStyles": true
+        },
+        {
+          "fileName": "ujcnobbz.es5.js",
+          "outputs": [
+            "www/build/app/ujcnobbz.es5.js"
+          ],
+          "size": 17822,
           "target": "es5"
+        },
+        {
+          "fileName": "ujcnobbz.sc.es5.js",
+          "outputs": [
+            "www/build/app/ujcnobbz.sc.es5.js"
+          ],
+          "size": 17864,
+          "target": "es5",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/nav/nav.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ]
     },
     {
@@ -2400,36 +2708,36 @@
       ],
       "bundles": [
         {
-          "fileName": "8pinm2ke.js",
+          "fileName": "pfdf2mol.js",
           "outputs": [
-            "www/build/app/8pinm2ke.js"
+            "www/build/app/pfdf2mol.js"
           ],
-          "size": 9010,
-          "mode": "md"
-        },
-        {
-          "fileName": "qm5t2syt.js",
-          "outputs": [
-            "www/build/app/qm5t2syt.js"
-          ],
-          "size": 9568,
+          "size": 9401,
           "mode": "ios"
         },
         {
-          "fileName": "8pinm2ke.es5.js",
+          "fileName": "yqklvxjr.js",
           "outputs": [
-            "www/build/app/8pinm2ke.es5.js"
+            "www/build/app/yqklvxjr.js"
           ],
-          "size": 11857,
+          "size": 8913,
+          "mode": "md"
+        },
+        {
+          "fileName": "yqklvxjr.es5.js",
+          "outputs": [
+            "www/build/app/yqklvxjr.es5.js"
+          ],
+          "size": 11718,
           "target": "es5",
           "mode": "md"
         },
         {
-          "fileName": "qm5t2syt.es5.js",
+          "fileName": "pfdf2mol.es5.js",
           "outputs": [
-            "www/build/app/qm5t2syt.es5.js"
+            "www/build/app/pfdf2mol.es5.js"
           ],
-          "size": 12415,
+          "size": 12206,
           "target": "es5",
           "mode": "ios"
         }
@@ -2464,26 +2772,43 @@
       ],
       "bundles": [
         {
-          "fileName": "2oo8mg4y.js",
+          "fileName": "hjm7onjs.js",
           "outputs": [
-            "www/build/app/2oo8mg4y.js"
+            "www/build/app/hjm7onjs.js"
           ],
-          "size": 2404
+          "size": 2518
         },
         {
-          "fileName": "2oo8mg4y.es5.js",
+          "fileName": "hjm7onjs.sc.js",
           "outputs": [
-            "www/build/app/2oo8mg4y.es5.js"
+            "www/build/app/hjm7onjs.sc.js"
           ],
-          "size": 2887,
+          "size": 2566,
+          "scopedStyles": true
+        },
+        {
+          "fileName": "hjm7onjs.es5.js",
+          "outputs": [
+            "www/build/app/hjm7onjs.es5.js"
+          ],
+          "size": 3082,
           "target": "es5"
+        },
+        {
+          "fileName": "hjm7onjs.sc.es5.js",
+          "outputs": [
+            "www/build/app/hjm7onjs.sc.es5.js"
+          ],
+          "size": 3130,
+          "target": "es5",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/ripple-effect/ripple-effect.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ]
     },
     {
@@ -2500,49 +2825,43 @@
       ],
       "bundles": [
         {
-          "fileName": "ridqu8mo.js",
+          "fileName": "gs3wuh9f.js",
           "outputs": [
-            "www/build/app/ridqu8mo.js"
+            "www/build/app/gs3wuh9f.js"
           ],
-          "size": 4550,
-          "mode": "ios"
+          "size": 3838
         },
         {
-          "fileName": "00kkao9j.js",
+          "fileName": "gs3wuh9f.sc.js",
           "outputs": [
-            "www/build/app/00kkao9j.js"
+            "www/build/app/gs3wuh9f.sc.js"
           ],
-          "size": 4370,
-          "mode": "md"
+          "size": 3916,
+          "scopedStyles": true
         },
         {
-          "fileName": "00kkao9j.es5.js",
+          "fileName": "gs3wuh9f.es5.js",
           "outputs": [
-            "www/build/app/00kkao9j.es5.js"
+            "www/build/app/gs3wuh9f.es5.js"
           ],
-          "size": 5166,
+          "size": 4576,
+          "target": "es5"
+        },
+        {
+          "fileName": "gs3wuh9f.sc.es5.js",
+          "outputs": [
+            "www/build/app/gs3wuh9f.sc.es5.js"
+          ],
+          "size": 4654,
           "target": "es5",
-          "mode": "md"
-        },
-        {
-          "fileName": "ridqu8mo.es5.js",
-          "outputs": [
-            "www/build/app/ridqu8mo.es5.js"
-          ],
-          "size": 5346,
-          "target": "es5",
-          "mode": "ios"
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/scroll/scroll.js"
       ],
       "encapsulations": [
-        "none"
-      ],
-      "modes": [
-        "ios",
-        "md"
+        "shadow"
       ]
     },
     {
@@ -2559,85 +2878,87 @@
       ],
       "bundles": [
         {
-          "fileName": "owciuqwv.js",
+          "fileName": "nj1zr1yx.js",
           "outputs": [
-            "www/build/app/owciuqwv.js"
+            "www/build/app/nj1zr1yx.js"
           ],
-          "size": 8860,
+          "size": 5375,
           "mode": "ios"
         },
         {
-          "fileName": "wlc8mwmz.js",
+          "fileName": "nj1zr1yx.sc.js",
           "outputs": [
-            "www/build/app/wlc8mwmz.js"
+            "www/build/app/nj1zr1yx.sc.js"
           ],
-          "size": 8776,
+          "size": 6005,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "j3wbb3hr.js",
+          "outputs": [
+            "www/build/app/j3wbb3hr.js"
+          ],
+          "size": 5377,
           "mode": "md"
         },
         {
-          "fileName": "owciuqwv.es5.js",
+          "fileName": "j3wbb3hr.sc.js",
           "outputs": [
-            "www/build/app/owciuqwv.es5.js"
+            "www/build/app/j3wbb3hr.sc.js"
           ],
-          "size": 9356,
+          "size": 5978,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "nj1zr1yx.es5.js",
+          "outputs": [
+            "www/build/app/nj1zr1yx.es5.js"
+          ],
+          "size": 5889,
           "target": "es5",
           "mode": "ios"
         },
         {
-          "fileName": "wlc8mwmz.es5.js",
+          "fileName": "nj1zr1yx.sc.es5.js",
           "outputs": [
-            "www/build/app/wlc8mwmz.es5.js"
+            "www/build/app/nj1zr1yx.sc.es5.js"
           ],
-          "size": 9272,
+          "size": 6519,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "j3wbb3hr.es5.js",
+          "outputs": [
+            "www/build/app/j3wbb3hr.es5.js"
+          ],
+          "size": 5891,
           "target": "es5",
           "mode": "md"
+        },
+        {
+          "fileName": "j3wbb3hr.sc.es5.js",
+          "outputs": [
+            "www/build/app/j3wbb3hr.sc.es5.js"
+          ],
+          "size": 6492,
+          "target": "es5",
+          "mode": "md",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/spinner/spinner.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ],
       "modes": [
         "ios",
         "md"
-      ]
-    },
-    {
-      "entryId": "entry:ion-tab",
-      "components": [
-        {
-          "tag": "ion-tab",
-          "dependencies": [],
-          "dependencyOf": [
-            "ion-tabs",
-            "tabs-page"
-          ]
-        }
-      ],
-      "bundles": [
-        {
-          "fileName": "aediktyl.js",
-          "outputs": [
-            "www/build/app/aediktyl.js"
-          ],
-          "size": 1569
-        },
-        {
-          "fileName": "aediktyl.es5.js",
-          "outputs": [
-            "www/build/app/aediktyl.es5.js"
-          ],
-          "size": 3517,
-          "target": "es5"
-        }
-      ],
-      "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/tab/tab.js"
-      ],
-      "encapsulations": [
-        "none"
       ]
     },
     {
@@ -2670,36 +2991,36 @@
       ],
       "bundles": [
         {
-          "fileName": "uzbmbo16.js",
+          "fileName": "fgnt1kd5.js",
           "outputs": [
-            "www/build/app/uzbmbo16.js"
+            "www/build/app/fgnt1kd5.js"
           ],
-          "size": 6772,
-          "mode": "md"
-        },
-        {
-          "fileName": "yxa9sc6d.js",
-          "outputs": [
-            "www/build/app/yxa9sc6d.js"
-          ],
-          "size": 7169,
+          "size": 6954,
           "mode": "ios"
         },
         {
-          "fileName": "uzbmbo16.es5.js",
+          "fileName": "eg58dxpi.js",
           "outputs": [
-            "www/build/app/uzbmbo16.es5.js"
+            "www/build/app/eg58dxpi.js"
           ],
-          "size": 9459,
+          "size": 6671,
+          "mode": "md"
+        },
+        {
+          "fileName": "eg58dxpi.es5.js",
+          "outputs": [
+            "www/build/app/eg58dxpi.es5.js"
+          ],
+          "size": 9316,
           "target": "es5",
           "mode": "md"
         },
         {
-          "fileName": "yxa9sc6d.es5.js",
+          "fileName": "fgnt1kd5.es5.js",
           "outputs": [
-            "www/build/app/yxa9sc6d.es5.js"
+            "www/build/app/fgnt1kd5.es5.js"
           ],
-          "size": 9856,
+          "size": 9599,
           "target": "es5",
           "mode": "ios"
         }
@@ -2733,45 +3054,83 @@
       ],
       "bundles": [
         {
-          "fileName": "xfsozopo.js",
+          "fileName": "tlhd2aal.js",
           "outputs": [
-            "www/build/app/xfsozopo.js"
+            "www/build/app/tlhd2aal.js"
           ],
-          "size": 134720,
-          "mode": "md"
-        },
-        {
-          "fileName": "uclypvld.js",
-          "outputs": [
-            "www/build/app/uclypvld.js"
-          ],
-          "size": 133552,
+          "size": 2656,
           "mode": "ios"
         },
         {
-          "fileName": "xfsozopo.es5.js",
+          "fileName": "tlhd2aal.sc.js",
           "outputs": [
-            "www/build/app/xfsozopo.es5.js"
+            "www/build/app/tlhd2aal.sc.js"
           ],
-          "size": 135220,
+          "size": 2761,
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "j6nze0jc.js",
+          "outputs": [
+            "www/build/app/j6nze0jc.js"
+          ],
+          "size": 2391,
+          "mode": "md"
+        },
+        {
+          "fileName": "j6nze0jc.sc.js",
+          "outputs": [
+            "www/build/app/j6nze0jc.sc.js"
+          ],
+          "size": 2491,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "tlhd2aal.es5.js",
+          "outputs": [
+            "www/build/app/tlhd2aal.es5.js"
+          ],
+          "size": 3117,
+          "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "tlhd2aal.sc.es5.js",
+          "outputs": [
+            "www/build/app/tlhd2aal.sc.es5.js"
+          ],
+          "size": 3222,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "j6nze0jc.es5.js",
+          "outputs": [
+            "www/build/app/j6nze0jc.es5.js"
+          ],
+          "size": 2852,
           "target": "es5",
           "mode": "md"
         },
         {
-          "fileName": "uclypvld.es5.js",
+          "fileName": "j6nze0jc.sc.es5.js",
           "outputs": [
-            "www/build/app/uclypvld.es5.js"
+            "www/build/app/j6nze0jc.sc.es5.js"
           ],
-          "size": 134052,
+          "size": 2952,
           "target": "es5",
-          "mode": "ios"
+          "mode": "md",
+          "scopedStyles": true
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/toolbar/toolbar.js"
       ],
       "encapsulations": [
-        "none"
+        "shadow"
       ],
       "modes": [
         "ios",
@@ -2925,7 +3284,7 @@
       ]
     },
     {
-      "entryId": "entry:profile-header",
+      "entryId": "entry:profile-header.ion-alert.ion-back-button.ion-card.ion-searchbar",
       "components": [
         {
           "tag": "profile-header",
@@ -2949,47 +3308,139 @@
             "user-profile",
             "users-page"
           ]
+        },
+        {
+          "tag": "ion-alert",
+          "dependencies": [
+            "ion-animation-controller",
+            "ion-backdrop",
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "ion-alert-controller"
+          ]
+        },
+        {
+          "tag": "ion-back-button",
+          "dependencies": [
+            "ion-icon",
+            "ion-ripple-effect"
+          ],
+          "dependencyOf": [
+            "bar-directions",
+            "beer-detail",
+            "post-detail",
+            "profile-page",
+            "settings-page",
+            "user-profile",
+            "users-page"
+          ]
+        },
+        {
+          "tag": "ion-card",
+          "dependencies": [],
+          "dependencyOf": [
+            "beer-item"
+          ]
+        },
+        {
+          "tag": "ion-searchbar",
+          "dependencies": [
+            "ion-icon"
+          ],
+          "dependencyOf": [
+            "bar-page",
+            "beer-page"
+          ]
         }
       ],
       "bundles": [
         {
-          "fileName": "txd5kkyr.js",
+          "fileName": "qzm0zurc.js",
           "outputs": [
-            "www/build/app/txd5kkyr.js"
+            "www/build/app/qzm0zurc.js"
           ],
-          "size": 1547
+          "size": 29022,
+          "mode": "ios"
         },
         {
-          "fileName": "txd5kkyr.sc.js",
+          "fileName": "qzm0zurc.sc.js",
           "outputs": [
-            "www/build/app/txd5kkyr.sc.js"
+            "www/build/app/qzm0zurc.sc.js"
           ],
-          "size": 1610,
+          "size": 32579,
+          "mode": "ios",
           "scopedStyles": true
         },
         {
-          "fileName": "txd5kkyr.es5.js",
+          "fileName": "hyjmmvj2.js",
           "outputs": [
-            "www/build/app/txd5kkyr.es5.js"
+            "www/build/app/hyjmmvj2.js"
           ],
-          "size": 3319,
-          "target": "es5"
+          "size": 28496,
+          "mode": "md"
         },
         {
-          "fileName": "txd5kkyr.sc.es5.js",
+          "fileName": "hyjmmvj2.sc.js",
           "outputs": [
-            "www/build/app/txd5kkyr.sc.es5.js"
+            "www/build/app/hyjmmvj2.sc.js"
           ],
-          "size": 3382,
+          "size": 30878,
+          "mode": "md",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "qzm0zurc.es5.js",
+          "outputs": [
+            "www/build/app/qzm0zurc.es5.js"
+          ],
+          "size": 34003,
           "target": "es5",
+          "mode": "ios"
+        },
+        {
+          "fileName": "qzm0zurc.sc.es5.js",
+          "outputs": [
+            "www/build/app/qzm0zurc.sc.es5.js"
+          ],
+          "size": 37560,
+          "target": "es5",
+          "mode": "ios",
+          "scopedStyles": true
+        },
+        {
+          "fileName": "hyjmmvj2.es5.js",
+          "outputs": [
+            "www/build/app/hyjmmvj2.es5.js"
+          ],
+          "size": 33477,
+          "target": "es5",
+          "mode": "md"
+        },
+        {
+          "fileName": "hyjmmvj2.sc.es5.js",
+          "outputs": [
+            "www/build/app/hyjmmvj2.sc.es5.js"
+          ],
+          "size": 35859,
+          "target": "es5",
+          "mode": "md",
           "scopedStyles": true
         }
       ],
       "inputs": [
+        "node_modules/@ionic/core/dist/collection/components/alert/alert.js",
+        "node_modules/@ionic/core/dist/collection/components/back-button/back-button.js",
+        "node_modules/@ionic/core/dist/collection/components/card/card.js",
+        "node_modules/@ionic/core/dist/collection/components/searchbar/searchbar.js",
         "src/components/profile-header/profile-header.js"
       ],
       "encapsulations": [
         "scoped"
+      ],
+      "modes": [
+        "ios",
+        "md"
       ]
     },
     {
@@ -3012,18 +3463,18 @@
       ],
       "bundles": [
         {
-          "fileName": "djryxgxt.js",
+          "fileName": "aqnv8kgp.js",
           "outputs": [
-            "www/build/app/djryxgxt.js"
+            "www/build/app/aqnv8kgp.js"
           ],
-          "size": 4408
+          "size": 4309
         },
         {
-          "fileName": "djryxgxt.es5.js",
+          "fileName": "aqnv8kgp.es5.js",
           "outputs": [
-            "www/build/app/djryxgxt.es5.js"
+            "www/build/app/aqnv8kgp.es5.js"
           ],
-          "size": 6571,
+          "size": 6472,
           "target": "es5"
         }
       ],
@@ -3035,7 +3486,7 @@
       ]
     },
     {
-      "entryId": "entry:settings-page.ion-toggle",
+      "entryId": "entry:settings-page",
       "components": [
         {
           "tag": "settings-page",
@@ -3052,67 +3503,34 @@
             "profile-header"
           ],
           "dependencyOf": []
-        },
-        {
-          "tag": "ion-toggle",
-          "dependencies": [
-            "ion-gesture"
-          ],
-          "dependencyOf": [
-            "settings-page"
-          ]
         }
       ],
       "bundles": [
         {
-          "fileName": "dije4goy.js",
+          "fileName": "masey169.js",
           "outputs": [
-            "www/build/app/dije4goy.js"
+            "www/build/app/masey169.js"
           ],
-          "size": 9620,
-          "mode": "ios"
+          "size": 2179
         },
         {
-          "fileName": "vqa0a5hd.js",
+          "fileName": "masey169.es5.js",
           "outputs": [
-            "www/build/app/vqa0a5hd.js"
+            "www/build/app/masey169.es5.js"
           ],
-          "size": 10006,
-          "mode": "md"
-        },
-        {
-          "fileName": "dije4goy.es5.js",
-          "outputs": [
-            "www/build/app/dije4goy.es5.js"
-          ],
-          "size": 12325,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
-          "fileName": "vqa0a5hd.es5.js",
-          "outputs": [
-            "www/build/app/vqa0a5hd.es5.js"
-          ],
-          "size": 12711,
-          "target": "es5",
-          "mode": "md"
+          "size": 4202,
+          "target": "es5"
         }
       ],
       "inputs": [
-        "node_modules/@ionic/core/dist/collection/components/toggle/toggle.js",
         "src/components/settings-page/settings-page.js"
       ],
       "encapsulations": [
         "none"
-      ],
-      "modes": [
-        "ios",
-        "md"
       ]
     },
     {
-      "entryId": "entry:stencil-beer.ion-app.ion-route.ion-router.ion-status-tap.ion-tap-click",
+      "entryId": "entry:stencil-beer.ion-app.ion-route.ion-router.ion-tap-click",
       "components": [
         {
           "tag": "stencil-beer",
@@ -3127,7 +3545,6 @@
         {
           "tag": "ion-app",
           "dependencies": [
-            "ion-status-tap",
             "ion-tap-click"
           ],
           "dependencyOf": [
@@ -3149,13 +3566,6 @@
           ]
         },
         {
-          "tag": "ion-status-tap",
-          "dependencies": [],
-          "dependencyOf": [
-            "ion-app"
-          ]
-        },
-        {
           "tag": "ion-tap-click",
           "dependencies": [],
           "dependencyOf": [
@@ -3165,54 +3575,30 @@
       ],
       "bundles": [
         {
-          "fileName": "syauwmdc.js",
+          "fileName": "iqos1djg.js",
           "outputs": [
-            "www/build/app/syauwmdc.js"
+            "www/build/app/iqos1djg.js"
           ],
-          "size": 23615,
-          "mode": "md"
+          "size": 12941
         },
         {
-          "fileName": "wtskiw0s.js",
+          "fileName": "iqos1djg.es5.js",
           "outputs": [
-            "www/build/app/wtskiw0s.js"
+            "www/build/app/iqos1djg.es5.js"
           ],
-          "size": 24667,
-          "mode": "ios"
-        },
-        {
-          "fileName": "wtskiw0s.es5.js",
-          "outputs": [
-            "www/build/app/wtskiw0s.es5.js"
-          ],
-          "size": 29620,
-          "target": "es5",
-          "mode": "ios"
-        },
-        {
-          "fileName": "syauwmdc.es5.js",
-          "outputs": [
-            "www/build/app/syauwmdc.es5.js"
-          ],
-          "size": 28568,
-          "target": "es5",
-          "mode": "md"
+          "size": 17717,
+          "target": "es5"
         }
       ],
       "inputs": [
         "node_modules/@ionic/core/dist/collection/components/app/app.js",
         "node_modules/@ionic/core/dist/collection/components/route/route.js",
         "node_modules/@ionic/core/dist/collection/components/router/router.js",
-        "node_modules/@ionic/core/dist/collection/components/status-tap/status-tap.js",
         "node_modules/@ionic/core/dist/collection/components/tap-click/tap-click.js",
         "src/components/stencil-beer/stencil-beer.js"
       ],
       "encapsulations": [
         "none"
-      ],
-      "modes": [
-        "ios",
-        "md"
       ]
     },
     {
@@ -3231,18 +3617,18 @@
       ],
       "bundles": [
         {
-          "fileName": "pmhooa6k.js",
+          "fileName": "iaqfj3wa.js",
           "outputs": [
-            "www/build/app/pmhooa6k.js"
+            "www/build/app/iaqfj3wa.js"
           ],
-          "size": 2718
+          "size": 2603
         },
         {
-          "fileName": "pmhooa6k.es5.js",
+          "fileName": "iaqfj3wa.es5.js",
           "outputs": [
-            "www/build/app/pmhooa6k.es5.js"
+            "www/build/app/iaqfj3wa.es5.js"
           ],
-          "size": 4595,
+          "size": 4480,
           "target": "es5"
         }
       ],
@@ -3285,18 +3671,18 @@
       ],
       "bundles": [
         {
-          "fileName": "e18fvpev.js",
+          "fileName": "knidrzgz.js",
           "outputs": [
-            "www/build/app/e18fvpev.js"
+            "www/build/app/knidrzgz.js"
           ],
-          "size": 2672
+          "size": 2645
         },
         {
-          "fileName": "e18fvpev.es5.js",
+          "fileName": "knidrzgz.es5.js",
           "outputs": [
-            "www/build/app/e18fvpev.es5.js"
+            "www/build/app/knidrzgz.es5.js"
           ],
-          "size": 4529,
+          "size": 4502,
           "target": "es5"
         }
       ],
@@ -3386,6 +3772,7 @@
         "ion-checkbox",
         "ion-chip",
         "ion-chip-button",
+        "ion-chip-icon",
         "ion-col",
         "ion-content",
         "ion-datetime",
@@ -3456,7 +3843,6 @@
         "ion-slides",
         "ion-spinner",
         "ion-split-pane",
-        "ion-status-tap",
         "ion-tab",
         "ion-tab-button",
         "ion-tabbar",

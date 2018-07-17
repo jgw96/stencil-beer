@@ -3,12 +3,112 @@
   "short_name": "IonicBeer",
   "start_url": "/",
   "display": "standalone",
-  "icons": [{
-    "src": "assets/img/icon.png",
-    "sizes": "512x512",
-    "type": "image/png"
-  }],
+  "icons": [
+      {
+          "src": "assets/img/android-launchericon-512-512.png",
+          "sizes": "512x512",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/a098cf6b-144b-71bd-db2e-f9fc1499e651.webPlatform.png",
+          "sizes": "44x44",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/e3774530-e693-4fca-51b8-8c76422d686b.webPlatform.png",
+          "sizes": "48x48",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/6764736d-a141-e7c8-cd54-31a55ebd6ef8.webPlatform.png",
+          "sizes": "1240x600",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/00ca6e7d-aaf5-79eb-d4cf-08802101a74a.webPlatform.png",
+          "sizes": "300x300",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/34c15214-9855-91a7-925f-b28f0633a0be.webPlatform.png",
+          "sizes": "150x150",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/b2529792-de12-2930-af0a-f1bf18b535d4.webPlatform.png",
+          "sizes": "88x88",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/9359feae-85e0-7f49-dd0f-86b5a802c081.webPlatform.png",
+          "sizes": "24x24",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/ecb71ddd-1bc3-8fae-6752-e0a7c7a8bf74.webPlatform.png",
+          "sizes": "50x50",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/17ac9ecd-4b81-56c3-92a3-0d526ed34983.webPlatform.png",
+          "sizes": "620x300",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/ee38dc4a-9710-5220-03bf-fee54836e987.webPlatform.png",
+          "sizes": "192x192",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/1cb719c8-ffb9-6f94-a370-83a1d55b81d0.webPlatform.png",
+          "sizes": "144x144",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/0f44d045-3066-819e-1fc1-38a95cc706c2.webPlatform.png",
+          "sizes": "96x96",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/5591d9f0-b26a-46c3-5272-226c8edfe30c.webPlatform.png",
+          "sizes": "72x72",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/fa88a627-bf03-1ae2-1bce-3dd9eb806eca.webPlatform.png",
+          "sizes": "36x36",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/f7645b28-0216-d0f7-fa5c-6feac68d6a3e.webPlatform.png",
+          "sizes": "1024x1024",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/ced0038a-62d1-a5a7-4983-9690c3fdbc60.webPlatform.png",
+          "sizes": "180x180",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/90a40e65-1781-4a34-3a6f-ce7685a8f9af.webPlatform.png",
+          "sizes": "152x152",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/93b89f33-e22d-596f-1c6c-f43544b01b10.webPlatform.png",
+          "sizes": "120x120",
+          "type": "image/png"
+      },
+      {
+          "src": "assets/img/images/30669adb-dd1d-5827-b0f0-28c49aaa43fe.webPlatform.png",
+          "sizes": "76x76",
+          "type": "image/png"
+      }
+  ],
   "background_color": "#222",
   "theme_color": "#222",
-  "gcm_sender_id": "103953800507"
+  "gcm_sender_id": "103953800507",
+  "lang": "English",
+  "orientation": "portrait",
+  "description": "Find your favorite beer and bars near you!"
 }
