@@ -46,7 +46,6 @@ export class BeerDetail {
 
   render() {
     if (this.beer) {
-
       return [
         <profile-header>
           <ion-back-button defaultHref='/home/beers' />

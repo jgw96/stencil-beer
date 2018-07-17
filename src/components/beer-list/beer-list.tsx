@@ -16,7 +16,7 @@ export class BeerList {
     if (this.beers) {
       const beers = this.beers.map((beer) => {
         return (
-          <beer-item fave={this.fave} beer={beer}></beer-item>
+          <beer-item key={beer.id} fave={this.fave} beer={beer}></beer-item>
         )
       });
 

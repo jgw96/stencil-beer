@@ -32,7 +32,7 @@ export class barList {
             };
 
             return (
-              <ion-item>
+              <ion-item key={bar.id}>
                 <ion-avatar slot="start" class={color}>
                   <div>{bar.rating}</div>
                 </ion-avatar>

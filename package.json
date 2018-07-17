@@ -16,8 +16,8 @@
     "deploy": "npm run build && firebase deploy"
   },
   "dependencies": {
-    "@ionic/core": "^4.0.0-alpha.7",
-    "@stencil/core": "^0.10.0",
+    "@ionic/core": "^4.0.0-alpha.10",
+    "@stencil/core": "^0.10.7",
     "am-rating": "0.0.7",
     "firebase": "4.8.2",
     "st-img": "^0.3.0"

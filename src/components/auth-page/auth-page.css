@@ -1,4 +1,4 @@
-main {
+auth-page main {
   height: 100vh;
   background: url(/assets/img/beer-bg-img.jpg) no-repeat center center fixed;
   background-size: cover;

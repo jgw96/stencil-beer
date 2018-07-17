@@ -21,7 +21,7 @@ export class UsersList {
         <ion-list no-lines>
           {this.users.map((user) => {
             return (
-              <ion-item>
+              <ion-item key={user.id}>
                 <ion-avatar slot='start'>
                   <img src={user.photo}></img>
                 </ion-avatar>
